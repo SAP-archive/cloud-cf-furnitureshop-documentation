@@ -1,9 +1,9 @@
 - - - -
-Previous Exercise: [Exercise 2 - Order New Items](../Exercise2_Order_New_Items) Next Exercise: [Exercise 4 - Comments and Ratings Backend](../Exercise4_Comments_and_Ratings_Backend)
+Previous Exercise: [Exercise 4 - Order New Items](../Exercise-04-Order-New-Items) Next Exercise: [Exercise 6 - Comments and Ratings Backend](../Exercise-06-Comments-and-Ratings-Backend)
 
 [Back to the Overview](../README.md)
 - - - -
-# Exercise 3 - Logging
+# Exercise 05 - Logging
 
 ## Why is logging important?
 - No debugging of microservices in production.
@@ -120,6 +120,6 @@ In this step, we will explore how easy it is to view and analyze your logs using
 - - - -
 © 2018 SAP SE
 - - - -
-Previous Exercise: [Exercise 2 - Order New Items](../Exercise2_Order_New_Items) Next Exercise: [Exercise 4 - Comments and Ratings Backend](../Exercise4_Comments_and_Ratings_Backend)
+Previous Exercise: [Exercise 4 - Order New Items](../Exercise-04-Order-New-Items) Next Exercise: [Exercise 6 - Comments and Ratings Backend](../Exercise-06-Comments-and-Ratings-Backend)
 
 [Back to the Overview](../README.md)
