@@ -448,7 +448,7 @@ properties:
 
 11. Your srv module should look like this:
 
-![mta srv](images/Exercise2_12_mta_srv.JPG)
+![mta srv](images/Exercise2_12_mta_srv.jpeg)
 
 12. Next, in the `resources` section of your `mta.yaml` add connectivity and destination and make sure you have an entry for uaa_furnitureshop_XX as shown:
 
