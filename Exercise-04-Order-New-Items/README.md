@@ -421,6 +421,9 @@ For this, on the `Detail.view.xml`, at the end of `</ObjectHeader>`, add the bel
 	</contentRight>
 </Bar>
 ```
+
+Save the file
+
 8. Now Expand _wishlist application - webapp - controller_ and open  `Detail.controller.js` Directly before the `onInit` function, define the function `onIconTabSelectBK`
 ```javascript
 onIconTabSelectBK: function () {
@@ -459,17 +462,18 @@ properties:
 
 ![mta srv](images/Exercise2_12_mta_srv1.jpeg)
 
-12. Next, in the `resources` section of your `mta.yaml` add connectivity and destination and make sure you have an entry for uaa_furnitureshop_XX as shown:
+12. Next, in the `resources` section of your `mta.yaml` add connectivity and destination and make sure you have an entry for uaa_furnitureshop as shown: notice the additional parameter `shared: true` this allows other mta's to share the instance of xsuaa that we have created as past of this application
 
 ```
  - name: connectivity
    type: org.cloudfoundry.existing-service
  - name: destination
    type: org.cloudfoundry.existing-service
- - name: uaa_furnitureshop_XX (XX is your unique student number)
+ - name: uaa_furnitureshop
    parameters:
       path: ./xs-security.json
       service-plan: application
+      shared: true
    type: com.sap.xs.uaa
 ```
 
