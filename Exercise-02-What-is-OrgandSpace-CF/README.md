@@ -4,9 +4,9 @@ Previous Exercise: [Exercise 01 Setup](../Exercise-01-Setup) Next Exercise: [Exe
 [Back to the Overview](../README.md)
 - - - -
 
-Basic Understanding of Org and Space.
+# Exercise 02 - Basic Understanding of Org and Space.
 
-Intro: 
+## Introduction 
 On SAP Cloud Platform - Cloud Foundry you will hear terms like Global account, Organization, Spaces, api endpoint. In this document we will explain those terms: 
 
 
