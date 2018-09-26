@@ -1,5 +1,5 @@
 - - - -
-Next Exercise: [Exercise 1 - Publish Wishlist](../Exercise1_Publish_Wishlist)
+Next Exercise: [Exercise 02 What is Org and Space CF](../Exercise-02-What-is-OrgandSpace-CF)
 
 [Back to the Overview](../README.md)
 - - - -
@@ -72,7 +72,7 @@ This completes the system setup for your exercises.
 - - - -
 © 2018 SAP SE
 - - - -
-Next Exercise: [Exercise 1 - Publish Wishlist](../Exercise1_Publish_Wishlist)
+Next Exercise: [Exercise 02 What is Org and Space CF](../Exercise-02-What-is-OrgandSpace-CF)
 
 [Back to the Overview](../README.md)
 - - - -
