@@ -162,6 +162,9 @@ entity BackEndProductData
 	DISCOUNT : String;
 }
 ```
+
+Save the `data-model.cds` file
+
 3. Edit `my-service.cds` under the `srv` module to add the new entity `BackendProductData`
 
 ```
@@ -174,6 +177,8 @@ service CatalogService {
 }
 ```
 Note that the `@cds.persistence.skip` specifies not to create the table entity in HANA.
+
+Save the `my-service.cds` file
 
 4.	The entity `BackendProductData` is not persistent in the HANA database and the odata get operation will return an empty set. We will override the `Query` and `Read` operations of the `BackendProductData` entity by our custom implementation in Java to read the onpremise odata that we created in the previous step via the destination pointing to the virtual url defined in the Cloud Connector configuration.
 5.	Under the `srv` module, navigate to src - main - java - com - company - furnitureshop and right-click and choose _Create new Java Class_ enter the class name as `BackEndProductEntity` (do not add .java extension, WebIDE will add it automatically).
