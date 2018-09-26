@@ -1,10 +1,10 @@
 - - - -
-Previous Exercise: [Exercise 5 - Comments and Ratings Frontend](../Exercise5_Comments_and_Ratings_Frontend) Next Exercise: [Exercise 7 - Autoscaling of Comments and Ratings](../Exercise7_Autoscaling_of_Comments_and_Ratings)
+Previous Exercise: [Exercise 07 - Comments and Ratings Frontend](../Exercise-07-Comments-and-Ratings-Frontend) Next Exercise: [Exercise 09 - Autoscaling of Comments and Ratings](../Exercise-09-Autoscaling-of-Comments-and-Ratings)
 
 [Back to the Overview](../README.md)
 - - - -
 
-# Exercise 6 - Tweet Comments Backend
+# Exercise 08 - Tweet Comments Backend
 
 Mary who is a loyal customer of home furniture franchise has access to the customer portal to provide ratings and comments on the wishlist which Franck has uploaded. Based on the feedback from customers Franck would add highly rated items into his furniture store.
 
@@ -90,6 +90,6 @@ In this section you will build and deploy the application that you have built in
 © 2018 SAP SE
 - - - -
 
-Previous Exercise: [Exercise 5 - Comments and Ratings Frontend](../Exercise5_Comments_and_Ratings_Frontend) Next Exercise: [Exercise 7 - Autoscaling of Comments and Ratings](../Exercise7_Autoscaling_of_Comments_and_Ratings)
+Previous Exercise: [Exercise 07 - Comments and Ratings Frontend](../Exercise-07-Comments-and-Ratings-Frontend) Next Exercise: [Exercise 09 - Autoscaling of Comments and Ratings](../Exercise-09-Autoscaling-of-Comments-and-Ratings)
 
 [Back to the Overview](../README.md)
