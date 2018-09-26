@@ -141,7 +141,7 @@ Enter the following:
    - Authentication: `NoAuthentication`
 5. Your destination should look like this:
 
-![destination](images/Exercise2_11_destination.JPG)
+![destination](images/Exercise2_1_destination.JPG)
 
 ## 4. Enhance the Service for the Wishlist Application
 We can now open the existing wishlist application in Web IDE and modify the service module to include the backend product data from our on premise system.
