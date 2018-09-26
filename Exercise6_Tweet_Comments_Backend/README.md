@@ -54,7 +54,7 @@ In this section you will build and deploy the application that you have built in
 
 3. Using your File Explorer in Web IDE, right click on the **`product_ratings`** folder, go to `Build` and click **Build** as shown in the picture below.
 
-   ![Step Image](images/image_10.png)
+   ![Step Image](images/image_8.png)
 
    Once the build is completed, you will see a new folder created in your Web IDE's File Explorer with the name **`mta_archives`**.
 
@@ -64,7 +64,7 @@ In this section you will build and deploy the application that you have built in
 
 5. In the popup that appears, please enter the following details and click _Deploy_.
 
-    ![Step Image](images/image_9.png)
+    ![Step Image](images/image_10.png)
 
     ```
     Cloud Foundry API Endpoint: ``//TODO: Add the end point
@@ -75,22 +75,16 @@ In this section you will build and deploy the application that you have built in
 
 7. Once your application is deployed launch the url for ratings_frontend app.
 
-8. Select a product and go to the `Rate Item` tab in the Product Details view.
-
-9. Give the product a rating and comment and click on submit, as shown in the picture below.
-
-    ![Step Image](images/image_10.png)
-
-    This will add a review to the product as show below.
+8. Give the product a rating and comment and click on submit.
 
     ![Step Image](images/image_11.png)
 
-10. In your web browser, go to this [twitter handle](https://twitter.com/sapcfbackserv)  to see your comment posted as a tweet.
+9.  In your web browser, go to this [twitter handle](https://twitter.com/sapfurnishop)  to see your comment posted as a tweet.
 
     ![Step Image](images/image_12.png)
 
 
-    Twitter handle URL: https://twitter.com/sapcfbackserv
+    Twitter handle URL: https://twitter.com/sapfurnishop
 
 - - - -
 © 2018 SAP SE
