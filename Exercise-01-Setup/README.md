@@ -54,7 +54,7 @@ We will be using additional Web IDE features that are not enabled by default. Th
 ![node.js](images/setup5b_nodejs.JPG)
 
 ## 4. Simplify the Copying of Code Blocks from GitHub
-Many of the exercises you will complete during the course of this session will require you to copy large blocks of code from the REAMME.md documentation files. To make this easier and reduce the risk of copy-paste errors in your code, you can install a simple add-on for Chrome called _Tampermonkey_ and then a GitHub-specific user script to provide you with a copy to clipboard button for the code blocks in the exercises.
+Many of the exercises you will complete during the course of this session will require you to copy large blocks of code from the README.md documentation files. To make this easier and reduce the risk of copy-paste errors in your code, you can install a simple add-on for Chrome called _Tampermonkey_ and then a GitHub-specific user script to provide you with a _copy to clipboard_ button for the code blocks in the exercises.
 
 1. Open your Chrome browser.
 2. Open the URL https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en-US - this is the Tampermonkey extension.
@@ -75,7 +75,7 @@ As in any environment it's important to save your work regularly to avoid losing
 
 1. Note that there are 2 _Save_ buttons in SAP Web IDE Full-Stack, _Save_ will only save the file currently being edited, _Save All_ will save all currently open and unsaved files.
 
-![save buttons](images/setup9_save_buttons.JPG)
+![save buttons](images/setup9_save_buttons.jpg)
 
 2. It is optional to enable the "Automatically save changes in open documents every 30 sec" and "Beautify the code of active documents on manual save" options in SAP Web IDE Full-Stack. To do so, open _Preferences-Code Editor_ and check the options for automatic saving and beautify code.
 
