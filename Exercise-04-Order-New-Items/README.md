@@ -1,10 +1,10 @@
 - - - -
-Previous Exercise: [Exercise 1 - Publish Wishlist](../Exercise1_Publish_Wishlist) Next Exercise: [Exercise 3 - Logging](../Exercise3_Logging)
+Previous Exercise: [Exercise 3 - Publish Wishlist](../Exercise-03-Publish-Wishlist) Next Exercise: [Exercise 5 - Logging](../Exercise-05-Logging)
 
 [Back to the Overview](../README.md)
 - - - -
 
-# Exercise 2 Order New Items
+# Exercise 04 - Order New Items
 
 In our scenario, Franck will need to determine which products to add to his inventory based on the feedback received on the wishlist. To do this, he will need to review the wishlist voting and comments received from his colleagues and the company’s customers through a customer portal. Franck will also need to view the existing product inventory from the on-premise backend system. Once he has decided which products to order, he will need to be able to place an order on the backend system and update the backend system inventory accordingly.
 
@@ -528,6 +528,6 @@ properties:
 - - - -
 © 2018 SAP SE
 - - - -
-Previous Exercise: [Exercise 1 - Publish Wishlist](../Exercise1_Publish_Wishlist) Next Exercise: [Exercise 3 - Logging](../Exercise3_Logging)
+Previous Exercise: [Exercise 3 - Publish Wishlist](../Exercise-03-Publish-Wishlist) Next Exercise: [Exercise 5 - Logging](../Exercise-05-Logging)
 
 [Back to the Overview](../README.md)
