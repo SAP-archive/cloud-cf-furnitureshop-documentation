@@ -59,8 +59,6 @@ The Cloud Connector is an optional on-premise component that is needed to integr
    - Location ID: `OPP363-XX` (XX being your unique number assigned to you)
    - Description: `ProductData Connector`
 
-Field HTTPS Proxy should be left blank
-
 ![add subaccount](images/Exercise2_5_cc_add_subaccount.JPG)
 
 For the current hands-on, all participants are sharing a single SAP Cloud Platform subaccount. To disambiguate the Cloud Connector, each participants provides a unique Location ID.
