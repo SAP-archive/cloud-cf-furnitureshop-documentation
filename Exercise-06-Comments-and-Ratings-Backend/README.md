@@ -17,9 +17,9 @@ To build a 'Comments and ratings' service which needs to collect inputs from the
 
 For persistence, we will require a simple, cost-effective, transactional database to quickly store the ratings and comments from the users. To satisfy this requirement, a relational database like PostgreSQL will be a good choice. The communication between this transactional store and the master data store on SAP HANA, will be via OData calls.
 
-In this exercise, we will create a Multi-Target Application [MTA], consisting of a Node.js module which provides REST API’s to add ratings and comments. During the deployment of the Node.js module, it will fetch the wishlist information from SAP HANA database which was exposed as OData in [Exercise 1](../Exercise1_Publish_Wishlist) and store it in a PostgreSQL database. Once this ratings backend is available, we will build the front-end i.e. user interface in Exercise 5, which will display the wishlist in the form of a list view and allow the user to rate and comment on any product in the list. Individual ratings and average ratings will be persisted in PostgreSQL and the average rating will also be pushed to SAP HANA. These ratings in SAP HANA will help Franck to decide which products to order.
+In this exercise, we will create a Multi-Target Application [MTA], consisting of a Node.js module which provides REST API’s to add ratings and comments. During the deployment of the Node.js module, it will fetch the wishlist information from SAP HANA database which was exposed as OData in [Exercise 3](../Exercise-03-Publish-Wishlist) and store it in a PostgreSQL database. Once this ratings backend is available, we will build the front-end i.e. user interface in Exercise 7, which will display the wishlist in the form of a list view and allow the user to rate and comment on any product in the list. Individual ratings and average ratings will be persisted in PostgreSQL and the average rating will also be pushed to SAP HANA. These ratings in SAP HANA will help Franck to decide which products to order.
 
-In Exercise 6, we will see that Mary’s comments on the furniture products can be pushed to Twitter to spread the word and encourage other customers/patrons to engage with the furniture shop. To cater to this requirement, we will use an asynchronous message-broker like RabbitMQ to communicate and push messages to Twitter.
+In Exercise 8, we will see that Mary’s comments on the furniture products can be pushed to Twitter to spread the word and encourage other customers/patrons to engage with the furniture shop. To cater to this requirement, we will use an asynchronous message-broker like RabbitMQ to communicate and push messages to Twitter.
 
 ## Important - before we begin
 
@@ -65,7 +65,7 @@ In this section, we will clone the exercise content from Git to SAP Web IDE Full
 
 ## 2. Read wishlist data
 
-In order to provide ratings (and comments) on products in the wishlist, the service will require the wishlist data published by the furniture shop. This data is stored in SAP HANA during Exercise 1. We will now have to read the wishlist data from Exercise 1 and persist the same in PostgreSQL.
+In order to provide ratings (and comments) on products in the wishlist, the service will require the wishlist data published by the furniture shop. This data is stored in SAP HANA during Exercise 3. We will now have to read the wishlist data from Exercise 3 and persist the same in PostgreSQL.
 
 Sharing of data between microservices is always a difficult architectural decision. In this exercise, we simplify this choice by opting for duplication of data via OData APIs. Let us see how this is realised.
 

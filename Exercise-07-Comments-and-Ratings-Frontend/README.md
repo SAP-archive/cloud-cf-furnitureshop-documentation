@@ -5,100 +5,169 @@ Previous Exercise: [Exercise 6 - Comments and Ratings Backend](../Exercise-06-Co
 - - - -
 # Exercise 07 - Comments and Ratings Frontend
 
-In this exercise, you will build the front-end application of the furniture shop's customer portal. The customer portal allows customers  to browse the store's product catalogue and see the whishlist items which the store is planning on stocking. You will build the screens that will enable customers like Mary to add ratings and comments on products which Franck has uploaded to the wishlist.
+Now that we have the backend application of the `Comments and Ratings` backend service in place, in this exercise we will build the front-end application i.e. furniture shop's customer portal. The portal will allow customers like Mary to browse the store's product catalogue and view the wishlist items that the store is planning to stock.
+
+Architecturally, we can either choose to consume microservices in a single UI via APIs or have every microservice develop it's own UI and use composition patterns to bring the UIs together. We have chosen to develop independent UIs for each microservice. Like we have done in previous UI modules, we will continue to use SAPUI5 as the technology of choice for front-end applications. We will now build the UI screens that will enable Mary to add ratings and comments on any product that Franck has uploaded to the wishlist.
 
 ## Overview
-The front end application has two views.
+The customer portal will have two views.
 
-1. Products List View - Wish list items uploaded by Franck.
+1. Products List View - contains the Wish list items uploaded by the furniture shop(Franck) for its customers.
 
-   ![Step Image](images/image_1.png)
+   ![Step Image](images/Exercise7_Overview_1.png)
 
-2. Product Details View - Details of the selected product.
+2. Product Details View - contains the details of a selected product
 
-    The Product Details View has two tabs.
+    The Product Details View will have two tabs.
 
-    * Tab 1: Details - It shows the details and the image of the selected product.
+    * Tab 1: Details - showing the details and image of the selected product
 
-        ![Step Image](images/image_2.png)
+      ![Step Image](images/Exercise7_Overview_2.png)
 
-    * Tab 2: Rate Item - The logged in user can provide rating and comments for the selected item from this tab.
+    * Tab 2: Rate Item - The logged in user/customer can provide ratings & comments, for a selected item from this tab.
 
-        ![Step Image](images/image_3.png)
+      ![Step Image](images/Exercise7_Overview_3.png)
 
-    Underneath the tabs, there is a review feed which shows all the comments given for the selected product.
-   ![Step Image](images/image_4.png)
+   There is also a review feed which shows all the comments for the selected product.
+   ![Step Image](images/Exercise7_Overview_4.png)
 
-## 1. Fetching the Code
-As a part of this session, you must have cloned the code required for this exercise (Exercise 5) in Exercise 4.
+## Important - before we begin
 
-If you haven't done so, please follow the steps mentioned [here](../Exercise4_Comments_and_Ratings_Backend)
+In the upcoming sections, you will be required to clone the exercise content from a given git repository. In general, Javascript modules need to be built based on the requirement and cannot be easily templated. To explain relevant sections of the code, you will notice that certain parts/modules are commented. The exercises will guide you to uncomment individual pieces of code, while explaining the relevance of each piece and what it tries to achieve. Please take note that commenting/uncommenting will differ based on the type of file you are working with. Javascript files will consist of line comments "//" where as UI5/xml files might use block comments with "/*.. */" format. Please follow the instructions closely to have a smooth exercise experience.
+
+### 1. Clone exercise content
+
+As a part of the previous exercise, we have cloned the content required for this exercise too.
+
+If you have not done so, please follow the steps 1 to 4 mentioned [here](../Exercise-06-Comments-and-Ratings-Backend#1-clone-exercise-content-and-code-walkthrough)
+
+The cloned application consists of 3 modules - `ratings_backend`, `ratings_frontend` and `tweets_comments`. In this exercise, we will focus on the `ratings_frontend` module.
 
 
-## 2. Setup the Products List View
-In this section, you will setup controller for products list view - a view that shows the list of products.
+### 2. Setup the Products List view
 
-1. Using your File Explorer in Web IDE, open the **`products_list.controller`** file as shown in the picture below.
+In this section, we will setup the view and controller for products list view - a view that shows the wishlist of products.
 
-   ![Step Image](images/image_5.png)
 
-2. Uncomment the following methods
-   * **`getProductsList`** - Fetches the products list from ratings_backend app.
-   * **`onProductSelection`** - Event handler for table row selection.
+1. Using your Files explorer in Web IDE, open the `ratings_frontend` module and navigate to the **`products_list.view.xml`** file under the **view** folder as shown in the picture below.
+
+   ![Step Image](images/Exercise7_2-1_prod_list_view.png)
+
+2. Check the code under the **`<pages>`** tag. We see that a table `idProductsListTable` with three columns Product Id, Product Name and Average Rating is created.
+
+   ![Step Image](images/Exercise7_2-2_prod_list_columns.png)
+
+3. We also see that selecting a product from the list will call the event handler `onProductSelection`.
+
+   ![Step Image](images/Exercise7_2-3_prod_list_select.png)
+
+4. Let us check the corresponding controller for Product List. Open the **`products_list.controller`** file as shown in the picture below.
+
+   ![Step Image](images/Exercise7_2-4_prod_list_controller.png)
+
+5. Uncomment the following methods
+   * **`getProductsList`** - Fetches the products list from ratings_backend app
+
+   ![Step Image](images/Exercise7_2-5_get_prod_list.png)
+
+   * **`onProductSelection`** - Event handler for table row selection
+
+   ![Step Image](images/Exercise7_2-5_prod_list_select.png)
 
         Note: To uncomment, follow these steps:
         1. Select the commented code
         2. Use the mouse Right click
         3. Select the 'Toggle Line Comment' option
 
-## 3. Setup the Product Details View
-In this section, you will setup controller for product details view - a view that shows the details of a product. The view also allows the logged in user to rate the product and add a review.
+### 3. Setup the Product Details view
 
-1. Using your File Explorer in Web IDE, open the **`products_details.controller`** file as shown in the picture below.
+In this section, we will setup the view and controller for product details view - a view that shows the details of a product and allows the logged in user to rate the product and add a review.
 
-   ![Step Image](images/image_6.png)
+1. Open the **`product_details.view.xml`** file under the **view** folder as shown in the picture below.
 
-2. Uncomment the following methods:
-   * **`setReviewFeed`** - Fetch all the reviews for the selected
-   * **`onSubmitRatingButtonPress`** - Handles the submit button click.
+   ![Step Image](images/Exercise7_3-1_prod_details.png)
 
-        At the end of Exercise 5, you will be able to see your comment in the review feed.
+2. Check the code under the **`<pages>`** tag.
+    * We see that we create two tabs.
+        * Details Tab - where the details of the selected product are displayed
+        * Rating Tab - where the user can review the product and submit ratings
 
-## 4. Understanding the HTML5 Application Code
+    ![Step Image](images/Exercise7_3-2_prod_details_tab.png)
+
+    * Underneath the tabs, all the review comments for the selected product are shown.
+
+    ![Step Image](images/Exercise7_3-2_prod_reviews.png)
+
+3. Let us check the corresponding controller for Product Details. Open the **`products_details.controller`** file as shown in the picture below.
+
+   ![Step Image](images/Exercise7_3-3_prod_details_controller.png)
+
+4. Uncomment the following methods
+   * **`setReviewFeed`** - fetches all the reviews for the selected product
+
+   ![Step Image](images/Exercise7_3-4_set_prod_review.png)
+
+   * **`onSubmitRatingButtonPress`** - saves the ratings/comments into the Postgres database. Triggers the calculation of average rating and send the same to HANA.
+
+   ![Step Image](images/Exercise7_3-4_submit_review.png)
+
+        Note: To uncomment, follow these steps:
+        1. Select the commented code
+        2. Use the mouse Right click
+        3. Select the 'Toggle Line Comment' option
+
+### 4. Deploying the application
+
+In this section, we will build and deploy the application that has been built above.
+
+1. Using your Files explorer in Web IDE, rename the **`mta.yaml`** file to **`mta_exercise_4.yaml`** as shown in the picture below.
+
+   ![Step Image](images/Exercise7_4-1_mta4_rename.png)
+
+2. Using your Files explorer in Web IDE, rename the **`mta_exercise_5.yaml`** file to **`mta.yaml`** as shown in the picture below.
+
+   ![Step Image](images/Exercise7_4-2_mta5_rename.png)
+
+3. Using your Files explorer in Web IDE, right click on the **`product_ratings`** folder, go to Build &rarr; and click on **Build** as shown in the picture below.
+
+   ![Step Image](images/Exercise7_4-3_app_build.png)
+
+   Once the build is completed, you will see a new folder created in Files explorer with the name **`mta_archives`**.
+
+4. Right click on the generated .mtar file **`product_ratings`**, and go to Deploy &rarr; and click on **Deploy to SAP Cloud Platform** as shown in the picture below.
+
+   ![Step Image](images/Exercise7_4-4_app_deploy.png)
+
+5. In the popup that appears, enter the following details and click on Deploy
+
+   ![Step Image](images/Exercise7_4-5_app_endpoint.png)
+
+    ```
+    Cloud Foundry API Endpoint: https://api.cf.eu10.hana.ondemand.com
+    Organization: TechEd2018_OPP363
+    Space: <select your space from the drop down list>
+    ```
+6. Once your application is deployed launch the url for `ratings_frontend` app. Your app should look like shown in the [overview section](#overview).
+
+7. Select a product and go to the `Rate Item` tab in the Product Details view.
+
+8. Give the product a rating and comment and click on submit, as shown in the picture below.
+
+    ![Step Image](images/Exercise7_4-7_rating_view.png)
+
+    This will add a review to the product as show below.
+
+    ![Step Image](images/Exercise7_4-8_comments_feed_view.png)
+
+
+### Appendix - Understanding the HTML5 application code
 *Please note that you don't have to make any changes to your code as a part of this step. This section is intended only to explain the SAP UI5 HTML application code*
 
-In the UI5 application each controller has a respective view where we build our UI. We have developed the UIs using XML. Let's take a closer look at what we have done in these xml view files.
+When you create a SAP UI5 application using the SAP Web IDE, a file structure with all the relevant files are created such as *`style.css`*, *`i18n.properties`*, *`model.js`* etc.
 
-### product_list.view.xml
-1. Using your Files explorer in Web IDE, open the **`products_list.view.xml`** file as shown in the picture below.
+![Step Image](images/Exercise7_Appendix.png)
 
-   ![Step Image](images/image_7.png)
-
-2. In this view we done the following:
-    * Here, you have created a table with id `idProductsListTable` with three columns Product Id, Product Name and Average Rating.
-    * The label names are fetched from i18 files, enabling globalization.
-    * The UI elements are bound to a model, which is set in the *`products_list.controller`*
-    * Making the Column List Item `Active` makes each item in the list clickable. The click action is bound to an event handler `onProductSelection` which gets a call when the user clicks on a row in the table.
-    * A Refresh button is added with the corresponding event handler in the footer.
-
-### product_details.view.xml
-1. Using your Files explorer in Web IDE, open the **`product_details.view.xml`** file as shown in the picture below.
-
-   ![Step Image](images/image_8.png)
-
-2. In this view we done the following:
-    * Here, a details view UI with multiple tabs, comments feed and a back navigation button is created.
-    * An IconTabBar  is used to create two tabs.
-        * Details Tab - Where all the details of the product are selected
-        * Rating Tab - Where the user can submit ratings
-    * Underneath the tabs, the review comments for the selected product are shown.
-
-When you create an SAP UI5 application using the SAP Web IDE, a file structure with all the relevant files are created such as *`style.css`*, *`i18n.properties`*, *`model.js`* etc.
-
-![Step Image](images/image_9.png)
-
-Let us look at two such files *`manifest.json`* and *`xs-app.json`* where you specify some crucial settings for the front end application.
-
+Let us look at two files *`manifest.json`* and *`xs-app.json`* where you specify some crucial settings for the front end application.
 
 #### manifest.json
 
@@ -108,74 +177,19 @@ Let us look at two such files *`manifest.json`* and *`xs-app.json`* where you sp
 
     You have used two global models in this app *`selectedProductModel`* and *`userInfo`*.
 
-* UI App Routing
+* UI App routing
 
     You use a router mechanism to navigate between different UI screens. You define the routes for your views in the *`manifest.json`* file under the **`routing` &rarr; `routes`** section
 
 #### xs-app.json
-* Backend Routing
+* Backend routing
 
     To forward our request sent from ratings_frontend app to the backend app, we define routes under the **`routes`** section inside *`xs-app.json`*
-
-
-## 5. Deploying the Application
-In this section you will build and deploy the application that you have built in Exercise 5.
-
-1. Using your File Explorer in Web IDE, rename the **`mta.yaml`** file to **`mta_exercise_4.yaml`** as shown in the picture below.
-
-   ![Step Image](images/image_10.png)
-
-2. Using your File Explorer in Web IDE, rename the **`mta_exercise_5.yaml`** file to **`mta.yaml`** as shown in the picture below.
-
-   ![Step Image](images/image_11.png)
-
-3. Using your File Explorer in Web IDE, right click on the **`product_ratings`** folder, go to Build &rarr; and click on **Build** as shown in the picture below.
-
-   ![Step Image](images/image_12.png)
-
-   Once the build is completed, you will see a new folder created in your Web IDE's File Explorer with the name **`mta_archives`**.
-
-4. Using your File Explorer in Web IDE, right click on the generated .mtar file **`product_ratings`**, and go to Deploy &rarr; and click on **Deploy to SAP Cloud Platform** as shown in the picture below.
-
-    ![Step Image](images/image_13.png)
-
-5. In the popup that appears, please enter the following details and click _Deploy_.
-
-    ![Step Image](images/image_14.png)
-
-    ```
-    Cloud Foundry API Endpoint: ``//TODO: Add the end point
-    Organization: ``//TODO: Add your organization
-    Space: Select your space from the drop down list
-    ```
-6. //TODO: @Sanjay to add the generic line about checking the services and logs as done in the earlier exercise.
-
-7. Once your application is deployed launch the url for ratings_frontend app.
-
-   Your app should look like the screenshots included in the [overview section](#overview).
-
-8. Select a product and go to the `Rate Item` tab in the Product Details view.
-
-9. Give the product a rating and comment and click on submit, as shown in the picture below.
-
-    ![Step Image](images/image_15.png)
-
-    This will add a review to the product as show below.
-
-    ![Step Image](images/image_16.png)
-
-### Troubleshooting
-If you are facing issues, please read the following points
-* Take caution about the commas `,` in the controller and JSON files. The last method/item doesn't end with a comma.
-* Ensure that you maintain case sensitivity in routes.
-* Ensure that the YAML files indentation is appropriate. You can do so by attempting to open your yaml file in MTA editor.
-* Ensure that you have the privileges and your space has the ability to create the resources you've mentioned in your yaml file.
 
 ### Further Reading
 * [Starting point for SAPUI5 and Fiori](https://sapui5.hana.ondemand.com/)
 * [SAP UI5 Icon explorer](https://sapui5.hana.ondemand.com/test-resources/sap/m/demokit/iconExplorer/webapp/index.html#)
-* [Github code repository]() //TODO: Add link here
-
+* [Github code repository](https://github.com/SAP/cloud-cf-furnitureshop-product-ratings)
 
 - - - -
 © 2018 SAP SE
