@@ -422,6 +422,7 @@ Also add the below line of code to set logging level to info which we will use i
 ```
 properties:
       SET_LOGGING_LEVEL: '{com.company.furnitureshop: INFO}'
+      ALLOW_MOCKED_AUTH_HEADER: true
 
 ```
 
