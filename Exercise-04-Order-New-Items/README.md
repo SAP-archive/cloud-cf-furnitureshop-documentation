@@ -565,7 +565,7 @@ Enter the following:
    - Name: `getWishlist`
    - Type: `HTTP`
    - Description: `Get Wishlist`
-   - URL: `<Paste the srv application url that you copied>`
+   - URL: `<Paste the srv application url that you copied>` (Make sure you add `https://` to the begining of the URL)
    - Proxy Type: `Internet`
    - Authentication: `NoAuthentication`
 5. Your destination should look like this:
