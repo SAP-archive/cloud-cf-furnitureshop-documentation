@@ -522,7 +522,7 @@ You can refer to the below image to see where the properties and required have t
 
 ![Deploy mtar](images/Exercise2_18_deploy_mtar.JPG)
 
-31. In the _Deploy to SAP Cloud Platform_ dialog, enter:
+31. You may get a popup to enter your credentials, please enter your id/password then In the _Deploy to SAP Cloud Platform_ dialog, enter:
     - Cloud Foundry API Endpoint: `https://api.cf.eu10.hana.ondemand.com`
     - Organization: `TechEd2018_OPP363`
     - Space: `<your space>`
@@ -533,7 +533,7 @@ You can refer to the below image to see where the properties and required have t
 33. Login to SAP Cloud Platform Cockpit -> Navigate to your Space -> Applications
 34. If you have followed all the steps from the start of Exercise 1, You should see 4 applications
 
- - db: This is the db module that was deployed as part of the mta deployment
+ - db: This is the db module that was deployed as part of the mta deployment, it will be stopped by default, do not delete or modify this app.
  - srv: This is the srv module with CDS and Java code that was deployed as part of the mta deployment
  - <SOME_RANDOM_NAME>furnitureshop-srv: This was deployed when you did right click on srv module and Run as Java Application in Exercise 1
  - webide-builder-sapwebide-di-<SOME_RANDOM_NAME>: This is the builder that you installed in Exercise 1
