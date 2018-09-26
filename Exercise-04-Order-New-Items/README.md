@@ -64,7 +64,7 @@ The Cloud Connector is an optional on-premise component that is needed to integr
 For the current hands-on, all participants are sharing a single SAP Cloud Platform subaccount. To disambiguate the Cloud Connector, each participants provides a unique Location ID.
 
 9. Click _Save_.
-10. Ensure that the Status under Tunnel Information is Connected. If you receive an error, recheck your subaccount ID, data center and credentials.
+10. Ensure that the Status under Tunnel Information is Connected. If you receive an error, recheck your Region, Subaccount and login information.
 
 ![add subaccount](images/Exercise2_6_cc_subaccount_status.JPG)
 
