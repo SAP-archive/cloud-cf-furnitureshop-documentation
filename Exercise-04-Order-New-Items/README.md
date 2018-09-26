@@ -14,7 +14,7 @@ We will use Web IDE Full-Stack to modify our existing wishlist application to in
 
 1.	Deploy product backend OData service.
 2.	Configure the SAP Cloud Connector: Add Cloud Platform Subaccount add local backend). Configure subaccount and access OData URL.
-3.	Create a destination on your Cloud Foundry space to access the backend OData URL.
+3.	Create an instance of destination service and a destination configuration on your Cloud Foundry space to access the backend OData URL.
 4.	Modify the wishlist front-end application in Web IDE and deploy your MTA to Cloud Foundry.
 
 ## 1. Deploy Product Backend OData Service
@@ -106,13 +106,26 @@ For the current hands-on, all participants are sharing a single SAP Cloud Platfo
 
 This completes the configuration of the SAP Cloud Connector.
 
-## 3. Create a Destination on SAP Cloud Platform
-The next thing we will need to do is create a destination on SAP Cloud Platform. This will allow us to access the on premise backend system in our applications on SAP Cloud Platform by using the virtual URL we configured in the cloud connector.
+## 3. Create an instance of destination service and a Destination configuration on SAP Cloud Platform
+The next thing we will need to do is create an instance of destination service on SAP Cloud Platform as well as a destination configuration. This will allow us to access the on premise backend system in our applications on SAP Cloud Platform by using the virtual URL we configured in the cloud connector.
 
-1. In your SAP Cloud Platform admin cockpit, go to your Cloud Foundry Subaccount.
-2. Click _Connectivity-Destinations_.
-3. Click New Destination.
-4. Enter the following:
+1. In your SAP Cloud Platform admin cockpit, go to your Cloud Foundry Subaccount and navigate to your space.
+2. Expand Services and choose Service Marketplace
+2. Click on the tile _destination_
+3. Click on Instance from the left menu and click on _New Instance_.
+4. In the _Create Instance_ wizard, enter:
+    - Plan: `lite`
+5. For _Specify Parameters_ click _Next_.
+6. For _Assign Application_ click _Next_.
+7. Under the _Confirm_ section, enter:
+    - Instance Name: `destination`
+8. Click _Finish_.
+
+You will see the instance of destination service is created
+
+![destination](images/Exercise2_dest.jpeg)
+
+Enter the following:
    - Name: `ONPREM_BACKEND_XX` (substitute `XX` with your assigned student number)
    - Type: `HTTP`
    - Description: `Local Backend`
@@ -122,7 +135,7 @@ The next thing we will need to do is create a destination on SAP Cloud Platform.
    - Authentication: `NoAuthentication`
 5. Your destination should look like this:
 
-![destination](images/Exercise2_11_destination.JPG)
+
 
 ## 4. Enhance the Service for the Wishlist Application
 We can now open the existing wishlist application in Web IDE and modify the service module to include the backend product data from our on premise system.
