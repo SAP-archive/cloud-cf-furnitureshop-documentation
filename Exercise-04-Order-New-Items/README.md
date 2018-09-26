@@ -16,6 +16,8 @@ We will use Web IDE Full-Stack to modify our existing wishlist application to in
 2.	Configure the SAP Cloud Connector: Add Cloud Platform Subaccount add local backend). Configure subaccount and access OData URL.
 3.	Create an instance of destination service and a destination configuration on your Cloud Foundry space to access the backend OData URL.
 4.	Modify the wishlist front-end application in Web IDE and deploy your MTA to Cloud Foundry.
+5.	Create Destination for Wishlist Service and Java Logic to update Ratings which will be required in the next Exercise
+6. 	Clean-Up
 
 ## 1. Deploy Product Backend OData Service
 
@@ -553,9 +555,99 @@ Enter the following:
    - Authentication: `NoAuthentication`
 5. Your destination should look like this:
 
-![destina](images/dest_getwishlist.jpeg)
+![destina](images/dest_getwishlist1.jpeg)
 
 
+Next we will create a Java Class in our application to handle the Update method to the Wishlist Collection
+
+6.Under the srv module, navigate to src - main - java - com - company - furnitureshop and right-click and choose Create new Java Class enter the class name as WishlistHandler (do not add .java extension, WebIDE will add it automatically). Replace the file with the code below:
+
+
+```java
+package com.company.furnitureshop;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.sap.cloud.sdk.service.prov.api.operations.Update;
+import com.sap.cloud.sdk.service.prov.api.response.UpdateResponse;
+import com.sap.cloud.sdk.service.prov.api.request.UpdateRequest;
+import com.sap.cloud.sdk.service.prov.api.EntityData;
+import com.sap.cloud.sdk.service.prov.api.ExtensionHelper;
+import com.sap.cloud.sdk.service.prov.api.DataSourceHandler;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.List;
+import java.util.ArrayList;
+import com.sap.cloud.sdk.service.prov.api.response.ErrorResponse;
+
+public class WishlistHandler {
+	
+	private static final Logger logger = LoggerFactory.getLogger(WishlistHandler.class.getName());
+	@Update(entity = "Wishlist", serviceName = "CatalogService")
+	public UpdateResponse updateWishlist(UpdateRequest updateRequest, ExtensionHelper extensionHelper) {
+	     
+	        EntityData entityData = updateRequest.getData();
+	        
+	        Map<String, Object> keyMap = new HashMap<String, Object>();
+			keyMap.put("ProductID", entityData.getElementValue("ProductID"));
+	        DataSourceHandler handler = extensionHelper.getHandler();
+	        
+	         try {
+	        EntityData existingWishlistData = handler.executeRead("Wishlist", keyMap,
+					getWishlistPropertyNames());
+	        
+	        
+	       
+	       EntityData updatedWishlistData = EntityData.getBuilder(existingWishlistData).removeElement("productRating").addElement("productRating",entityData.getElementValue("productRating")).buildEntityData("Wishlist");
+	       
+	       
+	       handler.executeUpdate(updatedWishlistData, updateRequest.getKeys(), false);
+	        
+	       
+	        }
+	        catch (Exception e) {
+				
+				ErrorResponse err = ErrorResponse.getBuilder().setMessage("Faild to Update Wishlist. Check log for more details.").setStatusCode(500)
+						.response();
+				return UpdateResponse.setError(err);
+			}
+	        return UpdateResponse.setSuccess().response();
+	         
+	        
+	         
+	}
+	
+	public static List<String> getWishlistPropertyNames(){
+		List<String> propertyNames = new ArrayList<String>();
+		
+		propertyNames.add("ProductID");
+		propertyNames.add("categoryName");
+		propertyNames.add("productName");
+		propertyNames.add("productDesc");
+		propertyNames.add("productColor");
+		propertyNames.add("productWidth");
+		propertyNames.add("productHeight");
+		propertyNames.add("productDepth");
+		propertyNames.add("productWeight");
+		propertyNames.add("productPrice");
+		propertyNames.add("productWarranty");
+		propertyNames.add("materialType");
+		propertyNames.add("supplierID");
+		propertyNames.add("supplierName");
+		propertyNames.add("supplierLocation");
+		propertyNames.add("pictureURL");
+		propertyNames.add("productRating");
+		
+		return propertyNames;
+	}
+
+}
+
+```
+
+
+
+7. Save the file
 
 
 ## 6. Clean-up
