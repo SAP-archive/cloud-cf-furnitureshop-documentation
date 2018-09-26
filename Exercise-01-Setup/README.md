@@ -68,6 +68,18 @@ Many of the exercises you will complete during the course of this session will r
 
 ![tampermonkey toolbar](images/setup8_copy_code_block.JPG)
 
+## 5. Tips on Saving your Changes in SAP Web IDE Full-Stack
+As in any environment it's important to save your work regularly to avoid losing your changes, this is particularly true in Web-based IDE's. As a general rule of thumb, try to follow the policy of: _"Save early, save often."_
+
+1. Note that there are 2 _Save_ buttons in SAP Web IDE Full-Stack, _Save_ will only save the file currently being edited, _Save All_ will save all currently open and unsaved files.
+
+![save buttons](images/setup9_save_buttons.JPG)
+
+2. It is optional to enable the "Automatically save changes in open documents every 30 sec" and "Beautify the code of active documents on manual save" options in SAP Web IDE Full-Stack. To do so, open _Preferences-Code Editor_ and check the options for automatic saving and beautify code.
+
+![autosave](images/setup10_save_prefs.JPG)
+
+
 This completes the system setup for your exercises.
 - - - -
 © 2018 SAP SE
