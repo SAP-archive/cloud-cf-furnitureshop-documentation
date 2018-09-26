@@ -460,7 +460,7 @@ properties:
       ALLOW_MOCKED_AUTH_HEADER: true
 
 ```
-
+You can refer to the below image to see where the properties and required have to be added
 
 11. Your srv module should look like this:
 
