@@ -63,6 +63,8 @@ The Cloud Connector is an optional on-premise component that is needed to integr
 
 For the current hands-on, all participants are sharing a single SAP Cloud Platform subaccount. To disambiguate the Cloud Connector, each participants provides a unique Location ID.
 
+Location IDs are defined to identify a location of a cloud connector for a specific sub account. You can have multiple cloud connectors configured to work with a single sub account identified by unique Location IDs
+
 9. Click _Save_.
 10. Ensure that the Status under Tunnel Information is Connected. If you receive an error, recheck your Region, Subaccount and login information.
 
