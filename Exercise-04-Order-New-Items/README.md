@@ -568,14 +568,14 @@ Enter the following:
    - URL: `<Paste the srv application url that you copied>` (Make sure you add `https://` to the begining of the URL)
    - Proxy Type: `Internet`
    - Authentication: `NoAuthentication`
-5. Your destination should look like this:
+6. Your destination should look like this:
 
 ![destina](images/dest_getwishlist1.jpeg)
 
 
 Next we will create a Java Class in our application to handle the Update method to the Wishlist Collection
 
-6.Under the srv module, navigate to src - main - java - com - company - furnitureshop and right-click and choose Create new Java Class enter the class name as WishlistHandler (do not add .java extension, WebIDE will add it automatically). Replace the file with the code below:
+7.Under the srv module, navigate to src - main - java - com - company - furnitureshop and right-click and choose Create new Java Class enter the class name as WishlistHandler (do not add .java extension, WebIDE will add it automatically). Replace the file with the code below:
 
 
 ```java
@@ -662,7 +662,7 @@ public class WishlistHandler {
 
 
 
-7. Save the file
+8. Save the file
 
 
 ## 6. Clean-up
