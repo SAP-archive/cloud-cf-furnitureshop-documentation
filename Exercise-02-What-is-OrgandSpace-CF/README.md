@@ -43,9 +43,10 @@ Subaccounts: Is the place where you can deploy applications, use services, and m
 
 7.	Click on Subaccounts to go back.
 
+8.	Click on OPP363CF to go the Organization overview page. This subaccount has multiple spaces one per participant.
+
 ![screnshot alt text](images/cforg.jpg).
 
-8.	Click on OPP363CF to go the Organization overview page. This subaccount has multiple spaces one per participant.
 
 ![screnshot alt text](images/orgdetail.jpg).
 
