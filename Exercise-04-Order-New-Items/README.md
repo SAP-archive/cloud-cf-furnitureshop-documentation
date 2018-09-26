@@ -442,9 +442,13 @@ oRatingElement.setValue(parseFloat(oRatingElement.getBindingContext().getPropert
 
 ![function](images/Exercise2_11a_onBindingChange.JPG)
 
-10. We need to add `xsuaa`, `connectivity` and `destination service` to `mta.yaml` file for the `srv` application.  In the _Code Editor_ view of your `mta.yaml` locate the `srv` module and insert the following lines in the `requires:` section:
+10. Open the mta.yaml file, you will find it in the image below 
+
+![mta_img](images/Exercise2_mta_file.jpg)
+
+We need to add `xsuaa`, `connectivity` and `destination service` to `mta.yaml` file for the `srv` application.  In the _Code Editor_ view of your `mta.yaml` locate the `srv` module and insert the following lines in the `requires:` section:
 ```
-    - name: uaa_furnitureshop_XX (XX is your unique student number)
+    - name: uaa_furnitureshop
     - name: connectivity
     - name: destination
 ```
