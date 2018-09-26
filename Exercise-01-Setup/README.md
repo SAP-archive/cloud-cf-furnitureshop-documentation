@@ -13,9 +13,11 @@ In order to use Web IDE Full-Stack, you would normally need to configure the ser
 Access Web IDE Full-Stack by simply [clicking here](https://webidecp-aevblwuamw.dispatcher.hana.ondemand.com/) and using the login information provided to you.
 
 If for some reason, the above link for accessing Web IDE Full-Stack does not work, please follow these steps:
-1. [Click here](https://account.hana.ondemand.com/cockpit) to open your SAP Cloud Platform cockpit and go to _Services-Web IDE Full-Stack_
+1. [Click here](https://account.hana.ondemand.com/cockpit) to open your SAP Cloud Platform cockpit and navigate to the OPP363 subaccount by clicking on _TechEd2018 --> OPP363_. 
+![Navigate to Neo Subaccount](images/Setup1a_NeoSubaccountNavigation.jpg)
 
-![Web IDE Full Stack](images/setup1_web_ide_tile.JPG)
+Click on _Services_ in the left panel and type _full-stack_ in the search field.
+![Locate Web IDE Full Stack service](images/Setup1b_SearchWebIDE_FullStack.jpg)
 
 2. Launch Web IDE Full-Stack by clicking on the tile for  _SAP Web IDE Full-Stack_, followed by clicking on the link for _Go to Service_.
 
