@@ -1,10 +1,10 @@
 - - - -
-Previous Exercise: [Exercise 6 -  Tweet Comments Backend](../Exercise6_Tweet_Comments_Backend) Next Exercise: [Exercise 8 - Blue Green Deployment of Comments and Ratings](../Exercise8_Blue_Green_Deployment_of_Comments_and_Ratings)
+Previous Exercise: [Exercise 08 -  Tweet Comments Backend](../Exercise-08-Tweet-Comments-Backend) Next Exercise: [Exercise 10 - Blue Green Deployment of Comments and Ratings](../Exercise-10-Blue-Green-Deployment-of-Comments-and-Ratings)
 
 [Back to the Overview](../README.md)
 - - - -
 
-# Exercise 7 - Autoscaling of ratings backend app
+# Exercise 09 - Autoscaling of ratings backend app
 
 Scaling of an application is adding more resources (Memory, CPU, Disk) to it and distributing the load between multiple servers. Two types of scaling that are available are:
 - Scaling Up/Vertical Scaling: change the disk and memory quota.
@@ -112,6 +112,6 @@ Download and edit this file in notepad: [policy.json](../Exercise7_Autoscaling_o
 - - - -
 © 2018 SAP SE
 - - - -
-Previous Exercise: [Exercise 6 -  Tweet Comments Backend](../Exercise6_Tweet_Comments_Backend) Next Exercise: [Exercise 8 - Blue Green Deployment of Comments and Ratings](../Exercise8_Blue_Green_Deployment_of_Comments_and_Ratings)
+Previous Exercise: [Exercise 08 -  Tweet Comments Backend](../Exercise-08-Tweet-Comments-Backend) Next Exercise: [Exercise 10 - Blue Green Deployment of Comments and Ratings](../Exercise-10-Blue-Green-Deployment-of-Comments-and-Ratings)
 
 [Back to the Overview](../README.md)
