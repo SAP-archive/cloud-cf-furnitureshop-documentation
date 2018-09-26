@@ -1,10 +1,10 @@
 - - - -
-Previous Exercise: [Exercise 3 - Logging](../Exercise3_Logging) Next Exercise: [Exercise 5 - Comments and Ratings Frontend](../Exercise5_Comments_and_Ratings_Frontend)
+Previous Exercise: [Exercise 5 - Logging](../Exercise-05-Logging) Next Exercise: [Exercise 7 - Comments and Ratings Frontend](../Exercise-07-Comments-and-Ratings-Frontend)
 
 [Back to the Overview](../README.md)
 - - - -
 
-# Exercise 4 - Comments and Ratings
+# Exercise 06 - Comments and Ratings
 
 Mary is a loyal customer of the home furniture franchise. She has access to the shop's customer portal. The customer portal allows her to browse the stores product catalogue and see the whishlist items which the store is planning on stocking. The customer portal provides customers like Mary with the ability to add ratings and comments on products which Frank has uploaded to the wishlist.
 
@@ -122,6 +122,6 @@ In this section you will build and deploy the application that you have built in
 © 2018 SAP SE
 - - - -
 
-Previous Exercise: [Exercise 3 - Logging](../Exercise3_Logging) Next Exercise: [Exercise 5 - Comments and Ratings Frontend](../Exercise5_Comments_and_Ratings_Frontend)
+Previous Exercise: [Exercise 5 - Logging](../Exercise-05-Logging) Next Exercise: [Exercise 7 - Comments and Ratings Frontend](../Exercise-07-Comments-and-Ratings-Frontend)
 
 [Back to the Overview](../README.md)
