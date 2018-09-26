@@ -1,3 +1,9 @@
+- - - -
+Previous Exercise: [Exercise 01 Setup](../Exercise-01-Setup) Next Exercise: [Exercise 3 - Publish Wishlist](../Exercise-03-Publish-Wishlist)
+
+[Back to the Overview](../README.md)
+- - - -
+
 Basic Understanding of Org and Space.
 
 Intro: 
@@ -110,4 +116,9 @@ User provided Service: User-provided service instances enable you to use service
 ![screnshot alt text](images/opp363space.jpg).
 The number 397 will be different for you, it will be your student number.
 
+- - - -
+© 2018 SAP SE
+- - - -
+Previous Exercise: [Exercise 01 Setup](../Exercise-01-Setup) Next Exercise: [Exercise 3 - Publish Wishlist](../Exercise-03-Publish-Wishlist)
 
+[Back to the Overview](../README.md)
