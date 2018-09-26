@@ -1,9 +1,9 @@
-- - - -
-Previous Exercise: [Exercise 4 - Comments and Ratings Backend](../Exercise4_Comments_and_Ratings_Backend) Next Exercise: [Exercise 6 - Tweet Comments Backend](../Exercise6_Tweet_Comments_Backend)
+ - - -
+Previous Exercise: [Exercise 6 - Comments and Ratings Backend](../Exercise-06-Comments-and-Ratings-Backend) Next Exercise: [Exercise 8 - Tweet Comments Backend](../Exercise-08-Tweet-Comments-Backend)
 
 [Back to the Overview](../README.md)
 - - - -
-# Exercise 5 - Comments and Ratings Frontend
+# Exercise 07 - Comments and Ratings Frontend
 
 In this exercise, you will build the front-end application of the furniture shop's customer portal. The customer portal allows customers  to browse the store's product catalogue and see the whishlist items which the store is planning on stocking. You will build the screens that will enable customers like Mary to add ratings and comments on products which Franck has uploaded to the wishlist.
 
@@ -180,6 +180,6 @@ If you are facing issues, please read the following points
 - - - -
 © 2018 SAP SE
 - - - -
-Previous Exercise: [Exercise 4 - Comments and Ratings Backend](../Exercise4_Comments_and_Ratings_Backend) Next Exercise: [Exercise 6 - Tweet Comments Backend](../Exercise6_Tweet_Comments_Backend)
+Previous Exercise: [Exercise 6 - Comments and Ratings Backend](../Exercise-06-Comments-and-Ratings-Backend) Next Exercise: [Exercise 8 - Tweet Comments Backend](../Exercise-08-Tweet-Comments-Backend)
 
 [Back to the Overview](../README.md)
