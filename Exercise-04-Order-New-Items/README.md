@@ -464,7 +464,7 @@ properties:
    type: com.sap.xs.uaa
 ```
 
-12. Next, we need to create instance of `connectivity` and `destination service` in cockpit UI (this could also be done using the Cloud Foundry command line interface (cli). From your SAP Cloud Platform administration cockpit, in your Cloud Foundry subaccount, click _Spaces_ on the left menu.
+12. Next, we need to create instance of `connectivity` service in cockpit UI (this could also be done using the Cloud Foundry command line interface (cli). From your SAP Cloud Platform administration cockpit, in your Cloud Foundry subaccount, click _Spaces_ on the left menu.
 
 ![spaces](images/Exercise2_13_spaces.JPG)
 
@@ -486,41 +486,35 @@ properties:
 21. Under the _Confirm_ section, enter:
     - Instance Name: `connectivity`
 22. Click _Finish_.
-23. Return to the _Service Marketplace_ under _Services_ for your space.
-24. Search for _destination_.
-25. As you did for _connectivity_, select Instances from the left menu and click _New Instance_.
-26. Leave everything default for _Service Plan_, _Specify Parameters_ and _Assign Application_.
-27. Under _Confirm_, enter:
-    - Instance Name: `destination`
-28. Click _Finish_.
-29. You can view your _Service Instances_ from the left menu:
+
+23. You can view your _Service Instances_ from the left menu:
 
 ![service instances](images/Exercise2_16_service_instances.JPG)
 
-13. We are now ready to build the project furnitureshop, deploy to Cloud Foundry.
-14. Right-click your project and click _Build CDS_.
-15. Confirm that the Build CDS has completed successfully.
-16. Right-click your project and click _Build_.
+24. We are now ready to build the project furnitureshop, deploy to Cloud Foundry.
+25. Right-click your project and click _Build CDS_.
+26. Confirm that the Build CDS has completed successfully.
+27. Right-click your project and click _Build_.
 
 
 ![Build Project](images/Exercise2_17_build.JPG)
 
-17. Confirm that the build has completed successfully.
-18. The result of the build should be a new folder in your project for the mta archives (`mta_archives`).
-19. Expoand the mar_archives folder and the folder for your project and then right-click the furnitureshop0.0.1.mtar and click _Deploy-Deploy to SAP Cloud Platform_.
+28. Confirm that the build has completed successfully.
+29. The result of the build should be a new folder in your project for the mta archives (`mta_archives`).
+30. Expoand the mar_archives folder and the folder for your project and then right-click the furnitureshop0.0.1.mtar and click _Deploy-Deploy to SAP Cloud Platform_.
 
 ![Deploy mtar](images/Exercise2_18_deploy_mtar.JPG)
 
-20. In the _Deploy to SAP Cloud Platform_ dialog, enter:
+31. In the _Deploy to SAP Cloud Platform_ dialog, enter:
     - Cloud Foundry API Endpoint: `https://api.cf.eu10.hana.ondemand.com`
     - Organization: `TechEd2018_OPP363`
     - Space: `<your space>`
 
 ![CF Endpoint](images/Exercise2_19_deploy_mtar_cf_endpoint.JPG)
 
-21. Let us next test the application
-22. Login to SAP Cloud Platform Cockpit -> Navigate to your Space -> Applications
-23. If you have followed all the steps from the start of Exercise 1, You should see 4 applications
+32. Let us next test the application
+33. Login to SAP Cloud Platform Cockpit -> Navigate to your Space -> Applications
+34. If you have followed all the steps from the start of Exercise 1, You should see 4 applications
 
  - db: This is the db module that was deployed as part of the mta deployment
  - srv: This is the srv module with CDS and Java code that was deployed as part of the mta deployment
@@ -529,13 +523,13 @@ properties:
  - wishlist: This is the wishlist html5 application with the UI logic was deployed as part of the mta deployment
 
 
-24. Click on the srv application and click on the link to under Application Routes to launch the srv application
+35. Click on the srv application and click on the link to under Application Routes to launch the srv application
 
-25. You shoild be able to see the URL to the ODATA service that the srv application has created on clicking the link you should now see a new collection - BackEndProductData
+36. You shoild be able to see the URL to the ODATA service that the srv application has created on clicking the link you should now see a new collection - BackEndProductData
 
-26. Append /BackEndProductData to the url to view the Collection
+37. Append /BackEndProductData to the url to view the Collection
 
-27. To test the ui application navigate to the wishlist application in the SAP Cloud Platform cockpit and launch the URL, you will see a new tab which shows Backend Product information, you may not see any ratings yes as this will be done in the next exercises
+38. To test the ui application navigate to the wishlist application in the SAP Cloud Platform cockpit and launch the URL, you will see a new tab which shows Backend Product information, you may not see any ratings yes as this will be done in the next exercises
 
 
 ## 5. Clean-up
