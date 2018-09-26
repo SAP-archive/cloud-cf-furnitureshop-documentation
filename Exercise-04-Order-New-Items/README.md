@@ -139,7 +139,7 @@ Enter the following:
    - URL: `http://productbackend.com:8080`
    - Proxy Type: `OnPremise`
    - Authentication: `NoAuthentication`
-5. Your destination should look like this:
+12. Your destination should look like this:
 
 ![destination](images/Exercise2_0_destination.JPG)
 
@@ -529,10 +529,36 @@ properties:
 
 37. Append /BackEndProductData to the url to view the Collection
 
-38. To test the ui application navigate to the wishlist application in the SAP Cloud Platform cockpit and launch the URL, you will see a new tab which shows Backend Product information, you may not see any ratings yes as this will be done in the next exercises
+38. To test the ui application navigate to the wishlist application in the SAP Cloud Platform cockpit and launch the URL, you will see a new tab which shows Backend Product information, you may not see any ratings yet as this will be done in the next exercises
+
+## 5. Create Destination for Wishlist Service and Java Logic to update Ratings which will be required in the next Exercise
+We will create another destination configuration to the Wishlist Odata that is exposed the srv module. This will be required for the next exercises.
 
 
-## 5. Clean-up
+1. In your SAP Cloud Platform admin cockpit, go to your Cloud Foundry Subaccount and navigate to your space.
+2. Click on Applications from the left menu
+3. Click on the srv application 
+4. Under Application Routes, copy the url link to the srv application. This will be used in the next steps.
+2. Click on the Service Bindings link on the left menu
+3. Click on the destination service link under the Name Column
+4. Click on Destinations link from the left menu, you will see the existing destination that oyu have created in the previous steps.
+5. Click on New Destination
+
+Enter the following:
+   - Name: `getWishlist`
+   - Type: `HTTP`
+   - Description: `Get Wishlist`
+   - URL: `<Paste the srv application url that you copied>`
+   - Proxy Type: `Internet`
+   - Authentication: `NoAuthentication`
+5. Your destination should look like this:
+
+![destina](images/dest_getwishlist.jpeg)
+
+
+
+
+## 6. Clean-up
 1. login to your SAP Cloud Platform Cockpit, navigate to your space and your applications
 2. Stop the java application, <SOME_RANDOM_NAME>furnitureshop-srv to free up some application runtime space for the next exercises
 
