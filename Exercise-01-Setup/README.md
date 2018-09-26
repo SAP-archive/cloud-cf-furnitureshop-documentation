@@ -3,7 +3,7 @@ Next Exercise: [Exercise 02 What is Org and Space CF](../Exercise-02-What-is-Org
 
 [Back to the Overview](../README.md)
 - - - -
-# Setup
+# Exercise 01 - Setup
 
 ## 1. SAP Web IDE Full-Stack
 The primary development tool for this hands-on is [SAP Web IDE Full Stack](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/c175c03da2534e4b9b3ea28687f6cb0a.html) - a browser-based IDE to easily develop, test, build, deploy, and extend role-based, consumer-grade apps for business users. For the sake of simplicity, we will refer the SAP Web IDE Full-Stack tooling as Web IDE Full-stack or simply Web IDE in the current documentation.
