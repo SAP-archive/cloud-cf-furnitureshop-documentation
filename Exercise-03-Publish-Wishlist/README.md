@@ -423,7 +423,7 @@ This completes the development of the wishlist application which Frank will use 
 - - - -
 © 2018 SAP SE
 - - - -
-Previous Exercise: [Exercise 02 What is Org and Space CF](../Exercise-02-What-is-OrgandSpace-CF) Next Exercise: [Exercise 4 - Order New Items](../Exercise-04-Order-New-Items
+Previous Exercise: [Exercise 02 What is Org and Space CF](../Exercise-02-What-is-OrgandSpace-CF) Next Exercise: [Exercise 4 - Order New Items](../Exercise-04-Order-New-Items)
 
 [Back to the Overview](../README.md)
 
