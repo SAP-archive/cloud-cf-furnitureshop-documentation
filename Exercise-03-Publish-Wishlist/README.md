@@ -3,7 +3,7 @@ Previous Exercise: [Exercise 02 What is Org and Space CF](../Exercise-02-What-is
 
 [Back to the Overview](../README.md)
 - - - -
-# Exercise 1 Publish Wishlist
+# Exercise 03 - Publish Wishlist
 
 Franck is the retail category manager in a home furniture franchise. In this exercise we will create the wishlist application which will allow Franck to see the catalogue of furniture wishlist items for the store. 
 
