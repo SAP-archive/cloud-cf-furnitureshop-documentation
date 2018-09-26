@@ -75,18 +75,19 @@ To engage other customers and seek greater customer input for rating the items, 
 
 ## Exercises
 
-- [Setup/System Perparation](Setup)
-- [Exercise 1 - Publish Wishlist](Exercise1_Publish_Wishlist)
-- [Exercise 2 - Order New Items](Exercise2_Order_New_Items)
-- [Exercise 3 - Logging](Exercise3_Logging)
-- [Exercise 4 - Comments and Ratings Backend](Exercise4_Comments_and_Ratings_Backend)
-- [Exercise 5 - Comments and Ratings Frontend](Exercise5_Comments_and_Ratings_Frontend)
-- [Exercise 6 - Tweet Comments Backend](Exercise6_Tweet_Comments_Backend)
-- [Exercise 7 - Autoscaling or Comments and Ratings](Exercise7_Autoscaling_of_Comments_and_Ratings)
-- [Exercise 8 - Blue Green Deployment of Comments and Ratings](Exercise8_Blue_Green_Deployment_of_Comments_and_Ratings)
-- [Exercise 9 - Test Order New Items with User Input](Exercise9_Test_Order_New_Items_with_User_Input)
-- [Exercise 10 - Monitoring](Exercise10_Monitoring)
-- [Exercise 11 - Debugging](Exercise11_Debugging)
+- [Exercise 01 - Setup/System Perparation](Exercise-01-Setup)
+- [Exercise 02 - What is Org and Space on CF](Exercise-02-What-is-OrgandSpace-CF)
+- [Exercise 03 - Publish Wishlist](Exercise-03-Publish-Wishlist)
+- [Exercise 04 - Order New Items](Exercise-04-Order-New-Items)
+- [Exercise 05 - Logging](Exercise-05-Logging)
+- [Exercise 06 - Comments and Ratings Backend](Exercise-06-Comments-and-Ratings-Backend)
+- [Exercise 07 - Comments and Ratings Frontend](Exercise-07-Comments-and-Ratings-Frontend)
+- [Exercise 08 - Tweet Comments Backend](Exercise-08-Tweet-Comments-Backend)
+- [Exercise 09 - Autoscaling or Comments and Ratings](Exercise-09-Autoscaling-of-Comments-and-Ratings)
+- [Exercise 10 - Blue Green Deployment of Comments and Ratings](Exercise-10-Blue-Green-Deployment-of-Comments-and-Ratings)
+- [Exercise 11 - Test Order New Items with User Input](Exercise-11-Test-Order-New-Items-with-User-Input)
+- [Exercise 12 - Monitoring](Exercise-12-Monitoring)
+- [Exercise 13 - Debugging](Exercise-13-Debugging)
 
 
 
