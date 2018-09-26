@@ -148,7 +148,7 @@ Enter the following:
 ## 4. Enhance the Service for the Wishlist Application
 We can now open the existing wishlist application in Web IDE and modify the service module to include the backend product data from our on premise system.
 
-1. Open Web IDE Full-Stack and open your existing `furniturestore_xx` application.
+1. Open Web IDE Full-Stack and open your existing `furnitureshop` application.
 2. Edit `data-model.cds` under the `db` module. Add a new entity called `BackendProductData` to the end of the file using the following definition:
 ```
 entity BackEndProductData
@@ -165,10 +165,10 @@ entity BackEndProductData
 3. Edit `my-service.cds` under the `srv` module to add the new entity `BackendProductData`
 
 ```
-using my.furnitureshop from '../db/data-model';
-service CatalogService {
-  entity Wishlist @read @update as projection on furnitureshop.Wishlist;
-
+using com.company.furnitureshop from '../db/data-model';
+service CatalogService {  
+	entity Wishlist @read @update as projection on furnitureshop.Wishlist; 
+	
 @cds.persistence.skip
   entity BackEndProductData as projection on furnitureshop.BackEndProductData;
 }
@@ -344,7 +344,7 @@ public class BackendService {
 }
 
 ```
-Modify the XX in the value ONPREM_BACKEND_XX in the above java code with your unique student number
+On line 20, right after the definition of the Class BackendService, Modify the XX in the value ONPREM_BACKEND_XX with your unique student number
 
 Review the Java code that you created, the `@Query` annotation implements the query operation for the `BackEndProductData` entityset and the `@Read` annotation for reading a single `BackEndProductData` entity. We use SAP Cloud Platform sdk to query the backend via destinations.
 
