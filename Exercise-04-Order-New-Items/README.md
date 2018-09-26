@@ -370,6 +370,8 @@ b.	Update the code to Display Product Ratings.
 ```
 5. Currently we have 2 tabs in our application `<IconTabFilter>` one which displays product information and the other one which displays an image of the product. Locate this in your code:
 
+Notice the id is iconTabBarFilter2, 
+
 ```html
 <IconTabFilter id="iconTabBarFilter2"
 	icon="sap-icon://picture" tooltip="{i18n>detailIconTabBarAttachments}">
@@ -381,7 +383,7 @@ b.	Update the code to Display Product Ratings.
 	</Image>
 </IconTabFilter>
 ```
-6. Add this code below:
+6. Add this piece of code after the block for iconTabBarFilter2 which you located in the previous step. We are creating a new tab for showing the Backend Product Data:
 ```html
 <IconTabFilter id="iconTabBarFilter3" icon="sap-icon://factory" tooltip="{i18n>detailIconTabBarAttachments}" >
 	<l:VerticalLayout
