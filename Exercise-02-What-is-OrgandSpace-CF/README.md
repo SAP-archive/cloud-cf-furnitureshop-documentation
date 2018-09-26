@@ -25,7 +25,9 @@ A global account can contain one or more subaccounts in which you deploy applica
 3.	Click on the link with text TechEd2018. 
 
 ![screnshot alt text](images/tilewithteched.jpg).
+
 4.	Here you will see two tiles which are subaccounts. In productive scenarios these would be your Dev, QA and Production accounts.  OPP363 is the tile for neo environment and OPP363CF for Cloud Foundry environment. For the scope of this hands on we will work on OPP363CF. These are different environments on which SAP Cloud Platform is available. See our help guide to know more about [SAP Cloud Platform Environments](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/ab512c3fbda248ab82c1c545bde19c78.html).  For more information refer the links below on the cockpit.
+
 ![screnshot alt text](images/subacct.jpg).
 
 Subaccounts: Is the place where you can deploy applications, use services, and manage subscriptions on SAP Cloud Platform.
@@ -38,7 +40,6 @@ Subaccounts: Is the place where you can deploy applications, use services, and m
 
 ![screnshot alt text](images/clcikentitlement1.jpg).
 
-![screnshot alt text](images/autoscalingentitlement.jpg).
 
 7.	Click on Subaccounts to go back.
 
