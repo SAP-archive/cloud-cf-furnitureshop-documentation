@@ -23,8 +23,8 @@ We first need to deploy a pre-built Java application which will simulate our bac
 
 1. Download the Tomcat server bundle  [backend_odata_tomcat.zip](apache-tomcat-9.0.11_OPP363.zip). This bundle has the backend-odata service already deployed.
 2. Extract the `backend_odata_tomcat.zip` archive.
-3. Launch a command prompt window in the `bin` folder of the extracted archive.
-4. Enter the command startup and press enter. (this will start the tomcat server).
+3. Navigate to the `bin` folder  
+4. Double Click on  startup.bat file. (this will launch a command prompt and start the tomcat server).
 5. Launch the URL [http://localhost:8080/backend-odata/Product.svc](http://localhost:8080/backend-odata/Product.svc).
 
 ![backend odata](images/Exercise2_1_backend_odata.JPG)
@@ -37,7 +37,7 @@ We first need to deploy a pre-built Java application which will simulate our bac
 The Cloud Connector is an optional on-premise component that is needed to integrate on-demand applications with customer backend services and is the counterpart of SAP Cloud Platform Connectivity. We will download the Cloud Connector from the SAP development tools site. We will use the portable version of the SAP Cloud Connector as it can be easily installed by simply extracting a compressed archive into an empty directory. It does not require administrator or root privileges for the installation.
 1. Before we install and configure the SAP Cloud Connector, we will need to get our Subaccount ID for use during the configuration of the cloud connector.
 2. Login to your SAP Cloud Platform cockpit [Teched 2018](https://account.hana.ondemand.com/cockpit#/globalaccount/8fd39023-a237-4d71-9b6a-ed9d1719d275/subaccounts)
-3. Click the (i) link on the Cloud Foundry subaccount tile (OPP363CF).
+3. Click the ![i_link](images/Exercise2_ilink.JPG) link on the Cloud Foundry subaccount tile (OPP363CF).
 
 ![account id](images/Exercise2_3_CF_account_id.JPG)
 
