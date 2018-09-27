@@ -77,7 +77,46 @@ We will configure the scaling manually in the SAP Cloud Platform Cockpit. PLease
 ![screnshot alt text](images/Exercise6_7_bindinstance.jpg).
 
 12.	In the _Application_ dropdown select the ratings_backend app.
-13.	Now copy the contents of `policy.json` from [here](../Exercise-09-Autoscaling-of-Comments-and-Ratings/policy.json) and paste it in the `Enter Parameters` text box shown on SAP Cloud Platform cockpit. Scroll down and edit `start_time` and `end_time` to your current time + 4 minutes. 
+13.	Now copy the contents of `policy.json` from below and paste it in the `Enter Parameters` text box shown on SAP Cloud Platform cockpit. Scroll down and edit `start_time` to your current time + 4 minutes. and `end_time` to your start time + 4 minutes. 
+
+```
+{
+	"instance_min_count": 1,
+	"instance_max_count": 2,
+	"schedules": {
+		"timezone": "Etc/GMT-8",
+		"scaling_rules": [
+			{
+				"metric_type": "memoryused",
+				"stat_window_secs": 60,
+				"breach_duration_secs": 60,
+				"threshold": 70,
+				"operator": ">",
+				"cool_down_secs": 60,
+				"adjustment": "-1"
+			}
+		],
+		"recurring_schedule": [
+			{
+			"start_time": "<Edit this:enter a suitable time in 24 hr format, your current time + 4 minutes. for ex:> 15:10",
+			"end_time": "<Edit this:enter a suitable time in 24 hr format, your start time + 4 minutes. for ex:> 15:14",
+				"days_of_week": [
+					1,
+					2,
+					3,
+					4,
+					5,
+					6,
+					7
+				],
+				"instance_min_count": 1,
+				"instance_max_count": 3,
+				"initial_min_instance_count": 3
+			}
+		]
+	}
+}
+```
 
 For example if your current time is 15:13 then you should put 15:17 under start time and 15:23 as end time. We are adding this time so that once we upload this policy the application will scale up and down under this time frame.
 
