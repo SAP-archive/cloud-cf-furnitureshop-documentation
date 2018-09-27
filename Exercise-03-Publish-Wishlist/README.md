@@ -11,11 +11,11 @@ We will create a business application using SAP WebIDE Full-Stack using the temp
 
 The application programming model for SAP Cloud Platform enables you to quickly create business applications by allowing you to focus on your domain logic. It offers a consistent end-to-end programming model that includes languages, libraries and APIs tailored for full-stack development on SAP Cloud Platform. The application programming model uses Core Data & Services (CDS) to build data models and service definitions on a conceptual level. These CDS models are used as inputs for the data, service and UI layers. They are then translated to native artifacts, for example SQL database schemas, and interpreted to automatically serve requests at runtime.
 
-Core Data & Services (CDS) was adopted as known from S/4 HANA and ABAP to define data models as well as service interfaces on a conceptional level. As with S/4 HANA, you can annotate the CDS models with annotations for Fiori UIs. The application programming model allows us to add Java or Node.js modules to the project for custom logic such as handling database connections, including tenant isolation, parsing input and serialising responses etc. 
+Core Data & Services (CDS) was adopted as known from S/4 HANA and ABAP to define data models as well as service interfaces on a conceptual level. As with S/4 HANA, you can annotate the CDS models with annotations for Fiori UIs. The application programming model allows us to add Java or Node.js modules to the project for custom logic such as handling database connections, including tenant isolation, parsing input and serialising responses etc. 
 
 ## 1. Create Wishlist Application
 
-We will create a new business application using Web IDE Full-Stack. We will define a model and CDS to create an OData service which will be consumed by the Wishlist application .
+We will create a new business application using Web IDE Full-Stack. We will define a model and CDS to create an OData service which will be consumed by the Wishlist application.
 
 1. Open your cloud platform cockpit and go to _Services-Web IDE Full-Stack_.
 2. Click _Go to Service_.
