@@ -2,7 +2,7 @@
 	"instance_min_count": 1,
 	"instance_max_count": 2,
 	"schedules": {
-		"timezone": "Asia/Kolkata",
+		"timezone": "Etc/GMT-8",
 		"scaling_rules": [
 			{
 				"metric_type": "memoryused",
