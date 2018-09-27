@@ -84,7 +84,7 @@ We will configure the scaling manually in the SAP Cloud Platform Cockpit. PLease
 	"instance_min_count": 1,
 	"instance_max_count": 2,
 	"schedules": {
-		"timezone": "Etc/GMT-8",
+		"timezone": "America/Los_Angeles",
 		"scaling_rules": [
 			{
 				"metric_type": "memoryused",
