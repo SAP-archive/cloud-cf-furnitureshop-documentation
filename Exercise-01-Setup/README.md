@@ -6,9 +6,9 @@ Next Exercise: [Exercise 02 What is Org and Space CF](../Exercise-02-What-is-Org
 # Exercise 01 - Setup
 
 ## 1. SAP Web IDE Full-Stack
-The primary development tool for this hands-on is [SAP Web IDE Full Stack](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/c175c03da2534e4b9b3ea28687f6cb0a.html) - a browser-based IDE to easily develop, test, build, deploy, and extend role-based, consumer-grade apps for business users. For the sake of simplicity, we will refer the SAP Web IDE Full-Stack tooling as Web IDE Full-stack or simply Web IDE in the current documentation.
+The primary development tool for this hands-on is [SAP Web IDE Full Stack](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/c175c03da2534e4b9b3ea28687f6cb0a.html) - a browser-based IDE to easily develop, test, build, deploy, and extend role-based, consumer-grade apps for business users. For the sake of simplicity, we will refer to the 'SAP Web IDE Full-Stack' as 'Web IDE Full-stack' or simply 'Web IDE' in the current documentation.
 
-In order to use Web IDE Full-Stack, you would normally need to configure the service and assign  appropriate authorizations, etc. For the purposes of this session, the user account provided by the instructor to you is preconfigured to access the Web IDE tooling.
+In order to use Web IDE Full-Stack, you would normally need to configure the service and assign appropriate authorizations, etc. For the purpose of this session, the user account provided to you by the instructor is preconfigured to access the Web IDE tool.
 
 Access Web IDE Full-Stack by simply [clicking here](https://webidecp-aevblwuamw.dispatcher.hana.ondemand.com/) and using the login information provided to you.
 
@@ -19,7 +19,7 @@ If for some reason, the above link for accessing Web IDE Full-Stack does not wor
 Click on _Services_ in the left panel and type _full-stack_ in the search field.
 ![Locate Web IDE Full Stack service](images/Setup1b_SearchWebIDE_FullStack.jpg)
 
-2. Launch Web IDE Full-Stack by clicking on the tile for  _SAP Web IDE Full-Stack_, followed by clicking on the link for _Go to Service_.
+2. Launch Web IDE by clicking on the tile for  _SAP Web IDE Full-Stack_, followed by clicking on the link for _Go to Service_.
 
 ![Go to Service](images/setup3_so_to_service.JPG)
 
@@ -28,20 +28,20 @@ Click on _Services_ in the left panel and type _full-stack_ in the search field.
 ## 2. Configure Cloud Foundry
 Before proceeding with development, we will need to configure our workspace for Cloud Foundry. We will need to assign a space for our development.
 
-1. Open Web IDE Full Stack and _Click Preferences_ (the gear icon at the bottom on the left hand side or by following the menu option _Tools - Preferences_).
+1. In Web IDE Full Stack and _Click Preferences_ (the gear icon at the bottom on the left hand side or by following the menu option _Tools - Preferences_).
 2. Choose _Workspace Preferences - Cloud Foundry_<br>
 ![CF Config](images/setup6_cf_config.JPG)
 3. Select the API Endpoint https://api.cf.eu10.hana.ondemand.com 
 4. Enter your User Name and password when prompted to log on to Cloud Foundry
 4. Verify that the Organization is set to `TechEd2018_OPP363` and the Space is set to `OPP363_SPACE_XX` (where XX is the student number assigned to you)
-5. Click _Install Builder_
+5. Click _Install Builder_ (The install might take a few seconds)
 6. Click _Save_
 
 ## 3. Enable Web IDe Full-Stack Features
 
 We will be using additional Web IDE features that are not enabled by default. The following steps describe how to enable specific features as required.
 
-1. Open Web IDE Full Stack and _Click Preferences_ (the gear icon at the bottom on the left hand side or by following the menu option _Tools - Preferences_).
+1. In Web IDE Full Stack and _Click Preferences_ (the gear icon at the bottom on the left hand side or by following the menu option _Tools - Preferences_).
 2. Choose _Workspace Preferences - Features_<br>
 ![web ide features](images/setup4_web_ide_features.JPG)
 3. Search for **SAP HANA Database Explorer**<br>
@@ -60,7 +60,7 @@ Many of the exercises you will complete during the course of this session will r
 2. Open the URL https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en-US - this is the Tampermonkey extension.
 3. Click _Add to Chrome_.
 4. When the extension has been added to Chrome, close all browser windows and open Chrome again.
-5. You should see the TamperMonkey toolabat button in the top right of your browser.
+5. You should see the TamperMonkey toolbar button in the top right of your browser.
 
 ![tampermonkey toolbar](images/setup7_tampermonkey.JPG)
 
@@ -71,7 +71,7 @@ Many of the exercises you will complete during the course of this session will r
 ![tampermonkey toolbar](images/setup8_copy_code_block.JPG)
 
 ## 5. Tips on Saving your Changes in SAP Web IDE Full-Stack
-As in any environment it's important to save your work regularly to avoid losing your changes, this is particularly true in Web-based IDE's. As a general rule of thumb, try to follow the policy of: _"Save early, save often."_
+As in any environment it's important to save your work regularly to avoid losing your changes, this is particularly true in Web-based IDEs. As a general rule of thumb, try to follow the policy of: _"Save early, save often."_
 
 1. Note that there are 2 _Save_ buttons in SAP Web IDE Full-Stack, _Save_ will only save the file currently being edited, _Save All_ will save all currently open and unsaved files.
 
