@@ -41,7 +41,27 @@ As a part of the previous exercise, we have cloned the content required for this
 
 If you have not done so, please follow the steps 1 to 4 mentioned [here](../Exercise-06-Comments-and-Ratings-Backend#1-clone-exercise-content-and-code-walkthrough)
 
-The cloned application consists of 3 modules - `ratings_backend`, `ratings_frontend` and `tweets_comments`. In this exercise, we will focus on the `ratings_frontend` module.
+We know that the cloned application consists of 3 modules - `ratings_backend`, `ratings_frontend` and `tweets_comments`. In this exercise, we will focus on the `ratings_frontend` module.
+
+To start working on *Exercise 7*, the `ratings_frontend` module, we will switch to `exercise-7` branch in git.
+
+1. Using your Git Pane, click on `Discard All` (Discard all unstaged changes in the list) as shown in the picture below.
+    ![Step Image](images/Exercise7_1-1_Git_discard_all.png)
+
+2. In the confirmation dialog that appears, click on `Discard`.
+    ![Step Image](images/Exercise7_1-2_Git_discard_confirmation.png)
+
+3. Using your Git Pane, click on `+` (Create Local Branch) as shown in the picture below.
+
+    ![Step Image](images/Exercise7_1-3_Git_pane.png)
+
+4. In the popup that appears, select the source branch as `origin-exercise-7` and enter the branch name as `exercise-7` and click on **OK**.
+
+    ![Step Image](images/Exercise7_1-4_create_local_branch.png)
+
+5. Refer to the image below and ensure that you have successfully checked out branch `exercise-7`
+
+    ![Step Image](images/Exercise7_1-5_branch_exercise_7.png)
 
 
 ### 2. Setup the Products List view
@@ -120,44 +140,36 @@ In this section, we will setup the view and controller for product details view 
 
 In this section, we will build and deploy the application that has been built above.
 
-1. Using your Files explorer in Web IDE, rename the **`mta.yaml`** file to **`mta_exercise_4.yaml`** as shown in the picture below.
+1. Using your Files explorer in Web IDE, right click on the **`product_ratings`** folder, go to Build &rarr; and click on **Build** as shown in the picture below.
 
-   ![Step Image](images/Exercise7_4-1_mta4_rename.png)
-
-2. Using your Files explorer in Web IDE, rename the **`mta_exercise_5.yaml`** file to **`mta.yaml`** as shown in the picture below.
-
-   ![Step Image](images/Exercise7_4-2_mta5_rename.png)
-
-3. Using your Files explorer in Web IDE, right click on the **`product_ratings`** folder, go to Build &rarr; and click on **Build** as shown in the picture below.
-
-   ![Step Image](images/Exercise7_4-3_app_build.png)
+   ![Step Image](images/Exercise7_4-1_app_build.png)
 
    Once the build is completed, you will see a new folder created in Files explorer with the name **`mta_archives`**.
 
-4. Right click on the generated .mtar file **`product_ratings`**, and go to Deploy &rarr; and click on **Deploy to SAP Cloud Platform** as shown in the picture below.
+2. Right click on the generated .mtar file **`product_ratings`**, and go to Deploy &rarr; and click on **Deploy to SAP Cloud Platform** as shown in the picture below.
 
-   ![Step Image](images/Exercise7_4-4_app_deploy.png)
+   ![Step Image](images/Exercise7_4-2_app_deploy.png)
 
-5. In the popup that appears, enter the following details and click on Deploy
+3. In the popup that appears, enter the following details and click on Deploy
 
-   ![Step Image](images/Exercise7_4-5_app_endpoint.png)
+   ![Step Image](images/Exercise7_4-3_app_endpoint.png)
 
     ```
     Cloud Foundry API Endpoint: https://api.cf.eu10.hana.ondemand.com
     Organization: TechEd2018_OPP363
     Space: <select your space from the drop down list>
     ```
-6. Once your application is deployed launch the url for `ratings_frontend` app. Your app should look like shown in the [overview section](#overview).
+4. Once your application is deployed launch the url for `ratings_frontend` app. Your app should look like shown in the [overview section](#overview).
 
-7. Select a product and go to the `Rate Item` tab in the Product Details view.
+5. Select a product and go to the `Rate Item` tab in the Product Details view.
 
-8. Give the product a rating and comment and click on submit, as shown in the picture below.
+6. Give the product a rating and comment and click on submit, as shown in the picture below.
 
-    ![Step Image](images/Exercise7_4-7_rating_view.png)
+    ![Step Image](images/Exercise7_4-6_rating_view.png)
 
     This will add a review to the product as show below.
 
-    ![Step Image](images/Exercise7_4-8_comments_feed_view.png)
+    ![Step Image](images/Exercise7_4-7_comments_feed_view.png)
 
 
 ### Appendix - Understanding the HTML5 application code
