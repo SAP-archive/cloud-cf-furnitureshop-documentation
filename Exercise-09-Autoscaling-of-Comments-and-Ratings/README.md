@@ -11,11 +11,18 @@ Scaling of an application is adding more resources (Memory, CPU, Disk) to it and
 - Scaling Out/Horizontal Scaling: increase/decrease the number of instances.
 
 Key benefits:
-- Provides failover capabilities - if one application process crashes, the application still works.
-- Enabling parallel processing.
+- Scaling an application ensures its ability to handle more requests, if necessary. Scalability also provides failover capabilities - if one application process crashes, the application will continue to work. First, when deploying the application, you need to define the minimum and maximum number of application processes. Then, you can scale the application up and down by starting and stopping additional application processes. In addition, you can also choose the compute unit size, which provides a certain central processing unit (CPU), main memory and disk space.
 
-## 1. Configure Manual Scaling in the SAP Cloud Platform Cockpit
-We will configure the scaling manually in the SAP Cloud Platform Cockpit. PLease make sure you complete the last step of the exercise and remove the additional instance(s) you create.
+
+## 1. Pre-requisites
+You have completed till [Exercise 06 -  Comments and Ratings](../Exercise-06-Comments-and-Ratings-Backend) and you should have the applications up and running on your SAP Cloud Platform.
+
+In this exercise we will performing manual and auto scaling on the comments and ratings backend logic. Consider a scenario where the review application is used by a large number of employees just like Mary, and the memory consumption, CPU usage is increased for this application. To cater to the incresing demand for this application we need to scale up the application so that request can be fullfilled. 
+
+Below we will be using SAP Cloud Platform cockpit and auto scaling policies to perform these operations.
+
+## 2. Configure Manual Scaling in the SAP Cloud Platform Cockpit
+We will configure the scaling manually in the SAP Cloud Platform Cockpit. PLease make sure you complete the pre-requisites as mentioned above.
 
 1. Open your SAP Cloud Platform cockpit and go to _Org - Space - Applications_.
 2. Locate the `ratings_backend` application.
@@ -29,14 +36,17 @@ We will configure the scaling manually in the SAP Cloud Platform Cockpit. PLease
 
 ![screnshot alt text](images/Exercise6_2_increase_instances.JPG).
 
-7. Now click on _Change Quota_ under _Quota Information_ to do the vertical scaling i.e scaling up where we will increase the disk and memory quota from `256 MB` to `512 MB`.
-8. Click _Save_ and you will see the quota increased.
+7. Now reduce the instance count back to 1 to perform further operation smoothly. This step is performed because you only have limited memory quota to your space and to avoid application crashes we are performing this step.
 
-![screnshot alt text](images/Exercise6_3_increase_quota.JPG).
+8. Now click on _Change Quota_ under _Quota Information_ to do the vertical scaling i.e scaling up where we will increase the disk and memory quota from `1024 MB` to `2048 MB`.
 
-8. Let’s get back the application to original state, click on change quota to reduce the quota back to `256 MB`.
-9. Click _Save_.
-10. Reduce the instance by removing it.
+9. Click _Save_ and you will see the quota increased.
+
+![screnshot alt text](images/Exercise6_3_increase_quota1.JPG).
+
+10. Let’s get back the application to original state, click on change quota to reduce the quota back to `1024 MB`.
+11. Click _Save_.
+
 
 ## 2. Configure Auto Scaling in the SAP Cloud Platform Cockpit
 
