@@ -24,8 +24,8 @@ For the current hands-on, various backing and technical services are used includ
 - SAP HANA
 - PostgreSQL
 - RabbitMQ
-- connectivity
-- destination
+- Connectivity
+- Destination
 - Authorization & Trust Management (xsuaa)
 - Application Logging
 - Application Autoscaler
@@ -57,20 +57,20 @@ To realize the above scenario, the following microservices will be built.
 
 ### Wishlist and Ordering service
 First, we will have a Wishlist service for Franck to publish his Wishlist. This application will be built using:
-- Application Programming Model of SAP Cloud Platform using the tooling - SAP Web IDE Full-Stack
+- Application Programming Model of SAP Cloud Platform using SAP Web IDE Full-Stack
 - For data persistence, this application will utilize SAP HANA
-- For the front-end, this application will use the SAP Web IDE Full-stack capability to use SAPUI5 templates.
+- For the front-end, this application will use SAPUI5 templates, available as a SAP Web IDE Full-stack capability.
 
-Next, we will build upon the Wishlist service to add Ordering capabilities, for which it is required to fetch certain data from the on-premise backend systems such as pricing. In order to connect to the backend system, this step will involve consuming various technical services of Cloud Foundry environment of SAP Cloud Platform such as - connectivity, destination and xsuaa.
+Next, we will build upon the Wishlist service to add Ordering capabilities, for which, it is required to fetch certain data, such as product price, from on-premise backend systems. In order to connect to the backend system, this step will involve consuming various technical services from SAP Cloud Platform Cloud Foundry environment such as - connectivity, destination and xsuaa.
 
 ### Rating and Tweet Services
 In order to seek ratings from customers like Mary and also involve additional customers via social channels, we will build a couple of services.
 
-First, we will have a Node.js based Rating service which uses
-- a simple front-end using SAPUI5 template for Mary to provide her rating / comments
-- PostgreSQL backing service for persisting the rating / comments data.
+First, we will have a Node.js based Ratings service which uses
+- A simple front-end using a SAPUI5 template, for Mary to provide her ratings / comments
+- PostgreSQL backing service for persisting the ratings / comments.
 
-To engage other customers and seek greater customer input for rating the items, we will add a Tweet service that posts a message on store's twitter account whenever a customer (like Mary) provides rating / comment on any item in Franck's Wishlist. This service is also built using Node.js. For the communication between the Rating service and the Tweet service, we will use the RabbitMQ backing service.
+To engage other customers and seek greater customer input for rating the items, we will add a Tweet service that posts a message on the store's twitter account whenever a customer (like Mary) reviews any item in Franck's Wishlist. This service is also built using Node.js. For the communication between the Ratings service and the Tweet service, we will use RabbitMQ backing service.
 
 
 ## Exercises
