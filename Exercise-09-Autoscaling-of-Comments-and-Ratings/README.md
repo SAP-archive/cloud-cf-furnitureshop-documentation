@@ -81,7 +81,7 @@ We will configure the scaling manually in the SAP Cloud Platform Cockpit. PLease
 
 For example if your current time is 15:13 then you should put 15:17 under start time and 15:23 as end time. We are adding this time so that once we upload this policy the application will scale up and down under this time frame.
 
-![screnshot alt text](images/Exercise6_7_bindinstance.JPG). 
+![screnshot alt text](images/Exercise6_7_bindinstance1.jpg). 
 
 
 14.	Click _Save_.
