@@ -6,82 +6,137 @@ Previous Exercise: [Exercise 07 - Comments and Ratings Frontend](../Exercise-07-
 
 # Exercise 08 - Tweet Comments Backend
 
-Mary who is a loyal customer of home furniture franchise has access to the customer portal to provide ratings and comments on the wishlist which Franck has uploaded. Based on the feedback from customers Franck would add highly rated items into his furniture store.
+Till now we have seen that Furniture Shop/Franck have published a 'Wishlist' of products that it/he wishes to carry. We also saw that loyal customers like Mary have access to the customer portal to provide ratings and comments on the wishlist to influence the shop's decision. If we now provide a mechanism to spread the word about these wishlist reviews to a broader audience, more customers would be able to provide their inputs via the portal. And based on this feedback, Franck can order for the highly rated items into his furniture store inventory.
 
-The user interface to provide ratings and comments was completed in Exercise 5 and the backend (Node.js module) to store ratings and comments was completed in Exercise 4.
+To achieve this reach, we can send out a **tweet** on the Furniture Store's twitter account whenever a customer posts a review of any particular product. We will build `tweet_comments`- a _headless_ microservice, i.e. a microservice without any UI & directly consumable in other microservices, to realise this functionality.
 
-Once the comments are published on to RabbitMQ by Excercise 4, in this module we pick the same message from the queue and publish it to Twitter.
+As the communication between our application and Twitter needs to be aysnchronous, we will use a message-broker like RabbitMQ to provide the queueing capability. Once a customer posts a review, the comments are published to a RabbitMQ queue. We will then pick the same message from the queue and publish it to Twitter.
 
-## 1. Developer Guide
+## Important - before we begin
 
-1. Source code for this Nodejs module was cloned as has part of Exercise 4.
-    * Click the development icon on the navigation view, the cloned application is displayed; expand the application.
+In the upcoming sections, you will be required to clone the exercise content from a given git repository. In general, Node.js modules need to be built based on the requirement and cannot be easily templated. To explain relevant sections of the code, you will notice that certain parts/modules are commented. The exercises will guide you to uncomment individual pieces of code, while explaining the relevance of each piece and what it tries to achieve. Please take note that commenting/uncommenting will differ based on the type of file you are working with. Javascript files will consist of line comments "//" where as UI5/xml files might use block comments with "/*.. */" format. Please follow the instructions closely to have a smooth exercise experience.
 
-        ![Step Image](images/image_1.png)
+### 1. Clone exercise content and code walkthrough
 
-2. Our focus for this exercise is tweet_comments module and enhance it further.
+As a part of the previous exercise, we have cloned the content required for this exercise too.
 
-    ![Step Image](images/image_2.png)
+If you have not done so, please follow the steps 1 to 4 mentioned [here](../Exercise-06-Comments-and-Ratings-Backend#1-clone-exercise-content-and-code-walkthrough)
 
-    * For a Node.js application `package.json` file is the core and it lists all the packages that your module depends on. For every application there is launch file which gets executed when the program is deployed.
+We know that the cloned application consists of 3 modules - `ratings_backend`, `ratings_frontend` and `tweets_comments`. In this exercise, we will focus on the `ratings_frontend` module.
 
-        This launch file is specified in `script` property under a start tag; in our case it is `app.js`.
+![Step Image](images/Exercise8_1-6_clone_project.png)
 
-        ![Step Image](images/image_3.png)
+To start working on *Exercise 8*, the `tweet_comments` module, we will switch to `exercise-8` branch in git.
 
-    * Uncomment the code in `app.js`, notice the connection to RabbitMQ instance, creation of channel and consume the incoming messages from the queue are achieved this block of code.
+1. Using your Git Pane, click on `Discard All` (Discard all unstaged changes in the list) as shown in the picture below.
+    ![Step Image](images/Exercise8_1-1_Git_discard_all.png)
 
-        ![Step Image](images/image_4.png)
+2. In the confirmation dialog that appears, click on `Discard`.
+    ![Step Image](images/Exercise8_1-2_Git_discard_confirmation.png)
 
-        Once the message is received the same is posted on to Twitter.
+3. Using your Git Pane, click on `+` (Create Local Branch) as shown in the picture below.
 
-    * The keys to configure Twitter account is saved in `config.js` under the `config` folder.
+    ![Step Image](images/Exercise8_1-3_Git_pane.png)
 
-        ![Step Image](images/image_5.png)
+4. In the popup that appears, select the source branch as `origin/exercise-8` and enter the branch name as `exercise-8` and click on **OK**.
 
-    * Now once Mary posts comments on products, the queue waiting in this module would read the message and post it to Twitter.
+    ![Step Image](images/Exercise8_1-4_create_local_branch.png)
 
-### 2. Deploying the Application
-In this section you will build and deploy the application that you have built in Exercise 6.
+5. Refer to the image below and ensure that you have successfully checked out branch `exercise-8`
 
-1. Using your File Explorer in Web IDE, rename the **`mta.yaml`** file to **`mta_exercise_5.yaml`** as shown in the picture below.
+    ![Step Image](images/Exercise8_1-5_branch_exercise.png)
 
-   ![Step Image](images/image_6.png)
+Open the `tweets_comments` module and navigate to the `package.json` file which lists all the packages that your module depends on.
 
-2. Using your File Explorer in Web IDE, rename the **`mta_exercise_6.yaml`** file to **`mta.yaml`** as shown in the picture below.
+![Step Image](images/Exercise8_1-7_tweet_comments.png)
 
-   ![Step Image](images/image_7.png)
+Note that the file contains dependencies on the following node/npm modules:
 
-3. Using your File Explorer in Web IDE, right click on the **`product_ratings`** folder, go to `Build` and click **Build** as shown in the picture below.
+![Step Image](images/Exercise8_1-8_package_json.png)
 
-   ![Step Image](images/image_8.png)
+ * `cfenv` - used to parse Cloud Foundry-provided environment variables
 
-   Once the build is completed, you will see a new folder created in your Web IDE's File Explorer with the name **`mta_archives`**.
+ * `amqplib` - used to make amqp clients for Node.js
 
-4. Using your File Explorer in Web IDE, right-click on the generated .mtar file **`product_ratings`**, and go to Deploy &rarr; and click on **Deploy to SAP Cloud Platform** as shown in the picture below.
+ * `twit` - Twitter API Client for Node.j
 
-    ![Step Image](images/image_8.png)
 
-5. In the popup that appears, please enter the following details and click _Deploy_.
+### 2. Setup RabbitMQ producer in 'ratings_backend' module
 
-    ![Step Image](images/image_10.png)
+1. Go to the `ratings_backend` module built in Exercise 6 and open the `route.js` file under `route` folder.
+
+   ![Step Image](images/Exercise8_2-1_route_js.png)
+
+2. Uncomment the `addToRabbitMQ' method - the producer which creates a channel and sends the review data from the ratings service to the RabbitMQ queue.
+
+   Note: To uncomment, follow these steps:
+
+   1. Select the commented code
+   2. Right click mouse on the editor
+   3. Select the 'Toggle Line Comment' option
+
+   ![Step Image](images/Exercise8_2-2_rmq_producer.png)
+
+
+### 3. Setup RabbitMQ consumer in 'tweet_comments' module
+
+1. The entry point to `tweets_comments` module is the `app.js`. Open this file.
+
+   ![Step Image](images/Exercise8_3-1_tweets_comments.png)
+
+   Uncomment the consumer code in `app.js`. This piece creates a channel and reads message from the RabbitMQ queue. We then push this message i.e. in our case 'Reviews' to Twitter.
+
+   Note: To uncomment, follow these steps:
+
+     1. Select the commented code
+     2. Right click mouse on the editor
+     3. Select the 'Toggle Line Comment' option
+
+   ![Step Image](images/Exercise8_3-2_rmq_consumer.png)
+
+
+2. The keys to configure Twitter account are saved in `config.js` file under the `config` folder.
+
+   ![Step Image](images/Exercise8_3-3_twitter_config.png)
+
+
+### 4. Deploying the application and Test
+
+In this section we will build and deploy the application that has been built in the above steps.
+
+1. Right click on the **`product_ratings`** folder, go to `Build` and click **Build** as shown in the picture below.
+
+   ![Step Image](images/Exercise8_4-1_app_build.png)
+
+   Once the build is completed successfully, you will see a new folder created in your Web IDE's File Explorer with the name **`mta_archives`**.
+
+2. Right-click on the generated .mtar file **`product_ratings`**, and go to Deploy &rarr; and click on **Deploy to SAP Cloud Platform** as shown in the picture below.
+
+   ![Step Image](images/Exercise8_4-2_app_deploy.png)
+
+3. In the popup that appears, please enter the following details and click _Deploy_.
+
+   ![Step Image](images/Exercise8_4-3_cf_endpoints.png)
 
     ```
-    Cloud Foundry API Endpoint: ``//TODO: Add the end point
-    Organization: ``//TODO: Add your organization
-    Space: Select your space from the drop down list
+      Cloud Foundry API Endpoint: https://api.cf.eu10.hana.ondemand.com
+      Organization: TechEd2018_OPP363
+      Space: <select your space from the drop down list>
     ```
-6. //TODO: @Sanjay to add the generic line about checking the services and logs as done in the earlier exercise.
 
-7. Once your application is deployed launch the url for ratings_frontend app.
+4. Once your application is deployed launch the url for ratings_frontend app. As `tweet_comments` is a headless service and is consumed by the `ratings` service.
 
-8. Give the product a rating and comment and click on submit.
+5. Select a product from the list and navigate to the `Rate Item` tab. Give the product a rating and a comment and click on submit.
 
-    ![Step Image](images/image_11.png)
+   ![Step Image](images/Exercise8_4-5_provide_rating.png)
 
-9.  In your web browser, go to this [twitter handle](https://twitter.com/sapfurnishop)  to see your comment posted as a tweet.
+   You can also check the review feeds for a particular product.
 
-    ![Step Image](images/image_12.png)
+   ![Step Image](images/Exercise8_4-5_check_comments.png)
+
+6. In your browser, go to this [twitter handle](https://twitter.com/sapfurnishop) to see your comment posted as a tweet.
+
+   ![Step Image](images/Exercise8_4-6_review_tweet.png)
 
 
     Twitter handle URL: https://twitter.com/sapfurnishop

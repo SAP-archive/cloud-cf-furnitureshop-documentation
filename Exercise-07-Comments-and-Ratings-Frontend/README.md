@@ -55,13 +55,13 @@ To start working on *Exercise 7*, the `ratings_frontend` module, we will switch 
 
     ![Step Image](images/Exercise7_1-3_Git_pane.png)
 
-4. In the popup that appears, select the source branch as `origin-exercise-7` and enter the branch name as `exercise-7` and click on **OK**.
+4. In the popup that appears, select the source branch as `origin/exercise-7` and enter the branch name as `exercise-7` and click on **OK**.
 
     ![Step Image](images/Exercise7_1-4_create_local_branch.png)
 
 5. Refer to the image below and ensure that you have successfully checked out branch `exercise-7`
 
-    ![Step Image](images/Exercise7_1-5_branch_exercise_7.png)
+    ![Step Image](images/Exercise7_1-5_branch_exercise.png)
 
 
 ### 2. Setup the Products List view
