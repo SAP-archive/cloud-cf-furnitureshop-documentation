@@ -48,7 +48,7 @@ We will configure the scaling manually in the SAP Cloud Platform Cockpit. PLease
 11. Click _Save_.
 
 
-## 2. Configure Auto Scaling in the SAP Cloud Platform Cockpit
+## 3. Configure Auto Scaling in the SAP Cloud Platform Cockpit
 
 1.	Go to your SAP Cloud Platform cockpit under _Org - Space_.
 2.	Expand the _Services_ tab on left.
@@ -65,31 +65,27 @@ We will configure the scaling manually in the SAP Cloud Platform Cockpit. PLease
 
 ![screnshot alt text](images/Exercise6_5_createinstanceJPG.jpg).
 
-7.	Click _Next_, on bottom right.
-8.	Again, click _Next_ on bottom right.
-9.	Click _Next_, on bottom right again.
-10.	Enter the _instance name_ as `myautoscaling`.
+7.	Finish configuration by accepting default values and clicking _Next_ on the subsequent screens
+8.	Enter the _instance name_ as `myautoscaling`.
 
 ![screnshot alt text](images/Exercise6_6_myautoscaling.jpg).
 
-11.	Click _Finish_, this will create a autoscaling instance for your applications to use.
-12.	Click on the newly created myautoscaling instance.
-13.	Click _Bind Instance_, we are performing this step to bind our application to this auto scaler instance.
+9.	Click _Finish_, this will create a autoscaling instance for your applications to use.
+10.	Click on the newly created myautoscaling instance.
+11.	Click _Bind Instance_, we are performing this step to bind our application to this auto scaler instance.
 
 ![screnshot alt text](images/Exercise6_7_bindinstance.jpg).
 
-14.	In the _Application_ dropdown select the ratings_backend app.
-15.	Now edit the below `policy.json` file in notepad:
+12.	In the _Application_ dropdown select the ratings_backend app.
+13.	Now copy the contents of `policy.json` from [here](../Exercise7_Autoscaling_of_Comments_and_Ratings/policy.json) and paste it in the `Enter Parameters` text box shown on SAP Cloud Platform cockpit. Scroll down and edit `start_time` and `end_time` to your current time + 4 minutes. 
 
-Download and edit this file in notepad: [policy.json](../Exercise7_Autoscaling_of_Comments_and_Ratings/policy.json)
+For example if your current time is 15:13 then you should put 15:17 under start time and 15:23 as end time. We are adding this time so that once we upload this policy the application will scale up and down under this time frame.
 
-16.	Save the file with name as `policy.json`
-17.	Go to your SAP Cloud Platform cockpit, click _browse_ and the `select policy.json` file, you should see the policy getting uploaded as parameters.
+![screnshot alt text](images/Exercise6_7_bindinstance.JPG). 
 
-![screnshot alt text](images/Exercise6_7_bindinstance1.JPG). 
 
-18.	Click _Save_.
-19.	 Explanation of the above parameters used: Here we are increasing the instance from 1 to 3, and then bringing it down. Other parameters are mentioned below:
+14.	Click _Save_.
+15.	 Explanation of the above parameters used: Here we are increasing the instance from 1 to 3, and then bringing it down. Other parameters are mentioned below:
 
         schedules:	A schedule enables you to configure scaling rules for specific days or on a recurring basis. Schedule guards against expected high surges or low activity period.
 
@@ -107,17 +103,19 @@ Download and edit this file in notepad: [policy.json](../Exercise7_Autoscaling_o
 
         initial_min_instance_count:	Minimum number of instances to scale up during the start of recurrence period.
 
-20.	You can now see your application under _Referencing Apps_.
+For more information on parametes refer our [help guide](https://help.sap.com/viewer/7472b7d13d5d4862b2b06a730a2df086/Cloud/en-US/c8023eb0995e42a68697f4262218a032.html) 
+
+16.	You can now see your application under _Referencing Apps_.
 
 ![screnshot alt text](images/Exercise6_9_refapp.JPG).
 
-21.	Click on your `ratings_backend` application, to go back to your _Application Service Bindings_ page. Here you can see the auto scaler instance being created.
-22.	Click _Overview_, on the left side.
-23.	Scroll down you can see the instances of your application increased to 3 as per the defined policy and the start time mentioned.
+17.	Click on your `ratings_backend` application, to go back to your _Application Service Bindings_ page. Here you can see the auto scaler instance being created.
+18.	Click _Overview_, on the left side.
+19.	Scroll down you can see the instances of your application increased to 3 as per the defined policy and the start time mentioned.
 
 ![screnshot alt text](images/Exercise6_10_ininstances.jpg).
 
-24.	As per the policy and the start time to reduce the instance the application instances will come down.
+20.	As per the policy and the end time to reduce the instance the application instances will come down.
 
 - - - -
 © 2018 SAP SE
