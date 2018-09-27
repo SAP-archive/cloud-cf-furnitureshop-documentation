@@ -77,7 +77,7 @@ We will configure the scaling manually in the SAP Cloud Platform Cockpit. PLease
 ![screnshot alt text](images/Exercise6_7_bindinstance.jpg).
 
 12.	In the _Application_ dropdown select the ratings_backend app.
-13.	Now copy the contents of `policy.json` from [here](../Exercise7_Autoscaling_of_Comments_and_Ratings/policy.json) and paste it in the `Enter Parameters` text box shown on SAP Cloud Platform cockpit. Scroll down and edit `start_time` and `end_time` to your current time + 4 minutes. 
+13.	Now copy the contents of `policy.json` from [here](../Exercise-09-Autoscaling-of-Comments-and-Ratings/policy.json) and paste it in the `Enter Parameters` text box shown on SAP Cloud Platform cockpit. Scroll down and edit `start_time` and `end_time` to your current time + 4 minutes. 
 
 For example if your current time is 15:13 then you should put 15:17 under start time and 15:23 as end time. We are adding this time so that once we upload this policy the application will scale up and down under this time frame.
 
