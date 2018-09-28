@@ -12,6 +12,8 @@ To simulate our on premise backend system, we will deploy a simple Java applicat
 
 We will use Web IDE Full-Stack to modify our existing wishlist application to include the retreival of data from the backed system as well as from the data stored in the SAP HANA database from the wishlist application.
 
+**This exercise involves the following main steps.**
+
 1.	Deploy product backend OData service.
 2.	Configure the SAP Cloud Connector: Add Cloud Platform Subaccount add local backend). Configure subaccount and access OData URL.
 3.	Create an instance of destination service and a destination configuration on your Cloud Foundry space to access the backend OData URL.
