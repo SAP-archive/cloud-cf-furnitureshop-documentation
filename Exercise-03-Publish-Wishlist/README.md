@@ -177,7 +177,7 @@ You will notice the collection `Wishlist` in the Odata service.<br>
 
 40.  The Web IDE Full-Stack tool is connected to your Cloud Foundry environment in the SAP Cloud Platform. When you build the database module or run the Java application in your project, the Web IDE Full-Stack tool is creating instances of backing services and applications in your _Space_ on the SAP Cloud Platform. To check, follow the following steps.
 
-If the SAP Cloud Platform cockpit is not already open, please open it by ![clicking here]( https://account.hana.ondemand.com/cockpit). Go to your _Space_ by clicking on _TechEd2018 - OPP363CF - Spaces - OPP363_SPACE_XYZ_.
+If the SAP Cloud Platform cockpit is not already open, please open it by [clicking here]( https://account.hana.ondemand.com/cockpit). Go to your _Space_ by clicking on _TechEd2018 - OPP363CF - Spaces - OPP363_SPACE_XYZ_.
 
 Now, on the Applications page, you should see an instance of the Java Application with the name of <random string>furnitureshop-srv.  This instance was created during the above steps of the current exercise. Click on the application name and check out its Service Bindings, etc.
 	
