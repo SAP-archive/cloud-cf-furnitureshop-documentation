@@ -82,6 +82,17 @@ As in any environment it's important to save your work regularly to avoid losing
 
 ![autosave](images/setup10_save_prefs.JPG)
 
+## 6. Install the CLoudFoundy CLI
+This is used in the exercise for blue green deployment. If you prefer to skip the exercise you may also skip this step.
+
+1. Download and install the [Cloud Foundry CLI](https://github.com/cloudfoundry/cli).
+
+2. Install the [MTA Plugin](https://tools.hana.ondemand.com/#cloud) for the CLoud Foundry CLI. Here is a direct download link that was active at the time of writing: [cf-cli-mta-plugin-2.0.3-windows-x86_64.exe](https://tools.hana.ondemand.com/additional/cfcliplugin/cf-cli-mta-plugin-2.0.3-windows-x86_64.exe).
+
+3. Test the CLI: run `[HOME]$ cf`. This should give you a list fo CF CLI commnds.
+
+4. Run `[HOME]$ cf plugins`. you should see the MTA plugins installed.
+
 
 This completes the system setup for your exercises.
 - - - -
