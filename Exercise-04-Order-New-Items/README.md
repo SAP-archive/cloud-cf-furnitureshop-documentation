@@ -490,7 +490,7 @@ Enter the following:
    - Authentication: `NoAuthentication`
 12. Your destination should look like this:
 
-![destination](images/Exercise2_0_destination.JPG)
+![destination](images/Exercise2_0_destination1.JPG)
 
 Click on Save
 
