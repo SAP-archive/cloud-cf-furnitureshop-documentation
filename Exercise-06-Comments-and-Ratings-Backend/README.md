@@ -17,7 +17,7 @@ To build a 'Comments and ratings' service which needs to collect inputs from the
 
 For persistence, we will require a simple, cost-effective, transactional database to quickly store the ratings and comments from the users. To satisfy this requirement, a relational database like PostgreSQL will be a good choice. The communication between this transactional store and the master data store on SAP HANA, will be via OData calls.
 
-In this exercise, we will create a Multi-Target Application [MTA], consisting of a Node.js module which provides REST API’s to add ratings and comments. During the deployment of the Node.js module, it will fetch the wishlist information from SAP HANA database which was exposed as OData in [Exercise 3](../Exercise-03-Publish-Wishlist) and store it in a PostgreSQL database. Once this ratings backend is available, we will build the front-end i.e. user interface in Exercise 7, which will display the wishlist in the form of a list view and allow the user to rate and comment on any product in the list. Individual ratings and average ratings will be persisted in PostgreSQL and the average rating will also be pushed to SAP HANA. These ratings in SAP HANA will help Franck to decide which products to order.
+In this exercise, we will create a Multi-Target Application [MTA], consisting of a Node.js module which provides REST API’s to add ratings and comments. During the deployment of the Node.js module, it will fetch the wishlist information from SAP HANA database which was exposed as OData in [Exercise 4](../Exercise-04-Order-New-Items) and store it in a PostgreSQL database. Once this ratings backend is available, we will build the front-end i.e. user interface in Exercise 7, which will display the wishlist in the form of a list view and allow the user to rate and comment on any product in the list. Individual ratings and average ratings will be persisted in PostgreSQL and the average rating will also be pushed to SAP HANA. These ratings in SAP HANA will help Franck to decide which products to order.
 
 In Exercise 8, we will see that Mary’s comments on the furniture products can be pushed to Twitter to spread the word and encourage other customers/patrons to engage with the furniture shop. To cater to this requirement, we will use an asynchronous message-broker like RabbitMQ to communicate and push messages to Twitter.
 
@@ -36,6 +36,8 @@ In this section, we will clone the exercise content from Git to SAP Web IDE Full
 	 ![Step Image](images/Exercise6_1-2_clone_git.png)
 
 3. Enter the git repository URL to clone from and click on 'Clone'.
+
+        Git URL: https://github.com/SAP/cloud-cf-furnitureshop-product-ratings.git
 
 	![Step Image](images/Exercise6_1-3_clone_git_popup.png)
 
@@ -103,7 +105,7 @@ Sharing of data between microservices is always a difficult architectural decisi
 
    ![Step Image](images/Exercise6_2-3_dbOps_2methods.png)
 
-4. We already understand that data sharing between the 'Wishlist' service and 'Ratings and Comments' microservices will be realised by calling OData endpoints from Exercise 1. These requests are handled in `odata.js` file under `odata` folder.
+4. We already understand that data sharing between the 'Wishlist' service and 'Ratings and Comments' microservices will be realised by calling OData endpoints from Exercise 4. These requests are handled in `odata.js` file under `odata` folder.
 
    ![Step Image](images/Exercise6_2-4_odata_js.png)
 
@@ -149,47 +151,13 @@ We will now build and deploy the application that has been built above.
    Space: <select your space from the drop down list>
    ```
 
-4. The deployment may fail with errors. This is because, in `odata.js`, the application expects a destination to read data from the Wishlist service, as shown below. This is currently missing. We will create the destination in the next section.
+4. We have created the destination `getWishList` in Exercise 4.
 
    ![Step Image](images/Exercise6_3-4_odata_destination.png)
 
-## 4. Create destination to consume wishlist data
+5. Once the deployment is successful, click on the url below _Application Routes_. The application opens in a new tab. Append “/products” to the URL and check that the Wishlist product data is shown.
 
-1. From the SAP Cloud cockpit, navigate to your space and select _Applications_ tab. Click on the `ratings_backend` application.
-
-   ![Step Image](images/Exercise6_4-1_find_application.png)
-
-2. Click on _Service Bindings_, here you would see all the services bound with the current application.
-
-   ![Step Image](images/Exercise6_4-2_service_binding.png)
-
-3. Click on the `destination` service from the service instance list.
-
-   ![Step Image](images/Exercise6_4-3_destination_service.png)
-
-4. Click on _Destinations_ tab.
-
-   ![Step Image](images/Exercise6_4-4_destination_list.png)
-
-5. Click on _New Destination_ ![New Destination](images/Exercise6_4-5_new_destination.png) and use the below parameters to create the destination. Click _Save_.
-
-   ![Step Image](images/Exercise6_4-5-1_create_destination.png)
-
-        - Name: `getWishlist`
-        - Type: `HTTP`
-        - URL: `mention the application url of _srv_ module of service1`
-        - Proxy type: `Internet`
-        - Authentication: `NoAuthentication`
-
-6. Navigate back to your _Applications_ view. Stop and Start the `ratings_backend` application.
-
-   ![Step Image](images/Exercise6_4-6_start_stop.png)
-
-7. The application should go to a green **Started** state. Click on the application name link.
-
-8. To test the application, click on the url below _Application Routes_. The application opens in a new tab. Append “/products” to the URL and check that the Wishlist product data is shown.
-
-   ![Step Image](images/Exercise6_4-8_check_data.png)
+   ![Step Image](images/Exercise6_3-5_check_data.png)
 
 - - - -
 © 2018 SAP SE
