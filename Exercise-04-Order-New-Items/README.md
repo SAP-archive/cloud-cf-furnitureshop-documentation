@@ -16,9 +16,9 @@ We will use Web IDE Full-Stack to modify our existing wishlist application to in
 
 1.	Deploy product backend OData service.
 2.	Configure the SAP Cloud Connector: Add Cloud Platform Subaccount add local backend). Configure subaccount and access OData URL.
-3.	Create an instance of destination service and a destination configuration on your Cloud Foundry space to access the backend OData URL.
-4.	Modify the wishlist front-end application in Web IDE and deploy your MTA to Cloud Foundry.
-5.	Create Destination for Wishlist Service and Java Logic to update Ratings which will be required in the next Exercise
+3.	Enhance the Service for the Wishlist Application
+4.	Extend the User Interface to Display On-Premise Product Data
+5.	Create Destination configuration on SAP Cloud Platform
 6. 	Clean-Up
 
 ## 1. Deploy Product Backend OData Service
@@ -457,41 +457,6 @@ Wait until the deployment is complete and ensure it was successful. meanwhile yo
 Please make sure the deployment is complete. The next thing we will need to do is create an instance of destination service on SAP Cloud Platform as well as a destination configuration. This will allow us to access the on premise backend system in our applications on SAP Cloud Platform by using the virtual URL we configured in the cloud connector.
 
 1. In your SAP Cloud Platform admin cockpit, go to your Cloud Foundry Subaccount and navigate to your space.
-2. Expand Services and choose Service Marketplace
-2. Click on the tile _destination_
-3. Click on Instance from the left menu and click on _New Instance_.
-4. In the _Create Instance_ wizard, enter:
-    - Plan: `lite`
-5. For _Specify Parameters_ click _Next_.
-6. For _Assign Application_ click _Next_.
-7. Under the _Confirm_ section, enter:
-    - Instance Name: `destination`
-8. Click _Finish_.
-
-You will see the instance of destination service is created
-
-![destination](images/Exercise2_dest.jpeg)
-
-9. Click on the destination link
-10. Click on Destinations link from the left menu
-11. Click on New Destination
-
-Enter the following:
-   - Name: `ONPREM_BACKEND`
-   - Type: `HTTP`
-   - Description: `Local Backend`
-   - Location ID: `OPP363-XX` (XX being your unique number assigned to you)
-   - URL: `http://productbackend.com:8080`
-   - Proxy Type: `OnPremise`
-   - Authentication: `NoAuthentication`
-12. Your destination should look like this:
-
-![destination](images/Exercise2_0_destination.JPG)
-
-We will create another destination configuration to the Wishlist Odata that is exposed the srv module. This will be required for the next exercises.
-
-
-1. In your SAP Cloud Platform admin cockpit, go to your Cloud Foundry Subaccount and navigate to your space.
 2. Click on Applications from the left menu
 3. Click on the srv application 
 4. Under Application Routes, copy the url link to the srv application. This will be used in the next steps.
@@ -511,10 +476,26 @@ Enter the following:
 
 ![destina](images/dest_getwishlist1.jpeg)
 
+Click on Save
 
+Click on New Destination
 
-32. Let us next test the application
-33. Login to SAP Cloud Platform Cockpit -> Navigate to your Space -> Applications
+Enter the following:
+   - Name: `ONPREM_BACKEND`
+   - Type: `HTTP`
+   - Description: `Local Backend`
+   - Location ID: `OPP363-XX` (XX being your unique number assigned to you)
+   - URL: `http://productbackend.com:8080`
+   - Proxy Type: `OnPremise`
+   - Authentication: `NoAuthentication`
+12. Your destination should look like this:
+
+![destination](images/Exercise2_0_destination.JPG)
+
+Click on Save
+
+32. Next Let us next test the application
+33. In the SAP Cloud Platform Cockpit -> Navigate to your Space -> Applications
 34. If you have followed all the steps from the start of Exercise 1, You should see 4 applications
 
  - db: This is the db module that was deployed as part of the mta deployment, it will be stopped by default, do not delete or modify this app.
@@ -522,7 +503,6 @@ Enter the following:
  - <SOME_RANDOM_NAME>furnitureshop-srv: This was deployed when you did right click on srv module and Run as Java Application in Exercise 1
  - webide-builder-sapwebide-di-<SOME_RANDOM_NAME>: This is the builder that you installed in Exercise 1
  - wishlist: This is the wishlist html5 application with the UI logic was deployed as part of the mta deployment
-
 
 35. Click on the srv application and click on the link to under Application Routes to launch the srv application
 
@@ -533,14 +513,7 @@ Enter the following:
 38. To test the ui application navigate to the wishlist application in the SAP Cloud Platform cockpit and launch the URL, you will see a new tab which shows Backend Product information, you may not see any ratings yet as this will be done in the next exercises
 
 
-
-## 6. Create Destination for Wishlist Service and Java Logic to update Ratings which will be required in the next Exercise
-
-
-
-
-
-## 7. Clean-up
+## 6. Clean-up
 1. login to your SAP Cloud Platform Cockpit, navigate to your space and your applications
 2. Stop the java application, <SOME_RANDOM_NAME>furnitureshop-srv to free up some application runtime space for the next exercises
 
