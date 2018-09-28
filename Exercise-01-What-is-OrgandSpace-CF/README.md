@@ -53,7 +53,7 @@ There are different environments in SAP Cloud Platform. See the help guide to kn
 
 ![screnshot alt text](images/orgdetail.jpg)
 
-9.	On right you can see the API endpoint and subaccount details. This is the API endpont that was used for SAP Web IDE Full-Stack  configuration in the previous exercise. 
+9.	On right you can see the API endpoint and subaccount details. This is the API endpont that will be used for SAP Web IDE Full-Stack  configuration in the [next exercise](../Exercise-02-Setup). 
 
 ![screnshot alt text](images/subacctdetail.jpg)
 
