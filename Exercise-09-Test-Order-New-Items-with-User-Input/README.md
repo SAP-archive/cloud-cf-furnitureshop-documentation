@@ -1,5 +1,5 @@
-- - - -
-Previous Exercise: [Exercise 08 Tweet Comments Backend](../Exercise-08-Tweet-Comments-Backend) Next Exercise: [Exercise 10 Blue Green Deployment of Comments and Ratings](../Exercise-10-Blue-Green-Deployment-of-Comments-and-Ratings)
+++- - - -
+Previous Exercise: [Exercise 08 Tweet Comments Backend](../Exercise-08-Tweet-Comments-Backend) Next Exercise: [Exercise 10-Autoscaling of Comments and Ratings](../Exercise-10-Autoscaling-of-Comments-and-Ratings)
 
 [Back to the Overview](../README.md)
 - - - -
@@ -10,6 +10,6 @@ Previous Exercise: [Exercise 08 Tweet Comments Backend](../Exercise-08-Tweet-Com
 © 2018 SAP SE
 - - - -
 
-Previous Exercise: [Exercise 08 Tweet Comments Backend](../Exercise-08-Tweet-Comments-Backend) Next Exercise: [Exercise 10 Blue Green Deployment of Comments and Ratings](../Exercise-10-Blue-Green-Deployment-of-Comments-and-Ratings)
+Previous Exercise: [Exercise 08 Tweet Comments Backend](../Exercise-08-Tweet-Comments-Backend) Next Exercise: [Exercise 10-Autoscaling of Comments and Ratings](../Exercise-10-Autoscaling-of-Comments-and-Ratings)
 
 [Back to the Overview](../README.md)
