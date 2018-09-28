@@ -40,7 +40,7 @@ We first need to deploy a pre-built Java application which will simulate our bac
 ## 2. Configure the SAP Cloud Connector
 The Cloud Connector is an optional on-premise component that is needed to integrate on-demand applications with customer backend services and is the counterpart of SAP Cloud Platform Connectivity. We will download the Cloud Connector from the SAP development tools site. We will use the portable version of the SAP Cloud Connector as it can be easily installed by simply extracting a compressed archive into an empty directory. It does not require administrator or root privileges for the installation.
 1. Before we install and configure the SAP Cloud Connector, we will need to get our Subaccount ID for use during the configuration of the cloud connector.
-2. Login to your SAP Cloud Platform cockpit [Teched 2018](https://account.hana.ondemand.com/cockpit#/globalaccount/8fd39023-a237-4d71-9b6a-ed9d1719d275/subaccounts)
+2. Login to your SAP Cloud Platform cockpit [TechEd 2018](https://account.hana.ondemand.com/cockpit#/globalaccount/8fd39023-a237-4d71-9b6a-ed9d1719d275/subaccounts)
 3. Click the ![i_link](images/Exercise2_ilink.jpeg) link on the Cloud Foundry subaccount tile (OPP363CF).
 
 ![account id](images/Exercise2_3_CF_account_id.JPG)
@@ -49,7 +49,7 @@ The Cloud Connector is an optional on-premise component that is needed to integr
 
 ![account id](images/Exercise2_4_CF_account_id.JPG)
 
-5. Locate the SAP Cloud Connector folder on the teched Image `(D:\SAP\SCC20)`
+5. Locate the SAP Cloud Connector folder on the TechEd Image `(D:\SAP\SCC20)`
 6. Double-click `go.bat` to start the SAP Cloud Connector.
 7. Launch SAP Cloud Connector URL [https://localhost:8443](https://localhost:8443) and login with the credentials:
    - User: `Administrator`
