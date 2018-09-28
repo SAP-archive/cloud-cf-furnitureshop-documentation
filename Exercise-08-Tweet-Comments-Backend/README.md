@@ -1,5 +1,5 @@
 - - - -
-Previous Exercise: [Exercise 07 - Comments and Ratings Frontend](../Exercise-07-Comments-and-Ratings-Frontend) Next Exercise: [Exercise 09 - Autoscaling of Comments and Ratings](../Exercise-09-Autoscaling-of-Comments-and-Ratings)
+Previous Exercise: [Exercise 07 - Comments and Ratings Frontend](../Exercise-07-Comments-and-Ratings-Frontend) Next Exercise: [Exercise-09 - Test Order New Items with User Input](../Exercise-09-Test-Order-New-Items-with-User-Input)
 
 [Back to the Overview](../README.md)
 - - - -
@@ -145,6 +145,6 @@ In this section we will build and deploy the application that has been built in 
 © 2018 SAP SE
 - - - -
 
-Previous Exercise: [Exercise 07 - Comments and Ratings Frontend](../Exercise-07-Comments-and-Ratings-Frontend) Next Exercise: [Exercise 09 - Autoscaling of Comments and Ratings](../Exercise-09-Autoscaling-of-Comments-and-Ratings)
+Previous Exercise: [Exercise 07 - Comments and Ratings Frontend](../Exercise-07-Comments-and-Ratings-Frontend) Next Exercise: [Exercise-09 - Test Order New Items with User Input](../Exercise-09-Test-Order-New-Items-with-User-Input)
 
 [Back to the Overview](../README.md)
