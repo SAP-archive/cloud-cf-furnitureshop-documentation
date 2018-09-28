@@ -1,4 +1,4 @@
-++- - - -
+- - - -
 Previous Exercise: [Exercise 08 Tweet Comments Backend](../Exercise-08-Tweet-Comments-Backend) Next Exercise: [Exercise 10-Autoscaling of Comments and Ratings](../Exercise-10-Autoscaling-of-Comments-and-Ratings)
 
 [Back to the Overview](../README.md)
