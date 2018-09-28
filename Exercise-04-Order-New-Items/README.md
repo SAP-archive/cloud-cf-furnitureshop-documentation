@@ -450,7 +450,7 @@ Replace the contents of mta.yaml with the file available at -
 
 ![CF Endpoint](images/Exercise2_19_deploy_mtar_cf_endpoint.JPG)
 
-Wait until the deployment is complete and ensure it was successful. meanwhile you can login to the cockpit to view the applications being deployed. Please do not click into applciation until the deployment is complete 
+Wait until the deployment is complete and ensure it was successful, meanwhile you can login to the cockpit to view the applications being deployed. Please do not click into application until the deployment is complete 
 
 
 ## 5. Create Destination configuration on SAP Cloud Platform
@@ -462,7 +462,7 @@ Please make sure the deployment is complete. The next thing we will need to do i
 4. Under Application Routes, copy the url link to the srv application. This will be used in the next steps.
 2. Click on the Service Bindings link on the left menu
 3. Click on the destination service link under the Name Column
-4. Click on Destinations link from the left menu, you will see the existing destination that oyu have created in the previous steps.
+4. Click on Destinations link from the left menu, you will see the existing destination that you have created in the previous steps.
 5. Click on New Destination
 
 Enter the following:
