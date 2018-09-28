@@ -71,8 +71,8 @@ We will configure the scaling manually in the SAP Cloud Platform Cockpit. PLease
 ![screnshot alt text](images/Exercise6_6_myautoscaling.jpg).
 
 9.	Click _Finish_, this will create a autoscaling instance for your applications to use.
-10.	Click on the newly created myautoscaling instance.
-11.	Click _Bind Instance_, we are performing this step to bind our application to this auto scaler instance.
+10.	Click on the newly created `myautoscaling` instance.
+11.	Click _Bind Instance_, we are performing this step to bind our application to this autoscaler instance.
 
 ![screnshot alt text](images/Exercise6_7_bindinstance.jpg).
 
