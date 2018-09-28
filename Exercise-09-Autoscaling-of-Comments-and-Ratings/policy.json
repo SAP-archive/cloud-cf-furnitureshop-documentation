@@ -2,7 +2,7 @@
 	"instance_min_count": 1,
 	"instance_max_count": 2,
 	"schedules": {
-		"timezone": "Etc/GMT-8",
+		"timezone": "America/Los_Angeles",
 		"scaling_rules": [
 			{
 				"metric_type": "memoryused",
@@ -16,8 +16,8 @@
 		],
 		"recurring_schedule": [
 			{
-			  "start_time": "Edit this: <enter a suitable time in 24 hr format, greater than your current time for ex:> 15:10",
-			  "end_time": "Edit this: <enter a suitable time in 24 hr format, greater than your current time for ex:> 15:14",
+			"start_time": "<Edit this:enter a suitable time in 24 hr format, your current time + 4 minutes. for ex:> 15:10",
+			"end_time": "<Edit this:enter a suitable time in 24 hr format, your start time + 4 minutes. for ex:> 15:14",
 				"days_of_week": [
 					1,
 					2,
