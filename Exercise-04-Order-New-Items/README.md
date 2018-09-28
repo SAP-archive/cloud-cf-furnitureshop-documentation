@@ -320,6 +320,95 @@ public class BackendService {
 
 Review the Java code that you created, the `@Query` annotation implements the query operation for the `BackEndProductData` entityset and the `@Read` annotation for reading a single `BackEndProductData` entity. We use SAP Cloud Platform sdk to query the backend via destinations.
 
+7.Under the srv module, navigate to src - main - java - com - company - furnitureshop and right-click and choose Create new Java Class enter the class name as WishlistHandler (do not add .java extension, WebIDE will add it automatically). Replace the file with the code below:
+
+Next we will create a Java Class in our application to handle the Update method to the Wishlist Collection which will be used in the next exercises
+
+
+```java
+package com.company.furnitureshop;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.sap.cloud.sdk.service.prov.api.operations.Update;
+import com.sap.cloud.sdk.service.prov.api.response.UpdateResponse;
+import com.sap.cloud.sdk.service.prov.api.request.UpdateRequest;
+import com.sap.cloud.sdk.service.prov.api.EntityData;
+import com.sap.cloud.sdk.service.prov.api.ExtensionHelper;
+import com.sap.cloud.sdk.service.prov.api.DataSourceHandler;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.List;
+import java.util.ArrayList;
+import com.sap.cloud.sdk.service.prov.api.response.ErrorResponse;
+
+public class WishlistHandler {
+	
+	private static final Logger logger = LoggerFactory.getLogger(WishlistHandler.class.getName());
+	@Update(entity = "Wishlist", serviceName = "CatalogService")
+	public UpdateResponse updateWishlist(UpdateRequest updateRequest, ExtensionHelper extensionHelper) {
+	     
+	        EntityData entityData = updateRequest.getData();
+	        
+	        Map<String, Object> keyMap = new HashMap<String, Object>();
+			keyMap.put("ProductID", entityData.getElementValue("ProductID"));
+	        DataSourceHandler handler = extensionHelper.getHandler();
+	        
+	         try {
+	        EntityData existingWishlistData = handler.executeRead("Wishlist", keyMap,
+					getWishlistPropertyNames());
+	        
+	        
+	       
+	       EntityData updatedWishlistData = EntityData.getBuilder(existingWishlistData).removeElement("productRating").addElement("productRating",entityData.getElementValue("productRating")).buildEntityData("Wishlist");
+	       
+	       
+	       handler.executeUpdate(updatedWishlistData, updateRequest.getKeys(), false);
+	        
+	       
+	        }
+	        catch (Exception e) {
+				
+				ErrorResponse err = ErrorResponse.getBuilder().setMessage("Faild to Update Wishlist. Check log for more details.").setStatusCode(500)
+						.response();
+				return UpdateResponse.setError(err);
+			}
+	        return UpdateResponse.setSuccess().response();
+	         
+	        
+	         
+	}
+	
+	public static List<String> getWishlistPropertyNames(){
+		List<String> propertyNames = new ArrayList<String>();
+		
+		propertyNames.add("ProductID");
+		propertyNames.add("categoryName");
+		propertyNames.add("productName");
+		propertyNames.add("productDesc");
+		propertyNames.add("productColor");
+		propertyNames.add("productWidth");
+		propertyNames.add("productHeight");
+		propertyNames.add("productDepth");
+		propertyNames.add("productWeight");
+		propertyNames.add("productPrice");
+		propertyNames.add("productWarranty");
+		propertyNames.add("materialType");
+		propertyNames.add("supplierID");
+		propertyNames.add("supplierName");
+		propertyNames.add("supplierLocation");
+		propertyNames.add("pictureURL");
+		propertyNames.add("productRating");
+		
+		return propertyNames;
+	}
+
+}
+
+```
+
+8. Save the file
+
 ## 4. Extend the User Interface to Display On-Premise Product Data
 We will next extend the user interface to include capabilities to display the on-premise product data as well as the UI to show the ratings of the products in in the wishlist. The ratings will be captured in the next exercise.
 
@@ -413,72 +502,12 @@ oRatingElement.setValue(parseFloat(oRatingElement.getBindingContext().getPropert
 
 ![mta_img](images/Exercise2_mta_file.jpg)
 
-We need to add `xsuaa`, `connectivity` and `destination service` to `mta.yaml` file for the `srv` application.  In the _Code Editor_ view of your `mta.yaml` locate the `srv` module and insert the following lines in the `requires:` section:
-```
-    - name: uaa_furnitureshop
-    - name: connectivity
-    - name: destination
-```
-Also add the below line of code to set logging level to info which we will use in the next exercise
-
-```
-properties:
-      SET_LOGGING_LEVEL: '{com.company.furnitureshop: INFO}'
-      ALLOW_MOCKED_AUTH_HEADER: true
-
-```
-You can refer to the below image to see where the properties and required have to be added
-
-11. Your srv module should look like this:
-
-![mta srv](images/Exercise2_12_mta_srv1.jpeg)
-
-12. Next, in the `resources` section of your `mta.yaml` add connectivity and destination and make sure you have an entry for uaa_furnitureshop as shown: notice the additional parameter `shared: true` this allows other mta's to share the instance of xsuaa that we have created as past of this application
-
-```
- - name: connectivity
-   type: org.cloudfoundry.existing-service
- - name: destination
-   type: org.cloudfoundry.existing-service
- - name: uaa_furnitureshop
-   parameters:
-      path: ./xs-security.json
-      service-plan: application
-      shared: true
-   type: com.sap.xs.uaa
-```
-
-12. Next, we need to create instance of `connectivity` service in cockpit UI (this could also be done using the Cloud Foundry command line interface (cli). From your SAP Cloud Platform administration cockpit, in your Cloud Foundry subaccount, click _Spaces_ on the left menu.
-
-![spaces](images/Exercise2_13_spaces.JPG)
-
-13. Open your space by clicking on the link in the tile.
-14. From the left menu, go to _Services-Service Marketplace_.
-15. Search for Connectivity.
-
-![service marketplace](images/Exercise2_14_service_marketplace.JPG)
-
-16. Click on _connectivity_ and from the left menu, select _Instances_.
-17. Click _New Instance_.
-
-![connectivity](images/Exercise2_15_connectivity.JPG)
-
-18. In the _Create Instance_ wizard, enter:
-    - Plan: `lite`
-19. For _Specify Parameters_ click _Next_.
-20. For _Assign Application_ click _Next_.
-21. Under the _Confirm_ section, enter:
-    - Instance Name: `connectivity`
-22. Click _Finish_.
-
-23. You can view your _Service Instances_ from the left menu:
-
-![service instances](images/Exercise2_16_service_instances.JPG)
+Replace the contents of mta.yaml with the file available at -  
 
 24. We are now ready to build the project furnitureshop, deploy to Cloud Foundry.
-25. Right-click your project and click _Build CDS_.
+25. Right-click your project and click _Build and choose Build CDS_.
 26. Confirm that the Build CDS has completed successfully.
-27. Right-click your project and click _Build_.
+27. Right-click your project and click _Build and Choose Build_.
 
 
 ![Build Project](images/Exercise2_17_build.JPG)
@@ -496,27 +525,11 @@ You can refer to the below image to see where the properties and required have t
 
 ![CF Endpoint](images/Exercise2_19_deploy_mtar_cf_endpoint.JPG)
 
-32. Let us next test the application
-33. Login to SAP Cloud Platform Cockpit -> Navigate to your Space -> Applications
-34. If you have followed all the steps from the start of Exercise 1, You should see 4 applications
-
- - db: This is the db module that was deployed as part of the mta deployment, it will be stopped by default, do not delete or modify this app.
- - srv: This is the srv module with CDS and Java code that was deployed as part of the mta deployment
- - <SOME_RANDOM_NAME>furnitureshop-srv: This was deployed when you did right click on srv module and Run as Java Application in Exercise 1
- - webide-builder-sapwebide-di-<SOME_RANDOM_NAME>: This is the builder that you installed in Exercise 1
- - wishlist: This is the wishlist html5 application with the UI logic was deployed as part of the mta deployment
+Wait until the deployment is complete and ensure it was successful. meanwhile you can login to the cockpit to view the applications being deployed. Please do not click into applciation until the deployment is complete 
 
 
-35. Click on the srv application and click on the link to under Application Routes to launch the srv application
-
-36. You shoild be able to see the URL to the ODATA service that the srv application has created on clicking the link you should now see a new collection - BackEndProductData
-
-37. Append /BackEndProductData to the url to view the Collection
-
-38. To test the ui application navigate to the wishlist application in the SAP Cloud Platform cockpit and launch the URL, you will see a new tab which shows Backend Product information, you may not see any ratings yet as this will be done in the next exercises
-
-## 5. Create an instance of destination service and a Destination configuration on SAP Cloud Platform
-The next thing we will need to do is create an instance of destination service on SAP Cloud Platform as well as a destination configuration. This will allow us to access the on premise backend system in our applications on SAP Cloud Platform by using the virtual URL we configured in the cloud connector.
+## 5. Create Destination configuration on SAP Cloud Platform
+Please make sure the deployment is complete. The next thing we will need to do is create an instance of destination service on SAP Cloud Platform as well as a destination configuration. This will allow us to access the on premise backend system in our applications on SAP Cloud Platform by using the virtual URL we configured in the cloud connector.
 
 1. In your SAP Cloud Platform admin cockpit, go to your Cloud Foundry Subaccount and navigate to your space.
 2. Expand Services and choose Service Marketplace
@@ -539,7 +552,7 @@ You will see the instance of destination service is created
 11. Click on New Destination
 
 Enter the following:
-   - Name: `ONPREM_BACKEND_XX` (substitute `XX` with your assigned student number)
+   - Name: `ONPREM_BACKEND`
    - Type: `HTTP`
    - Description: `Local Backend`
    - Location ID: `OPP363-XX` (XX being your unique number assigned to you)
@@ -550,7 +563,6 @@ Enter the following:
 
 ![destination](images/Exercise2_0_destination.JPG)
 
-## 6. Create Destination for Wishlist Service and Java Logic to update Ratings which will be required in the next Exercise
 We will create another destination configuration to the Wishlist Odata that is exposed the srv module. This will be required for the next exercises.
 
 
@@ -575,96 +587,32 @@ Enter the following:
 ![destina](images/dest_getwishlist1.jpeg)
 
 
-Next we will create a Java Class in our application to handle the Update method to the Wishlist Collection
 
-7.Under the srv module, navigate to src - main - java - com - company - furnitureshop and right-click and choose Create new Java Class enter the class name as WishlistHandler (do not add .java extension, WebIDE will add it automatically). Replace the file with the code below:
+32. Let us next test the application
+33. Login to SAP Cloud Platform Cockpit -> Navigate to your Space -> Applications
+34. If you have followed all the steps from the start of Exercise 1, You should see 4 applications
+
+ - db: This is the db module that was deployed as part of the mta deployment, it will be stopped by default, do not delete or modify this app.
+ - srv: This is the srv module with CDS and Java code that was deployed as part of the mta deployment
+ - <SOME_RANDOM_NAME>furnitureshop-srv: This was deployed when you did right click on srv module and Run as Java Application in Exercise 1
+ - webide-builder-sapwebide-di-<SOME_RANDOM_NAME>: This is the builder that you installed in Exercise 1
+ - wishlist: This is the wishlist html5 application with the UI logic was deployed as part of the mta deployment
 
 
-```java
-package com.company.furnitureshop;
+35. Click on the srv application and click on the link to under Application Routes to launch the srv application
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import com.sap.cloud.sdk.service.prov.api.operations.Update;
-import com.sap.cloud.sdk.service.prov.api.response.UpdateResponse;
-import com.sap.cloud.sdk.service.prov.api.request.UpdateRequest;
-import com.sap.cloud.sdk.service.prov.api.EntityData;
-import com.sap.cloud.sdk.service.prov.api.ExtensionHelper;
-import com.sap.cloud.sdk.service.prov.api.DataSourceHandler;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.List;
-import java.util.ArrayList;
-import com.sap.cloud.sdk.service.prov.api.response.ErrorResponse;
+36. You shoild be able to see the URL to the ODATA service that the srv application has created on clicking the link you should now see a new collection - BackEndProductData
 
-public class WishlistHandler {
-	
-	private static final Logger logger = LoggerFactory.getLogger(WishlistHandler.class.getName());
-	@Update(entity = "Wishlist", serviceName = "CatalogService")
-	public UpdateResponse updateWishlist(UpdateRequest updateRequest, ExtensionHelper extensionHelper) {
-	     
-	        EntityData entityData = updateRequest.getData();
-	        
-	        Map<String, Object> keyMap = new HashMap<String, Object>();
-			keyMap.put("ProductID", entityData.getElementValue("ProductID"));
-	        DataSourceHandler handler = extensionHelper.getHandler();
-	        
-	         try {
-	        EntityData existingWishlistData = handler.executeRead("Wishlist", keyMap,
-					getWishlistPropertyNames());
-	        
-	        
-	       
-	       EntityData updatedWishlistData = EntityData.getBuilder(existingWishlistData).removeElement("productRating").addElement("productRating",entityData.getElementValue("productRating")).buildEntityData("Wishlist");
-	       
-	       
-	       handler.executeUpdate(updatedWishlistData, updateRequest.getKeys(), false);
-	        
-	       
-	        }
-	        catch (Exception e) {
-				
-				ErrorResponse err = ErrorResponse.getBuilder().setMessage("Faild to Update Wishlist. Check log for more details.").setStatusCode(500)
-						.response();
-				return UpdateResponse.setError(err);
-			}
-	        return UpdateResponse.setSuccess().response();
-	         
-	        
-	         
-	}
-	
-	public static List<String> getWishlistPropertyNames(){
-		List<String> propertyNames = new ArrayList<String>();
-		
-		propertyNames.add("ProductID");
-		propertyNames.add("categoryName");
-		propertyNames.add("productName");
-		propertyNames.add("productDesc");
-		propertyNames.add("productColor");
-		propertyNames.add("productWidth");
-		propertyNames.add("productHeight");
-		propertyNames.add("productDepth");
-		propertyNames.add("productWeight");
-		propertyNames.add("productPrice");
-		propertyNames.add("productWarranty");
-		propertyNames.add("materialType");
-		propertyNames.add("supplierID");
-		propertyNames.add("supplierName");
-		propertyNames.add("supplierLocation");
-		propertyNames.add("pictureURL");
-		propertyNames.add("productRating");
-		
-		return propertyNames;
-	}
+37. Append /BackEndProductData to the url to view the Collection
 
-}
-
-```
+38. To test the ui application navigate to the wishlist application in the SAP Cloud Platform cockpit and launch the URL, you will see a new tab which shows Backend Product information, you may not see any ratings yet as this will be done in the next exercises
 
 
 
-8. Save the file
+## 6. Create Destination for Wishlist Service and Java Logic to update Ratings which will be required in the next Exercise
+
+
+
 
 
 ## 7. Clean-up
