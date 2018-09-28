@@ -17,9 +17,9 @@ Core Data & Services (CDS) was adopted as known from S/4 HANA and ABAP to define
 
 We will create a new business application using Web IDE Full-Stack. We will define a model and CDS to create an OData service which will be consumed by the Wishlist application.
 
-1. Open your cloud platform cockpit and go to _Services-Web IDE Full-Stack_.
-2. Click _Go to Service_.
-3. Log into Web IDE Full-Stack.
+1. Launch WebIDE
+2. You can use the direct link to WebIDE - https://webidecp-aevblwuamw.dispatcher.hana.ondemand.com/
+3. Enter your user ID and Password.
 4. Click _File-New-Project from Template_.
 5. Choose `SAP Cloud Platform Business Application`.
 
@@ -99,9 +99,9 @@ In this step, we define a Service called CatalogService having an Entity called 
 
 16. Open the `mta.yaml` file. Click the Code Editor tab to switch to the code editing view.<br>
 17. Take a look at the mta.yaml file which was automatically generated, you have 2 modules defined, the db module and the srv module
-18. Right-click on your  project and _click Build CDS_.<br>
+18. Right-click on your  project and _click Build and then Build CDS_.<br>
 
-![build cds](images/Exercise1_6_build_cds.jpg)
+![build cds](images/Exercise1_6_build_cds1.jpg)
 
 19. Note that right-clicking at the project, the CDS(s) for every module will be built – to build CDS at an individual module level, you could right click just the module you wish to build and select build.
 20. Make sure the build is successful and no errors. You can see this in the console log by choosing View menu -> Console if the console is not already visible<br>
@@ -135,9 +135,9 @@ Click on Browse and locate the csv.zip file that you downloaded in the previous 
 Notice that the target table created on HANA will be named according to the namespace you have used for your project plus the entity name. For example if the namespace was `com.company.furnitureshop` and the entity name in your data-model.cds was wishlist, the table created on HANA would be 
 `COM_COMPANY_FURNITURESHOP_WISHLIST` (where the period in the namespace are replaced with underscores).
 
-26.	Right-Click on the `db` module and click _Build_.<br>
+26.	Right-Click on the `db` module and click _Build and then choose Build_.<br>
 
-![Project Name](images/Exercise1_11_build_db.jpg)
+![Project Name](images/Exercise1_11_build_db1.jpg)
 
 27. Note this will build just the CDS in the db module.
 28. Right Click on the db module and click on Open HDI Container
@@ -158,7 +158,7 @@ Notice that the target table created on HANA will be named according to the name
 
 34.	Click on Development icon ![dev_icon](images/Exercise1_Dev_icon.jpg) on the left pane to go back to the development view and then Right-click on the srv module and click _Run-Run as-Java Application_.<br>
 
-![run as](images/Exercise1_17_run_as.jpg)
+![run as](images/Exercise1_17_run_as1.jpg)
 
 35. This will deploy the Java application in Cloud Foundry. Once the deploy is complete, you should see a success message and will notice a URL to the application in the `Run` console.<br>
 
