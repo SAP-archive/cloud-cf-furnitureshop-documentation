@@ -323,9 +323,9 @@ Review the Java code that you created, the `@Query` annotation implements the qu
 ## 4. Extend the User Interface to Display On-Premise Product Data
 We will next extend the user interface to include capabilities to display the on-premise product data as well as the UI to show the ratings of the products in in the wishlist. The ratings will be captured in the next exercise.
 
-There are 2 things we need to change in the UI:
-a.	Add a new Tab to show Backend Product Data that we fetch from on-Premise system.
-b.	Update the code to Display Product Ratings.
+There are 2 things we need to change in the UI:<br>
+a.	Add a new Tab to show Backend Product Data that we fetch from on-Premise system.<br>
+b.	Update the code to Display Product Ratings.<br>
 
 1. We will need to add a new tab to show backend product data that we fetch from on-premise system.
 2. Expand _wishlist application - webapp - view_, open `Detail.view.xml`
