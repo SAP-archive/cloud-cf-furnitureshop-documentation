@@ -1,5 +1,5 @@
 - - - -
-Previous Exercise: [Exercise 02 What is Org and Space CF](../Exercise-02-What-is-OrgandSpace-CF) Next Exercise: [Exercise 4 - Order New Items](../Exercise-04-Order-New-Items)
+Previous Exercise: [Exercise 02 Setup](../Exercise-02-Setup) Next Exercise: [Exercise 4 - Order New Items](../Exercise-04-Order-New-Items)
 
 [Back to the Overview](../README.md)
 - - - -
@@ -339,7 +339,7 @@ Have a look at the application, you will see the list of products with an icon, 
 - - - -
 © 2018 SAP SE
 - - - -
-Previous Exercise: [Exercise 02 What is Org and Space CF](../Exercise-02-What-is-OrgandSpace-CF) Next Exercise: [Exercise 4 - Order New Items](../Exercise-04-Order-New-Items)
+Previous Exercise: [Exercise 02 Setup](../Exercise-02-Setup) Next Exercise: [Exercise 4 - Order New Items](../Exercise-04-Order-New-Items)
 
 [Back to the Overview](../README.md)
 
