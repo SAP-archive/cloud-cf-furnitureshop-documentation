@@ -196,7 +196,7 @@ We willl now create an SAPUI5 application using WebIDE by consuming the OData se
 
 2.	Make sure you **Choose SAPUI5 version 1.52** and then Choose `SAP Fiori-Master-Detail Application`.<br>
 
-![fiori md](images/Exercise1_21_fiori_md5.jpg)
+![fiori md](images/Exercise1_21_fiori_md51.jpg)
 
 3.	Click _Next_.
 4.	Enter the following details:
