@@ -4,7 +4,7 @@ Previous Exercise: [Exercise 10 Blue Green Deployment of Comments and Ratings](.
 [Back to the Overview](../README.md)
 - - - -
 
-# Exercise 11 - Test Order New Items with User Input
+# Exercise 09 - Test Order New Items with User Input
 
 - - - -
 © 2018 SAP SE
