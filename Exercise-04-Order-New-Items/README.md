@@ -320,9 +320,9 @@ public class BackendService {
 
 Review the Java code that you created, the `@Query` annotation implements the query operation for the `BackEndProductData` entityset and the `@Read` annotation for reading a single `BackEndProductData` entity. We use SAP Cloud Platform sdk to query the backend via destinations.
 
-7.Under the srv module, navigate to src - main - java - com - company - furnitureshop and right-click and choose Create new Java Class enter the class name as WishlistHandler (do not add .java extension, WebIDE will add it automatically). Replace the file with the code below:
+7. In the same folder create another Java class and name it as WishlistHandler (do not add .java extension, WebIDE will add it automatically). Replace the file with the code below:
 
-Next we will create a Java Class in our application to handle the Update method to the Wishlist Collection which will be used in the next exercises
+This Java Class is to handle the Update method to the Wishlist Collection which will be used in the next exercises
 
 
 ```java
@@ -416,109 +416,34 @@ There are 2 things we need to change in the UI:<br>
 a.	Add a new Tab to show Backend Product Data that we fetch from on-Premise system.<br>
 b.	Update the code to Display Product Ratings.<br>
 
-1. We will need to add a new tab to show backend product data that we fetch from on-premise system.
-2. Expand _wishlist application - webapp - view_, open `Detail.view.xml`
-3. Locate `<IconTabBar>`
-4. Add an event - `select= "onIconTabSelectBK"` we will define this function in the controller to bind the `BackendProductData`
+1. Expand _wishlist application - webapp - view and Open the file `Detail.view.xml` replace the contents of the file with the file available in - 
 
-```
-<IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding" select= "onIconTabSelectBK">
-```
-5. Currently we have 2 tabs in our application `<IconTabFilter>` one which displays product information and the other one which displays an image of the product. Locate this in your code:
+2. Save the file
 
-Notice the id is iconTabBarFilter2, 
+3. Now Expand _wishlist application - webapp - controller_ and open  `Detail.controller.js` replace the contents of the file with the file available in - 
 
-```html
-<IconTabFilter id="iconTabBarFilter2"
-	icon="sap-icon://picture" tooltip="{i18n>detailIconTabBarAttachments}">
-	<Image src="img/{pictureURL}"
-	densityAware="false">
-	<layoutData>
-	<FlexItemData growFactor="1" />
-	</layoutData>
-	</Image>
-</IconTabFilter>
-```
-6. Add this piece of code after the block for iconTabBarFilter2 which you located in the previous step. We are creating a new tab for showing the Backend Product Data:
-```html
-<IconTabFilter id="iconTabBarFilter3" icon="sap-icon://factory" tooltip="{i18n>detailIconTabBarAttachments}" >
-	<l:VerticalLayout
-		class="sapUiContentPadding"
-		width="50%">
-		<l:content>
-			<List id = "backendlist"
-				headerText="On-Premise Data" >
-				<DisplayListItem
-					label="Product ID"
-					value="{ProductID}" />
-				<DisplayListItem
-					label="Stock"
-					value="{STOCK}" />
-				<DisplayListItem
-					label="Discount"
-					value="{DISCOUNT}"/>
-				<DisplayListItem
-					label="Delivery Date"
-					value="{DELIVERYDATE}"/>
-			</List>
-		</l:content>
-	</l:VerticalLayout>
-</IconTabFilter>
-```
-7. We will as well add a `RatingIndicator` to display ratings
-For this, on the `Detail.view.xml`, at the end of `</ObjectHeader>`, add the below code:
-```html
-<!-- Display Average Product Rating -->
-<Bar>
-	<contentRight>
-		<Label text = "Average Product Rating " />
-		<RatingIndicator maxValue="5" id = "prodrating" class="sapUiSmallMarginBottom" editable = "false" value="" />
-		<Label text = " ({productRating})" />
-	</contentRight>
-</Bar>
-```
 
-Save the file
-
-8. Now Expand _wishlist application - webapp - controller_ and open  `Detail.controller.js` Directly before the `onInit` function, define the function `onIconTabSelectBK`
-```javascript
-onIconTabSelectBK: function () {
-var prodid = this.getView().getBindingContext().getProperty("ProductID");
-var oListbackend = this.byId("backendlist");
-oListbackend.bindElement("/BackEndProductData('" + prodid + "')");
-},
-```
-9. In the same `Detail.controller.js`, locate the function `_onBindingChange` add the below lines of code at the end of the function:
-```javascript
-this.onIconTabSelectBK();
-/* convert the rating which is in the form of string to Float */
-var oRatingElement = this.byId("prodrating");
-oRatingElement.setValue(parseFloat(oRatingElement.getBindingContext().getProperty("productRating")));
-```
-
-![function](images/Exercise2_11a_onBindingChange.JPG)
-
-10. Open the mta.yaml file, you will find it in the image below 
+4. Open the mta.yaml file, you will find it in the image below 
 
 ![mta_img](images/Exercise2_mta_file.jpg)
 
 Replace the contents of mta.yaml with the file available at -  
 
-24. We are now ready to build the project furnitureshop, deploy to Cloud Foundry.
-25. Right-click your project and click _Build and choose Build CDS_.
-26. Confirm that the Build CDS has completed successfully.
-27. Right-click your project and click _Build and Choose Build_.
+5. We are now ready to build the project furnitureshop, deploy to Cloud Foundry.
+6. Right-click your project and click _Build and choose Build CDS_.
+7. Confirm that the Build CDS has completed successfully.
+8. Right-click your project and click _Build and Choose Build_.
 
 
 ![Build Project](images/Exercise2_17_build.JPG)
 
-28. Confirm that the build has completed successfully.
-29. The result of the build should be a new folder in your project for the mta archives (`mta_archives`).
-30. Expoand the mar_archives folder and the folder for your project and then right-click the furnitureshop0.0.1.mtar and click _Deploy-Deploy to SAP Cloud Platform_.
+9. Confirm that the build has completed successfully.
+10. The result of the build should be a new folder in your project for the mta archives (`mta_archives`).
+11. Expoand the mar_archives folder and the folder for your project and then right-click the furnitureshop0.0.1.mtar and click _Deploy-Deploy to SAP Cloud Platform_.
 
 ![Deploy mtar](images/Exercise2_18_deploy_mtar.JPG)
 
-31. You may get a popup to enter your credentials, please enter your id/password then In the _Deploy to SAP Cloud Platform_ dialog, enter:
+12. You may get a popup to enter your credentials, please enter your id/password then In the _Deploy to SAP Cloud Platform_ dialog, enter:
     - Cloud Foundry API Endpoint: `https://api.cf.eu10.hana.ondemand.com`
     - Organization: `TechEd2018_OPP363`
     - Space: `<your space>`
