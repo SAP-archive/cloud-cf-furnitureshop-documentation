@@ -113,7 +113,7 @@ Location IDs are defined to identify a location of a cloud connector for a speci
 This completes the configuration of the SAP Cloud Connector.
 
 
-## 4. Enhance the Service for the Wishlist Application
+## 3. Enhance the Service for the Wishlist Application
 We can now open the existing wishlist application in Web IDE and modify the service module to include the backend product data from our on premise system.
 
 1. Open Web IDE Full-Stack and open your existing `furnitureshop` application.
@@ -248,7 +248,7 @@ import com.sap.cloud.sdk.odatav2.connectivity.ODataQueryResult;
 
 
 public class BackendService {
-	private static final String BACKEND_DESTINATION_NAME = "ONPREM_BACKEND_XX";
+	private static final String BACKEND_DESTINATION_NAME = "ONPREM_BACKEND";
 	private static final Logger logger = LoggerFactory.getLogger(BackendService.class);
 
 	@Query(serviceName = "CatalogService", entity = "BackEndProductData")
@@ -317,7 +317,6 @@ public class BackendService {
 }
 
 ```
-On line 20, right after the definition of the Class BackendService, Modify the XX in the value ONPREM_BACKEND_XX with your unique student number
 
 Review the Java code that you created, the `@Query` annotation implements the query operation for the `BackEndProductData` entityset and the `@Read` annotation for reading a single `BackEndProductData` entity. We use SAP Cloud Platform sdk to query the backend via destinations.
 
@@ -516,7 +515,7 @@ You can refer to the below image to see where the properties and required have t
 
 38. To test the ui application navigate to the wishlist application in the SAP Cloud Platform cockpit and launch the URL, you will see a new tab which shows Backend Product information, you may not see any ratings yet as this will be done in the next exercises
 
-## 3. Create an instance of destination service and a Destination configuration on SAP Cloud Platform
+## 5. Create an instance of destination service and a Destination configuration on SAP Cloud Platform
 The next thing we will need to do is create an instance of destination service on SAP Cloud Platform as well as a destination configuration. This will allow us to access the on premise backend system in our applications on SAP Cloud Platform by using the virtual URL we configured in the cloud connector.
 
 1. In your SAP Cloud Platform admin cockpit, go to your Cloud Foundry Subaccount and navigate to your space.
@@ -551,7 +550,7 @@ Enter the following:
 
 ![destination](images/Exercise2_0_destination.JPG)
 
-## 5. Create Destination for Wishlist Service and Java Logic to update Ratings which will be required in the next Exercise
+## 6. Create Destination for Wishlist Service and Java Logic to update Ratings which will be required in the next Exercise
 We will create another destination configuration to the Wishlist Odata that is exposed the srv module. This will be required for the next exercises.
 
 
@@ -668,7 +667,7 @@ public class WishlistHandler {
 8. Save the file
 
 
-## 6. Clean-up
+## 7. Clean-up
 1. login to your SAP Cloud Platform Cockpit, navigate to your space and your applications
 2. Stop the java application, <SOME_RANDOM_NAME>furnitureshop-srv to free up some application runtime space for the next exercises
 
