@@ -1,5 +1,5 @@
 - - - -
-Previous Exercise: [Exercise 09 - Autoscaling of Comments and Ratings](../Exercise-09-Autoscaling-of-Comments-and-Ratings) Next Exercise: [Exercise 11 - Test Order New Items with User Input](../Exercise-11-Test-Order-New-Items-with-User-Input)
+Previous Exercise: [Exercise 10-Autoscaling of Comments and Ratings](../Exercise-10-Autoscaling-of-Comments-and-Ratings) Next Exercise: [Exercise 12-Monitoring](../Exercise-12-Monitoring)
 
 [Back to the Overview](../README.md)
 - - - -
@@ -107,6 +107,6 @@ Note: If there are database changes between versions, you may use [Blue-Green De
 © 2018 SAP SE
 - - - -
 
-Previous Exercise: [Exercise 09 - Autoscaling of Comments and Ratings](../Exercise-09-Autoscaling-of-Comments-and-Ratings) Next Exercise: [Exercise 11 - Test Order New Items with User Input](../Exercise-11-Test-Order-New-Items-with-User-Input)
+Previous Exercise: [Exercise 10-Autoscaling of Comments and Ratings](../Exercise-10-Autoscaling-of-Comments-and-Ratings) Next Exercise: [Exercise 12-Monitoring](../Exercise-12-Monitoring)
 
 [Back to the Overview](../README.md)
