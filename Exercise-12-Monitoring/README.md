@@ -1,5 +1,5 @@
 - - - -
-Previous Exercise: [Exercise 11 - Test Order New Items with User Input](../Exercise-11-Test-Order-New-Items-with-User-Input) Next Exercise: [Exercise 13 - Debugging](../Exercise-13-Debugging)
+Previous Exercise: [Exercise 11-Blue Green Deployment of Comments and Ratings](../Exercise-11-Blue-Green-Deployment-of-Comments-and-Ratings) Next Exercise: [Exercise 13 - Debugging](../Exercise-13-Debugging)
 
 [Back to the Overview](../README.md)
 - - - -
@@ -9,7 +9,6 @@ Previous Exercise: [Exercise 11 - Test Order New Items with User Input](../Exerc
 - - - -
 © 2018 SAP SE
 - - - -
-
-Previous Exercise: [Exercise 11 - Test Order New Items with User Input](../Exercise-11-Test-Order-New-Items-with-User-Input) Next Exercise: [Exercise 13 - Debugging](../Exercise-13-Debugging)
+Previous Exercise: [Exercise 11-Blue Green Deployment of Comments and Ratings](../Exercise-11-Blue-Green-Deployment-of-Comments-and-Ratings) Next Exercise: [Exercise 13 - Debugging](../Exercise-13-Debugging)
 
 [Back to the Overview](../README.md)
