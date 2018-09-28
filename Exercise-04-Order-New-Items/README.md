@@ -49,9 +49,9 @@ The Cloud Connector is an optional on-premise component that is needed to integr
 
 ![account id](images/Exercise2_4_CF_account_id.JPG)
 
-5. Locate the SAP Cloud connector folder on the teched Image `(D:\SAP\SCC20)`
-6. Double-click `go.bat` to start the Cloud Connector.
-7. Launch Cloud Connector URL [https://localhost:8443](https://localhost:8443) and login with the credentials:
+5. Locate the SAP Cloud Connector folder on the teched Image `(D:\SAP\SCC20)`
+6. Double-click `go.bat` to start the SAP Cloud Connector.
+7. Launch SAP Cloud Connector URL [https://localhost:8443](https://localhost:8443) and login with the credentials:
    - User: `Administrator`
    - Password: `welcome`
 8. For _Define Subaccount_ enter the following configuration:
@@ -67,17 +67,17 @@ Ignore the fields under the section HTTPS Proxy on the right side, leave them bl
 
 ![add subaccount](images/Exercise2_5_cc_add_subaccount.JPG)
 
-For the current hands-on, all participants are sharing a single SAP Cloud Platform subaccount. To disambiguate the Cloud Connector, each participants provides a unique Location ID.
+For the current hands-on, all participants are sharing a single SAP Cloud Platform subaccount. To disambiguate the SAP Cloud Connector, each participants provides a unique Location ID.
 
-Location IDs are defined to identify a location of a cloud connector for a specific sub account. You can have multiple cloud connectors configured to work with a single sub account identified by unique Location IDs
+Location IDs are defined to identify a location of a cloud connector for a specific sub account. You can have multiple SAP Cloud Connectors configured to work with a single sub account identified by unique Location IDs
 
 9. Click _Save_.
 10. Ensure that the Status under Tunnel Information is Connected. If you receive an error, recheck your Region, Subaccount and login information.
 
 ![add subaccount](images/Exercise2_6_cc_subaccount_status.JPG)
 
-11. Now that we have configured the cloud connector and connected it from our local laptop to our SAP Cloud Platform account, the next thing we need to do is to configure access to the backend system.
-12. In the Cloud Connector UI, go to `Cloud To On-Premise` from the left-hand menu.
+11. Now that we have configured the SAP Cloud Connector and connected it from our local laptop to our SAP Cloud Platform account, the next thing we need to do is to configure access to the backend system.
+12. In the SAP Cloud Connector UI, go to `Cloud To On-Premise` from the left-hand menu.
 13. Click the `+` icon to add a new mapping virtual to internal system.
 
 ![add mapping](images/Exercise2_7_cloud_to_onprem.JPG)
