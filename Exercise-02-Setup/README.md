@@ -1,9 +1,10 @@
+
 - - - -
-Next Exercise: [Exercise 02 What is Org and Space CF](../Exercise-02-What-is-OrgandSpace-CF)
+Previous Exercise: [Exercise 01 What is Org and Space CF](../Exercise-01-What-is-OrgandSpace-CF) Next Exercise: [Exercise 3 - Publish Wishlist](../Exercise-03-Publish-Wishlist)
 
 [Back to the Overview](../README.md)
 - - - -
-# Exercise 01 - Setup
+# Exercise 02 - Setup
 
 ## 1. SAP Web IDE Full-Stack
 The primary development tool for this hands-on is [SAP Web IDE Full Stack](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/c175c03da2534e4b9b3ea28687f6cb0a.html) - a browser-based IDE to easily develop, test, build, deploy, and extend role-based, consumer-grade apps for business users. For the sake of simplicity, we will refer to the 'SAP Web IDE Full-Stack' as 'Web IDE Full-stack' or simply 'Web IDE' in the current documentation.
@@ -86,7 +87,7 @@ This completes the system setup for your exercises.
 - - - -
 © 2018 SAP SE
 - - - -
-Next Exercise: [Exercise 02 What is Org and Space CF](../Exercise-02-What-is-OrgandSpace-CF)
+Previous Exercise: [Exercise 01 What is Org and Space CF](../Exercise-01-What-is-OrgandSpace-CF) Next Exercise: [Exercise 3 - Publish Wishlist](../Exercise-03-Publish-Wishlist)
 
 [Back to the Overview](../README.md)
 - - - -
