@@ -4,7 +4,7 @@ Previous Exercise: [Exercise 08 -  Tweet Comments Backend](../Exercise-08-Tweet-
 [Back to the Overview](../README.md)
 - - - -
 
-# Exercise 09 - Autoscaling of ratings backend app
+# Exercise 10 - Autoscaling of ratings backend app
 
 Scaling of an application is adding more resources (Memory, CPU, Disk) to it and distributing the load between multiple servers. Two types of scaling that are available are:
 - Scaling Up/Vertical Scaling: change the disk and memory quota.
