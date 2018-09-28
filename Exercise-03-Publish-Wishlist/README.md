@@ -28,7 +28,7 @@ We will create a new business application using Web IDE Full-Stack. We will defi
 6. Click _Next_.
 7. Enter Project Name `furnitureshop`.<br>
 
-![Project Name](images/Exercise1_2_project_name.jpg)
+![Project Name](images/cap_template_new.jpg)
 
 8.	Click _Next_.
 9.	Choose 
@@ -38,7 +38,10 @@ Java Package: com.company.furnitureshop
 Database (db): SAP HANA Database
 ```
 
-![Project Template](images/Business_Application_Template1.jpg)
+**Please do not select the option Enable User authentication(UAA), we will enable this in the next exercise**
+
+
+![Project Temp](images/Business_Application_Template1.jpg)
 
 10.	Note the value for Service, Java Package and Database.
 11.	Click _Finish_.<br>
