@@ -112,40 +112,6 @@ Location IDs are defined to identify a location of a cloud connector for a speci
 
 This completes the configuration of the SAP Cloud Connector.
 
-## 3. Create an instance of destination service and a Destination configuration on SAP Cloud Platform
-The next thing we will need to do is create an instance of destination service on SAP Cloud Platform as well as a destination configuration. This will allow us to access the on premise backend system in our applications on SAP Cloud Platform by using the virtual URL we configured in the cloud connector.
-
-1. In your SAP Cloud Platform admin cockpit, go to your Cloud Foundry Subaccount and navigate to your space.
-2. Expand Services and choose Service Marketplace
-2. Click on the tile _destination_
-3. Click on Instance from the left menu and click on _New Instance_.
-4. In the _Create Instance_ wizard, enter:
-    - Plan: `lite`
-5. For _Specify Parameters_ click _Next_.
-6. For _Assign Application_ click _Next_.
-7. Under the _Confirm_ section, enter:
-    - Instance Name: `destination`
-8. Click _Finish_.
-
-You will see the instance of destination service is created
-
-![destination](images/Exercise2_dest.jpeg)
-
-9. Click on the destination link
-10. Click on Destinations link from the left menu
-11. Click on New Destination
-
-Enter the following:
-   - Name: `ONPREM_BACKEND_XX` (substitute `XX` with your assigned student number)
-   - Type: `HTTP`
-   - Description: `Local Backend`
-   - Location ID: `OPP363-XX` (XX being your unique number assigned to you)
-   - URL: `http://productbackend.com:8080`
-   - Proxy Type: `OnPremise`
-   - Authentication: `NoAuthentication`
-12. Your destination should look like this:
-
-![destination](images/Exercise2_0_destination.JPG)
 
 ## 4. Enhance the Service for the Wishlist Application
 We can now open the existing wishlist application in Web IDE and modify the service module to include the backend product data from our on premise system.
@@ -549,6 +515,41 @@ You can refer to the below image to see where the properties and required have t
 37. Append /BackEndProductData to the url to view the Collection
 
 38. To test the ui application navigate to the wishlist application in the SAP Cloud Platform cockpit and launch the URL, you will see a new tab which shows Backend Product information, you may not see any ratings yet as this will be done in the next exercises
+
+## 3. Create an instance of destination service and a Destination configuration on SAP Cloud Platform
+The next thing we will need to do is create an instance of destination service on SAP Cloud Platform as well as a destination configuration. This will allow us to access the on premise backend system in our applications on SAP Cloud Platform by using the virtual URL we configured in the cloud connector.
+
+1. In your SAP Cloud Platform admin cockpit, go to your Cloud Foundry Subaccount and navigate to your space.
+2. Expand Services and choose Service Marketplace
+2. Click on the tile _destination_
+3. Click on Instance from the left menu and click on _New Instance_.
+4. In the _Create Instance_ wizard, enter:
+    - Plan: `lite`
+5. For _Specify Parameters_ click _Next_.
+6. For _Assign Application_ click _Next_.
+7. Under the _Confirm_ section, enter:
+    - Instance Name: `destination`
+8. Click _Finish_.
+
+You will see the instance of destination service is created
+
+![destination](images/Exercise2_dest.jpeg)
+
+9. Click on the destination link
+10. Click on Destinations link from the left menu
+11. Click on New Destination
+
+Enter the following:
+   - Name: `ONPREM_BACKEND_XX` (substitute `XX` with your assigned student number)
+   - Type: `HTTP`
+   - Description: `Local Backend`
+   - Location ID: `OPP363-XX` (XX being your unique number assigned to you)
+   - URL: `http://productbackend.com:8080`
+   - Proxy Type: `OnPremise`
+   - Authentication: `NoAuthentication`
+12. Your destination should look like this:
+
+![destination](images/Exercise2_0_destination.JPG)
 
 ## 5. Create Destination for Wishlist Service and Java Logic to update Ratings which will be required in the next Exercise
 We will create another destination configuration to the Wishlist Odata that is exposed the srv module. This will be required for the next exercises.
