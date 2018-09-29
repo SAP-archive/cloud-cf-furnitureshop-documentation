@@ -67,7 +67,18 @@ Note that the file contains dependencies on the following node/npm modules:
 
    ![Step Image](images/Exercise8_2-1_route_js.png)
 
-2. Uncomment the `addToRabbitMQ' method - the producer which creates a channel and sends the review data from the ratings service to the RabbitMQ queue.
+2. Uncomment the rabbitmq libraries used in `app.js`.
+
+   Note: To uncomment, follow these steps:
+
+     1. Select the commented code
+     2. Right click mouse on the editor
+     3. Select the 'Toggle Line Comment' option
+
+   ![Step Image](images/Exercise8_2-3_rmq_libs.png)
+
+
+3. Uncomment the `addToRabbitMQ` method - the producer which creates a channel and sends the review data from the ratings service to the RabbitMQ queue.
 
    Note: To uncomment, follow these steps:
 
@@ -75,8 +86,17 @@ Note that the file contains dependencies on the following node/npm modules:
    2. Right click mouse on the editor
    3. Select the 'Toggle Line Comment' option
 
-   ![Step Image](images/Exercise8_2-2_rmq_producer.png)
+   ![Step Image](images/Exercise8_2-3_rmq_producer.png)
 
+4. Uncomment the `addToRabbitMQ` method call.
+
+   Note: To uncomment, follow these steps:
+
+     1. Select the commented code
+     2. Right click mouse on the editor
+     3. Select the 'Toggle Line Comment' option
+
+   ![Step Image](images/Exercise8_2-4_rmq_method_call.png)
 
 ### 3. Setup RabbitMQ consumer in 'tweet_comments' module
 
@@ -84,7 +104,7 @@ Note that the file contains dependencies on the following node/npm modules:
 
    ![Step Image](images/Exercise8_3-1_tweets_comments.png)
 
-   Uncomment the consumer code in `app.js`. This piece creates a channel and reads message from the RabbitMQ queue. We then push this message i.e. in our case 'Reviews' to Twitter.
+2. Uncomment the consumer code in `app.js`. This piece creates a channel and reads message from the RabbitMQ queue. We then push this message i.e. in our case 'Reviews' to Twitter.
 
    Note: To uncomment, follow these steps:
 
@@ -94,10 +114,22 @@ Note that the file contains dependencies on the following node/npm modules:
 
    ![Step Image](images/Exercise8_3-2_rmq_consumer.png)
 
+3. Export (download) the `twitterkey.zip` file as shown in the picture below.
+   ![Step Image](images/Exercise8_3-3_twitter_zip.png)
 
-2. The keys to configure Twitter account are saved in `config.js` file under the `config` folder.
+4. Ask the presenters for the archive's password and extract `twitterkey.zip`
 
-   ![Step Image](images/Exercise8_3-3_twitter_config.png)
+   ![Step Image](images/Exercise8_3-4_twitter_zip_pass.png)
+
+    Once you've successfully extracted the archive, you should see `config.json` file.
+
+5. Open the `config.json` file extracted in the previous step and copy the entire content of the file.
+
+6. In you Web IDE, *open tweet_comments &rarr; config &rarr;* `config.js` and paste the content copied in the previous step.
+
+    The keys to configure Twitter account are saved in `config.js` file under the `config` folder.
+
+   ![Step Image](images/Exercise8_3-6_twitter_config.png)
 
 
 ### 4. Deploying the application and Test
