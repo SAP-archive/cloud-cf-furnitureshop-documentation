@@ -52,7 +52,7 @@ Notice that  the project gets created with two modules by default, a database mo
 
 `srv/src/main/` is the location for your java code.
 
-`Package.json` is used to configure CDS (for example adding reuse models).
+`package.json` is used to configure CDS (for example adding reuse models).
 
 `mta.yaml` configures your overall application.
 
