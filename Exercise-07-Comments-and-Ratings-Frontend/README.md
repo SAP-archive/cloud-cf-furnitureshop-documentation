@@ -159,11 +159,13 @@ In this section, we will build and deploy the application that has been built ab
     Organization: TechEd2018_OPP363
     Space: <select your space from the drop down list>
     ```
-4. Once your application is deployed launch the url for `ratings_frontend` app. Your app should look like shown in the [overview section](#overview).
+4. Please use this deployment time to login to the Cloud cockpit and check the creation of backing service instances, service bindings and applications. The order mentioned in your `mta.yaml` file will be followed during the deployment. You can also keep an eye on the flow of the deployment by watching the console logs from Web IDE or using the CF CLI command - **`cf logs <app name> --recent`**.
 
-5. Select a product and go to the `Rate Item` tab in the Product Details view.
+5. Once your application is deployed launch the url for `ratings_frontend` app. Your app should look like shown in the [overview section](#overview).
 
-6. Give the product a rating and comment and click on submit, as shown in the picture below.
+6. Select a product and go to the `Rate Item` tab in the Product Details view.
+
+7. Give the product a rating and comment and click on submit, as shown in the picture below.
 
     ![Step Image](images/Exercise7_4-6_rating_view.png)
 
