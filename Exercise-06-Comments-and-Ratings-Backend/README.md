@@ -37,7 +37,7 @@ In this section, we will clone the exercise content from Git to SAP Web IDE Full
 
 3. Enter the git repository URL to clone from and click on 'Clone'.
 
-        Git URL: https://github.com/SAP/cloud-cf-furnitureshop-product-ratings.git
+        https://github.com/SAP/cloud-cf-furnitureshop-product-ratings.git
 
 	![Step Image](images/Exercise6_1-3_clone_git_popup.png)
 
