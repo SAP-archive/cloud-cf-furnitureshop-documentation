@@ -151,11 +151,13 @@ We will now build and deploy the application that has been built above.
    Space: <select your space from the drop down list>
    ```
 
-4. We have created the destination `getWishList` in Exercise 4.
+4. The `odata.js` file under the `odata` folder in our deployment will expect a destination by name `getWishList`. Note that we have already created this destination in Exercise 4.
 
    ![Step Image](images/Exercise6_3-4_odata_destination.png)
+   
+5. As the deployment of a Node.js application involves uploading and packaging a number of files and modules, the deployment via Web IDE might take some time. Please use this opportunity to login to the Cloud cockpit and check the creation of backing service instances, service bindings and applications. The order mentioned in your `mta.yaml` file will be followed during the deployment. You can also keep an eye on the flow of the deployment by watching the console logs from Web IDE or using the CF CLI command - **`cf logs <app name> --recent`**.
 
-5. Once the deployment is successful, click on the url below _Application Routes_. The application opens in a new tab. Append “/products” to the URL and check that the Wishlist product data is shown.
+6. Once the deployment is successful, click on the url below _Application Routes_. The application opens in a new tab. Append “/products” to the URL and check that the Wishlist product data is shown.
 
    ![Step Image](images/Exercise6_3-5_check_data.png)
 
