@@ -120,6 +120,7 @@ Click on Browse and locate the csv.zip file that you downloaded in the previous 
 23. Click _OK_.
 
 In case you see a pop-up message that the import will overrwrite an existing filder, please ignore this message and proceed further by clicking 'Import'.
+
 24. Expand the `db` module for your project in the workspace explorer and confirm that the csv folder has been created and that the two files `Data.hdbtabledata` and `Wishlist.csv` have been imported.<br>
 
 ![imported](images/Exercise1_10_imported_files.jpg)
