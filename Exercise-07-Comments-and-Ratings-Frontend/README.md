@@ -33,7 +33,7 @@ The customer portal will have two views.
 
 ## Important - before we begin
 
-In the upcoming sections, you will be required to clone the exercise content from a given git repository. In general, Javascript modules need to be built based on the requirement and cannot be easily templated. To explain relevant sections of the code, you will notice that certain parts/modules are commented. The exercises will guide you to uncomment individual pieces of code, while explaining the relevance of each piece and what it tries to achieve. Please take note that commenting/uncommenting will differ based on the type of file you are working with. Javascript files will consist of line comments "//" where as UI5/xml files might use block comments with "/*.. */" format. Please follow the instructions closely to have a smooth exercise experience.
+In the upcoming sections, you will be required to clone the exercise content from a given git repository. In general, Javascript modules need to be built based on the requirement and cannot be easily templated. To explain relevant sections of the code, you will notice that certain parts/modules are commented. The exercises will guide you to uncomment individual pieces of code, while explaining the relevance of each piece and what it tries to achieve. Please take note that commenting/uncommenting will differ based on the type of file you are working with. Javascript files will consist of line comments "//". Please follow the instructions closely to have a smooth exercise experience.
 
 ### 1. Clone exercise content
 
@@ -138,40 +138,41 @@ In this section, we will setup the view and controller for product details view 
 
 ### 4. Deploying the application
 
-In this section, we will build and deploy the application that has been built above.
+We will now build and deploy the application that has been built above. Please note that the build and deploy may take few minutes. Please use this deployment time to login to the Cloud cockpit and check the creation of backing service instances, service bindings and applications. The order mentioned in your `mta.yaml` file will be followed during the deployment. You can also keep an eye on the flow of the deployment by watching the console logs from Web IDE or using the CF CLI command - **`cf logs <app name> --recent`**.
 
-1. Using your Files explorer in Web IDE, right click on the **`product_ratings`** folder, go to Build &rarr; and click on **Build** as shown in the picture below.
+1. To ensure that you do not deploy an incorrect MTAR it is advisable to delete the `mta_archives` folder as shown in the picture below.
+   ![Step Image](images/Exercise7_4-1_mta_folder_delete.png)
 
-   ![Step Image](images/Exercise7_4-1_app_build.png)
+2. Using your Files explorer in Web IDE, right click on the **`product_ratings`** folder, go to Build &rarr; and click on **Build** as shown in the picture below.
+
+   ![Step Image](images/Exercise7_4-2_app_build.png)
 
    Once the build is completed, you will see a new folder created in Files explorer with the name **`mta_archives`**.
 
-2. Right click on the generated .mtar file **`product_ratings`**, and go to Deploy &rarr; and click on **Deploy to SAP Cloud Platform** as shown in the picture below.
+3. Right click on the generated .mtar file **`product_ratings`**, and go to Deploy &rarr; and click on **Deploy to SAP Cloud Platform** as shown in the picture below.
 
-   ![Step Image](images/Exercise7_4-2_app_deploy.png)
+   ![Step Image](images/Exercise7_4-3_app_deploy.png)
 
-3. In the popup that appears, enter the following details and click on Deploy
+4. In the popup that appears, enter the following details and click on Deploy
 
-   ![Step Image](images/Exercise7_4-3_app_endpoint.png)
+   ![Step Image](images/Exercise7_4-4_app_endpoint.png)
 
     ```
     Cloud Foundry API Endpoint: https://api.cf.eu10.hana.ondemand.com
     Organization: TechEd2018_OPP363
     Space: <select your space from the drop down list>
     ```
-4. Please use this deployment time to login to the Cloud cockpit and check the creation of backing service instances, service bindings and applications. The order mentioned in your `mta.yaml` file will be followed during the deployment. You can also keep an eye on the flow of the deployment by watching the console logs from Web IDE or using the CF CLI command - **`cf logs <app name> --recent`**.
+5. Once your application is deployed launch the url for `ratings_frontend` app. Your app should look like shown in the [overview section](#overview).
 
-Once your application is deployed launch the url for `ratings_frontend` app. Your app should look like shown in the [overview section](#overview).
+6. Select a product and go to the `Rate Item` tab in the Product Details view.
 
-5. Select a product and go to the `Rate Item` tab in the Product Details view.
+7. Give the product a rating and comment and click on submit, as shown in the picture below.
 
-6. Give the product a rating and comment and click on submit, as shown in the picture below.
-
-    ![Step Image](images/Exercise7_4-6_rating_view.png)
+    ![Step Image](images/Exercise7_4-7-1_rating_view.png)
 
     This will add a review to the product as show below.
 
-    ![Step Image](images/Exercise7_4-7_comments_feed_view.png)
+    ![Step Image](images/Exercise7_4-7-2_comments_feed_view.png)
 
 
 ### Appendix - Understanding the HTML5 application code

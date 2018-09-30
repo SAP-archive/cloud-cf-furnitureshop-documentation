@@ -23,7 +23,7 @@ In Exercise 8, we will see that Mary’s comments on the furniture products can 
 
 ## Important - before we begin
 
-In the upcoming sections, you will be required to clone the exercise content from a given git repository. In general, Node.js modules need to be built based on the requirement and cannot be easily templated. To explain relevant sections of the code, you will notice that certain parts/modules are commented. The exercises will guide you to uncomment individual pieces of code, while explaining the relevance of each piece and what it tries to achieve. Please take note that commenting/uncommenting will differ based on the type of file you are working with. Javascript files will consist of line comments "//" where as UI5/xml files might use block comments with "/*.. */" format. Please follow the instructions closely to have a smooth exercise experience.
+In the upcoming sections, you will be required to clone the exercise content from a given git repository. In general, Node.js modules need to be built based on the requirement and cannot be easily templated. To explain relevant sections of the code, you will notice that certain parts/modules are commented. The exercises will guide you to uncomment individual pieces of code, while explaining the relevance of each piece and what it tries to achieve. Please take note that commenting/uncommenting will differ based on the type of file you are working with. Javascript files will consist of line comments "//". Please follow the instructions closely to have a smooth exercise experience.
 
 ## 1. Clone exercise content and code walkthrough
 
@@ -43,7 +43,9 @@ In this section, we will clone the exercise content from Git to SAP Web IDE Full
 
 4. Click the development icon ![Dev icon](images/Exercise6_1-4_dev_icon.png) on the navigation view, the cloned application is displayed; expand the application.
 
-	![Step Image](images/Exercise6_1-5_project_structure.png)
+   ![Step Image](images/Exercise6_1-5_project_structure.png)
+
+   As the version on the SAP Web IDE as recently updated, you can ignore the ES-Lint issues.
 
 5. The application consists of 3 modules - `ratings_backend`, `ratings_frontend` and `tweets_comments`. In this exercise, we will focus on the `ratings_backend` module.
 
@@ -129,21 +131,24 @@ Sharing of data between microservices is always a difficult architectural decisi
 
 ## 3. Deploy the application
 
-We will now build and deploy the application that has been built above.
+We will now build and deploy the application that has been built above. Please note that the build and deploy may take few minutes. Please use this deployment time to login to the Cloud cockpit and check the creation of backing service instances, service bindings and applications. The order mentioned in your `mta.yaml` file will be followed during the deployment. You can also keep an eye on the flow of the deployment by watching the console logs from Web IDE or using the CF CLI command - **`cf logs <app name> --recent`**.
 
-1. Using your Files explorer in Web IDE, right click on the **`product_ratings`** folder, go to Build &rarr; and click on **Build** as shown in the picture below.
+1. To ensure that you do not deploy an incorrect MTAR it is advisable to delete the `mta_archives` folder as shown in the picture below.
+   ![Step Image](images/Exercise6_3-1_mta_folder_delete.png)
 
-   ![Step Image](images/Exercise6_3-1_project_build.png)
+2. Using your Files explorer in Web IDE, right click on the **`product_ratings`** folder, go to Build &rarr; and click on **Build** as shown in the picture below.
+
+   ![Step Image](images/Exercise6_3-2_project_build.png)
 
    Once the build is completed successfully, you will see a new folder created in your project with the name **`mta_archives`**.
 
-2. Right click on the generated .mtar file **`product_ratings`**, and go to Deploy &rarr; and click on **Deploy to SAP Cloud Platform** as shown in the picture below.
+3. Right click on the generated .mtar file **`product_ratings`**, and go to Deploy &rarr; and click on **Deploy to SAP Cloud Platform** as shown in the picture below.
 
-   ![Step Image](images/Exercise6_3-2_project_deploy.png)
+   ![Step Image](images/Exercise6_3-3_project_deploy.png)
 
-3. In the popup that appears, please enter the following details and click on Deploy
+4. In the popup that appears, please enter the following details and click on Deploy
 
-   ![Step Image](images/Exercise6_3-3_deploy_mtar_cf_endpoint.png)
+   ![Step Image](images/Exercise6_3-4_deploy_mtar_cf_endpoint.png)
 
    ```
    Cloud Foundry API Endpoint: https://api.cf.eu10.hana.ondemand.com
@@ -153,13 +158,13 @@ We will now build and deploy the application that has been built above.
 
 4. The `odata.js` file under the `odata` folder in our deployment will expect a destination by name `getWishList`. Note that we have already created this destination in Exercise 4.
 
-   ![Step Image](images/Exercise6_3-4_odata_destination.png)
-   
+   ![Step Image](images/Exercise6_3-5_odata_destination.png)
+
 5. As the deployment of a Node.js application involves uploading and packaging a number of files and modules, the deployment via Web IDE might take some time. Please use this opportunity to login to the Cloud cockpit and check the creation of backing service instances, service bindings and applications. The order mentioned in your `mta.yaml` file will be followed during the deployment. You can also keep an eye on the flow of the deployment by watching the console logs from Web IDE or using the CF CLI command - **`cf logs <app name> --recent`**.
 
-6. Once the deployment is successful, click on the url below _Application Routes_. The application opens in a new tab. Append “/products” to the URL and check that the Wishlist product data is shown.
+6. Once the deployment is successful, click on the url below _Application Routes_. The application opens in a new tab.
 
-   ![Step Image](images/Exercise6_3-5_check_data.png)
+   ![Step Image](images/Exercise6_3-6_check_data.png)
 
 - - - -
 © 2018 SAP SE

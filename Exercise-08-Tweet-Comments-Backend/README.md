@@ -14,7 +14,7 @@ As the communication between our application and Twitter needs to be aysnchronou
 
 ## Important - before we begin
 
-In the upcoming sections, you will be required to clone the exercise content from a given git repository. In general, Node.js modules need to be built based on the requirement and cannot be easily templated. To explain relevant sections of the code, you will notice that certain parts/modules are commented. The exercises will guide you to uncomment individual pieces of code, while explaining the relevance of each piece and what it tries to achieve. Please take note that commenting/uncommenting will differ based on the type of file you are working with. Javascript files will consist of line comments "//" where as UI5/xml files might use block comments with "/*.. */" format. Please follow the instructions closely to have a smooth exercise experience.
+In the upcoming sections, you will be required to clone the exercise content from a given git repository. In general, Node.js modules need to be built based on the requirement and cannot be easily templated. To explain relevant sections of the code, you will notice that certain parts/modules are commented. The exercises will guide you to uncomment individual pieces of code, while explaining the relevance of each piece and what it tries to achieve. Please take note that commenting/uncommenting will differ based on the type of file you are working with. Javascript files will consist of line comments "//". Please follow the instructions closely to have a smooth exercise experience.
 
 ### 1. Clone exercise content and code walkthrough
 
@@ -114,41 +114,49 @@ Note that the file contains dependencies on the following node/npm modules:
 
    ![Step Image](images/Exercise8_3-2_rmq_consumer.png)
 
-3. Export (download) the `twitterkey.zip` file as shown in the picture below.
-   ![Step Image](images/Exercise8_3-3_twitter_zip.png)
+### 4. Setup the API Key for posting comments on Twitter
+In this section we will go over the configuration steps required to post the review comments on twitter. A Twitter account activated for development provides a set of access keys that can be used by an application to securely connect to twitter. As a part of this exercise, we will be using the API Keys to this [twitter handle](https://twitter.com/sapfurnishop). Since these keys are sensitive, we must gain access to them in a secure manner.
 
-4. Ask the presenters for the archive's password and extract `twitterkey.zip`
+1. Export (download) the `twitterkey.zip` file as shown in the picture below.
+   ![Step Image](images/Exercise8_4-1_twitter_zip.png)
 
-   ![Step Image](images/Exercise8_3-4_twitter_zip_pass.png)
+2. Extract the archive as shown in the picture below.
+   ![Step Image](images/Exercise8_4-2_twitter_zip_extract.png)
+
+3. While extracting, you will be prompted to enter a password. Please ask the presenters for the archive's password and continue extracting `twitterkey.zip`
+
+   ![Step Image](images/Exercise8_4-3_twitter_zip_pass.png)
 
     Once you've successfully extracted the archive, you should see `config.json` file.
 
-5. Open the `config.json` file extracted in the previous step and copy the entire content of the file.
+4. Right click on the extracted file - `config.json`, click on the *Edit* option and copy the entire content of the file.
+   ![Step Image](images/Exercise8_4-4_twitter_config.png)
 
-6. In you Web IDE, *open tweet_comments &rarr; config &rarr;* `config.js` and paste the content copied in the previous step.
+5. In you Web IDE, *open tweet_comments &rarr; config &rarr;* `config.js` and paste the content copied in the previous step.
 
-    The keys to configure Twitter account are saved in `config.js` file under the `config` folder.
-
-   ![Step Image](images/Exercise8_3-6_twitter_config.png)
+   ![Step Image](images/Exercise8_4-5_twitter_config.png)
 
 
-### 4. Deploying the application and Test
+### 5. Deploying the application and Test
 
-In this section we will build and deploy the application that has been built in the above steps.
+We will now build and deploy the application that has been built above. Please note that the build and deploy may take few minutes. Please use this deployment time to login to the Cloud cockpit and check the creation of backing service instances, service bindings and applications. The order mentioned in your `mta.yaml` file will be followed during the deployment. You can also keep an eye on the flow of the deployment by watching the console logs from Web IDE or using the CF CLI command - **`cf logs <app name> --recent`**.
 
-1. Right click on the **`product_ratings`** folder, go to `Build` and click **Build** as shown in the picture below.
+1. To ensure that you do not deploy an incorrect MTAR it is advisable to delete the `mta_archives` folder as shown in the picture below.
+   ![Step Image](images/Exercise8_5-1_mta_folder_delete.png)
 
-   ![Step Image](images/Exercise8_4-1_app_build.png)
+2. Right click on the **`product_ratings`** folder, go to `Build` and click **Build** as shown in the picture below.
+
+   ![Step Image](images/Exercise8_5-2_app_build.png)
 
    Once the build is completed successfully, you will see a new folder created in your Web IDE's File Explorer with the name **`mta_archives`**.
 
-2. Right-click on the generated .mtar file **`product_ratings`**, and go to Deploy &rarr; and click on **Deploy to SAP Cloud Platform** as shown in the picture below.
+3. Right-click on the generated .mtar file **`product_ratings`**, and go to Deploy &rarr; and click on **Deploy to SAP Cloud Platform** as shown in the picture below.
 
-   ![Step Image](images/Exercise8_4-2_app_deploy.png)
+   ![Step Image](images/Exercise8_5-3_app_deploy.png)
 
-3. In the popup that appears, please enter the following details and click _Deploy_.
+4. In the popup that appears, please enter the following details and click _Deploy_.
 
-   ![Step Image](images/Exercise8_4-3_cf_endpoints.png)
+   ![Step Image](images/Exercise8_5-4_cf_endpoints.png)
 
     ```
       Cloud Foundry API Endpoint: https://api.cf.eu10.hana.ondemand.com
@@ -156,21 +164,19 @@ In this section we will build and deploy the application that has been built in 
       Space: <select your space from the drop down list>
     ```
 
-4. As the deployment of a Node.js application involves uploading and packaging a number of files and modules, the deployment via Web IDE might take some time. Please use this opportunity to login to the Cloud cockpit and check the creation of backing service instances, service bindings and applications. The order mentioned in your `mta.yaml` file will be followed during the deployment. You can also keep an eye on the flow of the deployment by watching the console logs from Web IDE or using the CF CLI command - **`cf logs <app name> --recent`**.
+5. Once your application is deployed launch the url for ratings_frontend app. As `tweet_comments` is a headless service and is consumed by the `ratings` service.
 
-Once your application is deployed launch the url for ratings_frontend app. As `tweet_comments` is a headless service and is consumed by the `ratings` service.
+6. Select a product from the list and navigate to the `Rate Item` tab. Give the product a rating and a comment and click on submit.
 
-5. Select a product from the list and navigate to the `Rate Item` tab. Give the product a rating and a comment and click on submit.
-
-   ![Step Image](images/Exercise8_4-5_provide_rating.png)
+   ![Step Image](images/Exercise8_5-6_provide_rating.png)
 
    You can also check the review feeds for a particular product.
 
-   ![Step Image](images/Exercise8_4-5_check_comments.png)
+   ![Step Image](images/Exercise8_5-6_check_comments.png)
 
-6. In your browser, go to this [twitter handle](https://twitter.com/sapfurnishop) to see your comment posted as a tweet.
+7. In your browser, go to this [twitter handle](https://twitter.com/sapfurnishop) to see your comment posted as a tweet.
 
-   ![Step Image](images/Exercise8_4-6_review_tweet.png)
+   ![Step Image](images/Exercise8_5-7_review_tweet.png)
 
 
     Twitter handle URL: https://twitter.com/sapfurnishop
