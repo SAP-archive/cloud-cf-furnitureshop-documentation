@@ -74,7 +74,7 @@ We will need to create and bind an instance of the application logging service t
 15. From the _Overview_ for your application restart your application.
 
 ## 3. Generate, and View Logs in Kibana
-In this step, we will explore how easy it is to view and analyze your logs using the Kibana Dashboard. An alternative would be to view the application logs using the Cloud Foundry command line tools, ie `cf logs application name --recent`. This, however is difficult to work with.
+In this step, we will explore how easy it is to view and analyze your logs using the Kibana Dashboard. An alternative would be to view the application logs in the cockpit or using the Cloud Foundry command line tools, ie `cf logs application name --recent`. 
 
 1. Open the wishlist application in your browser and view a few products and their backend product details.
 2. Return to the SAP Cloud Platform Cockpit.
