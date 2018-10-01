@@ -339,6 +339,12 @@ Unlike the Java application, the ui applciation runs in the WebIDE design time a
 Have a look at the application, you will see the list of products with an icon, product name and price on the left, and on click of any product, you will notice the details of the products in the detail screen with two tab, product details and image
 
 
+## 3. Clean-up
+1. login to your SAP Cloud Platform Cockpit, navigate to your space and your applications
+2. Stop the java application, <SOME_RANDOM_NAME>furnitureshop-srv to free up some application runtime space for the next exercises
+3. Go to Service Instances and delete the furnitureshop-hdidb<RANDOM_NAME> instance
+
+
 - - - -
 © 2018 SAP SE
 - - - -
