@@ -513,9 +513,15 @@ Click on Save
 
 3. Click on the srv application and click on the link under Application Routes to launch the srv application
 
+![testingsrv0](images/Exercise2_0_testingsrv0.jpg)
+
 4. You should be able to see the URL to the ODATA service that the srv application has created on clicking the link you should now see a new collection - BackEndProductData
 
+![testingsrv1](images/Exercise2_0_testingsrv1.jpg)
+
 5. Append /BackEndProductData to the url to view the Collection
+
+![testingsrv2](images/Exercise2_0_testingsrv2.jpg)
 
 6. To test the ui application navigate to the wishlist application in the SAP Cloud Platform cockpit and launch the URL, you will see a new tab which shows Backend Product information, you may not see any ratings yet as this will be done in the next exercises
 
