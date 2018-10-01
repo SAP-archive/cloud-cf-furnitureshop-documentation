@@ -27,15 +27,14 @@ We will use Web IDE Full-Stack to modify our existing wishlist application to in
 
 We first need to deploy a pre-built Java application which will simulate our backend system. The OData service will exposes product information that can be consumed by our wishlist application.
 
-1. Tomcat bundle is available in the TechEd student image
-2. Your instructor will point you to this directory.
-3. Navigate to the `bin` folder  
-4. Double Click on  startup.bat file. (this will launch a command prompt and start the tomcat server).
-5. Launch the URL [http://localhost:8080/backend-odata/Product.svc](http://localhost:8080/backend-odata/Product.svc).
+1. Tomcat bundle is available in the TechEd student image under D:\Files\Session\OPP363\apache-tomcat-9.0.11
+2. Navigate to the `bin` folder  
+3. Double Click on  startup.bat file. (this will launch a command prompt and start the tomcat server).
+4. Launch the URL [http://localhost:8080/backend-odata/Product.svc](http://localhost:8080/backend-odata/Product.svc).
 
 ![backend odata](images/Exercise2_1_backend_odata.JPG)
 
-7. Notice that the OData service exposes a collection called OnPremiseProductData. Append `/OnPremiseProductData` to the URL so you have [http://localhost:8080/backend-odata/Product.svc/OnPremiseProductData](http://localhost:8080/backend-odata/Product.svc/OnPremiseProductData).
+5. Notice that the OData service exposes a collection called OnPremiseProductData. Append `/OnPremiseProductData` to the URL so you have [http://localhost:8080/backend-odata/Product.svc/OnPremiseProductData](http://localhost:8080/backend-odata/Product.svc/OnPremiseProductData).
 
 ![backend odata](images/Exercise2_2_backend_odata_collection.JPG)
 
