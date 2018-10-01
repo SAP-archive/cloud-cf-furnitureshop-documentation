@@ -429,7 +429,7 @@ b.	Update the code to Display Product Ratings.<br>
 
 ![mta_img](images/Exercise2_mta_file.jpg)
 
-Replace the contents of mta.yaml with the file available at -  [mta_file](https://github.com/SAP/cloud-cf-furnitureshop-demo/blob/step2-order-service/mta.yaml){:target="_blank"}
+Replace the contents of mta.yaml with the file available at -  [mta.yaml](https://github.com/SAP/cloud-cf-furnitureshop-demo/blob/step2-order-service/mta.yaml) {:target="_blank"}
 
 5. We are now ready to build the project furnitureshop, deploy to Cloud Foundry.
 6. Right-click your project and click _Build and choose Build CDS_.
@@ -502,8 +502,7 @@ Click on Save
 
  - db: This is the db module that was deployed as part of the mta deployment, it will be stopped by default, do not delete or modify this app.
  - srv: This is the srv module with CDS and Java code that was deployed as part of the mta deployment
- - <SOME_RANDOM_NAME>furnitureshop-srv: This was deployed when you did right click on srv module and Run as Java Application in Exercise 1
- - webide-builder-sapwebide-di-<SOME_RANDOM_NAME>: This is the builder that you installed in Exercise 1
+ - webide-builder-sapwebide-di-<SOME_RANDOM_NAME>: This is the builder that you installed in Exercise 1. Please do not delete this application.
  - wishlist: This is the wishlist html5 application with the UI logic was deployed as part of the mta deployment
 
 35. Click on the srv application and click on the link to under Application Routes to launch the srv application
@@ -514,10 +513,6 @@ Click on Save
 
 38. To test the ui application navigate to the wishlist application in the SAP Cloud Platform cockpit and launch the URL, you will see a new tab which shows Backend Product information, you may not see any ratings yet as this will be done in the next exercises
 
-
-## 6. Clean-up
-1. login to your SAP Cloud Platform Cockpit, navigate to your space and your applications
-2. Stop the java application, <SOME_RANDOM_NAME>furnitureshop-srv to free up some application runtime space for the next exercises
 
 
 
