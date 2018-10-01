@@ -1,4 +1,4 @@
-- - - -
+ - - -
 Previous Exercise: [Exercise 4 - Order New Items](../Exercise-04-Order-New-Items) Next Exercise: [Exercise 6 - Comments and Ratings Backend](../Exercise-06-Comments-and-Ratings-Backend)
 
 [Back to the Overview](../README.md)
@@ -19,7 +19,7 @@ In this exercise, you will learn how you as an application developer or a dev op
 
 ## 1. Review Logging Configuration and Code
 
-In Exercise 2, we added the backend serivce calls to our wishlist application. As part of this exercise, we included the logging configuration and code to avoid having to build and redeploy the application again just to include the logging. 
+In Exercise 4, we added the backend serivce calls to our wishlist application. As part of this exercise, we included the logging configuration and code to avoid having to build and redeploy the application again just to include the logging. 
 
 1. In your Web IDE Full-stack open mta.yaml.
 2. Under the srv module, nocite how we have already got the logging level set to `info` using the property:
@@ -39,11 +39,8 @@ There is no need to change any code. We will need to bind an instance of the app
 
 ## 2. Create and Bind a Service of application-logs
 We will need to create and bind an instance of the application logging service to our application.
-1. In the SAP Cloud PLatform Cockpit, go to your _Space-your space-applications-your application_.
+1. In the SAP Cloud PLatform Cockpit, go to your _Space-your space-applications-your application_ (srv).
 2. From the application overview, click _Service Bindings_ on the left menu.
-
-![Service Bindings](images/Exercise3_1_service_bindings.JPG)
-
 3. Click _New Binding_.
 
 ![New Binding](images/Exercise3_2_service_bindings.JPG)
@@ -77,7 +74,7 @@ We will need to create and bind an instance of the application logging service t
 15. From the _Overview_ for your application restart your application.
 
 ## 3. Generate, and View Logs in Kibana
-In this step, we will explore how easy it is to view and analyze your logs using the Kibana Dashboard. An alternative would be to view the application logs using the Cloud Foundry command line tools, ie `cf logs application name --recent`. This, however is difficult to work with.
+In this step, we will explore how easy it is to view and analyze your logs using the Kibana Dashboard. An alternative would be to view the application logs in the cockpit or using the Cloud Foundry command line tools, ie `cf logs application name --recent`. 
 
 1. Open the wishlist application in your browser and view a few products and their backend product details.
 2. Return to the SAP Cloud Platform Cockpit.
@@ -96,12 +93,14 @@ In this step, we will explore how easy it is to view and analyze your logs using
      Analyze request timeline further.
    - _Requests and Logs_
      Helps you to view, search and analyze the actual log messages.
+     
+![Requests and logs](images/Exercise3_15_all_logging.JPG)
 
 7. We will start by changing a few settings. Click the configuration on the top right to set the timeline (last 15 minutes, current day etc) and enable autorefresh.
 8. Next, Click _Requests and Logs_.
 9. In the requests list, you can filter out unwanted requests using the mignifying glass(-) button when you hover over an item (so you can filter for a specific component or log level).
 
-![Filter out]()
+![Filter out](images/Exercise3_19_filter_out.JPG)
 
 10. You can also add columns to the display. Expand a request in the list and scroll down to view the attributes of that request. Hover your mouse over the attribute of interest and click the _Toggle Colum in Table_ button to add that attribute to the column view.
 
@@ -113,9 +112,21 @@ In this step, we will explore how easy it is to view and analyze your logs using
 
 12. You can add filters by correlation id to group together the logs for that correlation id. This will filter the Requests list and Application Log list for the correlation id. 
 
+![Correlation ID](images/Exercise3_18_filter_correlation_id.JPG)
+
 13. To use the same filters across other dashboards you need to first pin them. Hover over the filter and click the _Pin_ icon.
 
 ![Pin filter](images/Exercise3_13_pin%20filter.JPG)
+
+14. In the _Application Logs_ pane, select any entry and click the arrow in the table to axpand that entry.
+
+![Expand](images/Exercise3_16_application_logs_expand.JPG)
+
+15. You can switch between the RAW and JSON view using the tabs. Click the JSON tab to view the expanded application log entry in JSON format. 
+
+![Expand](images/Exercise3_16a_application_logs_JSON.JPG)
+
+This concludes our brief introduction to application logging and how they are processed, enriched and visualised using Kibana. 
 
 - - - -
 © 2018 SAP SE
