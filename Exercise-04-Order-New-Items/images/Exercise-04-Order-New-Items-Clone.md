@@ -80,7 +80,7 @@ Location IDs are defined to identify a location of a cloud connector for a speci
 12. In the SAP Cloud Connector UI, go to `Cloud To On-Premise` from the left-hand menu.
 13. Click the `+` icon to add a new mapping virtual to internal system.
 
-![add mapping](images/Exercise2_7_cloud_to_onprem.JPG)
+![add mapping](Exercise2_7_cloud_to_onprem.JPG)
 
 14. Choose Back-end Type as `Non-SAP System` and click _Next_.
 15. Choose Protocol as `HTTP` and click on _Next_.
@@ -143,20 +143,20 @@ This completes the configuration of the SAP Cloud Connector.
 4. Right-click your project and click _Build and Choose Build_.
 
 
-![Build Project](images/Exercise2_17_build.JPG)
+![Build Project](Exercise2_17_build.JPG)
 
 5. Confirm that the build has completed successfully.
 6. The result of the build should be a new folder in your project for the mta archives (`mta_archives`).
 7. Expoand the mar_archives folder and the folder for your project and then right-click the furnitureshop0.0.1.mtar and click _Deploy-Deploy to SAP Cloud Platform_.
 
-![Deploy mtar](images/Exercise2_18_deploy_mtar.JPG)
+![Deploy mtar](Exercise2_18_deploy_mtar.JPG)
 
 8. You may get a popup to enter your credentials, please enter your id/password then In the _Deploy to SAP Cloud Platform_ dialog, enter:
     - Cloud Foundry API Endpoint: `https://api.cf.eu10.hana.ondemand.com`
     - Organization: `TechEd2018_OPP363`
     - Space: `<your space>`
 
-![CF Endpoint](images/Exercise2_19_deploy_mtar_cf_endpoint.JPG)
+![CF Endpoint](Exercise2_19_deploy_mtar_cf_endpoint.JPG)
 
 Wait until the deployment is complete and ensure it was successful, meanwhile you can login to the cockpit to view the applications being deployed. Please do not click into application until the deployment is complete 
 
