@@ -122,7 +122,7 @@ In this step, we will explore how easy it is to view and analyze your logs using
 
 ![Expand](images/Exercise3_16_application_logs_expand.JPG)
 
-15. You can switch between the RAW and JSON view using the tabs. Click the JSON tab to view the expanded application log entry in JSON format. 
+15. You can switch between the _table_ and _JSON_ view using the tabs. Click the JSON tab to view the expanded application log entry in JSON format. 
 
 ![Expand](images/Exercise3_16a_application_logs_JSON.JPG)
 
