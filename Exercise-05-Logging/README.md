@@ -1,4 +1,4 @@
-- - - -
+ - - -
 Previous Exercise: [Exercise 4 - Order New Items](../Exercise-04-Order-New-Items) Next Exercise: [Exercise 6 - Comments and Ratings Backend](../Exercise-06-Comments-and-Ratings-Backend)
 
 [Back to the Overview](../README.md)
@@ -19,7 +19,7 @@ In this exercise, you will learn how you as an application developer or a dev op
 
 ## 1. Review Logging Configuration and Code
 
-In Exercise 2, we added the backend serivce calls to our wishlist application. As part of this exercise, we included the logging configuration and code to avoid having to build and redeploy the application again just to include the logging. 
+In Exercise 4, we added the backend serivce calls to our wishlist application. As part of this exercise, we included the logging configuration and code to avoid having to build and redeploy the application again just to include the logging. 
 
 1. In your Web IDE Full-stack open mta.yaml.
 2. Under the srv module, nocite how we have already got the logging level set to `info` using the property:
@@ -124,7 +124,7 @@ In this step, we will explore how easy it is to view and analyze your logs using
 
 15. You can switch between the RAW and JSON view using the tabs. Click the JSON tab to view the expanded application log entry in JSON format. 
 
-![Expand](images/Exercise3_16a_application_logs_JSON.JPGG)
+![Expand](images/Exercise3_16a_application_logs_JSON.JPG)
 
 This concludes our brief introduction to application logging and how they are processed, enriched and visualised using Kibana. 
 
