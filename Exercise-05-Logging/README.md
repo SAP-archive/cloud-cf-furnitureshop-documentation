@@ -41,7 +41,7 @@ There is no need to change any code. We will need to bind an instance of the app
 We will need to create and bind an instance of the application logging service to our application.
 1. In the SAP Cloud PLatform Cockpit, go to your _Space-your space-applications-your application_ (srv).
 2. From the application overview, click _Service Bindings_ on the left menu.
-3. Click _New Binding_.
+3. Click _Bind Service_.
 
 ![New Binding](images/Exercise3_2_service_bindings.JPG)
 
@@ -76,7 +76,7 @@ We will need to create and bind an instance of the application logging service t
 ## 3. Generate, and View Logs in Kibana
 In this step, we will explore how easy it is to view and analyze your logs using the Kibana Dashboard. An alternative would be to view the application logs in the cockpit or using the Cloud Foundry command line tools, ie `cf logs application name --recent`. 
 
-1. Open the wishlist application in your browser and view a few products and their backend product details.
+1. In order to collect new logs after binding the Application Logging instance to the `srv` application you will need to run the application once to generate the logs. Open the wishlist application in your browser and view a few products and their backend product details.
 2. Return to the SAP Cloud Platform Cockpit.
 3. Click _Logs_ on the left menu.
 
