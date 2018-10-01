@@ -13,7 +13,7 @@ Previous Exercise: [Exercise 08 Tweet Comments Backend](../Exercise-08-Tweet-Com
 
 3. Notice the Ratings field.
 
-4. Try choosing different products and its ratings.
+4. Try choosing different products and view its ratings.
 5. Frank now has all that he needs to order the product as per the ratings he has received
 
 
