@@ -39,7 +39,7 @@ There is no need to change any code. We will need to bind an instance of the app
 
 ## 2. Create and Bind a Service of application-logs
 We will need to create and bind an instance of the application logging service to our application.
-1. In the SAP Cloud PLatform Cockpit, go to your _Space-your space-applications-your application_.
+1. In the SAP Cloud PLatform Cockpit, go to your _Space-your space-applications-your application_ (srv).
 2. From the application overview, click _Service Bindings_ on the left menu.
 3. Click _New Binding_.
 
