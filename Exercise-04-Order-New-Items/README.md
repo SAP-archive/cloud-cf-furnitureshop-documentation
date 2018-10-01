@@ -19,14 +19,14 @@ We will use Web IDE Full-Stack to modify our existing wishlist application to in
 3.	Enhance the Service for the Wishlist Application
 4.	Extend the User Interface to Display On-Premise Product Data
 5.	Create Destination configuration on SAP Cloud Platform
-6. 	Clean-Up
+
 
 ## 1. Deploy Product Backend OData Service
 
 We first need to deploy a pre-built Java application which will simulate our backend system. The OData service will exposes product information that can be consumed by our wishlist application.
 
-1. Download the Tomcat server bundle  [backend_odata_tomcat.zip](apache-tomcat-9.0.11_OPP363.zip). This bundle has the backend-odata service already deployed.
-2. Extract the `backend_odata_tomcat.zip` archive.
+1. Tomcat bundle is available in the TechEd student image
+2. Your instructor will point you to this directory.
 3. Navigate to the `bin` folder  
 4. Double Click on  startup.bat file. (this will launch a command prompt and start the tomcat server).
 5. Launch the URL [http://localhost:8080/backend-odata/Product.svc](http://localhost:8080/backend-odata/Product.svc).
@@ -431,21 +431,23 @@ b.	Update the code to Display Product Ratings.<br>
 
 Replace the contents of mta.yaml with the file available at -  [mta.yaml](https://github.com/SAP/cloud-cf-furnitureshop-demo/blob/step2-order-service/mta.yaml)
 
-5. We are now ready to build the project furnitureshop, deploy to Cloud Foundry.
-6. Right-click your project and click _Build and choose Build CDS_.
-7. Confirm that the Build CDS has completed successfully.
-8. Right-click your project and click _Build and Choose Build_.
+## 5. Build and Deploy application to SAP CLoud Platform
+
+1. We are now ready to build the project furnitureshop and deploy to Cloud Foundry.
+2. Right-click your project and click _Build and choose Build CDS_.
+3. Confirm that the Build CDS has completed successfully.
+4. Right-click your project and click _Build and Choose Build_.
 
 
 ![Build Project](images/Exercise2_17_build.JPG)
 
-9. Confirm that the build has completed successfully.
-10. The result of the build should be a new folder in your project for the mta archives (`mta_archives`).
-11. Expoand the mar_archives folder and the folder for your project and then right-click the furnitureshop0.0.1.mtar and click _Deploy-Deploy to SAP Cloud Platform_.
+5. Confirm that the build has completed successfully.
+6. The result of the build should be a new folder in your project for the mta archives (`mta_archives`).
+7. Expoand the mar_archives folder and the folder for your project and then right-click the furnitureshop0.0.1.mtar and click _Deploy-Deploy to SAP Cloud Platform_.
 
 ![Deploy mtar](images/Exercise2_18_deploy_mtar.JPG)
 
-12. You may get a popup to enter your credentials, please enter your id/password then In the _Deploy to SAP Cloud Platform_ dialog, enter:
+8. You may get a popup to enter your credentials, please enter your id/password then In the _Deploy to SAP Cloud Platform_ dialog, enter:
     - Cloud Foundry API Endpoint: `https://api.cf.eu10.hana.ondemand.com`
     - Organization: `TechEd2018_OPP363`
     - Space: `<your space>`
@@ -455,7 +457,7 @@ Replace the contents of mta.yaml with the file available at -  [mta.yaml](https:
 Wait until the deployment is complete and ensure it was successful, meanwhile you can login to the cockpit to view the applications being deployed. Please do not click into application until the deployment is complete 
 
 
-## 5. Create Destination configuration on SAP Cloud Platform
+## 6. Create Destination configuration on SAP Cloud Platform
 Please make sure the deployment is complete. The next thing we will need to do is create an instance of destination service on SAP Cloud Platform as well as a destination configuration. This will allow us to access the on premise backend system in our applications on SAP Cloud Platform by using the virtual URL we configured in the cloud connector.
 
 1. In your SAP Cloud Platform admin cockpit, go to your Cloud Foundry Subaccount and navigate to your space.
@@ -512,7 +514,6 @@ Click on Save
 37. Append /BackEndProductData to the url to view the Collection
 
 38. To test the ui application navigate to the wishlist application in the SAP Cloud Platform cockpit and launch the URL, you will see a new tab which shows Backend Product information, you may not see any ratings yet as this will be done in the next exercises
-
 
 
 
