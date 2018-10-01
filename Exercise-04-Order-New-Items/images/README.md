@@ -35,7 +35,7 @@ We first need to deploy a pre-built Java application which will simulate our bac
 
 7. Notice that the OData service exposes a collection called OnPremiseProductData. Append `/OnPremiseProductData` to the URL so you have [http://localhost:8080/backend-odata/Product.svc/OnPremiseProductData](http://localhost:8080/backend-odata/Product.svc/OnPremiseProductData).
 
-![backend odata](images/Exercise2_2_backend_odata_collection.JPG)
+![backend odata](Exercise2_2_backend_odata_collection.JPG)
 
 ## 2. Configure the SAP Cloud Connector
 The Cloud Connector is an optional on-premise component that is needed to integrate on-demand applications with customer backend services and is the counterpart of SAP Cloud Platform Connectivity. We will download the Cloud Connector from the SAP development tools site. We will use the portable version of the SAP Cloud Connector as it can be easily installed by simply extracting a compressed archive into an empty directory. It does not require administrator or root privileges for the installation.
