@@ -18,7 +18,9 @@ We will use Web IDE Full-Stack to modify our existing wishlist application to in
 2.	Configure the SAP Cloud Connector: Add Cloud Platform Subaccount add local backend). Configure subaccount and access OData URL.
 3.	Enhance the Service for the Wishlist Application
 4.	Extend the User Interface to Display On-Premise Product Data
-5.	Create Destination configuration on SAP Cloud Platform
+5. 	Build and Deploy application to SAP Cloud Platform
+6.	Create Destination configuration on SAP Cloud Platform
+7. 	Test the application
 
 
 ## 1. Deploy Product Backend OData Service
@@ -431,7 +433,7 @@ b.	Update the code to Display Product Ratings.<br>
 
 Replace the contents of mta.yaml with the file available at -  [mta.yaml](https://github.com/SAP/cloud-cf-furnitureshop-demo/blob/step2-order-service/mta.yaml)
 
-## 5. Build and Deploy application to SAP CLoud Platform
+## 5. Build and Deploy application to SAP Cloud Platform
 
 1. We are now ready to build the project furnitureshop and deploy to Cloud Foundry.
 2. Right-click your project and click _Build and choose Build CDS_.
@@ -498,24 +500,26 @@ Enter the following:
 
 Click on Save
 
-32. Next Let us next test the application
-33. In the SAP Cloud Platform Cockpit -> Navigate to your Space -> Applications
-34. If you have followed all the steps from the start of Exercise 1, You should see 4 applications
+## 7. Test the application
+
+
+1. In the SAP Cloud Platform Cockpit -> Navigate to your Space -> Applications
+2. If you have followed all the steps from the start of Exercise 3, You should see 4 applications
 
  - db: This is the db module that was deployed as part of the mta deployment, it will be stopped by default, do not delete or modify this app.
  - srv: This is the srv module with CDS and Java code that was deployed as part of the mta deployment
  - webide-builder-sapwebide-di-<SOME_RANDOM_NAME>: This is the builder that you installed in Exercise 1. Please do not delete this application.
- - wishlist: This is the wishlist html5 application with the UI logic was deployed as part of the mta deployment
+ - ui: This is the wishlist html5 application with the UI logic was deployed as part of the mta deployment
 
-35. Click on the srv application and click on the link to under Application Routes to launch the srv application
+3. Click on the srv application and click on the link under Application Routes to launch the srv application
 
-36. You shoild be able to see the URL to the ODATA service that the srv application has created on clicking the link you should now see a new collection - BackEndProductData
+4. You should be able to see the URL to the ODATA service that the srv application has created on clicking the link you should now see a new collection - BackEndProductData
 
-37. Append /BackEndProductData to the url to view the Collection
+5. Append /BackEndProductData to the url to view the Collection
 
-38. To test the ui application navigate to the wishlist application in the SAP Cloud Platform cockpit and launch the URL, you will see a new tab which shows Backend Product information, you may not see any ratings yet as this will be done in the next exercises
+6. To test the ui application navigate to the wishlist application in the SAP Cloud Platform cockpit and launch the URL, you will see a new tab which shows Backend Product information, you may not see any ratings yet as this will be done in the next exercises
 
-
+![testing](images/Exercise2_0_testingui.JPG)
 
 - - - -
 © 2018 SAP SE
