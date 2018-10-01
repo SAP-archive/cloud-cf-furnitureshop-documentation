@@ -144,7 +144,7 @@ This completes the configuration of the SAP Cloud Connector.
 4. Right-click your project and click _Build and Choose Build_.
 
 
-![Build Project](Exercise2_17_build.JPG)
+![Build Project](build_1.JPG)
 
 5. Confirm that the build has completed successfully.
 6. The result of the build should be a new folder in your project for the mta archives (`mta_archives`).
