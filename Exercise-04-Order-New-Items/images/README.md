@@ -1,7 +1,7 @@
 - - - -
-Previous Exercise: [Exercise 3 - Publish Wishlist](../Exercise-03-Publish-Wishlist) Next Exercise: [Exercise 5 - Logging](../Exercise-05-Logging)
+Previous Exercise: [Exercise 3 - Publish Wishlist](../../Exercise-03-Publish-Wishlist) Next Exercise: [Exercise 5 - Logging](../../Exercise-05-Logging)
 
-[Back to the Overview](../README.md)
+[Back to the Overview](../../README.md)
 - - - -
 
 # Exercise 04 - Order New Items
