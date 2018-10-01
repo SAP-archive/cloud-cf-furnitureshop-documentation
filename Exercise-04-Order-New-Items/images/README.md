@@ -41,13 +41,13 @@ We first need to deploy a pre-built Java application which will simulate our bac
 The Cloud Connector is an optional on-premise component that is needed to integrate on-demand applications with customer backend services and is the counterpart of SAP Cloud Platform Connectivity. We will download the Cloud Connector from the SAP development tools site. We will use the portable version of the SAP Cloud Connector as it can be easily installed by simply extracting a compressed archive into an empty directory. It does not require administrator or root privileges for the installation.
 1. Before we install and configure the SAP Cloud Connector, we will need to get our Subaccount ID for use during the configuration of the cloud connector.
 2. Login to your SAP Cloud Platform cockpit [TechEd 2018](https://account.hana.ondemand.com/cockpit#/globalaccount/8fd39023-a237-4d71-9b6a-ed9d1719d275/subaccounts)
-3. Click the ![i_link](images/Exercise2_ilink.jpeg) link on the Cloud Foundry subaccount tile (OPP363CF).
+3. Click the ![i_link](Exercise2_ilink.jpeg) link on the Cloud Foundry subaccount tile (OPP363CF).
 
-![account id](images/Exercise2_3_CF_account_id.JPG)
+![account id](Exercise2_3_CF_account_id.JPG)
 
 4. The subaccount ID (`dabec0d5-6df7-495d-9c96-f6b25dfd78a4`) will be displayed. Keep this subaccount ID for use in the cloud connector configuration.
 
-![account id](images/Exercise2_4_CF_account_id.JPG)
+![account id](Exercise2_4_CF_account_id.JPG)
 
 5. Locate the SAP Cloud Connector folder on the TechEd Image `(D:\SAP\SCC20)`
 6. Double-click `go.bat` to start the SAP Cloud Connector.
@@ -65,7 +65,7 @@ The Cloud Connector is an optional on-premise component that is needed to integr
 
 Ignore the fields under the section HTTPS Proxy on the right side, leave them blank 
 
-![add subaccount](images/Exercise2_5_cc_add_subaccount.JPG)
+![add subaccount](Exercise2_5_cc_add_subaccount.JPG)
 
 For the current hands-on, all participants are sharing a single SAP Cloud Platform subaccount. To disambiguate the SAP Cloud Connector, each participants provides a unique Location ID.
 
@@ -74,7 +74,7 @@ Location IDs are defined to identify a location of a cloud connector for a speci
 9. Click _Save_.
 10. Ensure that the Status under Tunnel Information is Connected. If you receive an error, recheck your Region, Subaccount and login information.
 
-![add subaccount](images/Exercise2_6_cc_subaccount_status.JPG)
+![add subaccount](Exercise2_6_cc_subaccount_status.JPG)
 
 11. Now that we have configured the SAP Cloud Connector and connected it from our local laptop to our SAP Cloud Platform account, the next thing we need to do is to configure access to the backend system.
 12. In the SAP Cloud Connector UI, go to `Cloud To On-Premise` from the left-hand menu.
@@ -96,17 +96,17 @@ Location IDs are defined to identify a location of a cloud connector for a speci
 21. Enter a Description and click _Next_.
 22. In the Summary Screen check the `Check Internal Host` check box and click _Finish_.
 
-![summary](images/Exercise2_8_summary.JPG)
+![summary](Exercise2_8_summary.JPG)
 
 23. You should notice that the Check Results column says `Reachable` in Green.
 
-![check results](images/Exercise2_9_check_results.JPG)
+![check results](Exercise2_9_check_results.JPG)
 
 24. `Under Resources Accessible On productbackend.com:8080` section, click the `+` icon to add the resources under this system.
 25. Enter `/backend-odata/` under URL Path.
 26. Select the option `Path and all Sub paths`.
 
-![check results](images/Exercise2_10_add_resource.JPG)
+![check results](Exercise2_10_add_resource.JPG)
 
 27. Click _Save_.
 28. You should notice that the Status is Green.
@@ -427,7 +427,7 @@ b.	Update the code to Display Product Ratings.<br>
 
 4. Open the mta.yaml file, you will find it in the image below 
 
-![mta_img](images/Exercise2_mta_file.jpg)
+![mta_img](Exercise2_mta_file.jpg)
 
 Replace the contents of mta.yaml with the file available at -  [mta.yaml](https://github.com/SAP/cloud-cf-furnitureshop-demo/blob/step2-order-service/mta.yaml)
 
@@ -478,7 +478,7 @@ Enter the following:
    - Authentication: `NoAuthentication`
 6. Your destination should look like this:
 
-![destina](images/dest_getwishlist1.jpeg)
+![destina](dest_getwishlist1.jpeg)
 
 Click on Save
 
@@ -494,7 +494,7 @@ Enter the following:
    - Authentication: `NoAuthentication`
 12. Your destination should look like this:
 
-![destination](images/Exercise2_0_destination1.JPG)
+![destination](Exercise2_0_destination1.JPG)
 
 Click on Save
 
@@ -520,6 +520,6 @@ Click on Save
 - - - -
 © 2018 SAP SE
 - - - -
-Previous Exercise: [Exercise 3 - Publish Wishlist](../Exercise-03-Publish-Wishlist) Next Exercise: [Exercise 5 - Logging](../Exercise-05-Logging)
+Previous Exercise: [Exercise 3 - Publish Wishlist](../../Exercise-03-Publish-Wishlist) Next Exercise: [Exercise 5 - Logging](../../Exercise-05-Logging)
 
-[Back to the Overview](../README.md)
+[Back to the Overview](../../README.md)
