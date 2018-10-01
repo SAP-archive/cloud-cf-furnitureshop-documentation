@@ -94,7 +94,7 @@ In this step, we will explore how easy it is to view and analyze your logs using
    - _Requests and Logs_
      Helps you to view, search and analyze the actual log messages.
      
-![Requests and logs](images/Exercise3_15_all logging.JPG)
+![Requests and logs](images/Exercise3_15_all_logging.JPG)
 
 7. We will start by changing a few settings. Click the configuration on the top right to set the timeline (last 15 minutes, current day etc) and enable autorefresh.
 8. Next, Click _Requests and Logs_.
