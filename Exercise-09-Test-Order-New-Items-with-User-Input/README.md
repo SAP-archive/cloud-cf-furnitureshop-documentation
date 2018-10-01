@@ -9,7 +9,7 @@ Previous Exercise: [Exercise 08 Tweet Comments Backend](../Exercise-08-Tweet-Com
 1. Launch SAP Cloud Platform Cockpit -> Navigate to your space -> Applications -> Choose ui
 2. Click on the link under Applciation route to launch the ui application
 
-![ui_app](images/ui_testing.jpg)
+![ui_app](ui_testing.jpg)
 
 3. Notice the Ratings field.
 
