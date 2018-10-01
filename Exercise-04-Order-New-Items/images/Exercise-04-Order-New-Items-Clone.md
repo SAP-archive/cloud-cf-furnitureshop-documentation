@@ -150,7 +150,7 @@ This completes the configuration of the SAP Cloud Connector.
 6. The result of the build should be a new folder in your project for the mta archives (`mta_archives`).
 7. Expoand the mar_archives folder and the folder for your project and then right-click the furnitureshop0.0.1.mtar and click _Deploy-Deploy to SAP Cloud Platform_.
 
-![Deploy mtar](Exercise2_18_deploy_mtar.JPG)
+![Deploy mtar](Exercise2_18_deploy_mtar1.JPG)
 
 8. You may get a popup to enter your credentials, please enter your id/password then In the _Deploy to SAP Cloud Platform_ dialog, enter:
     - Cloud Foundry API Endpoint: `https://api.cf.eu10.hana.ondemand.com`
