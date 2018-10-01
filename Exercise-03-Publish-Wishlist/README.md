@@ -342,7 +342,7 @@ Have a look at the application, you will see the list of products with an icon, 
 ## 3. Clean-up
 1. login to your SAP Cloud Platform Cockpit, navigate to your space and your applications
 2. Stop the java application, <SOME_RANDOM_NAME>furnitureshop-srv to free up some application runtime space for the next exercises
-3. Go to Service Instances and delete the furnitureshop-hdidb<RANDOM_NAME> instance
+3. Go to Service Instances and delete the furnitureshop-furnitureshop-hdidb<RANDOM_NAME> instance
 
 
 - - - -
