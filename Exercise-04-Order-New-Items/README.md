@@ -418,18 +418,18 @@ There are 2 things we need to change in the UI:<br>
 a.	Add a new Tab to show Backend Product Data that we fetch from on-Premise system.<br>
 b.	Update the code to Display Product Ratings.<br>
 
-1. Expand _ui_ module - webapp - view and Open the file `Detail.view.xml` replace the contents of the file with the file available in - [detail_view](https://github.com/SAP/cloud-cf-furnitureshop-demo/blob/step2-order-service/ui/webapp/view/Detail.view.xml){:target="_blank"}
+1. Expand _ui_ module - webapp - view and Open the file `Detail.view.xml` replace the contents of the file with the file available in - [DetailView](https://github.com/SAP/cloud-cf-furnitureshop-demo/blob/step2-order-service/ui/webapp/view/Detail.view.xml)
 
 2. Save the file
 
-3. Now Expand _ui_ application - webapp - controller_ and open  `Detail.controller.js` replace the contents of the file with the file available in - [detail_cont](https://github.com/SAP/cloud-cf-furnitureshop-demo/blob/step2-order-service/ui/webapp/controller/Detail.controller.js){:target="_blank"}
+3. Now Expand _ui_ application - webapp - controller_ and open  `Detail.controller.js` replace the contents of the file with the file available in - [Detail.controller](https://github.com/SAP/cloud-cf-furnitureshop-demo/blob/step2-order-service/ui/webapp/controller/Detail.controller.js)
 
 
 4. Open the mta.yaml file, you will find it in the image below 
 
 ![mta_img](images/Exercise2_mta_file.jpg)
 
-Replace the contents of mta.yaml with the file available at -  [mta.yaml](https://github.com/SAP/cloud-cf-furnitureshop-demo/blob/step2-order-service/mta.yaml) {:target="_blank"}
+Replace the contents of mta.yaml with the file available at -  [mta.yaml](https://github.com/SAP/cloud-cf-furnitureshop-demo/blob/step2-order-service/mta.yaml)
 
 5. We are now ready to build the project furnitureshop, deploy to Cloud Foundry.
 6. Right-click your project and click _Build and choose Build CDS_.
