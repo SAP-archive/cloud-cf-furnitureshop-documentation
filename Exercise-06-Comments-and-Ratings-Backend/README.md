@@ -136,13 +136,13 @@ We will now build and deploy the application that has been built above. Please n
 1. To ensure that you do not deploy an incorrect MTAR it is advisable to delete the `mta_archives` folder as shown in the picture below.
    ![Step Image](images/Exercise6_3-1_mta_folder_delete.png)
 
-2. Using your Files explorer in Web IDE, right click on the **`product_ratings`** folder, go to Build &rarr; and click on **Build** as shown in the picture below.
+2. Using your Files explorer in Web IDE, right click on the **`cloud-cf-furnitureshop-product-ratings`** folder, go to Build &rarr; and click on **Build** as shown in the picture below.
 
    ![Step Image](images/Exercise6_3-2_project_build.png)
 
    Once the build is completed successfully, you will see a new folder created in your project with the name **`mta_archives`**.
 
-3. Right click on the generated .mtar file **`product_ratings`**, and go to Deploy &rarr; and click on **Deploy to SAP Cloud Platform** as shown in the picture below.
+3. Right click on the generated .mtar file **`product_ratings_1.0.0.mtar`**, and go to Deploy &rarr; and click on **Deploy to SAP Cloud Platform** as shown in the picture below.
 
    ![Step Image](images/Exercise6_3-3_project_deploy.png)
 
