@@ -14,11 +14,12 @@ We will use Web IDE Full-Stack to modify our existing wishlist application to in
 
 **This exercise involves the following main steps.**
 
-1.	Deploy product backend OData service.
-2.	Configure the SAP Cloud Connector: Add Cloud Platform Subaccount add local backend). Configure subaccount and access OData URL.
-3.	Enhance the Service for the Wishlist Application
-4.	Extend the User Interface to Display On-Premise Product Data
-5.	Create Destination configuration on SAP Cloud Platform
+1.	   Deploy product backend OData service.
+2.	   Configure the SAP Cloud Connector: Add Cloud Platform Subaccount add local backend). Configure subaccount and access OData URL.
+3.    Clone the Wishlist application from Git
+4. 	Build and Deploy application to SAP Cloud Platform
+5.	   Create Destination configuration on SAP Cloud Platform
+6. 	Test the application
 
 
 ## 1. Deploy Product Backend OData Service
@@ -135,7 +136,8 @@ This completes the configuration of the SAP Cloud Connector.
 
 7.	Save the file
 
-## 5. Build and Deploy application to SAP CLoud Platform
+
+## 4. Build and Deploy application to SAP Cloud Platform
 
 1. We are now ready to build the project furnitureshop and deploy to Cloud Foundry.
 2. Right-click your project and click _Build and choose Build CDS_.
@@ -161,7 +163,7 @@ This completes the configuration of the SAP Cloud Connector.
 Wait until the deployment is complete and ensure it was successful, meanwhile you can login to the cockpit to view the applications being deployed. Please do not click into application until the deployment is complete 
 
 
-## 6. Create Destination configuration on SAP Cloud Platform
+## 5. Create Destination configuration on SAP Cloud Platform
 Please make sure the deployment is complete. The next thing we will need to do is create an instance of destination service on SAP Cloud Platform as well as a destination configuration. This will allow us to access the on premise backend system in our applications on SAP Cloud Platform by using the virtual URL we configured in the cloud connector.
 
 1. In your SAP Cloud Platform admin cockpit, go to your Cloud Foundry Subaccount and navigate to your space.
@@ -202,24 +204,32 @@ Enter the following:
 
 Click on Save
 
-32. Next Let us next test the application
-33. In the SAP Cloud Platform Cockpit -> Navigate to your Space -> Applications
-34. If you have followed all the steps from the start of Exercise 1, You should see 4 applications
+## 6. Test the application
+
+
+1. In the SAP Cloud Platform Cockpit -> Navigate to your Space -> Applications
+2. If you have followed all the steps from the start of Exercise 3, You should see 4 applications
 
  - db: This is the db module that was deployed as part of the mta deployment, it will be stopped by default, do not delete or modify this app.
  - srv: This is the srv module with CDS and Java code that was deployed as part of the mta deployment
  - webide-builder-sapwebide-di-<SOME_RANDOM_NAME>: This is the builder that you installed in Exercise 1. Please do not delete this application.
- - wishlist: This is the wishlist html5 application with the UI logic was deployed as part of the mta deployment
+ - ui: This is the wishlist html5 application with the UI logic was deployed as part of the mta deployment
 
-35. Click on the srv application and click on the link to under Application Routes to launch the srv application
+3. Click on the srv application and click on the link under Application Routes to launch the srv application
 
-36. You shoild be able to see the URL to the ODATA service that the srv application has created on clicking the link you should now see a new collection - BackEndProductData
+![testingsrv0](Exercise2_0_testingsrv0.jpg)
 
-37. Append /BackEndProductData to the url to view the Collection
+4. You should be able to see the URL to the ODATA service that the srv application has created on clicking the link you should now see a new collection - BackEndProductData
 
-38. To test the ui application navigate to the wishlist application in the SAP Cloud Platform cockpit and launch the URL, you will see a new tab which shows Backend Product information, you may not see any ratings yet as this will be done in the next exercises
+![testingsrv1](Exercise2_0_testingsrv1.jpg)
 
+5. Append /BackEndProductData to the url to view the Collection
 
+![testingsrv2](Exercise2_0_testingsrv2.jpg)
+
+6. To test the ui application navigate to the wishlist application in the SAP Cloud Platform cockpit and launch the URL, you will see a new tab which shows Backend Product information, you may not see any ratings yet as this will be done in the next exercises
+
+![testing](Exercise2_0_testingui.JPG)
 
 - - - -
 © 2018 SAP SE
