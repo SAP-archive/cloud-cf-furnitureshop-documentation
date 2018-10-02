@@ -16,7 +16,8 @@ The goals of this tutorial are as follows:
 8. Discover solution branches in the furnitureshop repository.
 
 Let's get started ...
-##Step 1. Learn about Git and GitHub.
+
+## Step 1. Learn about Git and GitHub.
 Git is a distributed version control system. This means that unlike central source code version control or document management
 systems where developers and content providers share files in a central repository, users work with files locally on their
 laptop, computer or device and only upload their changes to a shared repository when they need to.
@@ -30,7 +31,7 @@ features and bug fixes without changing the shared code (called the origin maste
 their local copy of the shared code (called the master branch) and then merge their changes from the feature or bug fix branch 
 with their master branch.
 
-##Step 2. Discover repositories on GitHub.
+## Step 2. Discover repositories on GitHub.
 It is now time for you to get familiar with GitHub. GitHub is a web-based hosting service for version control using Git. 
 It offers all of the distributed version control and source code management of Git as well as adding its own features.
 
@@ -46,7 +47,7 @@ we will use for this session:
     
 1. If you are not already a member of GitHub, sign up by clicking the `sign up` link.
     
-##Step 3. Clone a repository from GitHub to your WebIDE tenant.
+## Step 3. Clone a repository from GitHub to your WebIDE tenant.
 In this exercise you will configure WebIDE to connect to GitHub and clone a repository.
 1. Open Web IDE, select **Preferences**, select **Git Settings**, enter your GitHub account email address and user name.
 
@@ -63,7 +64,7 @@ In this exercise you will configure WebIDE to connect to GitHub and clone a repo
 
 Note: there should not be any files in the `master` branch of the **git-tutorial** folder.
 
-##Step 4 Learn about branches in Git.
+## Step 4 Learn about branches in Git.
 In WebIDE, when a change is made to a file and saved, it is only saved to the WebIDE environment and does not become part 
 of the Git repository. In order for the change to be incorporated in the repository it must be added to a commit. 
 In WebIDE, you do this by first saving the file and then staging the file by clicking the **Stage** tick box next to the file 
@@ -76,7 +77,7 @@ is pointing to the latest commit made to this repository.
 You can discover the latest commit and the commit history by selecting the project folder for the repository and then clicking 
 on **Git History** in the tool bar on the right of the IDE.
 
-##Step 5 Create a new branch.
+## Step 5 Create a new branch.
 In this exercise we will create a new `feature branch` for this repository. Imagine for a moment that you are working on a
 new feature for a product your development team is responsible for. Using Git, you decide to create a new *feature branch* 
 for the new *feature* you will develop. You decide to use a feature branch because you do not wish to modify the source code 
@@ -115,7 +116,7 @@ select **New**, select **File**, name the file `index.html`.
     ``` 
 1. Save, stage and commit the changes.
 
-##Step 6 Merge the changes into the master branch.
+## Step 6 Merge the changes into the master branch.
 Now that you have completed and tested your feature, you want to merge the feature into the master branch and share it 
 with other developers.
 
@@ -166,7 +167,7 @@ product code once the feature is fully developed, tested and bug-fixed. Normally
 changes would be **pushed** back to the origin repository to make them available to other developers however we are not allowing
 changes to our sample repository.
 
-## Rebase one branch onto another branch.
+## Step 7 Rebase one branch onto another branch.
 In some circumstances, it is better to retain all the commits that went into developing the feature and adding these commits 
 to the `master` branch in sequence. This avoids issues when trying to audit the commit history where teams use multiple branches
 to develop features and bug-fixes. To accomplish this you would use **Rebase** instead of **Merge** to incorporate changes from one branch
@@ -186,7 +187,7 @@ branch.
 You should now have the same result in the master branch but with a commit history that tells a linear story of commits.
 
 
-## Discover solution branches in the furnitureshop repository.
+## Step 8 Discover solution branches in the furnitureshop repository.
 1. Discover branches in repo: https://github.com/SAP/cloud-cf-furnitureshop-demo
 1. Clone repo to WebIDE
 1. Open solution branch `step1-wishlist-service` and change `xs-security.json`.
