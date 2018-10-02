@@ -15,31 +15,31 @@ In the previous exercises, you have deployed applications by first creating a _.
 This exercise demonstrates how to debug Node.js applications.  You can check out the above referenced documentation for debugging Java applications.
 
 ## 1. Prepare an application (tweet_comments) instance for debugging
-1. Open your SAP Cloud Platform cockpit and go to _Org - Space - Applications_.
-2. Locate the `ratings_frontend` application and click on it. On Overview page for the application, click on the URL displayed under the Application Routes. Test the rating functionality and check the twitter page for the posted comments by following the steps described below (your screen will look different based on the product you selected for rating):
-- Select a product from the list and navigate to the `Rate Item` tab. Give the product a rating and a comment and click on the _Submit_ button. 
+1. Open your SAP Cloud Platform cockpit and go to _Space - Applications_.
+
+1. Locate the `tweet_comments` application.
+
+1. Stop the running instance of the `tweet_comments` application.
+![screnshot alt text](images/Stop_tweet_comments.jpg)
+
+1. In the Web IDE Workspace, expand the project _cloud-cf-furnitureshop-product-ratings_, created during the previous exercise. Right-click on the tweet_comments module and select  _Run – Run as Node.js Application_.
+![screnshot alt text](images/Run_as_NodejsApp.jpg)
+
+1. Wait for a few minutes for the application to start
+![screnshot alt text](images/RunningApp_in_WebIDE.jpg)
+
+1. Let us test the overall porudct rating functionality using the newly created instance of the tweet_comments applications. Locate the `ratings_frontend` application and click on it. On Overview page for the application, click on the URL displayed under the Application Routes.
+
+- Select a product from the list and navigate to the `Rate Item` tab. Give the product a rating and a comment and click on the _Submit_ button. Note that your screen will look different based on the product you selected for rating.
    ![Step Image](images/Exercise8_5-6_provide_rating.png)
 
  - You can also check the review feeds for a particular product.
 
    ![Step Image](images/Exercise8_5-6_check_comments.png)
 
-7. In your browser, go to this [twitter handle](https://twitter.com/sapfurnishop) to see your comment posted as a tweet.
+1. In your browser, go to this [twitter handle](https://twitter.com/sapfurnishop) to see your comment posted as a tweet.
 
    ![Step Image](images/Exercise8_5-7_review_tweet.png)
-
-3. In the _cockpit_, locate the `tweet_comments` application.
-
-4. Stop the running instance of the `tweet_comments` application.
-![screnshot alt text](images/Stop_tweet_comments.jpg)
-
-5. In the Web IDE Workspace, expand the project _cloud-cf-furnitureshop-product-ratings_, created during the previous exercise. Right-click on the tweet_comments module and select  _Run – Run as Node.js Application_.
-![screnshot alt text](images/Run_as_NodejsApp.jpg)
-
-6. Wait for a few minutes for the application to start
-![screnshot alt text](images/RunningApp_in_WebIDE.jpg)
-
-7. Test the product rating functionality again with the new version of the tweet_comments instace by following the steps described in item 2 above.
 
 ## 2. Attaching Debugger to an application instance
 1.	In the Web IDE, launch the _Debugger_ by clicking on the Debugger icon on the menu bar on the right (or by selecting _View - Debugger_ from the menu bar on top).
@@ -51,7 +51,10 @@ This exercise demonstrates how to debug Node.js applications.  You can check out
 ![screnshot alt text](images/Attach_Debugger.jpg)
 
 3.	You should see a pop-up window to select a _Debug Target_ as shown below. Confirm the value of debug target and click on _OK_. You should see a notificaiton that the debugger is now successfully attached to the target application instance.
-![screnshot alt text](images/Select_Debug_Target.jpg)	
+![screnshot alt text](images/Select_Debug_Target.jpg)
+
+4. Open the _tweet_comments/app.js_ file and set a breakpoint right before the function call for _Twit.post(...)_ by clicking on the line number.
+![screnshot alt text](images/Set_breakpoint.jpg)
 
 ## 3. Debug the application instance
 We are now ready to debug the application instance running on the SAP Cloud Platform.
