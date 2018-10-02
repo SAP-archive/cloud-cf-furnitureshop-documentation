@@ -13,9 +13,9 @@ Previous Exercise: [Exercise 4 - Order New Items](../Exercise-04-Order-New-Items
 
 We want to be able to look back in time, identify corresponding requests, which version of software was running at that time, which methods were being called etc.
 
-The logs we collect are only useful if they can be analysed and visualised easily. It is helpful toto be able to collect logs in a single location and preferably in a common format.
+The logs we collect are only useful if they can be analysed and visualised easily. It is helpful to be able to collect logs in a single location and preferably in a common format.
 
-In this exercise, you will learn how you as an application developer or a dev ops engineer can visualize the application logs provided by default via Cloud Foundry ELK stack which provides elastic search, logstadsh (data processor and enrichment of logs) and Kibana. This is a good combination to store, search and visualise log entries.
+In this exercise, you will learn how you as an application developer or a dev ops engineer can visualize the application logs provided by default via Cloud Foundry ELK stack which provides elastic search, logstash (data processor and enrichment of logs) and Kibana. This is a good combination to store, search and visualise log entries.
 
 ## 1. Review Logging Configuration and Code
 
