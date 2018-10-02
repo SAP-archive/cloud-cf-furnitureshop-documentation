@@ -21,7 +21,7 @@ Let's get started ...
 Git is a distributed version control system. This means that unlike central source code version control or document management
 systems where developers and content providers share files in a central repository, users work with files locally on their
 laptop, computer or device and only upload their changes to a shared repository when they need to.
-![distributed version control](images/understanding_distributed_version_control.JPG)
+![distributed version control](images/understanding_distributed_version_control.jpg)
 In a distributed version control system, the developer works on his local repository while occaisionally fetching code 
 changes uploaded by other developers from the central repository. As a result, Git provides a mechanism to commit changes, 
 merge those changes into exisitng code, and then resolve any conflicts. 
