@@ -53,9 +53,13 @@ we will use for this session:
 ![Cloning from an external GitHub](images/cloning_git_repository.jpg)
 
 In this exercise you will configure WebIDE to connect to GitHub and clone a repository.
-1. Open Web IDE, select **Preferences**, select **Git Settings**, enter your GitHub account email address and user name.<img src="images/git_settings_in_webide.jpg" alt="SAP on GitHub" width="520" height="180" border="0" />
+1. Open Web IDE, select **Preferences**, select **Git Settings**, enter your GitHub account email address and user name.
+   
+   <img src="images/git_settings_in_webide.jpg" alt="SAP on GitHub" width="420" height="260" border="0" />
 
 1. Select **Development** to show the developer view of WebIDE. Right click on **Workspace** and select **Git**, select **Clone Repository**.
+   
+   <img src="images/clone_git_repository.jpg" alt="SAP on GitHub" width="420" height="260" border="0" />
 
 1. Switch back to **GitHub** and select the [documentation repository](https://github.com/SAP/cloud-cf-furnitureshop-documentation).
 
