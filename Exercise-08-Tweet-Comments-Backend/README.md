@@ -1,5 +1,5 @@
 - - - -
-Previous Exercise: [Exercise 07 - Comments and Ratings Frontend](../Exercise-07-Comments-and-Ratings-Frontend) Next Exercise: [Exercise-09 - Test Order New Items with User Input](../Exercise-09-Test-Order-New-Items-with-User-Input)
+Previous Exercise: [Exercise 07 - Comments and Ratings Frontend](../Exercise-07-Comments-and-Ratings-Frontend) Next Exercise: [Exercise-09 - Debugging](../Exercise-09-Debugging)
 
 [Back to the Overview](../README.md)
 - - - -
@@ -183,6 +183,6 @@ We will now build and deploy the application that has been built above. Please n
 © 2018 SAP SE
 - - - -
 
-Previous Exercise: [Exercise 07 - Comments and Ratings Frontend](../Exercise-07-Comments-and-Ratings-Frontend) Next Exercise: [Exercise-09 - Test Order New Items with User Input](../Exercise-09-Test-Order-New-Items-with-User-Input)
+Previous Exercise: [Exercise 07 - Comments and Ratings Frontend](../Exercise-07-Comments-and-Ratings-Frontend) Next Exercise: [Exercise-09 - Debugging](../Exercise-09-Debugging)
 
 [Back to the Overview](../README.md)

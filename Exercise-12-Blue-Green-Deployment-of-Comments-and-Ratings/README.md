@@ -1,10 +1,10 @@
 - - - -
-Previous Exercise: [Exercise 10-Autoscaling of Comments and Ratings](../Exercise-10-Autoscaling-of-Comments-and-Ratings) Next Exercise: [Exercise 12-Monitoring](../Exercise-12-Monitoring)
+Previous Exercise: [Exercise 11-Autoscaling of Comments and Ratings](../Exercise-11-Autoscaling-of-Comments-and-Ratings) Next Exercise: [Exercise 13-Monitoring](../Exercise-13-Monitoring)
 
 [Back to the Overview](../README.md)
 - - - -
 
-# Exercise 11 - Blue Green Deployment of Comments and Ratings
+# Exercise 12 - Blue Green Deployment of Comments and Ratings
 In this exercise you will learn about Blue Green deployment of multi-target applications (MTA).
 ## What is Blue Green deployment?
 Blue-Green deployment is a technique that reduces downtime and risk by running two identical production environments called Blue and Green.
@@ -184,6 +184,6 @@ knows that her reviews are being posted on twitter.
 © 2018 SAP SE
 - - - -
 
-Previous Exercise: [Exercise 10-Autoscaling of Comments and Ratings](../Exercise-10-Autoscaling-of-Comments-and-Ratings) Next Exercise: [Exercise 12-Monitoring](../Exercise-12-Monitoring)
+Previous Exercise: [Exercise 11-Autoscaling of Comments and Ratings](../Exercise-11-Autoscaling-of-Comments-and-Ratings) Next Exercise: [Exercise 13-Monitoring](../Exercise-13-Monitoring)
 
 [Back to the Overview](../README.md)
