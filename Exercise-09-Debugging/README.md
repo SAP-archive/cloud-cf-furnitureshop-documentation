@@ -29,12 +29,16 @@ This exercise demonstrates how to debug Node.js applications.  You can check out
    ![Step Image](images/Exercise8_5-7_review_tweet.png)
 
 3. In the _cockpit_, locate the `tweet_comments` application.
+
 4. Stop the running instance of the `tweet_comments` application.
 ![screnshot alt text](images/Stop_tweet_comments.jpg)
-5. In the Web IDE Workspace, expand the project _cloud-cf-furnitureshop-product-ratings_, created during the previous exercise. Right-click on the tweet_comments module and select  _Run – Run as Node.js Application’.
-[Step Image](images/Run_as_NodejsApp.jpg)
+
+5. In the Web IDE Workspace, expand the project _cloud-cf-furnitureshop-product-ratings_, created during the previous exercise. Right-click on the tweet_comments module and select  _Run – Run as Node.js Application_.
+![screnshot alt text](images/Run_as_NodejsApp.jpg)
+
 6. Wait for a few minutes for the application to start
 ![screnshot alt text](images/RunningApp_in_WebIDE.jpg)
+
 7. Test the product rating functionality again with the new version of the tweet_comments instace by following the steps described in item 2 above.
 
 ## 2. Attaching Debugger to an application instance
@@ -62,12 +66,13 @@ We are now ready to debug the application instance running on the SAP Cloud Plat
 3.	Enlarge the _Variables_ window and navigate to _Local - tweet - status_ to verify that the tweet message is as expected.
   ![screnshot alt text](images/Variables_View.jpg)
 
-3.	You can now step-over, step-in or step-out of the current function. To resume the application, click on the icon as shown in the below picture.
+4.	You can now step-over, step-in or step-out of the current function. To resume the application, click on the icon as shown in the below picture.
   
 ![screnshot alt text](images/Resume_Application.jpg)
-4. You can now refresh the [twitter page](https://twitter.com/sapfurnishop) where you should see a new tweet for the posted comment. 
 
-## 3. Cleanup
+5. You can now refresh the [twitter page](https://twitter.com/sapfurnishop) where you should see a new tweet for the posted comment. 
+
+## 4. Cleanup
 Let us now clean up by reversing the changes we applied for the current exercise.
 1.	Detach the Debugger from the running application.
 ![screnshot alt text](images/Detach_Debugger.jpg)
