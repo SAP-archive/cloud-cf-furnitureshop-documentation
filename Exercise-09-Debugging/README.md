@@ -17,27 +17,27 @@ This exercise demonstrates how to debug Node.js applications.  You can check out
 ## 1. Prepare an application (tweet_comments) instance for debugging
 1. Open your SAP Cloud Platform cockpit and go to your _Space - Applications_.
 
-1. Locate the `tweet_comments` application.
+2. Locate the `tweet_comments` application.
 
-1. Stop the running instance of the `tweet_comments` application.
+3. Stop the running instance of the `tweet_comments` application.
 ![screnshot alt text](images/Stop_tweet_comments.jpg)
 
-1. In the Web IDE Workspace, expand the project _cloud-cf-furnitureshop-product-ratings_, created during the previous exercise. Right-click on the tweet_comments module and select  _Run – Run as Node.js Application_.
+4. In the Web IDE Workspace, expand the project _cloud-cf-furnitureshop-product-ratings_, created during the previous exercise. Right-click on the tweet_comments module and select  _Run – Run as Node.js Application_.
 ![screnshot alt text](images/Run_as_NodejsApp.jpg)
 
-1. Wait for a few minutes for the application to start
+5. Wait for a few minutes for the application to start
 ![screnshot alt text](images/RunningApp_in_WebIDE.jpg)
 
-1. Let us test the overall porudct rating functionality using the newly created instance of the tweet_comments applications. In the _cockpit_, locate the `ratings_frontend` application and click on it. On the _Overview_ page for the application, click on the URL displayed under the _Application Routes_.
+6. Let us test the overall product rating functionality using the newly created instance of the tweet_comments applications. In the _cockpit_, locate the `ratings_frontend` application and click on it. On the _Overview_ page for the application, click on the URL displayed under the _Application Routes_.
 
-- Select a product from the list and navigate to the `Rate Item` tab. Give the product a rating and a comment and click on the _Submit_ button. Note that your screen will look different based on the product you selected for rating.
+ * Select a product from the list and navigate to the `Rate Item` tab. Give the product a rating and a comment and click on the _Submit_ button. Note that your screen will look different based on the product you selected for rating.
    ![Step Image](images/Exercise8_5-6_provide_rating.png)
 
- - You can also check the review feeds for a particular product.
+ * You can also check the review feeds for a particular product.
 
    ![Step Image](images/Exercise8_5-6_check_comments.png)
 
-1. In your browser, go to this [twitter handle](https://twitter.com/sapfurnishop) to see your comment posted as a tweet.
+7. In your browser, go to this [twitter handle](https://twitter.com/sapfurnishop) to see your comment posted as a tweet.
 
    ![Step Image](images/Exercise8_5-7_review_tweet.png)
 
