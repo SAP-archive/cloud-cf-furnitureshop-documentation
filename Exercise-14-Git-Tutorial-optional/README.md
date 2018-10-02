@@ -13,7 +13,6 @@ The goals of this tutorial are as follows:
 5. Work with branches by creating a new branch and adding commits to that branch.
 6. Merge one branch with another branch.
 7. Rebase one branch onto another branch.
-8. Discover solution branches in the furnitureshop repository.
 
 Let's get started ...
 
@@ -194,14 +193,5 @@ split and merged but follow a straight line.
 branch.
 
 You should now have the same result in the master branch but with a commit history that tells a linear story of commits.
-
-
-## Step 8 Discover solution branches in the furnitureshop repository.
-1. Discover branches in repo: https://github.com/SAP/cloud-cf-furnitureshop-demo
-1. Clone repo to WebIDE
-1. Open solution branch `step1-wishlist-service` and change `xs-security.json`.
-1. Build and deploy
-1. Merge with `master` branch and ff merge `master`.
-1. Build and Deploy `master`.
 
 
