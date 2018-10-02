@@ -141,7 +141,7 @@ In this section, we will setup the view and controller for product details view 
 We will now build and deploy the application that has been built above. Please note that the build and deploy may take few minutes. Please use this deployment time to login to the Cloud cockpit and check the creation of backing service instances, service bindings and applications. The order mentioned in your `mta.yaml` file will be followed during the deployment. You can also keep an eye on the flow of the deployment by watching the console logs from Web IDE or using the CF CLI command - **`cf logs <app name> --recent`**.
 
 1. To ensure that you do not deploy an incorrect MTAR it is advisable to delete the `product_ratings` folder under *mta_archives* folder as shown in the picture below.
-   ![Step Image](images/Exercise7_4-1_mta_folder_delete.png)
+   ![Step Image](images/Exercise7_4-1_pr_folder_delete.png)
 
 2. Using your Files explorer in Web IDE, right click on the **`cloud-cf-furnitureshop-product-ratings`** folder, go to Build &rarr; and click on **Build** as shown in the picture below.
 
