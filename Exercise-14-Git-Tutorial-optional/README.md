@@ -1,4 +1,9 @@
-# Git Tutorial
+- - - -
+Previous Exercise:  [Exercise 13-Monitoring](../Exercise-13-Monitoring) Next Exercise: [Exercise-15-Local-MTAR-Build-optional](../https://github.com/SAP/cloud-cf-furnitureshop-documentation/tree/master/Exercise-15-Local-MTAR-Build-optional)
+
+[Back to the Overview](../README.md)
+- - - -
+# Exercise 14 - Git Tutorial (optional)
 ## Purpose of this tutorial
 The pupose of this tutorial is to get the reader up to speed on how to use Git as fast as possible so that they are able
 to work with the repositories used in the rest of the hands-on session. This tutorial will not deep dive into what Git is
@@ -194,4 +199,14 @@ branch.
 
 You should now have the same result in the master branch but with a commit history that tells a linear story of commits.
 
+## Appendix
 
+* openSAP: [SAP Cloud Platform Version Control with Git](https://open.sap.com/courses/git1).
+* [GitHub definition on Wikipedia](https://en.wikipedia.org/wiki/GitHub).
+- - - -
+© 2018 SAP SE
+- - - -
+
+Previous Exercise:  [Exercise 13-Monitoring](../Exercise-13-Monitoring) Next Exercise: [Exercise-15-Local-MTAR-Build-optional](../https://github.com/SAP/cloud-cf-furnitureshop-documentation/tree/master/Exercise-15-Local-MTAR-Build-optional)
+
+[Back to the Overview](../README.md)
