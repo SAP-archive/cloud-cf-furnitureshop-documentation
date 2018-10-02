@@ -27,7 +27,7 @@ Click on _Services_ in the left panel and type _full-stack_ in the search field.
 3. Notice that when you try to access Web IDE Full-Stack, you will be prompted to log on again. This is because the subaccount you are using is configured to use a dedicated identity provider (IDP) set up for the purposes of TechEd `teched20.accounts.ondemand.com`. Log on with the same username and password information provided to you.
 
 ## 2. Configure Cloud Foundry
-Before proceeding with development, we will need to configure our workspace for Cloud Foundry. We will need to assign a space for our development.
+Before proceeding with development, we will need to configure our workspace for Cloud Foundry. We will need to assign a space for our development. In the assigned space, we then need to install the Builder i.e. The [MTA archive builder](https://help.sap.com/viewer/58746c584026430a890170ac4d87d03b/Cloud/en-US/ba7dd5a47b7a4858a652d15f9673c28d.html), which is a tool that builds a deployment-ready MTAR (.mtar file) from the artifacts of an MTA project according to the project’s MTA development descriptor (mta.yaml file).
 
 1. In Web IDE Full Stack and _Click Preferences_ (the gear icon at the bottom on the left hand side or by following the menu option _Tools - Preferences_).
 2. Choose _Workspace Preferences - Cloud Foundry_<br>
