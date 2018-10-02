@@ -32,19 +32,26 @@ This is where Blue-Green deployment comes in. Mary is using the application depl
 ## 1. Update the UI
 We will make small changes to the user interface so that Mary knows that her reviews are being posted on twitter.
 
- 1. Open the i18n.properties file using WebIDE.
+1. Open the i18n.properties file using WebIDE.
      ![Step Image](images/ex-11-1-1-product_ratings-Blue-i18n.png)
 
- 2. Find keyword `submitButton`, as shown in the image,  and update the value from `Submit` to `Submit & Tweet`
+2. Find keyword `submitButton`, as shown in the image,  and update the value from `Submit` to `Submit & Tweet`
 
      ![Step Image](images/ex-11-1-2-i18n_submit_n_tweet.png)
 
     ```properties
     submitButton=Submit & Tweet
     ```
+3. Add a new keyword `feedInfoToolbar` with value `Your comments are being tweeted` as shown in the image.
 
- 3. Open `product_details.view.xml` in WebIDE
-    ![Step Image](images/ex-11-1-3-product_ratings-Blue.mtar-view.jpg)
+    ![Step Image](images/ex-11-1-3-i18n_feedInfo_toolbar.png)
+
+    ```properties
+    feedInfoToolBar=Your comments are being tweeted
+    ```
+
+4. Open `product_details.view.xml` in WebIDE
+    ![Step Image](images/ex-11-1-4-product_ratings-Blue.mtar-view.jpg)
   * Replace the code starting at `<List id=idReviewsList>` and ending at `</List>` tag with the following code.
      ```xml
         <List id="idReviewsList" items="{reviewsModel>/reviews}" noDataText="{i18n>noCommentsTitle}" growing="true" growingThreshold="10" growingScrollToLoad="true">
@@ -62,8 +69,8 @@ We will make small changes to the user interface so that Mary knows that her rev
                 text="{reviewsModel>comments}" convertLinksToAnchorTags="All"></FeedListItem>
         </List>
      ```
- 4. Open the `mta.yaml` file and change the `version`, as shown in the image, to `1.0.2`.
-    ![Step Image](images/ex-11-1-4-mta_version.png)
+4. Open the `mta.yaml` file and change the `version`, as shown in the image, to `1.0.2`.
+    ![Step Image](images/ex-11-1-5-mta_version.png)
 
     ```yaml
     version: 1.0.2
@@ -72,27 +79,24 @@ We will make small changes to the user interface so that Mary knows that her rev
 ## 2. Deploying the updated version using Blue-Green deployment
 knows that her reviews are being posted on twitter.
 
-1. To ensure that you do not deploy an incorrect MTAR it is advisable to delete the `mta_archives` folder as shown in the picture below.
-   ![Step Image](images/ex-11-2-1-mta_folder_delete.png)
+1. Right click on the **`cloud-cf-furnitureshop-product-ratings`** folder, go to `Build` and click **Build** as shown in the picture below.
 
-2. Right click on the **`cloud-cf-furnitureshop-product-ratings`** folder, go to `Build` and click **Build** as shown in the picture below.
-
-   ![Step Image](images/ex-11-2-2-app_build.png)
+   ![Step Image](images/ex-11-2-1-app_build.png)
 
    Once the build is completed successfully, you will see a new folder created in your Web IDE's File Explorer with the name **`mta_archives`**.
 
-3. To download the  MTAR file use the **Export** option as shown in the image.
+2. To download the  MTAR file use the **Export** option as shown in the image.
 
-   ![Step Image](images/ex-11-2-3-mtar_export.png)
+   ![Step Image](images/ex-11-2-2-mtar_export.png)
 
    Note:
-   * If you haven't deleted `mta_archives` folder before you did your build, please ensure that you export `product_ratings_1.0.2.mtar` file.
+   * Please ensure that you export `product_ratings_1.0.2.mtar` file.
    * The download may take few minutes.
    * The mtar file will be saved to your users downloads folder. You may move it to another folder for your convenience but we will further refer to the location of this file as the `mtar_location`.
 
-4. Next you will need to log into Cloud Foundry using the Command Line Interface (CLI), which you have set up in [Exercise 01](../Exercise-01-Setup). In the terminal window type `cf login`.
+3. Next you will need to log into Cloud Foundry using the Command Line Interface (CLI), which you have set up in [Exercise 01](../Exercise-01-Setup). In the terminal window type `cf login`.
 
-    ![Step Image](images/ex-11-2-4-product_ratings-Blue.mtar-CLI.jpg)
+    ![Step Image](images/ex-11-2-3-product_ratings-Blue.mtar-CLI.jpg)
 
     * Make certain that the endpoint is `https://api.cf.eu10.hana.ondemand.com` otherwise, logout using:
 
@@ -100,27 +104,27 @@ knows that her reviews are being posted on twitter.
 
         `cf login https://api.cf.eu10.hana.ondemand.com`
 
-5. Select `TechEd2018_OPP363` as the `org` and `OPP363_SPACE_XX` as the space.
+4. Select `TechEd2018_OPP363` as the `org` and `OPP363_SPACE_XX` as the space.
 
-6. Deploy the archive using Blue Green deployment with the command:
+5. Deploy the archive using Blue Green deployment with the command:
 
     ```
     cf bg-deploy <Path to Mtar>/product_ratings_1.0.2.mtar
     ```
     This deployment may take several minutes. At the end of the deployment you should see the following:
 
-    ![Step Image](images/ex-11-2-6-bg-deploy-success.png)
+    ![Step Image](images/ex-11-2-5-bg-deploy-success.png)
 
     Make a note of these commands as you will be using them in the upcoming steps. Please note that your process ID will be different than the ones shown in the image and redo the step.
 
     Note: If your deployment fails due to insufficient memory, then please stop your Web IDE builder on the SAP Cloud Platform Cockpit as shown in the images.
 
-    ![Step Image](images/ex-11-2-6-web_ide_builder_stop.png)
+    ![Step Image](images/ex-11-2-5-web_ide_builder_stop.png)
 
-    ![Step Image](images/ex-11-2-6-web_ide_builder_stopped.png)
+    ![Step Image](images/ex-11-2-5-web_ide_builder_stopped.png)
 
 
-7. Open the SAP Cloud Platform cockpit to validate the application and services are running correctly.
+6. Open the SAP Cloud Platform cockpit to validate the application and services are running correctly.
     * Log in to the [SAP Cloud Platform cockpit](https://account.hana.ondemand.com/cockpit).
     * Navigate to the correct space by selecting the Account `TechEd2018`, the Sub account `OPP363CF`, and the space `OPP363_SPACE_XX`.
     * You should see 3 new applications started in the **Applications** tab of your space:
@@ -128,49 +132,49 @@ knows that her reviews are being posted on twitter.
         * ratings_frontend_green
         * tweet_comments_green
 
-    ![Step Image](images/ex-11-2-7-bg-apps-scp.png)
+    ![Step Image](images/ex-11-2-6-bg-apps-scp.png)
 
-8. Click on `ratings_frontend_green`.
-    ![Step Image](images/ex-11-2-8-bg-rfe-app.png)
+7. Click on `ratings_frontend_green`.
+    ![Step Image](images/ex-11-2-7-bg-rfe-app.png)
     You will see that the app URL for this application has the keyword 'idle' in it. This is an indication that the currently active version, the one being used by Mary, is the `ratings_frontend` app and not `ratings_frontend_green`.
 
-9. Now, let's see how the two URLs point to two different applications.
+8. Now, let's see how the two URLs point to two different applications.
     * In the `ratings_frontend_green` app, click on the application URL that you see.
-    ![Step Image](images/ex-11-2-9-1-bg-rfe-url.png)
+    ![Step Image](images/ex-11-2-8-green-url.png)
 
     * In the `ratings_frontend_green` application, click on an Item and go to the `Rate Item` tab.
-    ![Step Image](images/ex-11-2-9-2-green-idle-app.png)
+    ![Step Image](images/ex-11-2-8-green-idle-app.png)
 
     * In your SAP Cloud Platform cockpit, go to the `ratings_frontend` app and click on the application URL.
-    ![Step Image](images/ex-11-2-9-3-blue-url.png)
+    ![Step Image](images/ex-11-2-8-blue-url.png)
 
     * In the `ratings_frontend` application, click on an Item and go to the `Rate Item` tab.
-    ![Step Image](images/ex-11-2-9-4-blue-app.png)
+    ![Step Image](images/ex-11-2-8-blue-app.png)
 
     This is the app that Mary is currently using. You can see that the changes we deployed are not available on the currently active version (Blue version).
 
-10. Now that we have verified that our Green version is working fine, we will make it the active version. In your CLI tool enter the command, that you noted in Step 6, to resume Blue Green deployment.
+9.  Now that we have verified that our Green version is working fine, we will make it the active version. In your CLI tool enter the command, that you noted in Step 6, to resume Blue Green deployment.
 
     ```
     cf bg-deploy -i <PROCESS ID> -a resume
     ```
     Note: If your deployment is stuck at `ratings_backend`, you may have to close the web browser tabs where you are running the `ratings_frontend` applications.
 
-11. Once the `bg-deploy resume` is successful, go to your SAP Cloud Platform cockpit. You should now see only the *`*-green`* applications.
+10. Once the `bg-deploy resume` is successful, go to your SAP Cloud Platform cockpit. You should now see only the *`*-green`* applications.
     ![Step Image](images/ex-11-2-10-active-apps.png)
 
     The `bg-deploy resume` command has deleted the older version of
 
-12. Click on `ratings_frontend_green`.
-    ![Step Image](images/ex-11-2-12-active-rfe-app.png)
+11. Click on `ratings_frontend_green`.
+    ![Step Image](images/ex-11-2-11-active-rfe-app.png)
 
     The `bg-deploy resume` command has deleted the temporary routes, the ones with **idle** in them, and has mapped the active route the one that mary has, to the updated application.
 
     Note: If you can't see the updated view, you might have the older version in your browser cache. In such a case, open the URL in an 'Incognito' or 'Private' mode.
 
-13. To verify that the old route is running the updated version of the application, click on `ratings_frontend_green` application's URL.
+12. To verify that the old route is running the updated version of the application, click on `ratings_frontend_green` application's URL.
 
-    ![Step Image](images/ex-11-2-13-active-app.png)
+    ![Step Image](images/ex-11-2-12-active-app.png)
 
 ## Appendix
 

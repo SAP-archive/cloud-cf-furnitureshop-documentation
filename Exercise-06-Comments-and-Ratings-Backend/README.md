@@ -133,22 +133,19 @@ Sharing of data between microservices is always a difficult architectural decisi
 
 We will now build and deploy the application that has been built above. Please note that the build and deploy may take few minutes. Please use this deployment time to login to the Cloud cockpit and check the creation of backing service instances, service bindings and applications. The order mentioned in your `mta.yaml` file will be followed during the deployment. You can also keep an eye on the flow of the deployment by watching the console logs from Web IDE or using the CF CLI command - **`cf logs <app name> --recent`**.
 
-1. To ensure that you do not deploy an incorrect MTAR it is advisable to delete the `mta_archives` folder as shown in the picture below.
-   ![Step Image](images/Exercise6_3-1_mta_folder_delete.png)
+1. Using your Files explorer in Web IDE, right click on the **`cloud-cf-furnitureshop-product-ratings`** folder, go to Build &rarr; and click on **Build** as shown in the picture below.
 
-2. Using your Files explorer in Web IDE, right click on the **`cloud-cf-furnitureshop-product-ratings`** folder, go to Build &rarr; and click on **Build** as shown in the picture below.
-
-   ![Step Image](images/Exercise6_3-2_project_build.png)
+   ![Step Image](images/Exercise6_3-1_project_build.png)
 
    Once the build is completed successfully, you will see a new folder created in your project with the name **`mta_archives`**.
 
-3. Right click on the generated .mtar file **`product_ratings_1.0.0.mtar`**, and go to Deploy &rarr; and click on **Deploy to SAP Cloud Platform** as shown in the picture below.
+2. Right click on the generated .mtar file **`product_ratings_1.0.0.mtar`**, and go to Deploy &rarr; and click on **Deploy to SAP Cloud Platform** as shown in the picture below.
 
-   ![Step Image](images/Exercise6_3-3_project_deploy.png)
+   ![Step Image](images/Exercise6_3-2_project_deploy.png)
 
-4. In the popup that appears, please enter the following details and click on Deploy
+3. In the popup that appears, please enter the following details and click on Deploy
 
-   ![Step Image](images/Exercise6_3-4_deploy_mtar_cf_endpoint.png)
+   ![Step Image](images/Exercise6_3-3_deploy_mtar_cf_endpoint.png)
 
    ```
    Cloud Foundry API Endpoint: https://api.cf.eu10.hana.ondemand.com
@@ -156,9 +153,9 @@ We will now build and deploy the application that has been built above. Please n
    Space: <select your space from the drop down list>
    ```
 
-4. The `odata.js` file under the `odata` folder in our deployment will expect a destination by name `getWishList`. Note that we have already created this destination in Exercise 4.
+4. The `odata.js` file under the `odata` folder in our deployment will expect a destination by name `getWishList`. Note that we have already created this destination in Exercise
 
-   ![Step Image](images/Exercise6_3-5_odata_destination.png)
+   ![Step Image](images/Exercise6_3-4_odata_destination.png)
 
 5. As the deployment of a Node.js application involves uploading and packaging a number of files and modules, the deployment via Web IDE might take some time. Please use this opportunity to login to the Cloud cockpit and check the creation of backing service instances, service bindings and applications. The order mentioned in your `mta.yaml` file will be followed during the deployment. You can also keep an eye on the flow of the deployment by watching the console logs from Web IDE or using the CF CLI command - **`cf logs <app name> --recent`**.
 
