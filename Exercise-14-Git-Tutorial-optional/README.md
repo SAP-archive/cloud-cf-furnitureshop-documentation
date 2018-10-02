@@ -38,6 +38,7 @@ It offers all of the distributed version control and source code management of G
 1. Visit [SAP@GitHub](https://www.github.com/SAP) to view over 200 SAP projects on GitHub. These projects provide code and 
 instructions on how to run it. Optionally, visit the [Explore GitHub](https://www.github.com/explore) page to find even more 
 projects.
+<img src="images/sap_on_github.jpg" alt="SAP on GitHub" width="520" height="180" border="0" />
 
 1. Next, search for cloud cf repositories from SAP. Type `org:SAP cloud-cf` in the search box. Locate the three repositories 
 we will use for this session:
@@ -48,8 +49,11 @@ we will use for this session:
 1. If you are not already a member of GitHub, sign up by clicking the `sign up` link.
     
 ## Step 3. Clone a repository from GitHub to your WebIDE tenant.
+
+![Cloning from an external GitHub](images/cloning_git_repository.jpg)
+
 In this exercise you will configure WebIDE to connect to GitHub and clone a repository.
-1. Open Web IDE, select **Preferences**, select **Git Settings**, enter your GitHub account email address and user name.
+1. Open Web IDE, select **Preferences**, select **Git Settings**, enter your GitHub account email address and user name.<img src="images/git_settings_in_webide.jpg" alt="SAP on GitHub" width="520" height="180" border="0" />
 
 1. Select **Development** to show the developer view of WebIDE. Right click on **Workspace** and select **Git**, select **Clone Repository**.
 
@@ -57,8 +61,9 @@ In this exercise you will configure WebIDE to connect to GitHub and clone a repo
 
 1. Click on the **Clone or download** button and then click on the **copy to clipboard** button.
 
-1. Switch back to the Web IDE tab. Paste the web URL to the git repository into the **Clone Git Repository** dialog. Do **not** tick
-*Add configuration for Gerrit*. Click **Clone**.
+1. Switch back to the Web IDE tab. Paste the web URL to the git repository into the **Clone Git Repository** dialog. 
+   Do **not** tick *Add configuration for Gerrit*. 
+   Click **Clone**.
 
 1. Expand the repository folder in WebIDE. Open the folder **Exercise-14-Git-Tutorial-optional**. Open the folder **git-tutorial**.
 
