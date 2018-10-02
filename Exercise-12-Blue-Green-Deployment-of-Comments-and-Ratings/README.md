@@ -1,5 +1,5 @@
 - - - -
-Previous Exercise: [Exercise 11-Autoscaling of Comments and Ratings](../Exercise-11-Autoscaling-of-Comments-and-Ratings) Next Exercise: [Exercise 13-Monitoring](../Exercise-13-Monitoring)
+Previous Exercise: [Exercise 11-Autoscaling of Comments and Ratings](../Exercise-11-Autoscaling-of-Comments-and-Ratings)
 
 [Back to the Overview](../README.md)
 - - - -
@@ -184,6 +184,6 @@ knows that her reviews are being posted on twitter.
 © 2018 SAP SE
 - - - -
 
-Previous Exercise: [Exercise 11-Autoscaling of Comments and Ratings](../Exercise-11-Autoscaling-of-Comments-and-Ratings) Next Exercise: [Exercise 13-Monitoring](../Exercise-13-Monitoring)
+Previous Exercise: [Exercise 11-Autoscaling of Comments and Ratings](../Exercise-11-Autoscaling-of-Comments-and-Ratings)
 
 [Back to the Overview](../README.md)
