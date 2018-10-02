@@ -28,7 +28,7 @@ This exercise demonstrates how to debug Node.js applications.  You can check out
 1. Wait for a few minutes for the application to start
 ![screnshot alt text](images/RunningApp_in_WebIDE.jpg)
 
-1. Let us test the overall porudct rating functionality using the newly created instance of the tweet_comments applications. Locate the `ratings_frontend` application and click on it. On Overview page for the application, click on the URL displayed under the Application Routes.
+1. Let us test the overall porudct rating functionality using the newly created instance of the tweet_comments applications. Locate the `ratings_frontend` application and click on it. On the _Overview_ page for the application, click on the URL displayed under the _Application Routes_.
 
 - Select a product from the list and navigate to the `Rate Item` tab. Give the product a rating and a comment and click on the _Submit_ button. Note that your screen will look different based on the product you selected for rating.
    ![Step Image](images/Exercise8_5-6_provide_rating.png)
