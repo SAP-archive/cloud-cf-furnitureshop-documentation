@@ -33,11 +33,11 @@ We first need to deploy a pre-built Java application which will simulate our bac
 1. Double Click on  startup.bat file. (this will launch a command prompt and start the tomcat server).
 1. Launch the URL [http://localhost:8080/backend-odata/Product.svc](http://localhost:8080/backend-odata/Product.svc).
 
-![backend odata](images/Exercise2_1_backend_odata.JPG)
+    ![backend odata](images/Exercise2_1_backend_odata.JPG)
 
 1. Notice that the OData service exposes a collection called OnPremiseProductData. Append `/OnPremiseProductData` to the URL so you have [http://localhost:8080/backend-odata/Product.svc/OnPremiseProductData](http://localhost:8080/backend-odata/Product.svc/OnPremiseProductData).
 
-![backend odata](images/Exercise2_2_backend_odata_collection.JPG)
+    ![backend odata](images/Exercise2_2_backend_odata_collection.JPG)
 
 
 
