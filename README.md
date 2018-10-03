@@ -75,8 +75,8 @@ To engage other customers and seek greater customer input for rating the items, 
 
 ## Exercises
 
-- [Exercise 01 - Setup/System Perparation](Exercise-01-Setup)
-- [Exercise 02 - What is Org and Space on CF](Exercise-02-What-is-OrgandSpace-CF)
+- [Exercise 01 - What is Org and Space on CF](Exercise-01-What-is-OrgandSpace-CF)
+- [Exercise 02 - Setup/System Perparation](Exercise-02-Setup)
 - [Exercise 03 - Publish Wishlist](Exercise-03-Publish-Wishlist)
 - [Exercise 04 - Order New Items](Exercise-04-Order-New-Items)
 - [Exercise 05 - Logging](Exercise-05-Logging)
