@@ -122,7 +122,6 @@ For example if your current time is 15:13 then you should put 15:17 under start 
 
 ![screnshot alt text](images/Exercise6_7_bindinstance1.jpg). 
 
-
 14.	Click _Save_.
 15.	 Explanation of the above parameters used: Here we are increasing the instance from 1 to 3, and then bringing it down. Other parameters are mentioned below:
 
@@ -142,7 +141,7 @@ For example if your current time is 15:13 then you should put 15:17 under start 
 
         initial_min_instance_count:	Minimum number of instances to scale up during the start of recurrence period.
 
-For more information on parametes refer our [help guide](https://help.sap.com/viewer/7472b7d13d5d4862b2b06a730a2df086/Cloud/en-US/c8023eb0995e42a68697f4262218a032.html) 
+For more information on parametes refer our [help guide](https://help.sap.com/viewer/7472b7d13d5d4862b2b06a730a2df086/Cloud/en-US/c8023eb0995e42a68697f4262218a032.html). 
 
 16.	You can now see your application under _Referencing Apps_.
 
@@ -154,7 +153,7 @@ For more information on parametes refer our [help guide](https://help.sap.com/vi
 
 ![screnshot alt text](images/Exercise6_10_ininstances.jpg).
 
-20.	As per the policy and the end time to reduce the instance the application instances will come down.
+20.	As per the current policy based on memory threshold, the number of application instances will come down to 2.
 
 - - - -
 © 2018 SAP SE
