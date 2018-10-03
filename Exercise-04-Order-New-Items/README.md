@@ -158,14 +158,14 @@ We can now open the existing wishlist application in Web IDE and modify the serv
     ```
     using com.company.furnitureshop from '../db/data-model';
     service CatalogService {  
-        entity Wishlist @read @update as projection on furnitureshop.Wishlist; 
+      entity Wishlist @read @update as projection on furnitureshop.Wishlist; 
 
-    @cds.persistence.skip
+      @cds.persistence.skip
       entity BackEndProductData as projection on furnitureshop.BackEndProductData;
     }
     ```
 
-    Note that the `@cds.persistence.skip` specifies not to create the table entity in HANA.
+    Note that the `@cds.persistence.skip` specifies ***not*** to create the table entity in HANA.
 
     Save the `my-service.cds` file
 
@@ -273,7 +273,6 @@ Replace the file with the code below:
     import com.sap.cloud.sdk.service.prov.api.operations.Read;
     import com.sap.cloud.sdk.odatav2.connectivity.ODataQueryBuilder;
     import com.sap.cloud.sdk.odatav2.connectivity.ODataQueryResult;
-    
     
     public class BackendService {
       private static final String BACKEND_DESTINATION_NAME = "ONPREM_BACKEND";
@@ -432,17 +431,18 @@ There are 2 things we need to change in the UI:
 * Add a new Tab to show Backend Product Data that we fetch from on-Premise system.<br>
 * Update the code to Display Product Ratings.<br>
 
-1. Expand _ui_ module - webapp - view and Open the file `Detail.view.xml` replace the contents of the file with the file available in - [DetailView](https://github.com/SAP/cloud-cf-furnitureshop-demo/blob/step2-order-service/ui/webapp/view/Detail.view.xml)
+1. Expand the foledr ui -> module -> webapp -> view and Open the file `Detail.view.xml`.  Replace the contents of the file with the file available in - [DetailView](https://github.com/SAP/cloud-cf-furnitureshop-demo/blob/step2-order-service/ui/webapp/view/Detail.view.xml)
 
 1. Save the file
 
-1. Now Expand _ui_ application - webapp - controller_ and open  `Detail.controller.js` replace the contents of the file with the file available in - [Detail.controller](https://github.com/SAP/cloud-cf-furnitureshop-demo/blob/step2-order-service/ui/webapp/controller/Detail.controller.js)
+1. Now expand the folder ui -> application -> webapp -> controller and open `Detail.controller.js`. Replace the contents of the file with the file available in - [Detail.controller](https://github.com/SAP/cloud-cf-furnitureshop-demo/blob/step2-order-service/ui/webapp/controller/Detail.controller.js)
 
 1. Open the `mta.yaml` file, you will find it in the image below 
 
     ![mta_img](images/Exercise2_mta_file.jpg)
 
     Replace the contents of mta.yaml with the file available at -  [mta.yaml](https://github.com/SAP/cloud-cf-furnitureshop-demo/blob/step2-order-service/mta.yaml)
+
 
 ## 5. Build and Deploy Application to SAP Cloud Platform
 
@@ -478,8 +478,9 @@ Please make sure the deployment is complete. The next thing we will need to do i
 1. In your SAP Cloud Platform admin cockpit, go to your Cloud Foundry Subaccount and navigate to your space.
 1. Click on Applications from the left menu
 1. Click on the srv application 
-1. Under Application Routes, copy the url link to the srv application. This will be used in the next steps.
+1. Under Application Routes, copy the URL link to the srv application. This will be used in the next steps.
 1. Click on the Service Bindings link on the left menu
+1. If no destination service appears in the table, bind the existing destination service to your application (you do not need to create a new destination service instance)
 1. Click on the destination service link under the Name Column
 1. Click on Destinations link from the left menu, you will see the existing destination that you have created in the previous steps.
 1. Click on New Destination and enter the following:
