@@ -57,6 +57,7 @@ Notice that  the project gets created with two modules by default, a database mo
 `mta.yaml` configures your overall application.
 
 12.	Open the `data-model.cds` under the db module and replace the source code of the file with the following:
+
 ```
 namespace com.company.furnitureshop;
 
@@ -126,13 +127,13 @@ In case you see a pop-up message that the import will overrwrite an existing fil
 ![imported](images/Exercise1_10_imported_files.jpg)
 
 25. Open the file `Data.hdbtabledata` under `db\src\csv` 
+
 ```
 {
 	"format_version": 1,
 	"imports": [
 		{
 		"target_table": "COM_COMPANY_FURNITURESHOP_WISHLIST",
-
 ```
 
 Notice that the target table created on HANA will be named according to the namespace you have used for your project plus the entity name. For example if the namespace was `com.company.furnitureshop` and the entity name in your data-model.cds was wishlist, the table created on HANA would be 
@@ -191,8 +192,11 @@ Note: You should also see a Builder instance that was created as part of the ear
 
 We have now modeled the database and we have created an Odata service, in the next part we will create a UI application to consume the data provided by the Odata service.
 
+
+
 ## 2. Create Wishlist Application User Interface
-We willl now create an SAPUI5 application using WebIDE by consuming the OData service created in the previous step to create the wishlist.
+We will now create an SAPUI5 application using WebIDE by consuming the OData service created in the previous step to create the wishlist.
+
 1.	Right-click on your project and click _New-HTML5 Module_.<br>
 
 ![new html5](images/Exercise1_20_New_html5.jpg)
@@ -236,12 +240,13 @@ We willl now create an SAPUI5 application using WebIDE by consuming the OData se
 17. Right-click _Import-File or Project_. 
 Choose the img.zip that you just downloaded.<br>
 
-![import](images/Exercise1_25_import_img.jpg)
+![import](images/Exercise1_25_import_img.png)
 
 18. Click _OK_.
 19. You will see the image files imported into the `webapp/img` folder.
 20. Open the `Master.view.xml` under `webapp/view` folder.
 21. Locate and edit `<ObjectListItem>` to include the code as shown:
+
 ```
 <ObjectListItem
 type="{= ${device>/system/phone} ? 'Active' : 'Inactive'}"
@@ -257,9 +262,11 @@ icon="img/ico_{pictureURL}"
 >
 </ObjectListItem>
 ```
+
 22. This will add the image icon to the master view as well as add the currency formatting.
 23. Open the `Detail.view.xml` under `webapp/view` folder.
 24. Locate and Replace the `<ObjectHeader>` as shown.
+
 ```
 <ObjectHeader
 id="objectHeader" icon="img/ico_{pictureURL}"
@@ -270,8 +277,10 @@ numberState="Success" numberUnit="USD">
 <attributes> <ObjectAttribute text="{productDesc}"/> </attributes>
 </ObjectHeader>
 ```
+
 25. This will add the image to the detail view as well as the product name, price currency formatting.
 26. Locate and replace the `<IconTabBar>` as shown:
+
 ```
 <IconTabBar
 	id="iconTabBar"
@@ -312,13 +321,16 @@ numberState="Success" numberUnit="USD">
 </items>
 </IconTabBar>
 ```
+
 27. This will add 2 items to the icon tab bar, one for product details with the labels and details for the selected product and a second toolbar icon to view the full size product image.
 28. Finally add the following includes to the `Detail.view.xml`.
+
 ```
 xmlns:l="sap.ui.layout"
 xmlns:f="sap.ui.layout.form"
 xmlns:vk="sap.ui.vk"
 ```
+
 ![detail view](images/Exercise1_26_detail_view.jpg)
 
 29. Chose the ui module and right-click _Run-Run as - Web Application_.<br>
