@@ -42,7 +42,7 @@ We will configure the scaling manually in the SAP Cloud Platform Cockpit. PLease
 
 9. Click _Save_ and you will see the quota increased.
 
-![screnshot alt text](images/Exercise6_3_increase_quota1.jpg).
+![screnshot alt text](images/Exercise6_3_increase_quota_512.jpg).
 
 10. Let’s get back the application to original state, click on change quota to reduce the quota back to `256 MB`.
 11. Click _Save_.
