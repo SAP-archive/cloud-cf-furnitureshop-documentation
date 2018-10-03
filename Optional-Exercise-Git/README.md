@@ -45,11 +45,7 @@ projects.
 <img src="images/sap_on_github.jpg" alt="SAP on GitHub" width="520" height="180" border="0" />
 
 1. Next, search for cloud cf repositories from SAP. Type `org:SAP cloud-cf` in the search box. Locate the three repositories 
-we will use for this session:
-    * cloud-cf-furnitureshop-documentation
-    * cloud-cf-furnitureshop-demo
-    * cloud-cf-furnitureshop-product-ratings
-    
+
 1. If you are not already a member of GitHub, sign up by clicking the `sign up` link.
     
 ## Step 3. Clone a repository from GitHub to your WebIDE tenant.
@@ -57,28 +53,15 @@ we will use for this session:
 ![Cloning from an external GitHub](images/cloning_git_repository.jpg)
 
 In this exercise you will configure WebIDE to connect to GitHub and clone a repository.
-1. Open Web IDE, select **Preferences**, select **Git Settings**, enter your GitHub account email address and user name.
-   
-   <img src="images/git_settings_in_webide.jpg" alt="SAP on GitHub" width="420" height="260" border="0" />
 
 1. Select **Development** to show the developer view of WebIDE. Right click on **Workspace** and select **Git**, select **Clone Repository**.
 
-1. Switch back to **GitHub** and select the [documentation repository](https://github.com/SAP/cloud-cf-furnitureshop-documentation).
-
-1. Click on the **Clone or download** button and then click on the **copy to clipboard** button.
-   <img src="images/git_clone_copy.jpg" alt="git clone copy" width="50%" height="50%" border="0" />
-
-1. Switch back to the Web IDE tab. Paste the web URL to the git repository into the **Clone Git Repository** dialog. 
+1. Paste the following web URL to the git repository into the **Clone Git Repository** dialog: `https://git.hana.ondemand.com/aevblwuamw/cloudcfgittutorial` 
    * Do **not** tick *Add configuration for Gerrit*. 
    * Click **Clone**.
     
-    <img src="images/clone_git_repository.jpg" alt="SAP on GitHub" width="50%" height="50%" border="0" />
+    <img src="images/clone_git_repository_2.jpg" alt="SAP on GitHub" width="50%" height="50%" border="0" />
 
-1. Expand the repository folder in WebIDE. Open the folder **Exercise-14-Git-Tutorial-optional**. Open the folder **git-tutorial**.
-
-    <img src="images/git_tutorial_folder.jpg" alt="git tutorial folder" width="50%" height="50%" border="0" />
-
-Note: there should not be any files in the `master` branch of the **git-tutorial** folder.
 
 ## Step 4 Learn about branches in Git.
 In WebIDE, when a change is made to a file and saved, it is only saved to the WebIDE environment and does not become part 
@@ -89,7 +72,7 @@ the **Commit** button.
 
 ![save stage commit](images/save_stage_commit.jpg)
 
-In Git, a branch is a pointer to a commit. In the `master` branch for the current repository (`cloud-cf-furnitureshop-documentation`) it is pointing to the latest commit made to this repository. 
+In Git, a branch is a pointer to a commit. In the `master` branch for the current repository (`cloudcfgittutorial`) it is pointing to the latest commit made to this repository. 
 
 ![Branches in Git](images/git_branch.jpg)
 
@@ -105,18 +88,20 @@ of your change to the work of other developers in your team.
 
 ![Feature branches](images/git_feature_branch.jpg)
 
-1. In WebIDE, select the project folder for the project `cloud-cf-furnitureshop-documentation`.
+1. In WebIDE, select the project folder for the project `cloudcfgittutorial`.
 
 1. Open the Git pane by selecting the **Git Pane** button on the toolbar to the right of the IDE.
 
 1. The Git pane will display the name of the repository you are working on and the name of the branch (`master`) that you 
-are currently viewing. Next to the **branch** selection is a **+** sign for adding new braches. Click the **+** sign to add a new branch.
+are currently viewing. Next to the **branch** selection is a **+** sign for adding new branches. Click the **+** sign to add a new branch.
 
 1. In the **Create a New Local Branch** dialog select `master` as the source branch and give the new branch the name: 
-`step-5-create-branch-ex`.
+`create-branch-ex`.
 
-1. Expand to the **git-tutorial** folder as described above and right click on the folder. Add a new HTML file: 
-select **New**, select **File**, name the file `index.html`.
+1. Add a new HTML file: Right click on the project folder
+    * select **New**, 
+    * select **File**, 
+    * name the file `index.html`.
 
 1. Copy the following HTML in to the file:
     ```
@@ -142,7 +127,7 @@ Now that you have completed and tested your feature, you want to merge the featu
 with other developers.
 
 1. Add a new commit to the `master` branch:
-    1. Select the **git-tutorial** folder and right click on the folder.
+    1. Right click on the project folder.
 
     1. Select **New**, select **File**, name the file `style.css`
 
@@ -159,31 +144,31 @@ with other developers.
     1. Save, stage and commit the changes.
 
 1. View the branches using the **Git History** pane:
-    * Select the project folder `cloud-cf-furnitureshop-documentation` and click the **Git History** button to open the pane.
-    * Open the **History of Branch** drop down list and select the `master` and the `step-5-create-branch-ex` branches.
+    * Select the project folder `cloudcfgittutorial` and click the **Git History** button to open the pane.
+    * Open the **History of Branch** drop down list and select the `master` and the `create-branch-ex` branches.
     * Observe how the feature branch now deviates from the master branch.
     
     ![Feature branch changes](images/git_feature_branch_changes.jpg)
     
 1. Merge the changes onto the master branch: 
-    * Select the **git-tutorial** folder and open the Git pane.
-    * Make sure the `step-5-create-branch-ex` branch is selected and click the **Merge** button.
-    * Merge the `step-5-create-branch-ex` branch onto the `master` branch.
+    * Select the project folder and open the Git pane.
+    * Make sure the `create-branch-ex` branch is selected and click the **Merge** button.
+    * Merge the `create-branch-ex` branch onto the `master` branch.
     
-1. The **Merge** will create a new commit on the `step-5-create-branch-ex` branch to reference the changes made by the merge.
+1. The **Merge** will create a new commit on the `create-branch-ex` branch to reference the changes made by the merge.
 View the **Git History** for the two branches by following the same steps described above. Select the **Merge** commit and 
-observe that the commit is only referenced by the `step-5-create-branch-ex` branch.
+observe that the commit is only referenced by the `create-branch-ex` branch.
 
     <img src="images/git_merge_history.jpg" alt="Merge history" width="50%" height="50%" border="0" />
 
-1. Fast-forward merge the `master` branch onto the `step-5-create-branch-ex` branch.
-    * Select the **git-tutorial** folder and select the `master` branch form the **Git pane**.
-    * Merge the `master` branch onto the `step-5-create-branch-ex` branch.
+1. Fast-forward merge the `master` branch onto the `create-branch-ex` branch.
+    * Select the project folder and select the `master` branch form the **Git pane**.
+    * Merge the `master` branch onto the `create-branch-ex` branch.
     * Observe that both branches now point to the same branch.
-    * You may now delete the `step-5-create-branch-ex` branch.
+    * You may now delete the `create-branch-ex` branch.
 
 1. Check your work: if you would like to make certain that you have achieved the right solution and can compare the `master`
-branch to the `step-5-create-branch` solution branch. A brief visual inspection should show that the files are the same in both branches.
+branch to the `create-branch-sol` solution branch. A brief visual inspection should show that the files are the same in both branches.
 
 
 The exercise above demonstrated how you, as a developer, can build new features and then merge those features into the main 
@@ -199,13 +184,13 @@ into another.
 
 1. Reset the `master` branch by deleting the HTML and CSS files. Stage and commit these changes.
 
-1. Repeat Step 5 and 6 above to create the two different branches but without **Merging** the `step-5-create-branch-ex` branch
+1. Repeat Step 5 and 6 above to create the two different branches but without **Merging** the `create-branch-ex` branch
 into the `master` branch.
 
 1. Instead, choose **Rebase**. Notice that after the rebase, in the **Git History** pane, that the commits are no longer
 split and merged but follow a straight line.
 
-1. Perform a fast-forward merge of the `master` branch onto the `step-5-create-branch-ex` branch and delete the `step-5-create-branch-ex`
+1. Perform a fast-forward merge of the `master` branch onto the `create-branch-ex` branch and delete the `create-branch-ex`
 branch.
 
 You should now have the same result in the master branch but with a commit history that tells a linear story of commits.
