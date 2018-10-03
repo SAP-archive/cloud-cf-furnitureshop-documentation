@@ -17,7 +17,7 @@ Key benefits:
 ## 1. Pre-requisites
 You have completed till [Exercise 06 -  Comments and Ratings](../Exercise-06-Comments-and-Ratings-Backend) and you should have the applications up and running on your SAP Cloud Platform.
 
-In this exercise we will performing manual and auto scaling on the comments and ratings backend logic. Consider a scenario where the review application is used by a large number of employees just like Mary, and the memory consumption, CPU usage is increased for this application. To cater to the incresing demand for this application we need to scale up the application so that request can be fullfilled. 
+In this exercise, we will be performing manual and auto scaling on the comments and ratings backend logic. Consider a scenario where the review application is used by a large number of employees just like Mary, and the memory consumption, CPU usage is increased for this application. To cater to the increasing demand for this application we need to scale up the application so that request can be fulfilled. 
 
 Below we will be using SAP Cloud Platform cockpit and auto scaling policies to perform these operations.
 
@@ -36,15 +36,15 @@ We will configure the scaling manually in the SAP Cloud Platform Cockpit. PLease
 
 ![screnshot alt text](images/Exercise6_2_increase_instances.JPG).
 
-7. Now reduce the instance count back to 1 to perform further operation smoothly. This step is performed because you only have limited memory quota to your space and to avoid application crashes we are performing this step.
+7. Now reduce the instance count back to 1 to ensure that we do not exceed the quota limits for the next set of exercises.
 
-8. Now click on _Change Quota_ under _Quota Information_ to do the vertical scaling i.e scaling up where we will increase the disk and memory quota from `1024 MB` to `2048 MB`.
+8. Now click on Change Quota under Quota Information to do the vertical scaling i.e. scaling up where we will increase the disk and memory quota from 256 MB to 512 MB.
 
 9. Click _Save_ and you will see the quota increased.
 
 ![screnshot alt text](images/Exercise6_3_increase_quota1.jpg).
 
-10. Let’s get back the application to original state, click on change quota to reduce the quota back to `1024 MB`.
+10. Let’s get back the application to original state, click on change quota to reduce the quota back to `256 MB`.
 11. Click _Save_.
 
 
