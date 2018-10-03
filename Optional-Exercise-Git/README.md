@@ -1,5 +1,5 @@
 - - - -
-Previous Exercise:  [Exercise 13-Monitoring](../Exercise-13-Monitoring) Next Exercise: [Exercise-15-Local-MTAR-Build-optional](../https://github.com/SAP/cloud-cf-furnitureshop-documentation/tree/master/Exercise-15-Local-MTAR-Build-optional)
+Previous Exercise:  [Exercise 12 - Blue Green Deployment of Comments and Ratings](../Exercise-12-Blue-Green-Deployment-of-Comments-and-Ratings) Next Exercise: [Building MTAR Applications On Your Local Machine](../Optional-Exercise-Local-MTAR-Build)
 
 [Back to the Overview](../README.md)
 - - - -
@@ -62,18 +62,21 @@ In this exercise you will configure WebIDE to connect to GitHub and clone a repo
    <img src="images/git_settings_in_webide.jpg" alt="SAP on GitHub" width="420" height="260" border="0" />
 
 1. Select **Development** to show the developer view of WebIDE. Right click on **Workspace** and select **Git**, select **Clone Repository**.
-   
-   <img src="images/clone_git_repository.jpg" alt="SAP on GitHub" width="420" height="260" border="0" />
 
 1. Switch back to **GitHub** and select the [documentation repository](https://github.com/SAP/cloud-cf-furnitureshop-documentation).
 
 1. Click on the **Clone or download** button and then click on the **copy to clipboard** button.
+   <img src="images/git_clone_copy.jpg" alt="git clone copy" width="50%" height="50%" border="0" />
 
 1. Switch back to the Web IDE tab. Paste the web URL to the git repository into the **Clone Git Repository** dialog. 
-   Do **not** tick *Add configuration for Gerrit*. 
-   Click **Clone**.
+   * Do **not** tick *Add configuration for Gerrit*. 
+   * Click **Clone**.
+    
+    <img src="images/clone_git_repository.jpg" alt="SAP on GitHub" width="50%" height="50%" border="0" />
 
 1. Expand the repository folder in WebIDE. Open the folder **Exercise-14-Git-Tutorial-optional**. Open the folder **git-tutorial**.
+
+    <img src="images/git_tutorial_folder.jpg" alt="git tutorial folder" width="50%" height="50%" border="0" />
 
 Note: there should not be any files in the `master` branch of the **git-tutorial** folder.
 
@@ -84,18 +87,23 @@ In WebIDE, you do this by first saving the file and then staging the file by cli
 name in the Git pane. Next you need to add a message that describes what you are committing and then you will need to click 
 the **Commit** button.
 
-In Git, a branch is a pointer to a commit. In the master branch for the current repository (`cloud-cf-furnitureshop-documentation`)
-is pointing to the latest commit made to this repository. 
+![save stage commit](images/save_stage_commit.jpg)
+
+In Git, a branch is a pointer to a commit. In the `master` branch for the current repository (`cloud-cf-furnitureshop-documentation`) it is pointing to the latest commit made to this repository. 
+
+![Branches in Git](images/git_branch.jpg)
 
 You can discover the latest commit and the commit history by selecting the project folder for the repository and then clicking 
 on **Git History** in the tool bar on the right of the IDE.
 
 ## Step 5 Create a new branch.
-In this exercise we will create a new `feature branch` for this repository. Imagine for a moment that you are working on a
-new feature for a product your development team is responsible for. Using Git, you decide to create a new *feature branch* 
-for the new *feature* you will develop. You decide to use a feature branch because you do not wish to modify the source code 
+In this exercise we will create a new **feature branch** for this repository. Imagine for a moment that you are working on a
+new feature for a product your development team is responsible for. Using Git, you decide to create a new **feature branch** 
+for the new **feature** you will develop. You decide to use a feature branch because you do not wish to modify the source code 
 in the master branch directly until your feature is completed and tested. This way, you will minimize the disruptive effect 
 of your change to the work of other developers in your team.
+
+![Feature branches](images/git_feature_branch.jpg)
 
 1. In WebIDE, select the project folder for the project `cloud-cf-furnitureshop-documentation`.
 
@@ -155,14 +163,18 @@ with other developers.
     * Open the **History of Branch** drop down list and select the `master` and the `step-5-create-branch-ex` branches.
     * Observe how the feature branch now deviates from the master branch.
     
+    ![Feature branch changes](images/git_feature_branch_changes.jpg)
+    
 1. Merge the changes onto the master branch: 
     * Select the **git-tutorial** folder and open the Git pane.
     * Make sure the `step-5-create-branch-ex` branch is selected and click the **Merge** button.
-    * Megre the `step-5-create-branch-ex` branch onto the `master` branch.
+    * Merge the `step-5-create-branch-ex` branch onto the `master` branch.
     
 1. The **Merge** will create a new commit on the `step-5-create-branch-ex` branch to reference the changes made by the merge.
-View the **Git History for the two branches by following the same steps described above. Select the **Merge** commit and 
+View the **Git History** for the two branches by following the same steps described above. Select the **Merge** commit and 
 observe that the commit is only referenced by the `step-5-create-branch-ex` branch.
+
+    <img src="images/git_merge_history.jpg" alt="Merge history" width="50%" height="50%" border="0" />
 
 1. Fast-forward merge the `master` branch onto the `step-5-create-branch-ex` branch.
     * Select the **git-tutorial** folder and select the `master` branch form the **Git pane**.
@@ -171,9 +183,8 @@ observe that the commit is only referenced by the `step-5-create-branch-ex` bran
     * You may now delete the `step-5-create-branch-ex` branch.
 
 1. Check your work: if you would like to make certain that you have achieved the right solution and can compare the `master`
-branch to the `step-5-create-branch` solution branch. A brief visaul instection should show that the files are the same in both branches.
+branch to the `step-5-create-branch` solution branch. A brief visual inspection should show that the files are the same in both branches.
 
-We will use solution branches throughout the exercises in this session.
 
 The exercise above demonstrated how you, as a developer, can build new features and then merge those features into the main 
 product code once the feature is fully developed, tested and bug-fixed. Normally, after the merge, the `master` branch would 
@@ -207,6 +218,6 @@ You should now have the same result in the master branch but with a commit histo
 © 2018 SAP SE
 - - - -
 
-Previous Exercise:  [Exercise 13-Monitoring](../Exercise-13-Monitoring) Next Exercise: [Exercise-15-Local-MTAR-Build-optional](../https://github.com/SAP/cloud-cf-furnitureshop-documentation/tree/master/Exercise-15-Local-MTAR-Build-optional)
+Previous Exercise:  [Exercise 12 - Blue Green Deployment of Comments and Ratings](../Exercise-12-Blue-Green-Deployment-of-Comments-and-Ratings) Next Exercise: [Building MTAR Applications On Your Local Machine](../Optional-Exercise-Local-MTAR-Build)
 
 [Back to the Overview](../README.md)
