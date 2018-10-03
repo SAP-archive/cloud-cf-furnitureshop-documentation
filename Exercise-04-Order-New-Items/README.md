@@ -43,7 +43,7 @@ We first need to deploy a pre-built Java application which will simulate our bac
 
 ## 2. Configure the SAP Cloud Connector
 
-The Cloud Connector is an optional on-premise component that is needed to integrate on-demand applications with customer services running in an on-premise system, and is the counterpart of SAP Cloud Platform Connectivity.
+The Cloud Connector is an optional on-premise component that is needed to integrate on-demand applications running in the SAP Cloud Platform with customer services running in an on-premise system, and is the counterpart of SAP Cloud Platform Connectivity.
 
 In the case of the TechEd exercises, this component has already been installed.
 
