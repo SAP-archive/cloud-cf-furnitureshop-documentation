@@ -148,7 +148,7 @@ We will create a new business application using Web IDE Full-Stack. We will defi
     ![Project Name](images/Exercise1_11_build_db1.jpg)
 
 1. Note this will build just the CDS in the db module.
-1. Right Click on the db module and click on Open HDI Container. If you do not see this option, check if the **SAP HANA Database Explorer** has been switched _ON_, as mentioned in [exercise 2] (../Exercise-02-Setup/README.md#3-enable-web-ide-full-stack-features).
+1. Right Click on the db module and click on Open HDI Container. If you do not see this option, check if the **SAP HANA Database Explorer** feature has been switched _ON_ in Web IDE, as mentioned in [exercise 2](../Exercise-02-Setup/README.md#3-enable-web-ide-full-stack-features).
 
 1. Click _No_ if you are prompted to add a database.
 1. You will see the HDI Container as shown
