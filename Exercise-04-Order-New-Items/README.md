@@ -476,44 +476,39 @@ There are 2 things we need to change in the UI:
 Please make sure the deployment is complete. The next thing we will need to do is create an instance of destination service on SAP Cloud Platform as well as a destination configuration. This will allow us to access the on premise backend system in our applications on SAP Cloud Platform by using the virtual URL we configured in the cloud connector.
 
 1. In your SAP Cloud Platform admin cockpit, go to your Cloud Foundry Subaccount and navigate to your space.
-1. Click on Applications from the left menu
-1. Click on the srv application 
-1. Under Application Routes, copy the URL link to the srv application. This will be used in the next steps.
-1. Click on the Service Bindings link on the left menu
-1. If no destination service appears in the table, bind the existing destination service to your application (you do not need to create a new destination service instance)
-1. Click on the destination service link under the Name Column
-1. Click on Destinations link from the left menu, you will see the existing destination that you have created in the previous steps.
+1. Expand Services, then select Service Instances
+
+    ![Service Instances](images/Exercise2_Service_Instances.png)
+
+1. Click on the `destination` service instance, then from the menu on the left, select Destinations
 1. Click on New Destination and enter the following:
 
-    - Name: `getWishlist`
-    - Type: `HTTP`
-    - Description: `Get Wishlist`
-    - URL: `<Paste the srv application url that you copied>` (Make sure you add `https://` to the begining of the URL)
-    - Proxy Type: `Internet`
-    - Authentication: `NoAuthentication`
+    | Property | Value |
+    |---|---|
+    | Name | `getWishlist`
+    | Type | `HTTP`
+    | Description | `Get Wishlist`
+    | URL | `<Paste the srv application url that you copied>`<br>(Make sure you add `https://` to the begining of the URL)
+    | Proxy Type | `Internet`
+    | Authentication | `NoAuthentication`
 
-1. Your destination should look like this:
+   Your destination should now look like this:
 
     ![destina](images/dest_getwishlist1.jpeg)
 
-    Click on Save
-
-    Click on New Destination
-
-    Enter the following values:
+1. Click on Save and add a second destination with the following values:
       
-    ***IMPORTANT***  
-    The field "Location ID" will only become visible ***after*** you have selected a Proxy Type of `OnPremise`.
+    | Property | Value |
+    |---|---|
+    | Name | `ONPREM_BACKEND`
+    | Type | `HTTP`
+    | Description | `Local Backend`
+    | Location ID | `OPP363-XX`  where XX is your unique student number<br>***Important***: This field will only become visible ***after*** you have selected a Proxy Type of `OnPremise`
+    | URL | `http://productbackend.com:8080`
+    | Proxy Type | `OnPremise`
+    | Authentication | `NoAuthentication`
 
-    - Name: `ONPREM_BACKEND`
-    - Type: `HTTP`
-    - Description: `Local Backend`
-    - Location ID: `OPP363-XX` (XX being your unique number assigned to you)
-    - URL: `http://productbackend.com:8080`
-    - Proxy Type: `OnPremise`
-    - Authentication: `NoAuthentication`
-
-1. Your destination should look like this:
+1. Your destination should now look like this:
 
     ![destination](images/Exercise2_0_destination1.JPG)
 
@@ -525,10 +520,14 @@ Please make sure the deployment is complete. The next thing we will need to do i
 
 1. If you have followed all the steps from the start of Exercise 3, You should see 4 applications
 
-    - db: This is the db module that was deployed as part of the mta deployment, it will be stopped by default, do not delete or modify this app.
-    - srv: This is the srv module with CDS and Java code that was deployed as part of the mta deployment
-    - webide-builder-sapwebide-di-<SOME_RANDOM_NAME>: This is the builder that you installed in Exercise 1. Please do not delete this application.
-    - ui: This is the wishlist html5 application with the UI logic was deployed as part of the mta deployment
+    - `db`  
+        This is the db module that was deployed as part of the mta deployment and will be stopped by default.  Please do not delete or modify this app.
+    - `srv`  
+        This is the service module with CDS and Java code that was deployed as part of the MTA deployment
+    - `webide-builder-sapwebide-di-<SOME_RANDOM_NAME>`  
+        This is the builder tool that you installed in Exercise 1. Please ***do not*** delete this application!
+    - `ui`  
+        This is the wishlist HTML5 application with the UI logic was deployed as part of the MTA deployment
 
 1. Click on the srv application and click on the link under Application Routes to launch the srv application
 
