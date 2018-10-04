@@ -66,6 +66,7 @@ In the case of the TechEd exercises, this component has already been installed.
    - User: `Administrator`
    - Password: `welcome`
 
+1. If you see any existing entires in the Subaccount Dashboard table, please delete these as they are left over from previous exercises
 1. For _Define Subaccount_ enter the following configuration:
 
    - Region Host: `cf.eu10.hana.ondemand.com`
@@ -503,7 +504,7 @@ Please make sure the deployment is complete. The next thing we will need to do i
     | Name | `ONPREM_BACKEND`
     | Type | `HTTP`
     | Description | `Local Backend`
-    | Location ID | `OPP363-XX`  where XX is your unique student number<br>***Important***: This field will only become visible ***after*** you have selected a Proxy Type of `OnPremise`
+    | Location ID | `OPP363-XX`  where XX is your two-digit student number<br>***Important***<br>This field value is case-sensitive and will only become visible ***after*** you have selected a Proxy Type of `OnPremise`
     | URL | `http://productbackend.com:8080`
     | Proxy Type | `OnPremise`
     | Authentication | `NoAuthentication`
