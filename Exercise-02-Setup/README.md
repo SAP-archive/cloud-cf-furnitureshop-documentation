@@ -23,7 +23,7 @@ Before proceeding with development, we will need to configure our workspace for 
 4. Enter your User Name and password when prompted to log on to Cloud Foundry
 4. Verify that the Organization is set to `TechEd2018_OPP363` and the Space is set to `OPP363_SPACE_XX` (where XX is the student number assigned to you)
 5. Click _Install Builder_ (The install might take a few seconds)
-6. Click _Save_
+6. Click **_Save_** (The builder and API endpoint configuration will be lost if not saved).
 
 ## 3. Enable Web IDe Full-Stack Features
 
@@ -40,6 +40,8 @@ We will be using additional Web IDE features that are not enabled by default. Th
 7. Verify that the feature has been enabled by making sure the database explorer button is in the left-hand toolbar.
 8. Repeat these steps to enable the Tools for Node.js Development.<br>
 ![node.js](images/setup5b_nodejs.JPG)
+
+**TIP** It is advised to enable features one by one i.e. do NOT enable both features at once.
 
 ## 4. Simplify the Copying of Code Blocks from GitHub
 Many of the exercises you will complete during the course of this session will require you to copy large blocks of code from the README.md documentation files. To make this easier and reduce the risk of copy-paste errors in your code, you can install a simple add-on for Chrome called _Tampermonkey_ and then a GitHub-specific user script to provide you with a _copy to clipboard_ button for the code blocks in the exercises.
