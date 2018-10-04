@@ -17,7 +17,7 @@ Core Data & Services (CDS) was adopted as known from S/4 HANA and ABAP to define
 
 We will create a new business application using Web IDE Full-Stack. We will define a model and CDS to create an OData service which will be consumed by the Wishlist application.
 
-1. Launch WebIDE
+1. Launch WebIDE, if not already open
 1. You can use the direct link to WebIDE - https://webidecp-aevblwuamw.dispatcher.hana.ondemand.com/
 1. Enter your user ID and Password.
 1. Click _File-New-Project from Template_.
