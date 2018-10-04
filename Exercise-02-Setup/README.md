@@ -13,17 +13,6 @@ In order to use Web IDE Full-Stack, you would normally need to configure the ser
 
 Access Web IDE Full-Stack by simply [clicking here](https://webidecp-aevblwuamw.dispatcher.hana.ondemand.com/) and using the login information provided to you.
 
-If for some reason, the above link for accessing Web IDE Full-Stack does not work, please follow these steps:
-1. [Click here](https://account.hana.ondemand.com/cockpit) to open your SAP Cloud Platform cockpit and navigate to the OPP363 subaccount by clicking on _TechEd2018 --> OPP363_. 
-![Navigate to Neo Subaccount](images/Setup1a_NeoSubaccountNavigation.jpg)
-
-Click on _Services_ in the left panel and type _full-stack_ in the search field.
-![Locate Web IDE Full Stack service](images/Setup1b_SearchWebIDE_FullStack.jpg)
-
-2. Launch Web IDE by clicking on the tile for  _SAP Web IDE Full-Stack_, followed by clicking on the link for _Go to Service_.
-
-![Go to Service](images/setup3_so_to_service.JPG)
-
 3. Notice that when you try to access Web IDE Full-Stack, you will be prompted to log on again. This is because the subaccount you are using is configured to use a dedicated identity provider (IDP) set up for the purposes of TechEd `teched20.accounts.ondemand.com`. Log on with the same username and password information provided to you.
 
 ## 2. Configure Cloud Foundry
