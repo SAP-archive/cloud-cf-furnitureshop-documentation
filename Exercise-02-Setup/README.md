@@ -72,7 +72,7 @@ As in any environment it's important to save your work regularly to avoid losing
 ![autosave](images/setup10_save_prefs.JPG)
 
 ## 6. Verify installation of CLoud Foundy CLI
-Open a _Commnand Prompt_ and run the command `cf plugins` to verify that the Cloud Foundry CLI along with the required plugins (_MtaPlugin and blue-green-deploy_) are installed on your image
+Open a _Commnand Prompt_ and run the command `cf plugins` to verify that the Cloud Foundry CLI along with the required plugins **MtaPlugin** are installed on your image (command name _mta, deploy and bg-deploy_ should be available).
 
 
 This completes the system setup for your exercises.
