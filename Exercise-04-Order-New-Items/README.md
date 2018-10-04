@@ -59,8 +59,6 @@ In the case of the TechEd exercises, this component has already been installed.
 
     ![account id](images/Exercise2_4_CF_account_id.JPG)
 
-1. Locate the SAP Cloud Connector folder on the TechEd Image `(D:\SAP\SCC20)`
-1. Double-click `go.bat` to start the SAP Cloud Connector.
 1. Launch SAP Cloud Connector URL [https://localhost:8443](https://localhost:8443) and login with the credentials:
 
    - User: `Administrator`
