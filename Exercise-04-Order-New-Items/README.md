@@ -74,9 +74,11 @@ In the case of the TechEd exercises, this component has already been installed.
    - Display Name: `ProductData Connector`
    - Login Email ID: `<your_login_email>`
    - Password: `<Your_Password>`
-   - Location ID: `OPP363-XX` (XX being your unique number assigned to you)
+   - Location ID: `OPP363-XX` (XX being your unique two digit numbe)
    - Description: `ProductData Connector`
 
+    Note tha the value of Location ID is case sensitive. For the current exercise, ensure that you have types _OPP_ as upper case, since we will be using the same string elsewhere in this exercise.
+    
     Ignore the fields under the section HTTPS Proxy on the right side, leave them blank 
 
     ![add subaccount](images/Exercise2_5_cc_add_subaccount.JPG)
