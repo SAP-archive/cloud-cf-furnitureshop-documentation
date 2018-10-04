@@ -79,7 +79,7 @@ In the case of the TechEd exercises, this component has already been installed.
     | Location ID | `OPP363-XX`  where XX is your two digit student number
     | Description | `ProductData Connector`
 
-    Note that the value of Location ID is case sensitive. For the current exercise, ensure that you have types _OPP_ as upper case, since we will be using the same string elsewhere in this exercise.
+    Note that the value of Location ID is case sensitive! For the current exercise, ensure that you have entered ***OPP*** in upper case characters, since we will be using exactly this string value elsewhere in the exercise.
     
     Ignore the fields under the section HTTPS Proxy on the right side, leave them blank 
 
@@ -162,6 +162,7 @@ We can now open the existing wishlist application in Web IDE and modify the serv
 
     ```
     using com.company.furnitureshop from '../db/data-model';
+
     service CatalogService {  
       entity Wishlist @read @update as projection on furnitureshop.Wishlist; 
 
@@ -174,7 +175,7 @@ We can now open the existing wishlist application in Web IDE and modify the serv
 
     Save the `my-service.cds` file
 
-1.	The entity `BackendProductData` is not persistent in the HANA database and the odata get operation will return an empty set. We will override the `Query` and `Read` operations of the `BackendProductData` entity by our custom implementation in Java to read the onpremise OData that we created in the previous step via the destination pointing to the virtual url defined in the Cloud Connector configuration.
+1.	The entity `BackendProductData` is not persistent in the HANA database and the OData get operation will return an empty set. We will override the `Query` and `Read` operations of the `BackendProductData` entity by our custom implementation in Java to read the onpremise OData that we created in the previous step via the destination pointing to the virtual url defined in the Cloud Connector configuration.
 
 1.	Under the `srv` module, navigate to src -> main -> java -> com -> company -> furnitureshop  
     Right-click and choose _Create new Java Class_ enter the class name as `BackEndProductEntity` (do not add a `.java` extension as WebIDE will do this automatically).
@@ -328,8 +329,11 @@ Replace the file with the code below:
         try {
           logger.info("Class:BackendService - getProduct inside with ProductID = " + readRequest.getKeys().get("ProductID").toString());
           ODataQueryResult readResult = ODataQueryBuilder.
-            withEntity("/backend-odata/Product.svc", "OnPremiseProductData('" + readRequest.getKeys().get("ProductID").toString() + "')").
-            select("ProductID", "SUPPLIERID", "SUPPLIERNAME", "PRICE", "STOCK", "DELIVERYDATE","DISCOUNT").
+            withEntity("/backend-odata/Product.svc",
+              "OnPremiseProductData('" +
+              readRequest.getKeys().get("ProductID").toString() +
+              "')").
+            select("ProductID", "SUPPLIERID", "SUPPLIERNAME", "PRICE", "STOCK", "DELIVERYDATE", "DISCOUNT").
             enableMetadataCache().
             build().
             execute(BACKEND_DESTINATION_NAME);
@@ -357,10 +361,9 @@ Replace the file with the code below:
     
     Review the Java code that you created, the `@Query` annotation implements the query operation for the `BackEndProductData` entity set and the `@Read` annotation for reading a single `BackEndProductData` entity. We use SAP Cloud Platform SDK to query the backend via destinations.
 
-1. In the same folder create another Java class and name it as WishlistHandler (do not add .java extension, WebIDE will add it automatically). Replace the file with the code below:
+1. In the same folder create another Java class and name it as WishlistHandler (do not add a `.java` extension as WebIDE will do this automatically). Replace the contents of file with the code shown below:
 
-    This Java Class is to handle the Update method to the Wishlist Collection which will be used in the next exercises
-
+    This Java Class handles the Wishlist collection's update method which will be used in the next exercise
 
     ```java
     package com.company.furnitureshop;
@@ -467,20 +470,20 @@ There are 2 things we need to change in the UI:
 
 ## 5. Build and Deploy Application to SAP Cloud Platform
 
-1. We are now ready to build the project furnitureshop and deploy it to Cloud Foundry.
-1. Right-click your project and click _Build and choose Build CDS_.
+We are now ready to build the project furnitureshop and deploy it to Cloud Foundry.
+
+1. Right-click your project and select _Build_. then choose _Build CDS_.
 1. Confirm that the Build CDS has completed successfully.
-1. Right-click your project and click _Build and Choose Build_.
+1. Right-click your project and click _Build_ and then select _Build_.  This options takes the compiled CDS data model and creates a `.mta` file
 
     ![Build Project](images/Exercise2_17_build.JPG)
 
-1. Confirm that the build has completed successfully.
-1. The result of the build should be a new folder in your project for the MTA archives (`mta_archives`).
-1. Expand the mar_archives folder and the folder for your project and then right-click the furnitureshop0.0.1.mtar and click _Deploy-Deploy to SAP Cloud Platform_.
+1. Confirm that a `.mtar` file has been created under the newly created `mta_archives` folder.
+1. Expand the `mta_archives` folder and right-click the `furnitureshop0.0.1.mtar` file.  Select _Deploy_ -> _Deploy to SAP Cloud Platform_.
 
     ![Deploy mtar](images/Exercise2_18_deploy_mtar.JPG)
 
-1. You may get a popup to enter your credentials, please enter your id/password then In the _Deploy to SAP Cloud Platform_ dialog, enter:
+1. You may get a popup asking you to enter your credentials, please enter your id/password, then in the _Deploy to SAP Cloud Platform_ dialog, enter:
 
     - Cloud Foundry API Endpoint: `https://api.cf.eu10.hana.ondemand.com`
     - Organization: `TechEd2018_OPP363`
@@ -488,7 +491,7 @@ There are 2 things we need to change in the UI:
 
     ![CF Endpoint](images/Exercise2_19_deploy_mtar_cf_endpoint.JPG)
 
-    Wait until the deployment is complete and ensure it was successful, meanwhile you can login to the cockpit to view the applications being deployed. Please do not click into application until the deployment is complete 
+    Wait until the deployment is complete and ensure it was successful, meanwhile you can login to the cockpit to view the applications being deployed. Please do not click on your funitureshop application until the deployment has completed.
 
 
 ## 6. Create Destination Configuration on SAP Cloud Platform
