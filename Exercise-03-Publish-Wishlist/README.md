@@ -73,7 +73,7 @@ We will create a new business application using Web IDE Full-Stack. We will defi
           productWeight    : Integer;
           productPrice     : Decimal(10,2);
           productWarranty  : Integer;
-          materialType.    : String;
+          materialType     : String;
           supplierID       : String;
           supplierName     : String;
           supplierLocation : String;
