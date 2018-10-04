@@ -10,7 +10,7 @@ In our scenario, Franck will need to determine which products to add to his inve
 
 To simulate our on premise backend system, we will deploy a simple Java application which exposes product related backend APIs via OData services based on Apache Olingo Java libraries.
 
-We will use Web IDE Full-Stack to modify our existing wishlist application to include the retreival of data from the backed system as well as from the data stored in the SAP HANA database from the wishlist application.
+We will use Web IDE Full-Stack to modify our existing wishlist application to include the retrieval of data from the backed system as well as from the data stored in the SAP HANA database from the wishlist application.
 
 **This exercise involves the following main steps.**
 
@@ -69,15 +69,17 @@ In the case of the TechEd exercises, this component has already been installed.
 1. If you see any existing entires in the Subaccount Dashboard table, please delete these as they are left over from previous exercises
 1. For _Define Subaccount_ enter the following configuration:
 
-   - Region Host: `cf.eu10.hana.ondemand.com`
-   - Subaccount: `<ID that you copied in step 4>`
-   - Display Name: `ProductData Connector`
-   - Login Email ID: `<your_login_email>`
-   - Password: `<Your_Password>`
-   - Location ID: `OPP363-XX` (XX being your unique two digit numbe)
-   - Description: `ProductData Connector`
+    | Property | Value
+    |---|---|
+    | Region Host | `cf.eu10.hana.ondemand.com`
+    | Subaccount | `<ID that you copied in step 4>`
+    | Display Name | `ProductData Connector`
+    | Login Email ID | `<your_login_email>`
+    | Password | `<Your_Password>`
+    | Location ID | `OPP363-XX`  where XX is your two digit student number
+    | Description | `ProductData Connector`
 
-    Note tha the value of Location ID is case sensitive. For the current exercise, ensure that you have types _OPP_ as upper case, since we will be using the same string elsewhere in this exercise.
+    Note that the value of Location ID is case sensitive. For the current exercise, ensure that you have types _OPP_ as upper case, since we will be using the same string elsewhere in this exercise.
     
     Ignore the fields under the section HTTPS Proxy on the right side, leave them blank 
 
@@ -172,9 +174,10 @@ We can now open the existing wishlist application in Web IDE and modify the serv
 
     Save the `my-service.cds` file
 
-1.	The entity `BackendProductData` is not persistent in the HANA database and the odata get operation will return an empty set. We will override the `Query` and `Read` operations of the `BackendProductData` entity by our custom implementation in Java to read the onpremise odata that we created in the previous step via the destination pointing to the virtual url defined in the Cloud Connector configuration.
+1.	The entity `BackendProductData` is not persistent in the HANA database and the odata get operation will return an empty set. We will override the `Query` and `Read` operations of the `BackendProductData` entity by our custom implementation in Java to read the onpremise OData that we created in the previous step via the destination pointing to the virtual url defined in the Cloud Connector configuration.
 
-1.	Under the `srv` module, navigate to src - main - java - com - company - furnitureshop and right-click and choose _Create new Java Class_ enter the class name as `BackEndProductEntity` (do not add .java extension, WebIDE will add it automatically).
+1.	Under the `srv` module, navigate to src -> main -> java -> com -> company -> furnitureshop  
+    Right-click and choose _Create new Java Class_ enter the class name as `BackEndProductEntity` (do not add a `.java` extension as WebIDE will do this automatically).
 Replace the file with the code below:
 
     ```java
@@ -186,7 +189,7 @@ Replace the file with the code below:
     public class BackEndProductEntity {
       @ElementName("ProductID")
       @Key
-        private String ProductID;
+      private String ProductID;
 
       @ElementName("SUPPLIERID")
       private String SUPPLIERID;
@@ -288,65 +291,71 @@ Replace the file with the code below:
         QueryResponse queryResponse = null;
         try {
           logger.info("Class:BackendService - now execute query on Products");
-          ODataQueryBuilder qb = ODataQueryBuilder.withEntity("/backend-odata/Product.svc", "OnPremiseProductData")
-                .select("ProductID", "SUPPLIERID", "SUPPLIERNAME", "PRICE", "STOCK", "DELIVERYDATE","DISCOUNT");
+          ODataQueryBuilder qb = ODataQueryBuilder.
+            withEntity("/backend-odata/Product.svc", "OnPremiseProductData").
+            select("ProductID", "SUPPLIERID", "SUPPLIERNAME", "PRICE", "STOCK", "DELIVERYDATE","DISCOUNT");
     
           logger.info("Class:BackendService - After ODataQueryBuilder: ");
-            ODataQueryResult result = qb.enableMetadataCache()
-             .build()
-             .execute(BACKEND_DESTINATION_NAME);
+          ODataQueryResult result = qb.enableMetadataCache().
+            build().
+            execute(BACKEND_DESTINATION_NAME);
     
           logger.info("Class:BackendService - After calling backend OData V2 service: result: ");
     
           List<Map<String, Object>> v2BackEndProductsMap = result.asListOfMaps();
           queryResponse = QueryResponse.setSuccess().setData(v2BackEndProductsMap).response();
+
           return queryResponse;
-        } catch (Exception e) {
-          logger.error("Class:BackendService - ==> Exception calling backend OData V2 service for Query of Products: " + e.getMessage());
+        }
+        catch (Exception e) {
+          logger.error("Class:BackendService ==> Exception calling backend OData V2 service for Query of Products: " + e.getMessage());
     
-          ErrorResponse errorResponse = ErrorResponse.getBuilder()
-              .setMessage("Class:BackendService - There is an error.  Check the logs for the details.").setStatusCode(500).setCause(e)
-              .response();
+          ErrorResponse errorResponse = ErrorResponse.getBuilder().
+            setMessage("Class:BackendService ==> There is an error.  Check the logs for the details.").setStatusCode(500).
+            setCause(e).
+            response();
           queryResponse = QueryResponse.setError(errorResponse);
         }
-         return queryResponse;
+
+        return queryResponse;
       }
     
       @Read(entity = "BackEndProductData", serviceName = "CatalogService")
       public ReadResponse getProduct(ReadRequest readRequest) {
-      logger.info("Class:BackendService - at Read "+readRequest.getKeys().get("ProductID").toString());
+        logger.info("Class:BackendService - at Read "+readRequest.getKeys().get("ProductID").toString());
         ReadResponse readResponse = null;
     
         try {
           logger.info("Class:BackendService - getProduct inside with ProductID = " + readRequest.getKeys().get("ProductID").toString());
-          ODataQueryResult readResult = ODataQueryBuilder
-              .withEntity("/backend-odata/Product.svc",
-                  "OnPremiseProductData('" + readRequest.getKeys().get("ProductID").toString() + "')")
-              .select("ProductID", "SUPPLIERID", "SUPPLIERNAME", "PRICE", "STOCK", "DELIVERYDATE","DISCOUNT")
-              .enableMetadataCache()
-              .build().execute(BACKEND_DESTINATION_NAME);
-    
+          ODataQueryResult readResult = ODataQueryBuilder.
+            withEntity("/backend-odata/Product.svc", "OnPremiseProductData('" + readRequest.getKeys().get("ProductID").toString() + "')").
+            select("ProductID", "SUPPLIERID", "SUPPLIERNAME", "PRICE", "STOCK", "DELIVERYDATE","DISCOUNT").
+            enableMetadataCache().
+            build().
+            execute(BACKEND_DESTINATION_NAME);
     
           BackEndProductEntity readProdEntity = readResult.as(BackEndProductEntity.class);
           readResponse = ReadResponse.setSuccess().setData(readProdEntity).response();
     
           logger.info("Class:BackendService - After calling backend OData V2 READ service: readResponse : " + readResponse);
-    
-    
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
           logger.error("==> Exception calling backend OData V2 service for READ of Products: " + e.getMessage());
     
-          ErrorResponse errorResponse = ErrorResponse.getBuilder()
-              .setMessage("There is an error.  Check the logs for the details.").setStatusCode(500).setCause(e)
-              .response();
+          ErrorResponse errorResponse = ErrorResponse.getBuilder().
+            setMessage("There is an error.  Check the logs for the details.").
+            setStatusCode(500).
+            setCause(e).
+            response();
           readResponse = ReadResponse.setError(errorResponse);
         }
+
         return readResponse;
       }
     }
     ```
     
-    Review the Java code that you created, the `@Query` annotation implements the query operation for the `BackEndProductData` entityset and the `@Read` annotation for reading a single `BackEndProductData` entity. We use SAP Cloud Platform sdk to query the backend via destinations.
+    Review the Java code that you created, the `@Query` annotation implements the query operation for the `BackEndProductData` entity set and the `@Read` annotation for reading a single `BackEndProductData` entity. We use SAP Cloud Platform SDK to query the backend via destinations.
 
 1. In the same folder create another Java class and name it as WishlistHandler (do not add .java extension, WebIDE will add it automatically). Replace the file with the code below:
 
@@ -374,30 +383,39 @@ Replace the file with the code below:
       private static final Logger logger = LoggerFactory.getLogger(WishlistHandler.class.getName());
       @Update(entity = "Wishlist", serviceName = "CatalogService")
       public UpdateResponse updateWishlist(UpdateRequest updateRequest, ExtensionHelper extensionHelper) {
-           
-              EntityData entityData = updateRequest.getData();
-              
-              Map<String, Object> keyMap = new HashMap<String, Object>();
-          keyMap.put("ProductID", entityData.getElementValue("ProductID"));
-              DataSourceHandler handler = extensionHelper.getHandler();
-              
-              try {
-                EntityData existingWishlistData = handler.executeRead("Wishlist", keyMap,
-                getWishlistPropertyNames());
-             
-                EntityData updatedWishlistData = EntityData.getBuilder(existingWishlistData).removeElement("productRating").addElement("productRating",entityData.getElementValue("productRating")).buildEntityData("Wishlist");
-                 handler.executeUpdate(updatedWishlistData, updateRequest.getKeys(), false);
-              }
-              catch (Exception e) {
-                ErrorResponse err = ErrorResponse.getBuilder().setMessage("Failed to Update Wishlist. Check log for more details.").setStatusCode(500)
-                .response();
-                return UpdateResponse.setError(err);
-              }
 
-              return UpdateResponse.setSuccess().response();
+        EntityData entityData = updateRequest.getData();
+
+        Map<String, Object> keyMap = new HashMap<String, Object>();
+        keyMap.put("ProductID", entityData.getElementValue("ProductID"));
+        DataSourceHandler handler = extensionHelper.getHandler();
+
+        try {
+          EntityData existingWishlistData = handler.
+            executeRead("Wishlist", keyMap, getWishlistPropertyNames());
+
+          EntityData updatedWishlistData = EntityData.
+            getBuilder(existingWishlistData).
+            removeElement("productRating").
+            addElement("productRating",entityData.getElementValue("productRating")).
+            buildEntityData("Wishlist");
+
+          handler.executeUpdate(updatedWishlistData, updateRequest.getKeys(), false);
+        }
+        catch (Exception e) {
+          ErrorResponse err = ErrorResponse.
+            getBuilder().
+            setMessage("Failed to Update Wishlist. Check log for more details.").
+            setStatusCode(500).
+            response();
+
+          return UpdateResponse.setError(err);
+        }
+
+        return UpdateResponse.setSuccess().response();
       }
       
-      public static List<String> getWishlistPropertyNames(){
+      public static List<String> getWishlistPropertyNames() {
         List<String> propertyNames = new ArrayList<String>();
         
         propertyNames.add("ProductID");
@@ -434,32 +452,31 @@ There are 2 things we need to change in the UI:
 * Add a new Tab to show Backend Product Data that we fetch from on-Premise system.<br>
 * Update the code to Display Product Ratings.<br>
 
-1. Expand the foledr ui -> module -> webapp -> view and Open the file `Detail.view.xml`.  Replace the contents of the file with the file available in - [DetailView](https://github.com/SAP/cloud-cf-furnitureshop-demo/blob/step2-order-service/ui/webapp/view/Detail.view.xml)
+1. Expand the folder ui -> module -> webapp -> view and open the file `Detail.view.xml`.  Replace the contents of the file with this [DetailView](https://github.com/SAP/cloud-cf-furnitureshop-demo/blob/step2-order-service/ui/webapp/view/Detail.view.xml)
 
 1. Save the file
 
-1. Now expand the folder ui -> application -> webapp -> controller and open `Detail.controller.js`. Replace the contents of the file with the file available in - [Detail.controller](https://github.com/SAP/cloud-cf-furnitureshop-demo/blob/step2-order-service/ui/webapp/controller/Detail.controller.js)
+1. Now expand the folder ui -> application -> webapp -> controller and open `Detail.controller.js`. Replace the contents of the file with this [Detail.controller](https://github.com/SAP/cloud-cf-furnitureshop-demo/blob/step2-order-service/ui/webapp/controller/Detail.controller.js)
 
-1. Open the `mta.yaml` file, you will find it in the image below 
+1. Open the `mta.yaml` file in the top-level project folder
 
     ![mta_img](images/Exercise2_mta_file.jpg)
 
-    Replace the contents of mta.yaml with the file available at -  [mta.yaml](https://github.com/SAP/cloud-cf-furnitureshop-demo/blob/step2-order-service/mta.yaml)
+    Replace the contents of `mta.yaml` with this version [mta.yaml](https://github.com/SAP/cloud-cf-furnitureshop-demo/blob/step2-order-service/mta.yaml)
 
 
 ## 5. Build and Deploy Application to SAP Cloud Platform
 
-1. We are now ready to build the project furnitureshop and deploy to Cloud Foundry.
+1. We are now ready to build the project furnitureshop and deploy it to Cloud Foundry.
 1. Right-click your project and click _Build and choose Build CDS_.
 1. Confirm that the Build CDS has completed successfully.
 1. Right-click your project and click _Build and Choose Build_.
 
-
     ![Build Project](images/Exercise2_17_build.JPG)
 
 1. Confirm that the build has completed successfully.
-1. The result of the build should be a new folder in your project for the mta archives (`mta_archives`).
-1. Expoand the mar_archives folder and the folder for your project and then right-click the furnitureshop0.0.1.mtar and click _Deploy-Deploy to SAP Cloud Platform_.
+1. The result of the build should be a new folder in your project for the MTA archives (`mta_archives`).
+1. Expand the mar_archives folder and the folder for your project and then right-click the furnitureshop0.0.1.mtar and click _Deploy-Deploy to SAP Cloud Platform_.
 
     ![Deploy mtar](images/Exercise2_18_deploy_mtar.JPG)
 
@@ -491,13 +508,13 @@ Please make sure the deployment is complete. The next thing we will need to do i
     | Name | `getWishlist`
     | Type | `HTTP`
     | Description | `Get Wishlist`
-    | URL | `<Paste the srv application url that you copied>`<br>(Make sure you add `https://` to the begining of the URL)
+    | URL | `<Paste the srv application url that you copied>`<br>(Make sure you add `https://` to the beginning of the URL)
     | Proxy Type | `Internet`
     | Authentication | `NoAuthentication`
 
    Your destination should now look like this:
 
-    ![destina](images/dest_getwishlist1.jpeg)
+    ![destination get wish list](images/dest_getwishlist1.jpeg)
 
 1. Click on Save and add a second destination with the following values:
       
@@ -524,19 +541,19 @@ Please make sure the deployment is complete. The next thing we will need to do i
 1. If you have followed all the steps from the start of Exercise 3, You should see 4 applications
 
     - `db`  
-        This is the db module that was deployed as part of the mta deployment and will be stopped by default.  Please do not delete or modify this app.
+        This is the implementation of your data model.  It was deployed as part of the MTA deployment and will be stopped by default.  Please do not delete or modify this app.
     - `srv`  
-        This is the service module with CDS and Java code that was deployed as part of the MTA deployment
-    - `webide-builder-sapwebide-di-<SOME_RANDOM_NAME>`  
-        This is the builder tool that you installed in Exercise 1. Please ***do not*** delete this application!
+        This is the service created to expose your data model.  This module has been implemented in Java and was deployed as part of the MTA deployment
+    - `webide-builder-sapwebide-di-<SOME_RANDOM_STRING>`  
+        This is the CDS builder tool that you installed in Exercise 1. Every time you select "Build CDS" or "Build" from a context menu, you are invoking this tool.  Please ***do not*** delete this application!
     - `ui`  
-        This is the wishlist HTML5 application with the UI logic was deployed as part of the MTA deployment
+        This is the HTML5 wishlist application containing the UI logic that was deployed as part of the MTA deployment
 
-1. Click on the srv application and click on the link under Application Routes to launch the srv application
+1. Click on the srv application, then click on the link under Application Routes to launch the srv application
 
     ![testingsrv0](images/Exercise2_0_testingsrv0.jpg)
 
-1. You should be able to see the URL to the ODATA service that the srv application has created on clicking the link you should now see a new collection - BackEndProductData
+1. You should now be able to see the URL to the ODATA service that the srv application has created.  On clicking the link you should now see a new collection `BackEndProductData`
 
     ![testingsrv1](images/Exercise2_0_testingsrv1.jpg)
 
@@ -544,7 +561,7 @@ Please make sure the deployment is complete. The next thing we will need to do i
 
     ![testingsrv2](images/Exercise2_0_testingsrv2.jpg)
 
-1. To test the ui application navigate to the wishlist application in the SAP Cloud Platform cockpit and launch the URL, you will see a new tab which shows Backend Product information, you may not see any ratings yet as this will be done in the next exercises
+1. To test the ui application, navigate to the wishlist application in the SAP Cloud Platform cockpit and launch the URL.  You will see a new tab showing the Backend Product information.  However, you will probably not see any ratings yet as this functionality will be added in the next exercise
 
     ![testing](images/Exercise2_0_testingui.JPG)
 
