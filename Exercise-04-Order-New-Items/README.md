@@ -154,7 +154,7 @@ We can now open the existing wishlist application in Web IDE and modify the serv
 
     Save the `data-model.cds` file
 
-1. Edit `my-service.cds` under the `srv` module to add the new entity `BackendProductData`
+1. Edit `my-service.cds` under the `srv` module to add the new entity `BackendProductData`as shown below (or simply replace the entire content of the file with the following):
 
     ```
     using com.company.furnitureshop from '../db/data-model';
