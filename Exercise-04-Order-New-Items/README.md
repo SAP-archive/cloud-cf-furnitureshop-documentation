@@ -474,7 +474,7 @@ We are now ready to build the project furnitureshop and deploy it to Cloud Found
 
 1. Right-click your project and select _Build_. then choose _Build CDS_.
 1. Confirm that the Build CDS has completed successfully.
-1. Right-click your project and click _Build_ and then select _Build_.  This options takes the compiled CDS data model and creates a `.mta` file
+1. Right-click your project and click _Build_ and then select _Build_.  This option takes the compiled CDS data model and creates a `.mtar` file
 
     ![Build Project](images/Exercise2_17_build.JPG)
 
