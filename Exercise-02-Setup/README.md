@@ -45,9 +45,8 @@ Within this assigned space, we will then need to install a tool called the "Buil
 1. Click _Install Builder_ (This will take several minutes to complete)
 
 
-<a name="3-enable-web-ide-features">
+<a name="3-enable-web-ide-features"></a>
 ## 3. Enable Extra Features in Web IDE
-</a>
 
 In order to complete these exercises, we will need to use some extra features of Web IDE that are not enabled by default. The following steps describe how to enable these specific features.
 
