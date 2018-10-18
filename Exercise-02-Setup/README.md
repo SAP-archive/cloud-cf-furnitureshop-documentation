@@ -10,6 +10,7 @@
 
 # Exercise 2 - Setup
 
+<a name="1-web-ide-full-stack"></a>
 ## 1. SAP Web IDE Full-Stack
 
 The primary development tool for these hands-on exercises is [SAP Web IDE Full Stack](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/c175c03da2534e4b9b3ea28687f6cb0a.html) - a browser-based IDE in which you can easily develop, test, build, deploy and extend role-based, consumer-grade applications for business users.
@@ -21,7 +22,7 @@ In order to use Web IDE, you would normally need to configure the service and as
 Access Web IDE by [clicking here](https://webidecp-aevblwuamw.dispatcher.hana.ondemand.com/) and using the login information provided for you by the instructor.
 
 
-
+<a name="2-configure-cloud-foundry"></a>
 ## 2. Configure Cloud Foundry
 
 Before proceeding with development, we need to configure Web IDE to point to our allocated Space within our Cloud Foundry account.
@@ -74,6 +75,7 @@ In order to complete these exercises, we will need to use some extra features of
 
 
 
+<a name="4-simplify-copy-paste"></a>
 ## 4. Simplify the Copying of Code Blocks from GitHub
 
 During this session, you will often need to copy large blocks of code from the `README.md` documentation files. To make this easier and reduce the risk of copy-paste errors in your code, you can install a simple add-on for Chrome called _Tampermonkey_ and then a GitHub-specific user script to provide you with a _Copy to clipboard_ button for the code blocks in the exercises.
@@ -95,6 +97,7 @@ During the exercises, the copy to clipboard icon will now appear whenever when y
 
 
 
+<a name="5-saving-web-ide-changes"></a>
 ## 5. Tips on Saving your Changes in SAP Web IDE Full-Stack
 
 As in any development environment, it's important to save your work regularly to avoid losing your changes, this is particularly true in Web-based IDEs. As a general rule of thumb, try to follow the policy of: _"Save early, save often."_
@@ -115,7 +118,7 @@ As in any development environment, it's important to save your work regularly to
     ![autosave](images/setup10_save_prefs.JPG)
 
 
-
+<a name="6-verify-cli-plugins"></a>
 ## 6. Verify installation of Cloud Foundry CLI
 
 Open a _Command Prompt_ and run the command `cf plugins`.  You will see output similar to the following
