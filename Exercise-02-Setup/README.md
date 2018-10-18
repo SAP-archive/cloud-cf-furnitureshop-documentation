@@ -54,7 +54,7 @@ In order to complete these exercises, we will need to use some extra features of
 
     ![Web IDE features](images/setup4_web_ide_features.JPG)
 
-1. Search for feature called **SAP HANA Database Explorer**
+1. Search for two features, **SAP HANA Database Explorer** and **Tools for Node.js Development**
 
    ***IMPORTANT***  
    Each time SAP updates a Feature, the version number is incremented, and from a visual point of view, the background colour of the Feature's icon is changed.  Therefore the icon colours shown in the screenshot below are unlikely to match the icon colours you see on your screen.
