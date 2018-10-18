@@ -1,10 +1,14 @@
-- - - -
-Next Exercise: [Exercise 2 - Setup](../Exercise-02-Setup)
+# Navigation
 
-[Back to the Overview](../README.md)
-- - - -
+| Exercise | Link |
+|---|---|
+| Previous | 
+| Next | [Exercise 2 - Setup](../Exercise-02-Setup)
+| Start | [Overview](../README.md)
 
-# Exercise 01 - Gain Basic Understanding of the Account Structure on SAP Cloud Platform
+
+
+# Exercise 1 - Gain a Basic Understanding of the Account Structure on SAP Cloud Platform
 
 ## Introduction 
 In rest of the exercises, you will encounter various terms such as Global Account, Subaccount, Quota, Organisation, Spaces, API Endpoints, Applications and Services. The purpose of the current exercise is to help you get familiar with the terminology and the overall structure of an account within the SAP Cloud Platform.
@@ -143,9 +147,14 @@ As such, the current exercise is provided simply to help you learn your way arou
     ![screenshot alt text](images/home1.jpg)
 
 
-- - - -
+<hr>
 © 2018 SAP SE
-- - - -
-Next Exercise: [Exercise 2 - Setup](../Exercise-02-Setup)
+<hr>
 
-[Back to the Overview](../README.md)
+# Navigation
+
+| Exercise | Link |
+|---|---|
+| Previous | 
+| Next | [Exercise 2 - Setup](../Exercise-02-Setup)
+| Start | [Overview](../README.md)
