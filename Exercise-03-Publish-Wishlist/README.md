@@ -7,15 +7,16 @@
 | Start | [Overview](../README.md)
 
 ## Table of Contents
-1. [Business Scenario](#0-business-scenario)
-1. [Create Wishlist Application](#1-create-wishlist-app)
-1. [Create Wishlist User Interface](#2-create-wishlist-ui)
+1. [Business Scenario](#1-business-scenario)
+1. [Create Wishlist Application](#2-create-wishlist-app)
+1. [Create Wishlist User Interface](#3-create-wishlist-ui)
+1. [Cleanup](#4-cleanup)
 
 
 # Exercise 3 - Publish Wishlist
 
-<a name="0-business-scenario"></a>
-## 0. Business Scenario
+<a name="1-business-scenario"></a>
+## 1. Business Scenario
 
 Franck is the retail category manager in a home furniture franchise. In this exercise we will create a wishlist application that allows Franck to see a wishlist of furniture items he would like to have in his store.
 
@@ -37,8 +38,8 @@ The Business Application Programming Model allows us to add Java or Node.js modu
 
 [Top](#top)
 
-<a name="1-create-wishlist-app"></a>
-## 1. Create Wishlist Application
+<a name="2-create-wishlist-app"></a>
+## 2. Create Wishlist Application
 
 We will create a new business application using Web IDE. We will define a CDS data model and an OData service which will then be consumed by the Wishlist application.
 
@@ -272,8 +273,8 @@ In the next part, we will create a UI application to consume the data provided b
 
 
 
-<a name="2-create-wishlist-ui"></a>
-## 2. Create a Wishlist User Interface
+<a name="3-create-wishlist-ui"></a>
+## 3. Create a Wishlist User Interface
 
 We will now make use of the third layer in CDS and create a SAPUI5 application in order to make the business data accessible to the end user.  This app will consume the OData service we have just created.
 
@@ -460,8 +461,8 @@ Unlike the Java application, this UI application runs in the Web IDE design time
 
 
 
-<a name="3-clean-up"></a>
-## 3. Clean-up
+<a name="4-cleanup"></a>
+## 4. Clean-up
 
 1. Login to your SAP Cloud Platform Cockpit, navigate to your space and your applications.
 
