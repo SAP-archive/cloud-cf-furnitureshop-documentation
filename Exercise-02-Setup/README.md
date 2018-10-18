@@ -38,8 +38,8 @@ Within this assigned space, we will then need to install a tool called the "Buil
 
     ![CF Config](images/setup6_cf_config.JPG)
 
-1. Enter your User Name and password when prompted
 1. Select the API Endpoint `https://api.cf.eu10.hana.ondemand.com` 
+1. Enter your User Name and password when prompted
 1. Verify that the Organisation is set to `TechEd2018_OPP363` and the Space is set to `OPP363_SPACE_XXX` (where XXX is your assigned student number)
 1. Click **_Save_** otherwise the API endpoint configuration will be lost!
 1. Click _Install Builder_ (This will take several minutes to complete)
