@@ -15,7 +15,7 @@
 1. [Extend the User Interface to Display On-Premise Product Data](#4-extend-ui-onprem-data)
 1. [Build and Deploy Application to SAP Cloud Platform](#5-build-deploy-to-sapcp)
 1. [Create Destination Configuration on SAP Cloud Platform](#6-create-dest)
-1. [Test the application](#7-test-app)
+1. [Test the Application](#7-test-app)
 
 
 
@@ -170,7 +170,7 @@ Using Web IDE, we can now enhance the service module of our existing wishlist ap
 1. In Web IDE, open your existing `furnitureshop` application.
 1. Under the `db` folder, edit the file `data-model.cds` and append a new entity called `BackendProductData` to the end of the file:
 
-    ```
+    ```javascript
     entity BackEndProductData {
       key ProductID    : String;
           SUPPLIERID   : String;
@@ -188,7 +188,7 @@ Using Web IDE, we can now enhance the service module of our existing wishlist ap
 
 1. Under the `srv` folder, edit the file `my-service.cds` to add a new entity `BackendProductData`as shown below (or simply replace the entire contents of the file with the following):
 
-    ```
+    ```javascript
     using com.company.furnitureshop from '../db/data-model';
 
     service CatalogService {  
@@ -637,7 +637,7 @@ Next, we need to create an instance of a destination service on the SAP Cloud Pl
 
 
 <a name="7-test-app"></a>
-## 7. Test the application
+## 7. Test the Application
 
 1. In the SAP Cloud Platform Cockpit, navigate to your Space and then select Applications
 
