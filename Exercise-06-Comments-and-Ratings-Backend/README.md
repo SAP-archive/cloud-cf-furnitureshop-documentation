@@ -1,31 +1,68 @@
-- - - -
-Previous Exercise: [Exercise 5 - Logging](../Exercise-05-Logging) Next Exercise: [Exercise 7 - Comments and Ratings Frontend](../Exercise-07-Comments-and-Ratings-Frontend)
+<a name="top"></a># Navigation
 
-[Back to the Overview](../README.md)
-- - - -
+| Exercise | Link |
+|---|---|
+| Previous | [Exercise 5 - Logging](../Exercise-05-Logging)
+| Next | [[Exercise 7 - Comments and Ratings Frontend](../Exercise-07-Comments-and-Ratings-Frontend)
+| Start | [Overview](../README.md)
 
-# Exercise 06 - Comments and Ratings
 
-We now switch to the persona of Mary. Mary is a loyal customer of the furniture franchise. She has access to the shop's customer portal, which allows her to browse the product catalogue and view the wishlist items, which the shop is planning to stock. Customers like Mary will now have the ability to provide their input by adding ratings and comments on products, which Frank/the furniture shop has uploaded in the wishlist.
 
-## Technology choice
+## Table of Contents
+1. [Introduction](#1-intro)
+1. [Clone Exercise Content and Code Walkthrough](#2-clone-content)
+1. [Read Wishlist Data](#3-wishlist-data)
+1. [Deploy Application](#4-deploy-app)
 
-To help Mary provide her valuable inputs, we will create a 'Comments and Ratings' microservice. Following the guidelines of a microservice-based architecture of composing the application as a collection of loosely-coupled services, the choice of technology used by every service is based on the skillset in the team and more importantly on the requirements of the service.
-With the SAP Cloud Platform Cloud Foundry environment, teams have the flexibility to pick technologies and databases which best fit their requirements.
 
-To build a 'Comments and ratings' service which needs to collect inputs from the broad customer base of the furniture shop, we will need to use a technology which is simple and can work at lightning speeds. Hence the natural choice is to go with Node.js.
 
-For persistence, we will require a simple, cost-effective, transactional database to quickly store the ratings and comments from the users. To satisfy this requirement, a relational database like PostgreSQL will be a good choice. The communication between this transactional store and the master data store on SAP HANA, will be via OData calls.
+# Exercise 6 - Comments and Ratings
 
-In this exercise, we will create a Multi-Target Application [MTA], consisting of a Node.js module which provides REST API’s to add ratings and comments. During the deployment of the Node.js module, it will fetch the wishlist information from SAP HANA database which was exposed as OData in [Exercise 4](../Exercise-04-Order-New-Items) and store it in a PostgreSQL database. Once this ratings backend is available, we will build the front-end i.e. user interface in Exercise 7, which will display the wishlist in the form of a list view and allow the user to rate and comment on any product in the list. Individual ratings and average ratings will be persisted in PostgreSQL and the average rating will also be pushed to SAP HANA. These ratings in SAP HANA will help Franck to decide which products to order.
+<a name="1-intro"></a>
+## 1. Introduction
 
-In Exercise 8, we will see that Mary’s comments on the furniture products can be pushed to Twitter to spread the word and encourage other customers/patrons to engage with the furniture shop. To cater to this requirement, we will use an asynchronous message-broker like RabbitMQ to communicate and push messages to Twitter.
+### Business Scenario
 
-## Important - before we begin
+We now switch to the persona of Mary. Mary is a loyal customer of the furniture franchise. She has access to the shop's customer portal, through which she can not only browse the product catalogue, but also see the wishlist items the shop is planning to stock.
 
-In the upcoming sections, you will be required to clone the exercise content from a given git repository. In general, Node.js modules need to be built based on the requirement and cannot be easily templated. To explain relevant sections of the code, you will notice that certain parts/modules are commented. The exercises will guide you to uncomment individual pieces of code, while explaining the relevance of each piece and what it tries to achieve. Please take note that commenting/uncommenting will differ based on the type of file you are working with. Javascript files will consist of line comments "//". Please follow the instructions closely to have a smooth exercise experience.
+Customers like Mary now have the ability to provide their feedback by adding ratings and comments on the products Frank and other furniture shop staff-members have uploaded to the wishlist.
 
-## 1. Clone exercise content and code walkthrough
+
+### Technology choice
+
+To help Mary provide her feedback, we will create a 'Comments and Ratings' microservice.
+
+We will follow the guidelines of a microservice-based architecture in which the application should be composed from a collection of loosely-coupled services.  The choice of technology used by every service is based on the skillset in the team and more importantly, on the requirements of the service.
+
+With the SAP Cloud Platform Cloud Foundry environment, teams have the flexibility to pick technologies and databases that best fit their requirements.
+
+To build a 'Comments and ratings' service that collects feedback from the furniture shop's broad customer base, we need to use a technology which is simple and can work at lightning speeds. Hence the natural choice is to go with Node.js.
+
+For persistence, we require a simple, cost-effective, transactional database in which user's ratings and comments can easily be stored and retrieved. To satisfy this requirement, a relational database such as PostgreSQL is a good choice.
+
+The communication between this transactional store and the master data store on SAP HANA, will be via OData calls.
+
+In this exercise, we will create a Multi-Target Application [MTA], consisting of a Node.js module that provides REST API’s to add ratings and comments. During the deployment of the Node.js module, it will fetch the wishlist information from SAP HANA database that has been exposed as an OData service in [Exercise 4](../Exercise-04-Order-New-Items) and store it in a PostgreSQL database.
+
+Once the ratings backend is available, we will build the front-end i.e. user interface in Exercise 7, which will display the wishlist in the form of a list view and allow the user to rate and comment on any product in the list.
+
+Individual ratings and average ratings will be persisted in PostgreSQL and the average rating will also be pushed to SAP HANA. These ratings in SAP HANA will help Franck decide which products to order.
+
+In Exercise 8, we will see that Mary’s comments on the furniture products can be pushed to Twitter to spread the word and encourage other customers/patrons to engage with the furniture shop. To cater for this requirement, we will use the asynchronous message-broker RabbitMQ in order to push messages to Twitter service.
+
+### Important - Before we Begin
+
+In the upcoming sections, you will be required to clone the exercise content from a given Git repository. In general, Node.js modules need to be built based on the requirement and cannot be easily templated. To explain relevant sections of the code, you will notice that certain parts/modules are commented. The exercises will guide you to uncomment individual pieces of code, while explaining the relevance of each piece and what it achieves.
+
+Please take note that commenting/uncommenting will differ based on the type of file you are working with. Javascript files will consist of line comments "//". Please follow the instructions closely to have a smooth exercise experience.
+
+[Top](Top)
+
+
+
+
+<a name="2-clone-content"></a>
+## 2. Clone Exercise Content and Code Walkthrough
 
 In this section, we will clone the exercise content from Git to SAP Web IDE Full-Stack.
 
@@ -67,7 +104,13 @@ In this section, we will clone the exercise content from Git to SAP Web IDE Full
 
 	  * `@sap\xssec`- SAP provided module for node.js Container Security API
 
-## 2. Read wishlist data
+[Top](Top)
+
+
+
+
+<a name="3-wishlist-data"></a>
+## 3. Read Wishlist Data
 
 In order to provide ratings (and comments) on products in the wishlist, the service will require the wishlist data published by the furniture shop. This data is stored in SAP HANA during Exercise 3. We will now have to read the wishlist data from Exercise 3 and persist the same in PostgreSQL.
 
@@ -129,7 +172,13 @@ Sharing of data between microservices is always a difficult architectural decisi
 
    ![Step Image](images/Exercise6_2-5_route_js.png)
 
-## 3. Deploy the application
+[Top](Top)
+
+
+
+
+<a name="4-deploy-app></a>
+## 4. Deploy the Application
 
 We will now build and deploy the application that has been built above. Please note that the build and deploy may take few minutes. Please use this deployment time to login to the Cloud cockpit and check the creation of backing service instances, service bindings and applications. The order mentioned in your `mta.yaml` file will be followed during the deployment. You can also keep an eye on the flow of the deployment by watching the console logs from Web IDE or using the CF CLI command - **`cf logs <app name> --recent`**.
 
@@ -163,11 +212,18 @@ We will now build and deploy the application that has been built above. Please n
 
    ![Step Image](images/Exercise6_3-6_check_data.png)
 
-- - - -
+[Top](Top)
+
+
+<hr>
 © 2018 SAP SE
-- - - -
+<hr>
 
-Previous Exercise: [Exercise 5 - Logging](../Exercise-05-Logging) Next Exercise: [Exercise 7 - Comments and Ratings Frontend](../Exercise-07-Comments-and-Ratings-Frontend)
 
-[Back to the Overview](../README.md)
+# Navigation
 
+| Exercise | Link |
+|---|---|
+| Previous | [Exercise 5 - Logging](../Exercise-05-Logging)
+| Next | [[Exercise 7 - Comments and Ratings Frontend](../Exercise-07-Comments-and-Ratings-Frontend)
+| Start | [Overview](../README.md)
