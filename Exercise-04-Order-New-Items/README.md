@@ -29,6 +29,7 @@ To simulate our on premise backend system, we will deploy a simple Java applicat
 
 We will use Web IDE to modify our existing wishlist application so that it in addition to the data stored in the SAP HANA database, it also displays data from our simulated backed system.
 
+[Top](#top)
 
 
 <a name="1-deploy-odata-srv"></a>
@@ -51,6 +52,7 @@ We first need to deploy a pre-built Java application in order to simulate our ba
 
     Now you can see the additional product information provided by this little server.
 
+[Top](#top)
 
 
 <a name="2-configure-sapcc"></a>
@@ -157,6 +159,7 @@ You will need this value when configuring the cloud connector.
 
 This completes the configuration of the SAP Cloud Connector.
 
+[Top](#top)
 
 
 <a name="3-enhance-wishlist-app-service"></a>
@@ -493,6 +496,7 @@ Using Web IDE, we can now enhance the service module of our existing wishlist ap
 
 1. Save the file
 
+[Top](#top)
 
 
 <a name="4-extend-ui-onprem-data"></a>
@@ -521,6 +525,7 @@ There are 2 things we need to change in the UI:
 
     Replace the contents of `mta.yaml` with this version [mta.yaml](https://raw.githubusercontent.com/SAP/cloud-cf-furnitureshop-demo/step2-order-service/mta.yaml)
 
+[Top](#top)
 
 
 <a name="5-build-deploy-to-sapcp"></a>
@@ -578,6 +583,7 @@ Right-click on the `furnitureshop` project name and select _Build -> Build CDS_.
 
 1. Select the `srv` service and make a note of the URL under Application Routes.  This is the URL to start your service and will be needed when we create a destination in the next step.
 
+[Top](#top)
 
 
 <a name="6-create-dest"></a>
@@ -627,6 +633,7 @@ Next, we need to create an instance of a destination service on the SAP Cloud Pl
 
     Click on Save
 
+[Top](#top)
 
 
 <a name="7-test-app"></a>
@@ -649,6 +656,8 @@ Next, we need to create an instance of a destination service on the SAP Cloud Pl
 1. To test the `ui` application, navigate to the wishlist application in the SAP Cloud Platform cockpit and launch the URL.  You will see a new tab showing the Backend Product information.  However, you will not see any rating information yet as this functionality will be added in the next exercise
 
     ![testing](images/Exercise2_0_testingui.JPG)
+
+[Top](#top)
 
 <hr>
 © 2018 SAP SE
