@@ -464,14 +464,9 @@ Unlike the Java application, this UI application runs in the Web IDE design time
 <a name="4-cleanup"></a>
 ## 4. Clean-up
 
-1. Login to your SAP Cloud Platform Cockpit, navigate to your space and your applications.
+1. Login to your SAP Cloud Platform Cockpit, navigate to your space and your Service Instances.
 
-1. Stop the java application, `<SOME_RANDOM_NAME>furnitureshop-srv` to free up some application runtime space for the next exercises.
-
-1. ***IMPORTANT***  
-    Do ***NOT*** stop or delete the Builder application instance with a name of `webide-builder-sapwebide-di-<random_string>`
-
-1. Go to Service Instances and delete the instance `furnitureshop-furnitureshop-hdidb<random_string>`.
+1. Delete the instance `furnitureshop-furnitureshop-hdidb<random_string>`.
 
 [Top](#top)
 
