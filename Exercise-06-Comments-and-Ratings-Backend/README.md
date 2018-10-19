@@ -177,7 +177,7 @@ Sharing of data between microservices is always a difficult architectural decisi
 
 
 
-<a name="4-deploy-app></a>
+<a name="4-deploy-app"></a>
 ## 4. Deploy the Application
 
 We will now build and deploy the application that has been built above. Please note that the build and deploy may take few minutes. Please use this deployment time to login to the Cloud cockpit and check the creation of backing service instances, service bindings and applications. The order mentioned in your `mta.yaml` file will be followed during the deployment. You can also keep an eye on the flow of the deployment by watching the console logs from Web IDE or using the CF CLI command - **`cf logs <app name> --recent`**.
