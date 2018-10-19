@@ -86,7 +86,7 @@ We will create a new business application using Web IDE. We will define a CDS da
 
 1.	Open the `data-model.cds` under the `db` module and replace the entire file with the following:
 
-    ```
+    ```javascript
     namespace com.company.furnitureshop;
 
     entity Wishlist {
@@ -116,7 +116,7 @@ We will create a new business application using Web IDE. We will define a CDS da
 
 1.	Open the `my-service.cds` under the srv module and replace the source code of the file with following:
 
-    ```
+    ```javascript
     using com.company.furnitureshop from '../db/data-model';
 
     service CatalogService {
@@ -192,7 +192,7 @@ We will create a new business application using Web IDE. We will define a CDS da
 
     For you information, open the file `Data.hdbtabledata` under `db\src\csv` and you will see a JSON object:
 
-    ```
+    ```json
     {
       "format_version": 1,
       "imports": [
@@ -344,7 +344,7 @@ We will now make use of the third layer in CDS and create a SAPUI5 application i
 
 1. On or near line 62, you will find the `<ObjectListItem>` object.  Edit it to include the code as shown:
 
-    ```
+    ```xml
     <ObjectListItem
         type="{= ${device>/system/phone} ? 'Active' : 'Inactive'}"
         press="onSelectionChange"
@@ -366,7 +366,7 @@ We will now make use of the third layer in CDS and create a SAPUI5 application i
 
 1. On or near line 16, you will find an `<ObjectHeader>` object.  Edit it be as shown below.
 
-    ```
+    ```xml
     <ObjectHeader
         id="objectHeader" icon="img/ico_{pictureURL}"
         iconDensityAware="false" iconAlt="{productName}"
@@ -381,7 +381,7 @@ We will now make use of the third layer in CDS and create a SAPUI5 application i
 
 1. On or near line 24, you will find the `<IconTabBar>` object.  Edit it to be as shown below:
 
-    ```
+    ```xml
     <IconTabBar
       id="iconTabBar"
       class="sapUiResponsiveContentPadding">
@@ -426,7 +426,7 @@ We will now make use of the third layer in CDS and create a SAPUI5 application i
 
 1. Finally add the following includes to the `Detail.view.xml`.
 
-    ```
+    ```xml
     xmlns:l="sap.ui.layout"
     xmlns:f="sap.ui.layout.form"
     xmlns:vk="sap.ui.vk"
