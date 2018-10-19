@@ -629,7 +629,7 @@ Next, we need to create an instance of a destination service on the SAP Cloud Pl
 
 1. Your destination should now look like this:
 
-    ![destination](images/Exercise2_0_destination1.JPG)
+    ![destination](images/Exercise4_Destination.png)
 
     Click on Save
 
