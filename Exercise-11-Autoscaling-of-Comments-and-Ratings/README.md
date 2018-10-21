@@ -147,9 +147,9 @@ We will configure the scaling manually in the SAP Cloud Platform Cockpit. Please
 
     ![screenshot alt text](images/Exercise6_7_bindinstance1.jpg). 
 
-    1. Click _Save_.
+1. Click _Save_.
 
-    1. Explanation of the above parameters used: Here we are increasing the number of instances from 1 to 3, and then bringing it down. Other parameters are mentioned below:
+1. Explanation of the above parameters used: Here we are increasing the number of instances from 1 to 3, and then bringing it down. Other parameters are mentioned below:
 
     ***schedules***  
     A schedule enables you to configure scaling rules for specific days or on a recurring basis. Schedule guards against expected high surges or low activity period.
