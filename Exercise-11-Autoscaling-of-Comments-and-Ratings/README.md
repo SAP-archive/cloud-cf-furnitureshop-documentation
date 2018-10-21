@@ -84,35 +84,35 @@ We will configure the scaling manually in the SAP Cloud Platform Cockpit. Please
 <a name="Step3"></a>
 # 3. Configure Auto Scaling in the SAP Cloud Platform Cockpit
 
-1.	Go to your SAP Cloud Platform cockpit under _Org - Space_.
-1.	Expand the _Services_ tab on left.
+1. Go to your SAP Cloud Platform cockpit under _Org - Space_.
+1. Expand the _Services_ tab on left.
 
     ![screenshot alt text](images/Exercise6_4_servicemarketplace.JPG).
 
-1.	Click _Service Marketplace_.
-1.	Click _Application Autoscaler_, we are performing this step to create an instance of application autoscaler.
+1. Click _Service Marketplace_.
+1. Click _Application Autoscaler_, we are performing this step to create an instance of application autoscaler.
 
     ![screenshot alt text](images/Exercise6_5_autoscaling.JPG).
 
-1.	Click _Instances_ on the left side.
-1.	Click _New Instance_.
+1. Click _Instances_ on the left side.
+1. Click _New Instance_.
 
     ![screenshot alt text](images/Exercise6_5_createinstanceJPG.jpg).
 
-1.	Finish configuration by accepting default values and clicking _Next_ on the subsequent screens
-1.	Enter the _instance name_ as `myautoscaling`.
+1. Finish configuration by accepting default values and clicking _Next_ on the subsequent screens
+1. Enter the _instance name_ as `myautoscaling`.
 
     ![screenshot alt text](images/Exercise6_6_myautoscaling.jpg).
 
-1.	Click _Finish_, this will create a autoscaling instance for your applications to use.
-1.	Click on the newly created `myautoscaling` instance.
-1.	Click _Bind Instance_, we are performing this step to bind our application to this autoscaler instance.
+1. Click _Finish_, this will create a autoscaling instance for your applications to use.
+1. Click on the newly created `myautoscaling` instance.
+1. Click _Bind Instance_, we are performing this step to bind our application to this autoscaler instance.
 
     ![screenshot alt text](images/Exercise6_7_bindinstance.jpg).
 
-1.	In the _Application_ dropdown select the ratings_backend app.
+1. In the _Application_ dropdown select the ratings_backend app.
 
-1.	Now copy the contents of `policy.json` from below, edit in Notepad++ editor and then paste it into the `Enter Parameters` text box shown on SAP Cloud Platform cockpit. Scroll down and edit `start_time` to your current time + 4 minutes. and `end_time` to your start time + 4 minutes. 
+1. Now copy the contents of `policy.json` from below, edit in Notepad++ editor and then paste it into the `Enter Parameters` text box shown on SAP Cloud Platform cockpit. Scroll down and edit `start_time` to your current time + 4 minutes. and `end_time` to your start time + 4 minutes. 
 
     ```json
     {
@@ -147,48 +147,48 @@ We will configure the scaling manually in the SAP Cloud Platform Cockpit. Please
 
     ![screenshot alt text](images/Exercise6_7_bindinstance1.jpg). 
 
-    1.	Click _Save_.
+    1. Click _Save_.
 
-    1.	 Explanation of the above parameters used: Here we are increasing the instance from 1 to 3, and then bringing it down. Other parameters are mentioned below:
+    1. Explanation of the above parameters used: Here we are increasing the number of instances from 1 to 3, and then bringing it down. Other parameters are mentioned below:
 
-        ***schedules***  
-        A schedule enables you to configure scaling rules for specific days or on a recurring basis. Schedule guards against expected high surges or low activity period.
+    ***schedules***  
+    A schedule enables you to configure scaling rules for specific days or on a recurring basis. Schedule guards against expected high surges or low activity period.
 
-        ***recurring_schedule***  
-        Triggers the scaling rule recursively during the specified intervals.
+    ***recurring_schedule***  
+    Triggers the scaling rule recursively during the specified intervals.
 
-        ***start_time***  
-        Start time of a recurring schedule in 24-hr format (HH:MM).
+    ***start_time***  
+    Start time of a recurring schedule in 24-hr format (HH:MM).
 
-        ***end_time***  
-        End time of a recurring schedule in 24-hr format (HH:MM).
+    ***end_time***  
+    End time of a recurring schedule in 24-hr format (HH:MM).
 
-        ***days_of_week***  
-        Trigger scaling on weekdays ranging from 1 (Monday) to 7 (Sunday). The rule will execute during the weekdays specified within the array.
+    ***days_of_week***  
+    Trigger scaling on weekdays ranging from 1 (Monday) to 7 (Sunday). The rule will execute during the weekdays specified within the array.
 
-        ***instance_min_count***  
-        Minimum number of instances during the recurrence period.
+    ***instance_min_count***  
+    Minimum number of instances during the recurrence period.
 
-        ***instance_max_count***  
-        Maximum number of instances during the recurrence period.
+    ***instance_max_count***  
+    Maximum number of instances during the recurrence period.
 
-        ***initial_min_instance_count***  
-        Minimum number of instances to scale up during the start of recurrence period.
+    ***initial_min_instance_count***  
+     Minimum number of instances to scale up during the start of recurrence period.
 
     For more information on parameters refer our [help guide](https://help.sap.com/viewer/7472b7d13d5d4862b2b06a730a2df086/Cloud/en-US/c8023eb0995e42a68697f4262218a032.html). 
 
-1.	You can now see your application under _Referencing Apps_.
+1. You can now see your application under _Referencing Apps_.
 
     ![screenshot alt text](images/Exercise6_9_refapp.JPG).
 
-1.	Click on your `ratings_backend` application, to go back to your _Application Service Bindings_ page. Here you can see the auto scaler instance being created.
+1. Click on your `ratings_backend` application, to go back to your _Application Service Bindings_ page. Here you can see the auto scaler instance being created.
 
-1.	Click _Overview_, on the left side.
-1.	Scroll down you can see the instances of your application increased to 3 as per the defined policy and the start time mentioned.
+1. Click _Overview_, on the left side.
+1. Scroll down you can see the instances of your application increased to 3 as per the defined policy and the start time mentioned.
 
     ![screenshot alt text](images/Exercise6_10_ininstances.jpg).
 
-1.	As per the current policy based on memory threshold, the number of application instances will come down to 2.
+1. As per the current policy based on memory threshold, the number of application instances will come down to 2.
 
 [Top](#Top)
 
