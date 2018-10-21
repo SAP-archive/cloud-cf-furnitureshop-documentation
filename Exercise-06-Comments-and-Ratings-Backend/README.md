@@ -3,7 +3,7 @@
 | Exercise | Link |
 |---|---|
 | Previous | [Exercise 5 - Logging](../Exercise-05-Logging)
-| Next | [[Exercise 7 - Comments and Ratings Frontend](../Exercise-07-Comments-and-Ratings-Frontend)
+| Next | [Exercise 7 - Comments and Ratings Frontend](../Exercise-07-Comments-and-Ratings-Frontend)
 | Start | [Overview](../README.md)
 
 
