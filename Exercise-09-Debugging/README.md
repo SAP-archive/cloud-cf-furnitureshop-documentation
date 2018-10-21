@@ -66,14 +66,14 @@ This exercise demonstrates how to debug Node.js applications.  You can check out
 
 1. In your browser, go to this [twitter handle](https://twitter.com/sapfurnishop) to see your comment posted as a tweet.
 
-         ![Step Image](images/Exercise8_5-7_review_tweet.png)
+    ![Step Image](images/Exercise8_5-7_review_tweet.png)
 
 [Top](#Top)
 
 
 
 <a name="Step2"></a>
-## 2. Attaching the Debugger to an Application Instance
+# 2. Attaching the Debugger to an Application Instance
 
 1.	In the Web IDE, launch the _Debugger_ by clicking on the Debugger icon on the menu bar on the right (or by selecting _View - Debugger_ from the menu bar on top).
 
