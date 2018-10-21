@@ -1,27 +1,25 @@
-<a name="top"></a># Navigation
+<a name="top"></a># Exercise 5 - Logging
 
-| Exercise | Link |
-|---|---|
-| Previous | [Exercise 4 - Order New Items](../Exercise-04-Order-New-Items)
-| Next | [Exercise 6 - Comments and Ratings Backend](../Exercise-06-Comments-and-Ratings-Backend)
-| Start | [Overview](../README.md)
+## Navigation
 
+| Previous | | Next
+|---|---|---|
+| [Exercise 4 - Order New Items](../Exercise-04-Order-New-Items) | [Overview](../README.md) | [Exercise 6 - Comments and Ratings Backend](../Exercise-06-Comments-and-Ratings-Backend)
 
 
 ## Table of Contents
-1. [Why is Logging Important?](#1-importance-of-logging)
-1. [Review Logging Configuration and Code](#2-review-logging-config)
-1. [Create and Bind a Service of application-logs](#3-app-logging-service)
-1. [Generate and View Logs in Kibana](#4-kibana)
+* [Why is Logging Important?](#Intro)
+* [Review Logging Configuration and Code](#Step1)
+* [Create and Bind a Service of application-logs](#Step2)
+* [Generate and View Logs in Kibana](#Step3)
 
 
 
-# Exercise 5 - Logging
 
 
 
-<a name="1-importance-of-logging"></a>
-## 1. Why is Logging Important?
+<a name="Intro"></a>
+# Why is Logging Important?
 
 - No debugging of micro-services in production
 - Debug port is closed by default
@@ -34,10 +32,11 @@ The logs we collect are only useful if they can be analysed and visualised easil
 
 In this exercise, you will learn how you as an application developer or a dev ops engineer can visualize the application logs provided by default via Cloud Foundry ELK stack which provides elastic search, logstash (data processor and enrichment of logs) and Kibana. This is a good combination to store, search and visualise log entries.
 
+[Top](#Top)
 
 
-<a name="2-review-logging-config"></a>
-## 2. Review Logging Configuration and Code
+<a name="Step1"></a>
+# 1. Review Logging Configuration and Code
 
 In Exercise 4, we added the backend service calls to our wishlist application. As part of this exercise, we included the logging configuration and code to avoid having to build and redeploy the application again just to include the logging. 
 
@@ -60,10 +59,12 @@ In Exercise 4, we added the backend service calls to our wishlist application. A
 
     There is no need to change any code. We will bind an instance of the `application-logs` service in the next step.
 
+[Top](#Top)
 
 
-<a name="3-app-logging-service"></a>
-## 3. Create and Bind a Service of application-logs
+
+<a name="Step2"></a>
+## 2. Create and Bind a Service of application-logs
 
 We will now create and bind an instance of the application logging service to our application.
 
@@ -101,10 +102,12 @@ We will now create and bind an instance of the application logging service to ou
 
 1. From the _Overview_ for your application restart your application.
 
+[Top](#Top)
 
 
-<a name="4-kibana"></a>
-## 4. Generate and View Logs in Kibana
+
+<a name="Step3"></a>
+# 3. Generate and View Logs in Kibana
 
 In this step, we will explore how easy it is to view and analyze your logs using the Kibana Dashboard. 
 
@@ -172,16 +175,17 @@ Alternatively, you could view the application logs in the cockpit or by using th
 
 This concludes our brief introduction to application logging and how logs can be processed, enriched and visualised using Kibana.
 
+[Top](#Top)
+
+
 
 <hr>
 © 2018 SAP SE
 <hr>
 
 
-# Navigation
+## Navigation
 
-| Exercise | Link |
-|---|---|
-| Previous | [Exercise 4 - Order New Items](../Exercise-04-Order-New-Items)
-| Next | [Exercise 6 - Comments and Ratings Backend](../Exercise-06-Comments-and-Ratings-Backend)
-| Start | [Overview](../README.md)
+| Previous | | Next
+|---|---|---|
+| [Exercise 4 - Order New Items](../Exercise-04-Order-New-Items) | [Overview](../README.md) | [Exercise 6 - Comments and Ratings Backend](../Exercise-06-Comments-and-Ratings-Backend)

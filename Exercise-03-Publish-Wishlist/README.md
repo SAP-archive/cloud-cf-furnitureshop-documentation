@@ -1,22 +1,22 @@
-<a name="top"></a># Navigation
+<a name="top"></a># Exercise 3 - Publish Wishlist
 
-| Exercise | Link |
-|---|---|
-| Previous | [Exercise 2 - Setup](../Exercise-02-Setup)
-| Next | [Exercise 4 - Order New Items](../Exercise-04-Order-New-Items)
-| Start | [Overview](../README.md)
+## Navigation
+
+| Previous | | Next
+|---|---|---|
+| [Exercise 2 - Setup](../Exercise-02-Setup) | [Overview](../README.md) | [Exercise 4 - Order New Items](../Exercise-04-Order-New-Items)
+
 
 ## Table of Contents
-1. [Business Scenario](#1-business-scenario)
-1. [Create Wishlist Application](#2-create-wishlist-app)
-1. [Create Wishlist User Interface](#3-create-wishlist-ui)
-1. [Cleanup](#4-cleanup)
+* [Business Scenario](#Intro)
+* [Create Wishlist Application](#Step1)
+* [Create Wishlist User Interface](#Step2)
+* [Cleanup](#Step3)
 
 
-# Exercise 3 - Publish Wishlist
 
-<a name="1-business-scenario"></a>
-## 1. Business Scenario
+<a name="Intro"></a>
+# Business Scenario
 
 Franck is the retail category manager in a home furniture franchise. In this exercise we will create a wishlist application that allows Franck to see a wishlist of furniture items he would like to have in his store.
 
@@ -38,8 +38,11 @@ The Business Application Programming Model allows us to add Java or Node.js modu
 
 [Top](#top)
 
-<a name="2-create-wishlist-app"></a>
-## 2. Create Wishlist Application
+
+
+
+<a name="Step1"></a>
+# 1. Create Wishlist Application
 
 We will create a new business application using Web IDE. We will define a CDS data model and an OData service which will then be consumed by the Wishlist application.
 
@@ -273,8 +276,9 @@ In the next part, we will create a UI application to consume the data provided b
 
 
 
-<a name="3-create-wishlist-ui"></a>
-## 3. Create a Wishlist User Interface
+
+<a name="Step2"></a>
+# 2. Create a Wishlist User Interface
 
 We will now make use of the third layer in CDS and create a SAPUI5 application in order to make the business data accessible to the end user.  This app will consume the OData service we have just created.
 
@@ -461,8 +465,8 @@ Unlike the Java application, this UI application runs in the Web IDE design time
 
 
 
-<a name="4-cleanup"></a>
-## 4. Clean-up
+<a name="Step3"></a>
+## 3. Clean-up
 
 1. Login to your SAP Cloud Platform Cockpit, navigate to your space and your Service Instances.
 
@@ -475,12 +479,10 @@ Unlike the Java application, this UI application runs in the Web IDE design time
 © 2018 SAP SE
 <hr>
 
-# Navigation
+## Navigation
 
-| Exercise | Link |
-|---|---|
-| Previous | [Exercise 2 - Setup](../Exercise-02-Setup)
-| Next | [Exercise 4 - Order New Items](../Exercise-04-Order-New-Items)
-| Start | [Overview](../README.md)
+| Previous | | Next
+|---|---|---|
+| [Exercise 2 - Setup](../Exercise-02-Setup) | [Overview](../README.md) | [Exercise 4 - Order New Items](../Exercise-04-Order-New-Items)
 
 

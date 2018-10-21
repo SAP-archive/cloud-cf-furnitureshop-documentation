@@ -1,16 +1,18 @@
-<a name="top"></a># Navigation
+<a name="top"></a># Exercise 10 - Test Order New Items with User Input
 
-| Exercise | Link |
-|---|---|
-| Previous | [Exercise 9 - Debugging](../Exercise-09-Debugging)
-| Next | [Exercise 11 - Autoscaling of Comments and Ratings](../Exercise-11-Autoscaling-of-Comments-and-Ratings)
-| Start | [Overview](../README.md)
+## Navigation
+
+| Previous | | Next
+|---|---|---|
+| [Exercise 9 - Debugging](../Exercise-09-Debugging) | [Overview](../README.md) | [Exercise 11 - Autoscaling of Comments and Ratings](../Exercise-11-Autoscaling-of-Comments-and-Ratings)
 
 
 
-# Exercise 10 - Test Order New Items with User Input
+# Overview
 
 Franck is the retail category manager in a home furniture franchise. In the previous exercises we have created the Wishlist application which will allow Franck to see the catalogue of furniture Wishlist items for the store and then we updated the application to include Backend Product data from an on-Premise system. We created an application for Franck's colleagues to rate the products that were in his Wishlist. In addition to rating the products we as well added the functionality to tweet the comments on Twitter. Now Frank has the aggregated rating information from his colleagues which will help him make a decision on the products that he should order from the suppliers. In this exercise, we will run the Wishlist application that consists of the aggregated ratings from his colleagues.
+
+# Test Application
 
 1. Launch the SAP Cloud Platform Cockpit and navigate to the Applications in your Space
 
@@ -35,8 +37,6 @@ Franck is the retail category manager in a home furniture franchise. In the prev
 
 # Navigation
 
-| Exercise | Link |
-|---|---|
-| Previous | [Exercise 9 - Debugging](../Exercise-09-Debugging)
-| Next | [Exercise 11 - Autoscaling of Comments and Ratings](../Exercise-11-Autoscaling-of-Comments-and-Ratings)
-| Start | [Overview](../README.md)
+| Previous | | Next
+|---|---|---|
+| [Exercise 9 - Debugging](../Exercise-09-Debugging) | [Overview](../README.md) | [Exercise 11 - Autoscaling of Comments and Ratings](../Exercise-11-Autoscaling-of-Comments-and-Ratings)

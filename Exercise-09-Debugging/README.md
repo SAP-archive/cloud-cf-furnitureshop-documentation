@@ -1,10 +1,9 @@
-<a name="top"></a># Navigation
+<a name="top"></a># Exercise 9 - Debugging
+## Navigation
 
-| Exercise | Link |
-|---|---|
-| Previous | [Exercise 8 - Tweet Comments Backend](../Exercise-08-Tweet-Comments-Backend)
-| Next | [Exercise 10 - Test Order New Items with User Input](../Exercise-10-Test-Order-New-Items-with-User-Input)
-| Start | [Overview](../README.md)
+| Previous | | Next
+|---|---|---|
+| [Exercise 8 - Tweet Comments Backend](../Exercise-08-Tweet-Comments-Backend) | [Overview](../README.md) | [Exercise 10 - Test Order New Items with User Input](../Exercise-10-Test-Order-New-Items-with-User-Input)
 
 
 
@@ -18,7 +17,6 @@
 
 
 
-# Exercise 9 - Debugging
 
 <a name="Intro"></a>
 ## Overview
@@ -146,8 +144,6 @@ Let us now clean up by reversing the changes we applied for the current exercise
 
 # Navigation
 
-| Exercise | Link |
-|---|---|
-| Previous | [Exercise 8 - Tweet Comments Backend](../Exercise-08-Tweet-Comments-Backend)
-| Next | [Exercise 10 - Test Order New Items with User Input](../Exercise-10-Test-Order-New-Items-with-User-Input)
-| Start | [Overview](../README.md)
+| Previous | | Next
+|---|---|---|
+| [Exercise 8 - Tweet Comments Backend](../Exercise-08-Tweet-Comments-Backend) | [Overview](../README.md) | [Exercise 10 - Test Order New Items with User Input](../Exercise-10-Test-Order-New-Items-with-User-Input)

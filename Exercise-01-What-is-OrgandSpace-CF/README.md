@@ -1,20 +1,20 @@
-# Navigation
-
-| Exercise | Link |
-|---|---|
-| Previous | 
-| Next | [Exercise 2 - Setup](../Exercise-02-Setup)
-| Start | [Overview](../README.md)
-
-
-
 # Exercise 1 - Gain a Basic Understanding of the Account Structure on SAP Cloud Platform
 
-## Introduction 
+## Navigation
+
+| Previous | | Next
+|---|---|---|
+|  | [Overview](../README.md) | [Exercise 2 - Setup](../Exercise-02-Setup)
+
+
+# Introduction
+
 In rest of the exercises, you will encounter various terms such as Global Account, Subaccount, Quota, Organisation, Spaces, API Endpoints, Applications and Services. The purpose of the current exercise is to help you get familiar with the terminology and the overall structure of an account within the SAP Cloud Platform.
 
 As such, the current exercise is provided simply to help you learn your way around the SAP Cloud Platform Cockpit, and is not essential for completing the rest of the exercises.
 
+
+# Exercise Steps
 
 1. When you login to [SAP Cloud Platform cockpit](https://account.eu1.hana.ondemand.com/cockpit#/home/allaccounts) with your student credentials, you will see the home page which has a listing of Global Accounts. For the purpose of the current exercise, you will see a single Global Account listed - TechEd2018.
 
@@ -153,8 +153,6 @@ As such, the current exercise is provided simply to help you learn your way arou
 
 # Navigation
 
-| Exercise | Link |
-|---|---|
-| Previous | 
-| Next | [Exercise 2 - Setup](../Exercise-02-Setup)
-| Start | [Overview](../README.md)
+| Previous | | Next
+|---|---|---|
+|  | [Overview](../README.md) | [Exercise 2 - Setup](../Exercise-02-Setup)

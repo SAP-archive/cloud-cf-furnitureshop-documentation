@@ -1,33 +1,32 @@
-<a name="top"></a># Navigation
+<a name="top"></a># Exercise 7 - Comments and Ratings Frontend
 
-| Exercise | Link |
-|---|---|
-| Previous | [Exercise 6 - Comments and Ratings Backend](../Exercise-06-Comments-and-Ratings-Backend)
-| Next | [Exercise 8 - Tweet Comments Backend](../Exercise-08-Tweet-Comments-Backend)
-| Start | [Overview](../README.md)
+## Navigation
+
+| Previous | | Next
+|---|---|---|
+| [Exercise 6 - Comments and Ratings Backend](../Exercise-06-Comments-and-Ratings-Backend) | [Overview](../README.md) | [Exercise 8 - Tweet Comments Backend](../Exercise-08-Tweet-Comments-Backend)
 
 
 
 ## Table of Contents
-1. [Overview](#Intro)
-1. [Clone Exercise Content](#Step1)
-1. [Setup the Products List View](#Step2)
-1. [Setup the Product Details View](#Step3)
-1. [Deploy Application](#Step4)
-1. [Appendix](#Appendix)
+* [Overview](#Intro)
+* [Clone Exercise Content](#Step1)
+* [Setup the Products List View](#Step2)
+* [Setup the Product Details View](#Step3)
+* [Deploy Application](#Step4)
+* [Appendix](#Appendix)
 
 
 
-# Exercise 7 - Comments and Ratings Frontend
+<a name="Intro"></a>
+# Overview
 
 Now that we have the backend application of the `Comments and Ratings` backend service in place, in this exercise we will build the front-end application i.e. furniture shop's customer portal. The portal will allow customers like Mary to browse the store's product catalogue and view the wishlist items that the store is planning to stock.
 
 Architecturally, we can either choose to consume micro-services in a single UI via APIs or have every micro-service develop it's own UI and use composition patterns to bring the UIs together. We have chosen to develop independent UIs for each micro-service. Like we have done in previous UI modules, we will continue to use SAPUI5 as the technology of choice for front-end applications. We will now build the UI screens that will enable Mary to add ratings and comments on any product that Franck has uploaded to the wishlist.
 
+## Scenario
 
-
-<a name="Intro"></a>
-## Overview
 The customer portal will have two views.
 
 1. Products List View - contains the Wish list items uploaded by the furniture shop(Franck) for its customers.
@@ -268,8 +267,6 @@ Let us look at two files *`manifest.json`* and *`xs-app.json`* where you specify
 
 # Navigation
 
-| Exercise | Link |
-|---|---|
-| Previous | [Exercise 6 - Comments and Ratings Backend](../Exercise-06-Comments-and-Ratings-Backend)
-| Next | [Exercise 8 - Tweet Comments Backend](../Exercise-08-Tweet-Comments-Backend)
-| Start | [Overview](../README.md)
+| Previous | | Next
+|---|---|---|
+| [Exercise 6 - Comments and Ratings Backend](../Exercise-06-Comments-and-Ratings-Backend) | [Overview](../README.md) | [Exercise 8 - Tweet Comments Backend](../Exercise-08-Tweet-Comments-Backend)

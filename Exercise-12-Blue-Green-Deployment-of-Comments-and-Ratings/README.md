@@ -2,10 +2,9 @@
 
 ## Navigation
 
-| Exercise | Link |
-|---|---|
-| Previous | [Exercise 11 - Autoscaling of Comments and Ratings](../Exercise-11-Autoscaling-of-Comments-and-Ratings)
-| Start | [Overview](../README.md)
+| Previous | | Next
+|---|---|---|
+| [Exercise 11 - Autoscaling of Comments and Ratings](../Exercise-11-Autoscaling-of-Comments-and-Ratings) | [Overview](../README.md) | 
 
 
 
@@ -240,7 +239,6 @@ We will make small changes to the user interface so that Mary knows that her rev
 
 ## Navigation
 
-| Exercise | Link |
-|---|---|
-| Previous | [Exercise 11 - Autoscaling of Comments and Ratings](../Exercise-11-Autoscaling-of-Comments-and-Ratings)
-| Start | [Overview](../README.md)
+| Previous | | Next
+|---|---|---|
+| [Exercise 11 - Autoscaling of Comments and Ratings](../Exercise-11-Autoscaling-of-Comments-and-Ratings) | [Overview](../README.md) | 

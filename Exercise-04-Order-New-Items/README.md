@@ -1,25 +1,27 @@
-<a name="top"></a># Navigation
+<a name="top"></a># Exercise 4 - Order New Items
 
-| Exercise | Link |
-|---|---|
-| Previous | [Exercise 3 - Publish Wishlist](../Exercise-03-Publish-Wishlist)
-| Next | [Exercise 5 - Logging](../Exercise-05-Logging)
-| Start | [Overview](../README.md)
+## Navigation
+
+| Previous | | Next
+|---|---|---|
+| [Exercise 3 - Publish Wishlist](../Exercise-03-Publish-Wishlist) | [Overview](../README.md) | [Exercise 5 - Logging](../Exercise-05-Logging)
 
 
 
 ## Table of Contents
-1. [Deploy Product Backend OData Service](#1-deploy-odata-srv)
-1. [Configure the SAP Cloud Connector](#2-configure-sapcc)
-1. [Enhance the Service for the Wishlist Application](#3-enhance-wishlist-app-service)
-1. [Extend the User Interface to Display On-Premise Product Data](#4-extend-ui-onprem-data)
-1. [Build and Deploy Application to SAP Cloud Platform](#5-build-deploy-to-sapcp)
-1. [Create Destination Configuration on SAP Cloud Platform](#6-create-dest)
-1. [Test the Application](#7-test-app)
+* [Overview](#Intro)
+* [Deploy Product Backend OData Service](#Step1)
+* [Configure the SAP Cloud Connector](#Step2)
+* [Enhance the Service for the Wishlist Application](#Step3)
+* [Extend the User Interface to Display On-Premise Product Data](#Step4)
+* [Build and Deploy Application to SAP Cloud Platform](#Step5)
+* [Create Destination Configuration on SAP Cloud Platform](#Step6)
+* [Test the Application](#Step7)
 
 
 
-# Exercise 4 - Order New Items
+<a name="Intro"></a>
+# Overview
 
 In our scenario, Franck wants to determine which products to add to his inventory. To do this, he needs to review the votes and comments received via the Wishlist app from his colleagues and the company’s customers through a customer portal.
 
@@ -32,8 +34,8 @@ We will use Web IDE to modify our existing wishlist application so that it in ad
 [Top](#top)
 
 
-<a name="1-deploy-odata-srv"></a>
-## 1. Deploy Product Backend OData Service
+<a name="Step1"></a>
+# 1. Deploy Product Backend OData Service
 
 We first need to deploy a pre-built Java application in order to simulate our backend system. The OData service it provides will expose product information that can be consumed by our wishlist application.
 
@@ -55,8 +57,8 @@ We first need to deploy a pre-built Java application in order to simulate our ba
 [Top](#top)
 
 
-<a name="2-configure-sapcc"></a>
-## 2. Configure the SAP Cloud Connector
+<a name="Step2"></a>
+# 2. Configure the SAP Cloud Connector
 
 The Cloud Connector is an optional on-premise component that integrates applications running on the SAP Cloud Platform with customer services running in on-premise systems.  It is the counterpart of SAP Cloud Platform Connectivity.
 
@@ -162,8 +164,8 @@ This completes the configuration of the SAP Cloud Connector.
 [Top](#top)
 
 
-<a name="3-enhance-wishlist-app-service"></a>
-## 3. Enhance the Service for the Wishlist Application
+<a name="Step3"></a>
+# 3. Enhance the Service for the Wishlist Application
 
 Using Web IDE, we can now enhance the service module of our existing wishlist application to include data from our simulated premise system.
 
@@ -499,8 +501,8 @@ Using Web IDE, we can now enhance the service module of our existing wishlist ap
 [Top](#top)
 
 
-<a name="4-extend-ui-onprem-data"></a>
-## 4. Extend the User Interface to Display On-Premise Product Data
+<a name="Step4"></a>
+# 4. Extend the User Interface to Display On-Premise Product Data
 
 We will next extend the user interface both to display the on-premise product data and show the wishlist product ratings. The ratings will be captured in the next exercise.
 
@@ -528,8 +530,8 @@ There are 2 things we need to change in the UI:
 [Top](#top)
 
 
-<a name="5-build-deploy-to-sapcp"></a>
-## 5. Build and Deploy Application to SAP Cloud Platform
+<a name="Step5"></a>
+# 5. Build and Deploy Application to SAP Cloud Platform
 
 We are now ready to build the `furnitureshop` project and deploy it to Cloud Foundry.
 
@@ -586,8 +588,8 @@ Right-click on the `furnitureshop` project name and select _Build -> Build CDS_.
 [Top](#top)
 
 
-<a name="6-create-dest"></a>
-## 6. Create Destination Configuration on SAP Cloud Platform
+<a name="Step6"></a>
+# 6. Create Destination Configuration on SAP Cloud Platform
 
 Before proceeding with this step, please make sure the deployment is complete.
 
@@ -636,8 +638,8 @@ Next, we need to create an instance of a destination service on the SAP Cloud Pl
 [Top](#top)
 
 
-<a name="7-test-app"></a>
-## 7. Test the Application
+<a name="Step7"></a>
+# 7. Test the Application
 
 1. In the SAP Cloud Platform Cockpit, navigate to your Space and then select Applications
 
@@ -664,10 +666,8 @@ Next, we need to create an instance of a destination service on the SAP Cloud Pl
 <hr>
 
 
-# Navigation
+## Navigation
 
-| Exercise | Link |
-|---|---|
-| Previous | [Exercise 3 - Publish Wishlist](../Exercise-03-Publish-Wishlist)
-| Next | [Exercise 5 - Logging](../Exercise-05-Logging)
-| Start | [Overview](../README.md)
+| Previous | | Next
+|---|---|---|
+| [Exercise 3 - Publish Wishlist](../Exercise-03-Publish-Wishlist) | [Overview](../README.md) | [Exercise 5 - Logging](../Exercise-05-Logging)

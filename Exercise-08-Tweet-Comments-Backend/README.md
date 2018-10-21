@@ -1,10 +1,10 @@
-<a name="top"></a># Navigation
+<a name="top"></a># Exercise 8 - Tweet Comments Backend
 
-| Exercise | Link |
-|---|---|
-| Previous | [Exercise 07 - Comments and Ratings Frontend](../Exercise-07-Comments-and-Ratings-Frontend)
-| Next | [Exercise-09 - Debugging](../Exercise-09-Debugging)
-| Start | [Overview](../README.md)
+## Navigation
+
+| Previous | | Next
+|---|---|---|
+| [Exercise 7 - Comments and Ratings Frontend](../Exercise-07-Comments-and-Ratings-Frontend) | [Overview](../README.md) | [Exercise 9 - Debugging](../Exercise-09-Debugging)
 
 
 
@@ -18,7 +18,6 @@
 * [Deploying the Application and Testing](#Step5)
 
 
-# Exercise 8 - Tweet Comments Backend
 
 <a name="Intro"></a>
 ## Overview
@@ -213,9 +212,7 @@ We will now build and deploy the application that has been built above. Please n
 
 # Navigation
 
-| Exercise | Link |
-|---|---|
-| Previous | [Exercise 07 - Comments and Ratings Frontend](../Exercise-07-Comments-and-Ratings-Frontend)
-| Next | [Exercise-09 - Debugging](../Exercise-09-Debugging)
-| Start | [Overview](../README.md)
+| Previous | | Next
+|---|---|---|
+| [Exercise 7 - Comments and Ratings Frontend](../Exercise-07-Comments-and-Ratings-Frontend) | [Overview](../README.md) | [Exercise 9 - Debugging](../Exercise-09-Debugging)
 

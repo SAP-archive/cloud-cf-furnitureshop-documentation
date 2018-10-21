@@ -1,10 +1,10 @@
-<a name="top"></a># Navigation
+<a name="top"></a># Exercise 11 - Autoscaling of Ratings Backend App
 
-| Exercise | Link |
-|---|---|
-| Previous | [Exercise 10 - Test Order New Items with User Input](../Exercise-10-Test-Order-New-Items-with-User-Input)
-| Next | [Exercise 12 - Blue Green Deployment of Comments and Ratings](../Exercise-12-Blue-Green-Deployment-of-Comments-and-Ratings)
-| Start | [Overview](../README.md)
+## Navigation
+
+| Previous | | Next
+|---|---|---|
+| [Exercise 10 - Test Order New Items with User Input](../Exercise-10-Test-Order-New-Items-with-User-Input) | [Overview](../README.md) | [Exercise 12 - Blue Green Deployment of Comments and Ratings](../Exercise-12-Blue-Green-Deployment-of-Comments-and-Ratings)
 
 
 
@@ -16,8 +16,6 @@
 * [Configure Auto Scaling in the SAP Cloud Platform Cockpit](#Step3)
 
 
-
-# Exercise 11 - Autoscaling of Ratings Backend App
 
 <a name="Intro"></a>
 ## Overview
@@ -200,8 +198,6 @@ We will configure the scaling manually in the SAP Cloud Platform Cockpit. Please
 
 # Navigation
 
-| Exercise | Link |
-|---|---|
-| Previous | [Exercise 10 - Test Order New Items with User Input](../Exercise-10-Test-Order-New-Items-with-User-Input)
-| Next | [Exercise 12 - Blue Green Deployment of Comments and Ratings](../Exercise-12-Blue-Green-Deployment-of-Comments-and-Ratings)
-| Start | [Overview](../README.md)
+| Previous | | Next
+|---|---|---|
+| [Exercise 10 - Test Order New Items with User Input](../Exercise-10-Test-Order-New-Items-with-User-Input) | [Overview](../README.md) | [Exercise 12 - Blue Green Deployment of Comments and Ratings](../Exercise-12-Blue-Green-Deployment-of-Comments-and-Ratings)
