@@ -55,6 +55,7 @@ The customer portal will have two views.
 
 In the upcoming sections, you will be required to clone the exercise content from a given git repository. In general, Javascript modules need to be built based on the requirement and cannot be easily templated. To explain relevant sections of the code, you will notice that certain parts/modules are commented. The exercises will guide you to uncomment individual pieces of code, while explaining the relevance of each piece and what it tries to achieve. Please take note that commenting/uncommenting will differ based on the type of file you are working with. Javascript files will consist of line comments "//". Please follow the instructions closely to have a smooth exercise experience.
 
+[Top](#Top)
 
 
 <a name="Step1"></a>
@@ -87,6 +88,8 @@ To start working on *Exercise 7*, the `ratings_frontend` module, we will switch 
 1. Refer to the image below and ensure that you have successfully checked out branch `exercise-7`
 
     ![Step Image](images/Exercise7_1-5_branch_exercise.png)
+
+[Top](#Top)
 
 
 
@@ -126,6 +129,8 @@ In this section, we will setup the view and controller for products list view - 
     1. Select the commented code
     1. Use the mouse Right click
     1. Select the '*Toggle Line Comment*' option
+
+[Top](#Top)
 
 
 
@@ -168,6 +173,8 @@ In this section, we will setup the view and controller for product details view 
         1. Select the commented code
         2. Use the mouse Right click
         3. Select the 'Toggle Line Comment' option
+
+[Top](#Top)
 
 
 
@@ -212,6 +219,8 @@ We will now build and deploy the application that has been built above. Please n
 
     ![Step Image](images/Exercise7_4-7-2_comments_feed_view.png)
 
+[Top](#Top)
+
 
 
 <a name="Appendix"></a>
@@ -248,6 +257,8 @@ Let us look at two files *`manifest.json`* and *`xs-app.json`* where you specify
 * [Starting point for SAPUI5 and Fiori](https://sapui5.hana.ondemand.com/)
 * [SAP UI5 Icon explorer](https://sapui5.hana.ondemand.com/test-resources/sap/m/demokit/iconExplorer/webapp/index.html#)
 * [Github code repository](https://github.com/SAP/cloud-cf-furnitureshop-product-ratings)
+
+[Top](#Top)
 
 
 <hr>
