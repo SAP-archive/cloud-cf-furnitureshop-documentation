@@ -216,3 +216,4 @@ We will now build and deploy the application that has been built above. Please n
 |---|---|---|
 | [Exercise 7 - Comments and Ratings Frontend](../Exercise-07-Comments-and-Ratings-Frontend) | [Overview](../README.md) | [Exercise 9 - Debugging](../Exercise-09-Debugging)
 
+3

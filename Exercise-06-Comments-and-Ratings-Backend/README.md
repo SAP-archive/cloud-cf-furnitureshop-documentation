@@ -118,11 +118,7 @@ Sharing of data between micro-services is always a difficult architectural decis
 
 1. In this file we initialise the PostgreSQL database and load the required data from the Wishlist service to PostgreSQL. You will see 2 methods - `initializeDB` and `uploadInitialData` which are used to achieve this. Uncomment these 2 methods.
 
-    Note: To uncomment, follow these steps:
-
-   * Select the commented code
-   * Right click mouse on the editor
-   * Select the 'Toggle Line Comment' option
+    Note: To uncomment, select the commented lines and press Ctrl-/ (Control slash) or right-click over the selected lines and choose 'Toggle Line Comment'.
 
    ![Step Image](images/Exercise6_2-2_app_2methods.png)
 
@@ -137,13 +133,7 @@ Sharing of data between micro-services is always a difficult architectural decis
 
    * The `uploadInitialData` function makes a request to the OData endpoint of service 1 to get the wishlist and stores it in PostgreSQL tables.
 
-   Uncomment the 2 functions (`initializeDB` and `uploadInitialData`) in `dbOp.js`
-
-   Note: To uncomment, follow these steps:
-
-   * Select the commented code
-   * Right click mouse on the editor
-   * Select the 'Toggle Line Comment' option
+   Uncomment the functions `initializeDB` and `uploadInitialData` in `dbOp.js`
 
    ![Step Image](images/Exercise6_2-3_dbOps_2methods.png)
 
@@ -157,13 +147,7 @@ Sharing of data between micro-services is always a difficult architectural decis
 
    * `updateWishlistRating` is used to share the average rating of a wishlist product to service 1. It looks for the destination where the OData endpoint is described. Once the OData URL is discovered, a PUT request is made to update average rating into the SAP HANA database.
 
-   Uncomment the function (`readWishList`) in `odata.js`
-
-   Note: To uncomment, follow these steps:
-
-   * Select the commented code
-   * Right click mouse on the editor
-   * Select the 'Toggle Line Comment' option
+   Uncomment both functions
 
 1. The `route.js` module under the `route` folder is used to expose these functions as REST APIs. Have a look at this file to understand how this is achieved.
 
