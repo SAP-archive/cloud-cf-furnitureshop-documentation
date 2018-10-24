@@ -194,7 +194,7 @@ We will create a new business application using Web IDE. We will define a CDS da
     
 1. The purpose of the `Data.hdbtabledata` file is to give HANA instructions on how to populate our database table at the time it is created.  This file instructs HANA to transfer the data found in the `Wishlist.csv` file into the database.
 
-    For you information, open the file `Data.hdbtabledata` under `db\src\csv` and you will see a JSON object:
+    For your information, open the file `Data.hdbtabledata` under `db\src\csv` and you will see a JSON object:
 
     ```json
     {
