@@ -136,7 +136,7 @@ We will create a new business application using Web IDE. We will define a CDS da
 
 1. Take a look at the contents of the `mta.yaml` file.  This content has been automatically generated and contains our two modules, `db` and `srv`.
 
-1. Run the CDS compiler to compile your database agnostic data module (found in `db/data-model.cds`) into a form suitable for deployment to HANA.  To do this, right-click on your project and select _Build -> Build CDS_.
+1. Run the CDS compiler to compile your database agnostic data model (found in `db/data-model.cds`) into a form suitable for deployment to HANA.  To do this, right-click on your project and select _Build -> Build CDS_.
 
     ![build cds](images/Exercise1_6_build_cds1.jpg)
 
