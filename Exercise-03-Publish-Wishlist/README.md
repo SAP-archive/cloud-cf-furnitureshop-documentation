@@ -189,7 +189,7 @@ We will create a new business application using Web IDE. We will define a CDS da
 
 1. Expand the `db` module for your project in the workspace explorer and confirm that the `csv` folder has been created and that the two files `Data.hdbtabledata` and `Wishlist.csv` have been imported.
 
-    ![imported](images/Exercise1_10_imported_files.jpg)
+    ![imported](images/Exercise1_10_imported_files.png)
     
 1. The purpose of the `Data.hdbtabledata` file is to give HANA instructions on how to populate our database table at the time it is created.  This file instructs HANA to transfer the data found in the `Wishlist.csv` file into the database.
 
