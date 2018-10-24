@@ -1,4 +1,5 @@
-<a name="top"></a># Exercise 4 - Order New Items
+<a name="top"></a>
+# Exercise 4 - Order New Items
 
 ## Navigation
 
@@ -19,7 +20,7 @@
 * [Test the Application](#Step7)
 
 
-
+name="user-content-Intro
 <a name="Intro"></a>
 # Overview
 
@@ -34,7 +35,7 @@ We will use Web IDE to modify our existing wishlist application so that it in ad
 [Top](#top)
 
 
-<a name="Step1"></a>
+<a name="user-content-Step1"></a>
 # 1. Deploy Product Backend OData Service
 
 We first need to deploy a pre-built Java application in order to simulate our backend system. The OData service it provides will expose product information that can be consumed by our wishlist application.
@@ -57,7 +58,7 @@ We first need to deploy a pre-built Java application in order to simulate our ba
 [Top](#top)
 
 
-<a name="Step2"></a>
+<a name="user-content-Step2"></a>
 # 2. Configure the SAP Cloud Connector
 
 The Cloud Connector is an optional on-premise component that integrates applications running on the SAP Cloud Platform with customer services running in on-premise systems.  It is the counterpart of SAP Cloud Platform Connectivity.
@@ -164,7 +165,7 @@ This completes the configuration of the SAP Cloud Connector.
 [Top](#top)
 
 
-<a name="Step3"></a>
+<a name="user-content-Step3"></a>
 # 3. Enhance the Service for the Wishlist Application
 
 Using Web IDE, we can now enhance the service module of our existing wishlist application to include data from our simulated premise system.
@@ -501,7 +502,7 @@ Using Web IDE, we can now enhance the service module of our existing wishlist ap
 [Top](#top)
 
 
-<a name="Step4"></a>
+<a name="user-content-Step4"></a>
 # 4. Extend the User Interface to Display On-Premise Product Data
 
 We will next extend the user interface both to display the on-premise product data and show the wishlist product ratings. The ratings will be captured in the next exercise.
@@ -530,7 +531,7 @@ There are 2 things we need to change in the UI:
 [Top](#top)
 
 
-<a name="Step5"></a>
+<a name="user-content-Step5"></a>
 # 5. Build and Deploy Application to SAP Cloud Platform
 
 We are now ready to build the `furnitureshop` project and deploy it to Cloud Foundry.
@@ -588,7 +589,7 @@ Right-click on the `furnitureshop` project name and select _Build -> Build CDS_.
 [Top](#top)
 
 
-<a name="Step6"></a>
+<a name="user-content-Step6"></a>
 # 6. Create Destination Configuration on SAP Cloud Platform
 
 Before proceeding with this step, please make sure the deployment is complete.
@@ -638,7 +639,7 @@ Next, we need to create an instance of a destination service on the SAP Cloud Pl
 [Top](#top)
 
 
-<a name="Step7"></a>
+<a name="user-content-Step7"></a>
 # 7. Test the Application
 
 1. In the SAP Cloud Platform Cockpit, navigate to your Space and then select Applications

@@ -1,4 +1,5 @@
-<a name="top"></a># Exercise 11 - Autoscaling of Ratings Backend App
+<a name="top"></a>
+# Exercise 11 - Autoscaling of Ratings Backend App
 
 ## Navigation
 
@@ -16,7 +17,7 @@
 * [Configure Auto Scaling in the SAP Cloud Platform Cockpit](#Step3)
 
 
-
+name="user-content-Intro
 <a name="Intro"></a>
 ## Overview
 
@@ -33,7 +34,7 @@ Key benefits:
 
 
 
-<a name="Step1"></a>
+<a name="user-content-Step1"></a>
 # 1. Prerequisites
 
 You have completed till [Exercise 06 -  Comments and Ratings](../Exercise-06-Comments-and-Ratings-Backend) and you should have the applications up and running on your SAP Cloud Platform.
@@ -46,7 +47,7 @@ Below we will be using SAP Cloud Platform cockpit and auto scaling policies to p
 
 
 
-<a name="Step2"></a>
+<a name="user-content-Step2"></a>
 # 2. Configure Manual Scaling in the SAP Cloud Platform Cockpit
 
 We will configure the scaling manually in the SAP Cloud Platform Cockpit. Please make sure you complete the pre-requisites as mentioned above.
@@ -79,7 +80,7 @@ We will configure the scaling manually in the SAP Cloud Platform Cockpit. Please
 
 
 
-<a name="Step3"></a>
+<a name="user-content-Step3"></a>
 # 3. Configure Auto Scaling in the SAP Cloud Platform Cockpit
 
 1. Go to your SAP Cloud Platform cockpit under _Org - Space_.

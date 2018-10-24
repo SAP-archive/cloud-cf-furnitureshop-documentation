@@ -1,5 +1,7 @@
-<a name="top"></a># Exercise 9 - Debugging
-## Navigation
+<a name="top"></a>
+# Exercise 9 - Debugging
+
+## Navigation
 
 | Previous | | Next
 |---|---|---|
@@ -16,7 +18,7 @@
 * [Cleanup](#Step4)
 
 
-
+name="user-content-Intro
 
 <a name="Intro"></a>
 ## Overview
@@ -33,7 +35,7 @@ This exercise demonstrates how to debug Node.js applications.  You can check out
 
 
 
-<a name="Step1"></a>
+<a name="user-content-Step1"></a>
 # 1. Prepare an Application (`tweet_comments`) Instance for Debugging
 
 1. Open your SAP Cloud Platform cockpit and go to your _Space - Applications_.
@@ -70,7 +72,7 @@ This exercise demonstrates how to debug Node.js applications.  You can check out
 
 
 
-<a name="Step2"></a>
+<a name="user-content-Step2"></a>
 # 2. Attaching the Debugger to an Application Instance
 
 1.	In the Web IDE, launch the _Debugger_ by clicking on the Debugger icon on the menu bar on the right (or by selecting _View - Debugger_ from the menu bar on top).
@@ -93,7 +95,7 @@ This exercise demonstrates how to debug Node.js applications.  You can check out
 
 
 
-<a name="Step3"></a>
+<a name="user-content-Step3"></a>
 # 3. Debug the Application Instance
 We are now ready to debug the application instance running on the SAP Cloud Platform.
 1.	Once again, use the _ratings_frontend_ application to submit rating and comment for any of the products.  You may see a notification (typically in the bottom right corner) that the Debugger has suspended the application.
@@ -117,7 +119,7 @@ We are now ready to debug the application instance running on the SAP Cloud Plat
 
 
 
-<a name="Step4"></a>
+<a name="user-content-Step4"></a>
 # 4. Cleanup
 
 Let us now clean up by reversing the changes we applied for the current exercise.
