@@ -236,7 +236,7 @@ We will create a new business application using Web IDE. We will define a CDS da
 
 1.	Now select the Development icon ![dev_icon](images/Exercise1_Dev_icon.jpg) from the vertical toolbar on the left to go back to the development view.
 
-    Right-click on the `srv` module and select _Run -> Run as-Java Application_
+    Right-click on the `srv` module and select _Run -> Java Application_
 
     ![run as](images/Exercise1_17_run_as1.jpg)
 
