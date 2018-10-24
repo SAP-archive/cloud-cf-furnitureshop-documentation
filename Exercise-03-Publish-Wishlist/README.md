@@ -346,7 +346,7 @@ We will now make use of the third layer in CDS and create a SAPUI5 application i
 
 1. Open the `Master.view.xml` under `webapp/view` folder.
 
-1. On or near line 82, you will find the `<ObjectListItem>` object.  Edit it to include the code as shown:
+1. On or near line 62, you will find the `<ObjectListItem>` object.  Edit it to include the code as shown:
 
     ```xml
     <ObjectListItem
