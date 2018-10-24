@@ -11,13 +11,13 @@
 
 ## Table of Contents
 
-* [Overview](#Intro)
-* [Update the UI](#Step1)
-* [Deploying the Updated Version using Blue-Green Deployment](#Step2)
+* [Overview](#user-content-Intro)
+* [Update the UI](#user-content-Step1)
+* [Deploying the Updated Version using Blue-Green Deployment](#user-content-Step2)
 * [Appendix](#Appendix)
 
 
-name="user-content-Intro
+name="Intro
 <a name="Intro"></a>
 # Overview
 
@@ -50,7 +50,7 @@ This is where Blue-Green deployment comes in. Mary is using the application depl
 
 
 
-<a name="user-content-Step1"></a>
+<a name="Step1"></a>
 # 1. Update the UI
 We will make small changes to the user interface so that Mary knows that her reviews are being posted on twitter.
 
@@ -112,7 +112,7 @@ We will make small changes to the user interface so that Mary knows that her rev
 
 
 
-<a name="user-content-Step2"></a>
+<a name="Step2"></a>
 # 2. Deploying the Updated Version using Blue-Green Deployment
 
 1. Right click on the **`cloud-cf-furnitureshop-product-ratings`** folder, go to `Build` and click **Build** as shown in the picture below.

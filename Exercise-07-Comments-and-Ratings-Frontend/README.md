@@ -10,15 +10,15 @@
 
 
 ## Table of Contents
-* [Overview](#Intro)
-* [Clone Exercise Content](#Step1)
-* [Setup the Products List View](#Step2)
-* [Setup the Product Details View](#Step3)
-* [Deploy Application](#Step4)
+* [Overview](#user-content-Intro)
+* [Clone Exercise Content](#user-content-Step1)
+* [Setup the Products List View](#user-content-Step2)
+* [Setup the Product Details View](#user-content-Step3)
+* [Deploy Application](#user-content-Step4)
 * [Appendix](#Appendix)
 
 
-name="user-content-Intro
+name="Intro
 <a name="Intro"></a>
 # Overview
 
@@ -58,7 +58,7 @@ In the upcoming sections, you will be required to clone the exercise content fro
 [Top](#Top)
 
 
-<a name="user-content-Step1"></a>
+<a name="Step1"></a>
 # 1. Clone Exercise Content
 
 As a part of the previous exercise, we have cloned the content required for this exercise too.
@@ -93,7 +93,7 @@ To start working on *Exercise 7*, the `ratings_frontend` module, we will switch 
 
 
 
-<a name="user-content-Step2"></a>
+<a name="Step2"></a>
 # 2. Setup the Products List View
 
 In this section, we will setup the view and controller for products list view - a view that shows the wishlist of products.
@@ -130,7 +130,7 @@ In this section, we will setup the view and controller for products list view - 
 
 
 
-<a name="user-content-Step3"></a>
+<a name="Step3"></a>
 # 3. Setup the Product Details View
 
 In this section, we will setup the view and controller for product details view - a view that shows the details of a product and allows the logged in user to rate the product and add a review.
@@ -174,7 +174,7 @@ In this section, we will setup the view and controller for product details view 
 
 
 
-<a name="user-content-Step4"></a>
+<a name="Step4"></a>
 # 4. Deploying the Application
 
 We will now build and deploy the application that has been built above. Please note that the build and deploy may take few minutes. Please use this deployment time to login to the Cloud cockpit and check the creation of backing service instances, service bindings and applications. The order mentioned in your `mta.yaml` file will be followed during the deployment. You can also keep an eye on the flow of the deployment by watching the console logs from Web IDE or using the CF CLI command - **`cf logs <app_name> --recent`**.

@@ -9,14 +9,14 @@
 
 
 ## Table of Contents
-* [Introduction](#Intro)
-* [Clone Exercise Content and Code Walkthrough](#Step1)
-* [Read Wishlist Data](#Step2)
-* [Deploy Application](#Step3)
+* [Introduction](#user-content-Intro)
+* [Clone Exercise Content and Code Walkthrough](#user-content-Step1)
+* [Read Wishlist Data](#user-content-Step2)
+* [Deploy Application](#user-content-Step3)
 
 
 
-name="user-content-Intro
+name="Intro
 <a name="Intro"></a>
 # Introduction
 
@@ -60,7 +60,7 @@ Please take note that commenting/uncommenting will differ based on the type of f
 
 
 
-<a name="user-content-Step1"></a>
+<a name="Step1"></a>
 ## 1. Clone Exercise Content and Code Walkthrough
 
 In this section, we will clone the exercise content from Git to SAP Web IDE Full-Stack.
@@ -106,7 +106,7 @@ In this section, we will clone the exercise content from Git to SAP Web IDE Full
 
 
 
-<a name="user-content-Step2"></a>
+<a name="Step2"></a>
 # 2. Read Wishlist Data
 
 In order to provide ratings (and comments) on products in the wishlist, the service will require the wishlist data published by the furniture shop. This data is stored in SAP HANA during Exercise 3. We will now have to read the wishlist data from Exercise 3 and persist the same in PostgreSQL.
@@ -159,7 +159,7 @@ Sharing of data between micro-services is always a difficult architectural decis
 
 
 
-<a name="user-content-Step3"></a>
+<a name="Step3"></a>
 ## 3. Deploy the Application
 
 We will now build and deploy the application that has been built above. Please note that the build and deploy may take few minutes. Please use this deployment time to login to the Cloud cockpit and check the creation of backing service instances, service bindings and applications. The order mentioned in your `mta.yaml` file will be followed during the deployment. You can also keep an eye on the flow of the deployment by watching the console logs from Web IDE or using the CF CLI command - **`cf logs <app name> --recent`**.

@@ -11,15 +11,15 @@
 
 ## Table of Contents
 
-* [Overview](#Intro)
-* [Clone Exercise Content and Code Walkthrough](#Step1)
-* [Setup RabbitMQ Producer in `ratings_backend` Module](#Step2)
-* [Setup RabbitMQ Consumer in `tweet_comments` Module](#Step3)
-* [Setup the API Key For Posting Comments on Twitter](#Step4)
-* [Deploying the Application and Testing](#Step5)
+* [Overview](#user-content-Intro)
+* [Clone Exercise Content and Code Walkthrough](#user-content-Step1)
+* [Setup RabbitMQ Producer in `ratings_backend` Module](#user-content-Step2)
+* [Setup RabbitMQ Consumer in `tweet_comments` Module](#user-content-Step3)
+* [Setup the API Key For Posting Comments on Twitter](#user-content-Step4)
+* [Deploying the Application and Testing](#user-content-Step5)
 
 
-name="user-content-Intro
+name="Intro
 <a name="Intro"></a>
 ## Overview
 
@@ -37,7 +37,7 @@ In the upcoming sections, you will be required to clone the exercise content fro
 [Top](#Top)
 
 
-<a name="user-content-Step1"></a>
+<a name="Step1"></a>
 # 1. Clone Exercise Content and Code Walkthrough
 
 As a part of the previous exercise, we have cloned the content required for this exercise too.
@@ -86,7 +86,7 @@ Note that the file contains dependencies on the following node/npm modules:
 
 
 
-<a name="user-content-Step2"></a>
+<a name="Step2"></a>
 # 2. Setup RabbitMQ Producer in `ratings_backend` Module
 
 1. Go to the `ratings_backend` module built in Exercise 6 and open the `route.js` file under `route` folder.
@@ -111,7 +111,7 @@ Note that the file contains dependencies on the following node/npm modules:
 
 
 
-<a name="user-content-Step3"></a>
+<a name="Step3"></a>
 # 3. Setup RabbitMQ Consumer in `tweet_comments` Module
 
 1. The entry point to `tweets_comments` module is the `app.js`. Open this file.
@@ -126,7 +126,7 @@ Note that the file contains dependencies on the following node/npm modules:
 
 
 
-<a name="user-content-Step4"></a>
+<a name="Step4"></a>
 # 4. Setup the API Key For Posting Comments on Twitter
 
 In this section we will go over the configuration steps required to post the review comments on twitter. A Twitter account activated for development provides a set of access keys that can be used by an application to securely connect to twitter. As a part of this exercise, we will be using the API Keys to this [twitter handle](https://twitter.com/sapfurnishop). Since these keys are sensitive, we must gain access to them in a secure manner.
@@ -158,7 +158,7 @@ In this section we will go over the configuration steps required to post the rev
 
 
 
-<a name="user-content-Step5"></a>
+<a name="Step5"></a>
 # 5. Deploying the Application and Testing
 
 We will now build and deploy the application that has been built above. Please note that the build and deploy may take few minutes. Please use this deployment time to login to the Cloud cockpit and check the creation of backing service instances, service bindings and applications. The order mentioned in your `mta.yaml` file will be followed during the deployment. You can also keep an eye on the flow of the deployment by watching the console logs from Web IDE or using the CF CLI command - **`cf logs <app name> --recent`**.

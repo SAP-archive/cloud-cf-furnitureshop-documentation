@@ -9,16 +9,16 @@
 
 
 ## Table of Contents
-* [Why is Logging Important?](#Intro)
-* [Review Logging Configuration and Code](#Step1)
-* [Create and Bind a Service of application-logs](#Step2)
-* [Generate and View Logs in Kibana](#Step3)
+* [Why is Logging Important?](#user-content-Intro)
+* [Review Logging Configuration and Code](#user-content-Step1)
+* [Create and Bind a Service of application-logs](#user-content-Step2)
+* [Generate and View Logs in Kibana](#user-content-Step3)
 
 
 
 
 
-name="user-content-Intro
+name="Intro
 <a name="Intro"></a>
 # Why is Logging Important?
 
@@ -36,7 +36,7 @@ In this exercise, you will learn how you as an application developer or a dev op
 [Top](#Top)
 
 
-<a name="user-content-Step1"></a>
+<a name="Step1"></a>
 # 1. Review Logging Configuration and Code
 
 In Exercise 4, we added the backend service calls to our wishlist application. As part of this exercise, we included the logging configuration and code to avoid having to build and redeploy the application again just to include the logging. 
@@ -64,7 +64,7 @@ In Exercise 4, we added the backend service calls to our wishlist application. A
 
 
 
-<a name="user-content-Step2"></a>
+<a name="Step2"></a>
 ## 2. Create and Bind a Service of application-logs
 
 We will now create and bind an instance of the application logging service to our application.
@@ -107,7 +107,7 @@ We will now create and bind an instance of the application logging service to ou
 
 
 
-<a name="user-content-Step3"></a>
+<a name="Step3"></a>
 # 3. Generate and View Logs in Kibana
 
 In this step, we will explore how easy it is to view and analyze your logs using the Kibana Dashboard. 
