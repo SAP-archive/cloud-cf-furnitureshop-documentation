@@ -83,6 +83,8 @@ You will need this value when configuring the cloud connector.
     | Userid | Password |
     |---|---|
     |`Administrator`|`welcome`|
+    
+    You can ignore the browser warning about an unsafe connection.  If you see this error, click on *Advanced* -> *Proceed to website*.
 
 1. If you see any existing entires in the Subaccount Dashboard table, please delete these as they are left over from a previous exercise
 
@@ -634,7 +636,9 @@ Next, we need to create an instance of a destination service on the SAP Cloud Pl
 
     ![destination](images/Exercise4_Destination.png)
 
-    Click on Save
+    Click on Save.
+    
+    The *Check Connection* might incorrectly that your backend system cannot be reached.  You can ignore this error.
 
 [Top](#top)
 

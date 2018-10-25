@@ -135,7 +135,7 @@ In this section we will go over the configuration steps required to post the rev
 
     ![Step Image](images/Exercise8_4-1_twitter_zip.png)
 
-1. Extract the archive as shown in the picture below.
+1. Extract the archive as shown in the picture below.  The ZIP file password is *Welcome18*.
 
     ![Step Image](images/Exercise8_4-2_twitter_zip_extract.png)
 

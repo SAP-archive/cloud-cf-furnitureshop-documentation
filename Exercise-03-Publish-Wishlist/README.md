@@ -437,6 +437,8 @@ We will now make use of the third layer in CDS and create a SAPUI5 application i
     xmlns:vk="sap.ui.vk"
     ```
 
+    Make sure that the above namespace declarations are added ***inside*** the XML `<` `>` brackets.
+
     ![detail view](images/Exercise1_26_detail_view.jpg)
 
 1. Save all your changes, then right-click on the `ui` module and select _Run -> Run as Web Application_.
@@ -472,6 +474,8 @@ Unlike the Java application, this UI application runs in the Web IDE design time
 1. Login to your SAP Cloud Platform Cockpit, navigate to your space and your Service Instances.
 
 1. Delete the instance `furnitureshop-furnitureshop-hdidb<random_string>`.
+
+1. Stop your running application from the Web IDE Run Console.
 
 [Top](#top)
 
