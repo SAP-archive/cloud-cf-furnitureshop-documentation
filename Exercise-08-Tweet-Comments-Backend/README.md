@@ -19,7 +19,6 @@
 * [Deploying the Application and Testing](#user-content-Step5)
 
 
-name="Intro
 <a name="Intro"></a>
 ## Overview
 
