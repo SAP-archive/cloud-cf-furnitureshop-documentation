@@ -8,12 +8,12 @@
 
 
 ## Table of Contents
-* [SAP Web IDE Full-Stack](#user-content-Step1)
-* [Configure Cloud Foundry](#user-content-Step2)
-* [Enable Extra Features in Web IDE](#user-content-Step3)
-* [Simplify the Copying of Code Blocks from GitHub](#user-content-Step4)
-* [Tips on Saving your Changes in SAP Web IDE Full-Stack](#user-content-Step5)
-* [Verify installation of Cloud Foundry CLI](#user-content-Step6)
+* [SAP Web IDE Full-Stack](#user-content-step1)
+* [Configure Cloud Foundry](#user-content-step2)
+* [Enable Extra Features in Web IDE](#user-content-step3)
+* [Simplify the Copying of Code Blocks from GitHub](#user-content-step4)
+* [Tips on Saving your Changes in SAP Web IDE Full-Stack](#user-content-step5)
+* [Verify installation of Cloud Foundry CLI](#user-content-step6)
 
 
 

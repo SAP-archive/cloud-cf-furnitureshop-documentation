@@ -10,17 +10,16 @@
 
 
 ## Table of Contents
-* [Overview](#user-content-Intro)
-* [Deploy Product Backend OData Service](#user-content-Step1)
-* [Configure the SAP Cloud Connector](#user-content-Step2)
-* [Enhance the Service for the Wishlist Application](#user-content-Step3)
-* [Extend the User Interface to Display On-Premise Product Data](#user-content-Step4)
-* [Build and Deploy Application to SAP Cloud Platform](#user-content-Step5)
-* [Create Destination Configuration on SAP Cloud Platform](#user-content-Step6)
-* [Test the Application](#user-content-Step7)
+* [Overview](#user-content-intro)
+* [Deploy Product Backend OData Service](#user-content-step1)
+* [Configure the SAP Cloud Connector](#user-content-step2)
+* [Enhance the Service for the Wishlist Application](#user-content-step3)
+* [Extend the User Interface to Display On-Premise Product Data](#user-content-step4)
+* [Build and Deploy Application to SAP Cloud Platform](#user-content-step5)
+* [Create Destination Configuration on SAP Cloud Platform](#user-content-step6)
+* [Test the Application](#user-content-step7)
 
 
-name="Intro
 <a name="Intro"></a>
 # Overview
 
