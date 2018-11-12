@@ -9,14 +9,13 @@
 
 
 ## Table of Contents
-* [Introduction](#user-content-Intro)
-* [Clone Exercise Content and Code Walkthrough](#user-content-Step1)
-* [Read Wishlist Data](#user-content-Step2)
-* [Deploy Application](#user-content-Step3)
+* [Introduction](#user-content-intro)
+* [Clone Exercise Content and Code Walkthrough](#user-content-step1)
+* [Read Wishlist Data](#user-content-step2)
+* [Deploy Application](#user-content-step3)
 
 
 
-name="Intro
 <a name="Intro"></a>
 # Introduction
 
@@ -35,13 +34,13 @@ We will follow the guidelines of a microservice-based architecture in which the 
 
 With the SAP Cloud Platform Cloud Foundry environment, teams have the flexibility to pick technologies and databases that best fit their requirements.
 
-To build a 'Comments and ratings' service that collects feedback from the furniture shop's broad customer base, we need to use a technology which is simple and can work at lightning speeds. Hence the natural choice is to go with Node.js.
+To build a 'Comments and ratings' service that collects feedback from the furniture shop's broad customer base, we need to use a technology which is simple and can work at lightning speeds. Hence the natural choice is to go with NodeJS.
 
 For persistence, we require a simple, cost-effective, transactional database in which user's ratings and comments can easily be stored and retrieved. To satisfy this requirement, a relational database such as PostgreSQL is a good choice.
 
 The communication between this transactional store and the master data store on SAP HANA, will be via OData calls.
 
-In this exercise, we will create a Multi-Target Application [MTA], consisting of a Node.js module that provides REST API’s to add ratings and comments. During the deployment of the Node.js module, it will fetch the wishlist information from SAP HANA database that has been exposed as an OData service in [Exercise 4](../Exercise-04-Order-New-Items) and store it in a PostgreSQL database.
+In this exercise, we will create a Multi-Target Application [MTA], consisting of a NodeJS module that provides REST API’s to add ratings and comments. During the deployment of the NodeJS module, it will fetch the wishlist information from SAP HANA database that has been exposed as an OData service in [Exercise 4](../Exercise-04-Order-New-Items) and store it in a PostgreSQL database.
 
 Once the ratings backend is available, we will build the front-end i.e. user interface in Exercise 7, which will display the wishlist in the form of a list view and allow the user to rate and comment on any product in the list.
 
@@ -51,7 +50,7 @@ In Exercise 8, we will see that Mary’s comments on the furniture products can 
 
 ## Important - Before we Begin
 
-In the upcoming sections, you will be required to clone the exercise content from a given Git repository. In general, Node.js modules need to be built based on the requirement and cannot be easily templated. To explain relevant sections of the code, you will notice that certain parts/modules are commented. The exercises will guide you to uncomment individual pieces of code, while explaining the relevance of each piece and what it achieves.
+In the upcoming sections, you will be required to clone the exercise content from a given Git repository. In general, NodeJS modules need to be built based on the requirement and cannot be easily templated. To explain relevant sections of the code, you will notice that certain parts/modules are commented. The exercises will guide you to uncomment individual pieces of code, while explaining the relevance of each piece and what it achieves.
 
 Please take note that commenting/uncommenting will differ based on the type of file you are working with. Javascript files will consist of line comments "//". Please follow the instructions closely to have a smooth exercise experience.
 
@@ -87,7 +86,7 @@ In this section, we will clone the exercise content from Git to SAP Web IDE Full
 
 1. The application consists of 3 modules - `ratings_backend`, `ratings_frontend` and `tweets_comments`. In this exercise, we will focus on the `ratings_backend` module.
 
-1. Open the `ratings_backend` module and navigate to the `package.json` file which lists all the packages that your module depends on.
+1. Open the `ratings_backend` module and navigate to `package.json`.  This file lists all the packages on which your module depends.
 
     ![Step Image](images/Exercise6_1-6_ratings_backend.png)
 
@@ -97,9 +96,9 @@ In this section, we will clone the exercise content from Git to SAP Web IDE Full
 
     * `pg-promise` - handles automatic connections and transactions to the Postgres database instance
     * `cfenv` - used to parse Cloud Foundry-provided environment variables
-    * `amqplib` - used to make amqp clients for Node.js
+    * `amqplib` - used to make amqp clients for NodeJS
     * `@sap\xsenv` - SAP provided module for working with environment variables
-    * `@sap\xssec`- SAP provided module for Node.js Container Security API
+    * `@sap\xssec`- SAP provided module for NodeJS Container Security API
 
 [Top](Top)
 
@@ -188,7 +187,7 @@ We will now build and deploy the application that has been built above. Please n
 
    ![Step Image](images/Exercise6_3-4_odata_destination.png)
 
-5. As the deployment of a Node.js application involves uploading and packaging a number of files and modules, the deployment via Web IDE might take some time. Please use this opportunity to login to the Cloud cockpit and check the creation of backing service instances, service bindings and applications. The order mentioned in your `mta.yaml` file will be followed during the deployment. You can also keep an eye on the flow of the deployment by watching the console logs from Web IDE or using the CF CLI command - **`cf logs <app name> --recent`**.
+5. As the deployment of a NodeJS application involves uploading and packaging a number of files and modules, the deployment via Web IDE might take some time. Please use this opportunity to login to the Cloud cockpit and check the creation of backing service instances, service bindings and applications. The order mentioned in your `mta.yaml` file will be followed during the deployment. You can also keep an eye on the flow of the deployment by watching the console logs from Web IDE or using the CF CLI command - **`cf logs <app name> --recent`**.
 
 6. Once the deployment is successful, click on the url below _Application Routes_. The application opens in a new tab.
 

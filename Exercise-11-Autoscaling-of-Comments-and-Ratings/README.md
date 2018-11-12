@@ -11,13 +11,13 @@
 
 ## Table of Contents
 
-* [Overview](#user-content-Intro)
-* [Prerequisites](#user-content-Step1)
-* [Configure Manual Scaling in the SAP Cloud Platform Cockpit](#user-content-Step2)
-* [Configure Auto Scaling in the SAP Cloud Platform Cockpit](#user-content-Step3)
+* [Overview](#user-content-intro)
+* [Prerequisites](#user-content-step1)
+* [Configure Manual Scaling in the SAP Cloud Platform Cockpit](#user-content-step2)
+* [Configure Auto Scaling in the SAP Cloud Platform Cockpit](#user-content-step3)
 
 
-name="Intro
+
 <a name="Intro"></a>
 ## Overview
 

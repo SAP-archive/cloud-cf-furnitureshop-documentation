@@ -9,16 +9,15 @@
 
 
 ## Table of Contents
-* [Why is Logging Important?](#user-content-Intro)
-* [Review Logging Configuration and Code](#user-content-Step1)
-* [Create and Bind a Service of application-logs](#user-content-Step2)
-* [Generate and View Logs in Kibana](#user-content-Step3)
+* [Why is Logging Important?](#user-content-intro)
+* [Review Logging Configuration and Code](#user-content-step1)
+* [Create and Bind a Service of application-logs](#user-content-step2)
+* [Generate and View Logs in Kibana](#user-content-step3)
 
 
 
 
 
-name="Intro
 <a name="Intro"></a>
 # Why is Logging Important?
 
@@ -31,7 +30,7 @@ We want to be able to look back in time, identify corresponding requests, which 
 
 The logs we collect are only useful if they can be analysed and visualised easily. It is helpful to be able to collect logs in a single location and preferably in a common format.
 
-In this exercise, you will learn how you as an application developer or a dev ops engineer can visualize the application logs provided by default via Cloud Foundry ELK stack which provides elastic search, logstash (data processor and enrichment of logs) and Kibana. This is a good combination to store, search and visualise log entries.
+In this exercise, you will learn how you as an application developer or a dev ops engineer can visualise the application logs provided by default via Cloud Foundry ELK stack which provides elastic search, log stash (data processor and enrichment of logs) and Kibana. This is a good combination to store, search and visualise log entries.
 
 [Top](#Top)
 
@@ -110,7 +109,7 @@ We will now create and bind an instance of the application logging service to ou
 <a name="Step3"></a>
 # 3. Generate and View Logs in Kibana
 
-In this step, we will explore how easy it is to view and analyze your logs using the Kibana Dashboard. 
+In this step, we will explore how easy it is to view and analyse your logs using the Kibana Dashboard. 
 
 Alternatively, you could view the application logs in the cockpit or by using the Cloud Foundry CLI tools, ie `cf logs <app-name> --recent`. 
 
@@ -126,19 +125,19 @@ Alternatively, you could view the application logs in the cockpit or by using th
 
 1. Log in user your SAP Cloud Platform User and Password.
 
-1. Lets take a look at the different dashboards within Kibana.
+1. Let's take a look at the different dashboards within Kibana.
 
    - ***Overview***  
-     This shows the organization(s), space(s) of which you are a member (you        only see those logs). You can filter by organization or space. 
+     This shows the organisation(s), space(s) of which you are a member (you        only see those logs). You can filter by organisation or space. 
 
    - ***Usage***  
      To check usage which endpoints are called how often.
 
    - ***Performance and Quality***  
-     Analyze request timeline further.
+     Analyse request timeline further.
 
    - ***Requests and Logs***  
-     Helps you to view, search and analyze the actual log messages.
+     Helps you to view, search and analyse the actual log messages.
      
     ![Requests and logs](images/Exercise3_15_all_logging.JPG)
 
@@ -166,7 +165,7 @@ Alternatively, you could view the application logs in the cockpit or by using th
 
     ![Pin filter](images/Exercise3_13_pin%20filter.JPG)
 
-1. In the _Application Logs_ pane, select any entry and click the arrow in the table to axpand that entry.
+1. In the _Application Logs_ pane, select any entry and click the arrow in the table to expand that entry.
 
     ![Expand](images/Exercise3_16_application_logs_expand.JPG)
 

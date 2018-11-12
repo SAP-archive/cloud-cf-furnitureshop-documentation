@@ -11,12 +11,13 @@
 
 ## Table of Contents
 
-* [Overview](#user-content-Intro)
-* [Clone Exercise Content and Code Walkthrough](#user-content-Step1)
-* [Setup RabbitMQ Producer in `ratings_backend` Module](#user-content-Step2)
-* [Setup RabbitMQ Consumer in `tweet_comments` Module](#user-content-Step3)
-* [Setup the API Key For Posting Comments on Twitter](#user-content-Step4)
-* [Deploying the Application and Testing](#user-content-Step5)
+* [Overview](#user-content-intro)
+* [Clone Exercise Content and Code Walkthrough](#user-content-step1)
+* [Setup RabbitMQ Producer in `ratings_backend` Module](#user-content-step2)
+* [Setup RabbitMQ Consumer in `tweet_comments` Module](#user-content-step3)
+* [Setup the API Key For Posting Comments on Twitter](#user-content-step4)
+* [Deploying the Application and Testing](#user-content-step5)
+
 
 
 <a name="Intro"></a>
@@ -31,7 +32,7 @@ As the communication between our application and Twitter needs to be asynchronou
 
 ## Important - Before we Begin
 
-In the upcoming sections, you will be required to clone the exercise content from a given git repository. In general, Node.js modules need to be built based on the requirement and cannot be easily templated. To explain relevant sections of the code, you will notice that certain parts/modules are commented. The exercises will guide you to uncomment individual pieces of code, while explaining the relevance of each piece and what it tries to achieve. Please take note that commenting/uncommenting will differ based on the type of file you are working with. Javascript files will consist of line comments "//". Please follow the instructions closely to have a smooth exercise experience.
+In the upcoming sections, you will be required to clone the exercise content from a given git repository. In general, NodeJS modules need to be built based on the requirement and cannot be easily templated. To explain relevant sections of the code, you will notice that certain parts/modules are commented. The exercises will guide you to uncomment individual pieces of code, while explaining the relevance of each piece and what it tries to achieve. Please take note that commenting/uncommenting will differ based on the type of file you are working with. Javascript files will consist of line comments "//". Please follow the instructions closely to have a smooth exercise experience.
 
 [Top](#Top)
 
@@ -78,7 +79,7 @@ Note that the file contains dependencies on the following node/npm modules:
 ![Step Image](images/Exercise8_1-8_package_json.png)
 
  * `cfenv` - used to parse Cloud Foundry-provided environment variables
- * `amqplib` - used to make amqp clients for Node.js
+ * `amqplib` - used to make amqp clients for NodeJS
  * `twit` - Twitter API Client for Node.j
 
 [Top](#Top)
@@ -148,7 +149,7 @@ In this section we will go over the configuration steps required to post the rev
 
     ![Step Image](images/Exercise8_4-4_twitter_config.png)
 
-1. In you Web IDE, *open tweet_comments &rarr; config &rarr;* `config.js` and paste the content copied in the previous step.
+1. In you Web IDE, open *tweet_comments -> config ->* `config.js` and paste the content copied in the previous step.
 
     ![Step Image](images/Exercise8_4-5_twitter_config.png)
 

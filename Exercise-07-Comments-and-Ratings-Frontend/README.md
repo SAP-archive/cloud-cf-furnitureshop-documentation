@@ -10,15 +10,14 @@
 
 
 ## Table of Contents
-* [Overview](#user-content-Intro)
-* [Clone Exercise Content](#user-content-Step1)
-* [Setup the Products List View](#user-content-Step2)
-* [Setup the Product Details View](#user-content-Step3)
-* [Deploy Application](#user-content-Step4)
-* [Appendix](#Appendix)
+* [Overview](#user-content-intro)
+* [Clone Exercise Content](#user-content-step1)
+* [Setup the Products List View](#user-content-step2)
+* [Setup the Product Details View](#user-content-step3)
+* [Deploy Application](#user-content-step4)
+* [Appendix](#user-content-appendix)
 
 
-name="Intro
 <a name="Intro"></a>
 # Overview
 

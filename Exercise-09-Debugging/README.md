@@ -11,25 +11,24 @@
 
 ## Table of Contents
 
-* [Overview](#user-content-Intro)
-* [Prepare an Application (`tweet_comments`) Instance for Debugging](#user-content-Step1)
-* [Attaching the Debugger to an Application Instance](#user-content-Step2)
-* [Debug the Application Instance](#user-content-Step3)
-* [Cleanup](#user-content-Step4)
+* [Overview](#user-content-intro)
+* [Prepare an Application (`tweet_comments`) Instance for Debugging](#user-content-step1)
+* [Attaching the Debugger to an Application Instance](#user-content-step2)
+* [Debug the Application Instance](#user-content-step3)
+* [Cleanup](#user-content-step4)
 
 
-name="Intro
 
 <a name="Intro"></a>
 ## Overview
 
-SAP Web IDE Full-Stack provides built-in functionality for debugging cloud applications. Currently, [debugging of Java](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/a0f95901ab6c46a0b16c92eb313c6b08.html?q=debugging) and [debugging of Node.js](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/af6cc561014f4763837be143a4173a0a.html?q=debugging) applications are supported.
+SAP Web IDE Full-Stack provides built-in functionality for debugging cloud applications. Currently, [debugging of Java](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/a0f95901ab6c46a0b16c92eb313c6b08.html?q=debugging) and [debugging of NodeJS](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/af6cc561014f4763837be143a4173a0a.html?q=debugging) applications are supported.
 
 When an application is run from within the Web IDE tool (using the _Run as_ option available for each module), you can attach the debugger and debug that application instance.
 
 In the previous exercises, you have deployed applications by first creating a _.mtar_ file by issuing a **_Build_** command on the project, followed by a command to **_Deploy_** the created mtar package to the SAP Cloud Platform. In these cases, the debugger within the SAP Web IDE tool cannot attach to the running application instances. So, for the sake of the current exercise, we will first stop a running instance of an application (`tweet_comments` in our case), and instead start an application instance directly from within the Web IDE, in order to attach the debugger to the application instance.
 
-This exercise demonstrates how to debug Node.js applications.  You can check out the above referenced documentation for debugging Java applications.
+This exercise demonstrates how to debug NodeJS applications.  You can check out the above referenced documentation for debugging Java applications.
 
 [Top](#Top)
 
@@ -46,7 +45,7 @@ This exercise demonstrates how to debug Node.js applications.  You can check out
 
     ![screenshot alt text](images/Stop_tweet_comments.jpg)
 
-1. In the Web IDE Workspace, expand the project _cloud-cf-furnitureshop-product-ratings_, created during the previous exercise. Right-click on the tweet_comments module and select  _Run – Run as Node.js Application_.
+1. In the Web IDE Workspace, expand the project _cloud-cf-furnitureshop-product-ratings_, created during the previous exercise. Right-click on the tweet_comments module and select  _Run – Run as NodeJS Application_.
 
     ![screenshot alt text](images/Run_as_NodejsApp.jpg)
 

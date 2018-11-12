@@ -11,13 +11,12 @@
 
 ## Table of Contents
 
-* [Overview](#user-content-Intro)
-* [Update the UI](#user-content-Step1)
-* [Deploying the Updated Version using Blue-Green Deployment](#user-content-Step2)
-* [Appendix](#Appendix)
+* [Overview](#user-content-intro)
+* [Update the UI](#user-content-step1)
+* [Deploying the Updated Version using Blue-Green Deployment](#user-content-step2)
+* [Appendix](#user-content-appendix)
 
 
-name="Intro
 <a name="Intro"></a>
 # Overview
 
@@ -32,7 +31,7 @@ As you prepare a new version of your software, deployment and the final stage of
    ![Description Image](images/ex-11_bg_explanation.png)
 
 
-This technique can eliminate downtime due to application deployment. In addition, Blue-Green deployment reduces risk: if something unexpected happens with your new version on Green,you can immediately roll back to the last version by switching back to Blue.
+This technique can eliminate downtime due to application deployment. In addition, Blue-Green deployment reduces risk: if something unexpected happens with your new version on Green, you can immediately roll back to the last version by switching back to Blue.
 
 
 ## Scenario

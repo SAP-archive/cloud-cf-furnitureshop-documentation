@@ -9,10 +9,10 @@
 
 
 ## Table of Contents
-* [Business Scenario](#user-content-Intro)
-* [Create Wishlist Application](#user-content-Step1)
-* [Create Wishlist User Interface](#user-content-Step2)
-* [Cleanup](#user-content-Step3)
+* [Business Scenario](#user-content-intro)
+* [Create Wishlist Application](#user-content-step1)
+* [Create Wishlist User Interface](#user-content-step2)
+* [Cleanup](#user-content-step3)
 
 
 
