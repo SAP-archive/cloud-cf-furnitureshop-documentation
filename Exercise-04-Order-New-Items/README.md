@@ -638,7 +638,7 @@ Next, we need to create an instance of a destination service on the SAP Cloud Pl
 
     Click on Save.
     
-    The *Check Connection* might incorrectly that your backend system cannot be reached.  You can ignore this error.
+    At this point, pressing the ***Check Connection*** button will incorrectly state that your backend system cannot be reached.  Please ignore this error.
 
 [Top](#top)
 
