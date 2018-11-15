@@ -61,7 +61,7 @@ We will create a new business application using Web IDE. We will define a CDS da
 
 1.	Click _Next_.
 1.	Choose 
-
+    Make sure you change the default package name as below
     ```
     Service (srv): Java
     Java Package: com.company.furnitureshop
