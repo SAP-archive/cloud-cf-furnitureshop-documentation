@@ -35,7 +35,7 @@ Using Core Data Services, you will define your data model and its relevant servi
 
 The version of CDS used in Web IDE has been adapted and extended from CDS used in S/4 HANA and ABAP systems. As with S/4 HANA, you can extend a CDS model with annotations for Fiori UIs.
 
-The Business Application Programming Model allows us to add Java or Node.js modules to the project for custom logic such as handling database connections, including tenant isolation, parsing input and serialising responses etc. 
+The Business Application Programming Model allows us to add Java or Node.js modules to the project for custom logic such as handling database connections, including tenant isolation, parsing input and serialising responses etc.
 
 [Top](#top)
 
@@ -60,17 +60,23 @@ We will create a new business application using Web IDE. We will define a CDS da
     ![Project Name](images/Exercise1_2_project_name.jpg)
 
 1.	Click _Next_.
-1.	Choose 
+1.	Choose
     Make sure you change the default package name as below
     ```
     Service (srv): Java
     Java Package: com.company.furnitureshop
     Database (db): SAP HANA Database
     ```
+    **Note**
+     * *Please **do not** select the option Enable User authentication(UAA), we will enable this in the next exercise*
+     * *Please **enable** the `include sample file in project` checkbox*
 
-    **Please do not select the option Enable User authentication(UAA), we will enable this in the next exercise**
+    ![Project Temp1](images/cap_template_new.png)
 
-    ![Project Temp1](images/cap_template_new.jpg)
+1. Click _Next_.
+2. In the next view, Click _Next_.
+3. Choose
+
 
 1.	Note the value for Service, Java Package and Database.
 1.	Click _Finish_.
@@ -83,7 +89,7 @@ We will create a new business application using Web IDE. We will define a CDS da
     * `srv/my-service.cds`
 
     Your Java code is located in the `srv/src/main/` folder
-    
+
     The top level `package.json` file is used to configure CDS (for example adding reuse models).
 
     The file `mta.yaml` is used to configure your overall application
@@ -95,7 +101,7 @@ We will create a new business application using Web IDE. We will define a CDS da
 
     entity Wishlist {
       key ProductID        : String;
-          categoryName     : String; 
+          categoryName     : String;
           productName      : String;
           productDesc      : String;
           productColor     : String;
@@ -129,7 +135,7 @@ We will create a new business application using Web IDE. We will define a CDS da
     ```
 
     In this step, we have defined a Service called `CatalogService` that contains a single Entity called `Wishlist`.  The `Wishlist` Entity allows the read and update methods to be performed on a projection of the database table `furnitureshop.Wishlist`
-    
+
     Again, click _Save_.
 
 1. Open the `mta.yaml` file. At the very bottom of the editor screen, click the "Code Editor" tab to switch to the code editing view.
@@ -140,14 +146,14 @@ We will create a new business application using Web IDE. We will define a CDS da
 
     ![build cds](images/Exercise1_6_build_cds1.jpg)
 
-    If you now expand the folder `db/src` you will see the compiler output has been placed into a new `gen` folder.  This is the HANA-specific definition of your data model. 
+    If you now expand the folder `db/src` you will see the compiler output has been placed into a new `gen` folder.  This is the HANA-specific definition of your data model.
 
-    Note that right-clicking at the project level and selecting _Build -> Build CDS_ will cause the CDS compiler to compile every CDS file in every module.   However, to compile one module individually, right-click on the module name and then select _Build -> Build CDS_.
+    **Note:** that right-clicking at the project level and selecting _Build -> Build CDS_ will cause the CDS compiler to compile every CDS file in every module. However, to compile one module individually, right-click on the module name and then select _Build -> Build CDS_.
 
 1. Make sure the build is successful. You can see the compiler output in the console log by choosing _View -> Console_ if the console is not already visible.
 
     You should see output similar to that shown below.  The important part is the `CDS return code: 0`.
-    
+
     ```
     16:51:07 (DIBuild) [INFO] Injecting source code into builder...
     [INFO] Source code injection finished
@@ -155,21 +161,21 @@ We will create a new business application using Web IDE. We will define a CDS da
     npm install
     up to date in 0.206s
     npm run build
-    
+
     > furnitureshop@1.0.0 build /home/vcap/app/.java-buildpack/tomcat/temp/builder/sap.cds.mta/builds/build-5735012828943919909/furnitureshop
     > cds build --clean
-    
+
     This is CDS 2.10.1, Compiler 1.1.3, Home: node_modules/@sap/cds
-    
+
     Compiled 'db/data-model.cds' to
       db/src/gen/.hdinamespace
       db/src/gen/CATALOGSERVICE_WISHLIST.hdbcds
       db/src/gen/COM_COMPANY_FURNITURESHOP_WISHLIST.hdbcds
-    
+
     Compiled 'srv/my-service.cds' to
       srv/src/main/resources/edmx/CatalogService.xml
       srv/src/main/resources/edmx/csn.json
-    
+
     CDS return code: 0
     16:51:07 (DIBuild) ********** End of /furnitureshop Build Log **********
     ```
@@ -191,7 +197,7 @@ We will create a new business application using Web IDE. We will define a CDS da
 1. Expand the `db` module for your project in the workspace explorer and confirm that the `csv` folder has been created and that the two files `Data.hdbtabledata` and `Wishlist.csv` have been imported.
 
     ![imported](images/Exercise1_10_imported_files.png)
-    
+
 1. The purpose of the `Data.hdbtabledata` file is to give HANA instructions on how to populate our database table at the time it is created.  This file instructs HANA to transfer the data found in the `Wishlist.csv` file into the database.
 
     For your information, open the file `Data.hdbtabledata` under `db\src\csv` and you will see a JSON object:
@@ -202,6 +208,9 @@ We will create a new business application using Web IDE. We will define a CDS da
       "imports": [
       {
         "target_table": "COM_COMPANY_FURNITURESHOP_WISHLIST",
+        .
+        .
+        .
     ```
 
     Notice that the target table created in the HANA database has been named according to the namespace you used for your project followed the entity name. For example if the namespace is `com.company.furnitureshop` and the entity name in your `data-model.cds` is `wishlist`, then the table created on HANA will be `COM_COMPANY_FURNITURESHOP_WISHLIST` (where the dots in the namespace have been replaced with underscores).
@@ -215,7 +224,7 @@ We will create a new business application using Web IDE. We will define a CDS da
 1. Now that our database has been deployed to HANA (built) and loaded with data, we can now look at this information.
 
     Right Click on the `db` module and select _Open HDI Container_.
-    
+
     If you do not see this option, then check that the **SAP HANA Database Explorer** feature has been switched _ON_ as mentioned in [exercise 2](../Exercise-02-Setup/README.md#3-enable-web-ide-features).
 
 1. Click _No_ if you are prompted to add a database.
@@ -236,14 +245,15 @@ We will create a new business application using Web IDE. We will define a CDS da
 
 1.	Now select the Development icon ![dev_icon](images/Exercise1_Dev_icon.jpg) from the vertical toolbar on the left to go back to the development view.
 
-    Right-click on the `srv` module and select _Run -> Java Application_
+    * Right click on the `furnitreshop` folder and select *Refresh Workspace*.
+    * Right click on the `srv` module and select _Run -> Java Application_
 
     ![run as](images/Exercise1_17_run_as1.jpg)
 
 1. This will deploy the Java application to Cloud Foundry. The Run Console will appear at the bottom of the screen and to start with, you will the message "Application is starting"
 
     When the message changes to "application is running", a URL will appear in the header of the Run Console.
-    
+
     ![run console](images/Exercise1_18_run_console.jpg)
 
     Click on this link to view the running application. Optionally you can login to your SAP Cloud Platform cockpit, then select "Applications" and you will see the deployed Java application.  Select the application and then click on the link under "Application Routes".
@@ -263,11 +273,11 @@ We will create a new business application using Web IDE. We will define a CDS da
 1.  If the SAP Cloud Platform cockpit is not already open, please open it by following this link <https://account.hana.ondemand.com/cockpit>. Go to your _Space_ by clicking on _TechEd2018 - OPP363CF - Spaces - OPP363\_SPACE\_\<Your\_Student\_Number\>_.
 
     Now, on the Applications page, you should see an instance of the Java Application with the name of `<random string>furnitureshop-srv`.
-    
-    Note: You should also see a Builder instance that was created as part of the earlier exercise for Set up. 
+
+    Note: You should also see a Builder instance that was created as part of the earlier exercise for Set up.
 
 We have now used two of the three layers in CDS:
-    
+
 * Created a CDS data model, then compiled and deployed it to HANA
 * Exposed the data model as an OData service using a generated Java application
 
@@ -315,7 +325,7 @@ We will now make use of the third layer in CDS and create a SAPUI5 application i
     - Object Collection: `Wishlist`
     - Object Collection ID: `Productid`
     - Object Title: `productName`
-    - Object Numeric Attribute: `productPrice` 
+    - Object Numeric Attribute: `productPrice`
 
     ![template cust](images/Exercise1_24_template_cust.jpg)
 
@@ -329,7 +339,7 @@ We will now make use of the third layer in CDS and create a SAPUI5 application i
 
 1. Click _Save_.
 
-1. Open the file `xs-security.json` and edit the `xsappname` parameter to `furnitureshop_XXX`, where `XXX` is your student number. Click _Save_. 
+1. Open the file `xs-security.json` and edit the `xsappname` parameter to `furnitureshop_XXX`, where `XXX` is your student number. Click _Save_.
 
 1. Download the [img.zip](https://github.com/SAP/cloud-cf-furnitureshop-documentation/raw/master/Exercise-03-Publish-Wishlist/img.zip) file and save it locally.
 
@@ -447,7 +457,7 @@ We will now make use of the third layer in CDS and create a SAPUI5 application i
 
 1. In the `Choose File to Run` pop-up, scroll the list down and select `index.html` and press OK.
 
-1. Enter your SAP Cloud Platform user ID and password and press "Create".
+1. Enter your SAP Cloud Platform user ID (e-mail) and password and press "Create".
 
     This is required by the design time to run the web application (this userid is the same student userid and password you have used to login to the Cloud Platform Cockpit and WebIDE)
 

@@ -38,19 +38,19 @@ Within this assigned space, we will then need to install a tool called the "Buil
 
 1. Connect to Web IDE Full Stack
 
-1. Select the  _Preferences_  
-    ![Web IDE Preferences](./images/Icon_Preferences.png)  
-    This is done either by clicking on the gear icon at the bottom of the vertical tool bar on the left-hand side of the screen, or by following the menu option _Tools -> Preferences_.  
+1. Select the  _Preferences_
+    ![Web IDE Preferences](./images/Icon_Preferences.png)
+    This is done either by clicking on the gear icon at the bottom of the vertical tool bar on the left-hand side of the screen, or by following the menu option _Tools -> Preferences_.
 
-1. Choose _Workspace Preferences - Cloud Foundry_
+2. Choose _Workspace Preferences - Cloud Foundry_
 
     ![CF Config](images/setup6_cf_config.JPG)
 
-1. Select the API Endpoint `https://api.cf.eu10.hana.ondemand.com` 
-1. Enter your User Name and password when prompted
-1. Verify that the Organisation is set to `TechEd2018_OPP363` and the Space is set to `OPP363_SPACE_XXX` (where XXX is your assigned student number)
-1. Click **_Save_** otherwise the API endpoint configuration will be lost!
-1. Click _Install Builder_ (This will take several minutes to complete)
+3. Select the API Endpoint `https://api.cf.eu10.hana.ondemand.com`
+4. Enter your Email and password when prompted
+5. Verify that the Organisation is set to `TechEd2018_OPP363` and the Space is set to `OPP363_SPACE_XXX` (where XXX is your assigned student number)
+6. Click **_Save_** otherwise the API endpoint configuration will be lost!
+7. Click _Install Builder_ (This will take several minutes to complete)
 
 
 <a name="Step3"></a>
@@ -64,7 +64,7 @@ In order to complete these exercises, we will need to use some extra features of
 
 1. Search for two features, **SAP HANA Database Explorer** and **Tools for Node.js Development**
 
-   ***IMPORTANT***  
+   ***IMPORTANT***
    Each time SAP updates a Feature, the version number is incremented, and from a visual point of view, the background colour of the Feature's icon is changed.  Therefore the icon colours shown in the screenshot below are unlikely to match the icon colours you see on your screen.
 
     ![HANA DB](images/setup5_hana_db.JPG)
@@ -111,7 +111,7 @@ As in any development environment, it's important to save your work regularly to
 
 1. Note that there are two _Save_ buttons in SAP Web IDE Full-Stack
 
-    ***Save*** will only save the file currently being edited  
+    ***Save*** will only save the file currently being edited
     ***Save All*** will save all currently open and unsaved files.
 
     ![save buttons](images/setup9_save_buttons.jpg)
