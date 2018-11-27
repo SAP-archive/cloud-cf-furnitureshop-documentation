@@ -63,7 +63,7 @@ We will create a new business application using Web IDE. We will define a CDS da
 
 1.	Click _Next_.
 
-1. enter Application ID: furnitureshop
+1. Enter Application ID: furnitureshop
 
 **Do not select the option Use HTML5 Application Repository**
 
