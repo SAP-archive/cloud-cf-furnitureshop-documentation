@@ -29,7 +29,7 @@ Franck also needs to view the existing product inventory from the on-premise bac
 
 To simulate our on premise backend system, we will deploy a simple Java application which exposes product information via an OData service.  To create this OData service, we will create a service based on Apache Olingo Java libraries.
 
-We will use Web IDE to modify our existing wishlist application so that it in addition to the data stored in the SAP HANA database, it also displays data from our simulated backed system.
+We will use Web IDE to modify our existing wishlist application so that it in addition to the data stored in the SAP HANA database, it also displays data from our simulated backend system.
 
 [Top](#top)
 
@@ -39,16 +39,19 @@ We will use Web IDE to modify our existing wishlist application so that it in ad
 
 We first need to deploy a pre-built Java application in order to simulate our backend system. The OData service it provides will expose product information that can be consumed by our wishlist application.
 
-1. A Tomcat bundle is available in the TechEd student image in the folder `D:\Files\Session\OPP363\apache-tomcat-9.0.11`
-1. Navigate to the `bin` folder
-1. Start the Tomcat server by double clicking on `startup.bat`.
-1. The OData service provided by this local Tomcat server can be viewed at this URL <http://localhost:8080/backend-odata/Product.svc>.
+1. A Tomcat bundle is available in the TechEd student image in the folder
+   ```
+   D:\Files\Session\OPP363\apache-tomcat-9.0.11
+   ```
+2. Navigate to the `bin` folder
+3. Start the Tomcat server by double clicking on `startup.bat`.
+4. The OData service provided by this local Tomcat server can be viewed at this URL <http://localhost:8080/backend-odata/Product.svc>.
 
     ![backend odata](images/Exercise2_1_backend_odata.JPG)
 
     Notice that the OData service exposes a collection called `OnPremiseProductData`.
 
-1. Append `/OnPremiseProductData` to the URL and press enter, or click on this link <http://localhost:8080/backend-odata/Product.svc/OnPremiseProductData>.
+5. Append `/OnPremiseProductData` to the URL and press enter, or click on this link <http://localhost:8080/backend-odata/Product.svc/OnPremiseProductData>.
 
     ![backend odata](images/Exercise2_2_backend_odata_collection.JPG)
 
@@ -72,7 +75,7 @@ In the case of these TechEd exercises, this component has already been installed
 
     ![account id](images/Exercise2_3_CF_account_id.JPG)
 
-1. The subaccount ID (`dabec0d5-6df7-495d-9c96-f6b25dfd78a4`) is now displayed.  
+1. The subaccount ID (`dabec0d5-6df7-495d-9c96-f6b25dfd78a4`) is now displayed.
 You will need this value when configuring the cloud connector.
 
     ![account id](images/Exercise2_4_CF_account_id.JPG)
@@ -82,8 +85,8 @@ You will need this value when configuring the cloud connector.
     | Userid | Password |
     |---|---|
     |`Administrator`|`welcome`|
-    
-    You can ignore the browser warning about an unsafe connection.  If you see this error, click on *Advanced* -> *Proceed to website*.
+
+    Please ignore the browser warning about an unsafe connection.  If you see this error, click on *Advanced* -> *Proceed to website*.
 
 1. If you see any existing entires in the Subaccount Dashboard table, please delete these as they are left over from a previous exercise
 
@@ -98,15 +101,15 @@ You will need this value when configuring the cloud connector.
     | Region Host | Select "Europe (Frankfurt)" | `cf.eu10.hana.ondemand.com`
     | Subaccount | Paste in the GUID you copied in step 4 above | During TechEd 2018, this value will be `dabec0d5-6df7-495d-9c96-f6b25dfd78a4`
     | Display Name | `ProductData Connector` |
-    | Login Email ID | `<your_login_email>` | 
+    | Login Email ID | `<your_login_email>` |
     | Password | `<your_password>` |
     | Location ID |`OPP363-XXX`<br>where XXX is your three digit student number | For the TechEd hands-on sessions, all participants share a single SAP Cloud Platform subaccount. To ensure the SAP Cloud Connector can identify each connection, each student must provide a unique Location ID.<br>You can have multiple SAP Cloud Connectors configured to work with a single sub account as long as each is identified by a unique Location ID
-    | Description | `ProductData Connector` | 
+    | Description | `ProductData Connector` |
 
-    ***IMPORTANT***  
+    ***IMPORTANT***
     The value of Location ID is case sensitive! For the current exercise, ensure that you have entered ***OPP*** in upper case characters, since we will be using exactly this string value elsewhere in the exercise.
-    
-    Ignore the fields under the section HTTPS Proxy on the right side, leave them blank 
+
+    Ignore the fields under the section HTTPS Proxy on the right side, leave them blank
 
 
 1. Click _Save_.
@@ -172,7 +175,7 @@ This completes the configuration of the SAP Cloud Connector.
 Using Web IDE, we can now enhance the service module of our existing wishlist application to include data from our simulated premise system.
 
 1. In Web IDE, open your existing `furnitureshop` application.
-1. Under the `db` folder, edit the file `data-model.cds` and append a new entity called `BackendProductData` to the end of the file:
+1. Under the `db` folder, edit the file `data-model.cds` and **append a new entity called** `BackendProductData` to the end of the file:
 
     ```javascript
     entity BackEndProductData {
@@ -190,13 +193,13 @@ Using Web IDE, we can now enhance the service module of our existing wishlist ap
 
     As you save the `data-model.cds` file, think about the consequences of that last statement.
 
-1. Under the `srv` folder, edit the file `my-service.cds` to add a new entity `BackendProductData`as shown below (or simply replace the entire contents of the file with the following):
+1. Under the `srv` folder, edit the file `my-service.cds` to *add a new entity* `BackendProductData` as shown below (or simply **replace the entire contents of the file with the following**):
 
     ```javascript
     using com.company.furnitureshop from '../db/data-model';
 
-    service CatalogService {  
-      entity Wishlist @read @update as projection on furnitureshop.Wishlist; 
+    service CatalogService {
+      entity Wishlist @read @update as projection on furnitureshop.Wishlist;
 
       @cds.persistence.skip
       entity BackEndProductData as projection on furnitureshop.BackEndProductData;
@@ -204,13 +207,13 @@ Using Web IDE, we can now enhance the service module of our existing wishlist ap
     ```
 
     The purpose of the `@cds.persistence.skip` annotation it to tell the CDS compiler that following entity does ***not*** need to be created as a table in the HANA database.
-    
+
     Think about why this annotation is needed...
-    
+
     Where does the backend product data come from?  Our HANA database, or somewhere else?
-    
+
     When we modified `data-model.cds`, we explicitly include the metadata of a table that we know does not exist in our HANA database, but instead, exists in an independent, backend service running on our local laptop.  Therefore, it is necessary to do two things:
-    
+
     * Modify the data model to include the definition of entity `BackEndProductData`
     * Modify the service to expose this new entity as part of the OData service, yet at the same time, explicitly exclude this entity from being created in the HANA database.  This is because the data comes from an alternative source that we must now define.
 
@@ -223,11 +226,13 @@ Using Web IDE, we can now enhance the service module of our existing wishlist ap
 1.	Under the `srv` folder, navigate to `src/main/java/com/company/furnitureshop`
 
     Right-click on the `furnitureshop` folder name and choose _New -> Java Class_.
-    
+
     Enter the class name `BackEndProductEntity`
-    
-    ***IMPORTANT***  
+
+    ***IMPORTANT***
     Do not add a `.java` extension to the class name as Web IDE will do this for you
+
+    You don't need to modify the package name.
 
     Replace the file with the code below:
 
@@ -312,13 +317,13 @@ Using Web IDE, we can now enhance the service module of our existing wishlist ap
 
     This coding is the Java implementation of the entity definition we just added in `data-model.cds` in which we define the getter and setter methods for `BackEndProductEntity`.
 
-1. In the same folder create another Java class and name it as `BackendService`.  
+1. In the same folder create another Java class and name it as `BackendService`.
 
     Paste in the code shown below:
 
     ```java
     package com.company.furnitureshop;
-    
+
     import java.util.List;
     import java.util.Map;
     import org.slf4j.Logger;
@@ -332,29 +337,29 @@ Using Web IDE, we can now enhance the service module of our existing wishlist ap
     import com.sap.cloud.sdk.service.prov.api.operations.Read;
     import com.sap.cloud.sdk.odatav2.connectivity.ODataQueryBuilder;
     import com.sap.cloud.sdk.odatav2.connectivity.ODataQueryResult;
-    
+
     public class BackendService {
       private static final String BACKEND_DESTINATION_NAME = "ONPREM_BACKEND";
       private static final Logger logger = LoggerFactory.getLogger(BackendService.class);
-    
+
       @Query(serviceName = "CatalogService", entity = "BackEndProductData")
       public QueryResponse getProducts(QueryRequest queryRequest) {
         logger.info("Class:BackendService - now in @Query getProducts()");
-    
+
         QueryResponse queryResponse = null;
         try {
           logger.info("Class:BackendService - now execute query on Products");
           ODataQueryBuilder qb = ODataQueryBuilder.
             withEntity("/backend-odata/Product.svc", "OnPremiseProductData").
             select("ProductID", "SUPPLIERID", "SUPPLIERNAME", "PRICE", "STOCK", "DELIVERYDATE","DISCOUNT");
-    
+
           logger.info("Class:BackendService - After ODataQueryBuilder: ");
           ODataQueryResult result = qb.enableMetadataCache().
             build().
             execute(BACKEND_DESTINATION_NAME);
-    
+
           logger.info("Class:BackendService - After calling backend OData V2 service: result: ");
-    
+
           List<Map<String, Object>> v2BackEndProductsMap = result.asListOfMaps();
           queryResponse = QueryResponse.setSuccess().setData(v2BackEndProductsMap).response();
 
@@ -362,7 +367,7 @@ Using Web IDE, we can now enhance the service module of our existing wishlist ap
         }
         catch (Exception e) {
           logger.error("Class:BackendService ==> Exception calling backend OData V2 service for Query of Products: " + e.getMessage());
-    
+
           ErrorResponse errorResponse = ErrorResponse.getBuilder().
             setMessage("Class:BackendService ==> There is an error.  Check the logs for the details.").setStatusCode(500).
             setCause(e).
@@ -372,12 +377,12 @@ Using Web IDE, we can now enhance the service module of our existing wishlist ap
 
         return queryResponse;
       }
-    
+
       @Read(entity = "BackEndProductData", serviceName = "CatalogService")
       public ReadResponse getProduct(ReadRequest readRequest) {
         logger.info("Class:BackendService - at Read "+readRequest.getKeys().get("ProductID").toString());
         ReadResponse readResponse = null;
-    
+
         try {
           logger.info("Class:BackendService - getProduct inside with ProductID = " + readRequest.getKeys().get("ProductID").toString());
           ODataQueryResult readResult = ODataQueryBuilder.
@@ -389,15 +394,15 @@ Using Web IDE, we can now enhance the service module of our existing wishlist ap
             enableMetadataCache().
             build().
             execute(BACKEND_DESTINATION_NAME);
-    
+
           BackEndProductEntity readProdEntity = readResult.as(BackEndProductEntity.class);
           readResponse = ReadResponse.setSuccess().setData(readProdEntity).response();
-    
+
           logger.info("Class:BackendService - After calling backend OData V2 READ service: readResponse : " + readResponse);
         }
         catch (Exception e) {
           logger.error("==> Exception calling backend OData V2 service for READ of Products: " + e.getMessage());
-    
+
           ErrorResponse errorResponse = ErrorResponse.getBuilder().
             setMessage("There is an error.  Check the logs for the details.").
             setStatusCode(500).
@@ -410,9 +415,9 @@ Using Web IDE, we can now enhance the service module of our existing wishlist ap
       }
     }
     ```
-    
+
     This coding uses the SAP Cloud Platform SDK to implement the OData service exposed by the SAP Cloud Platform, but under the surface, it uses the SAP Cloud Connector connection (via a destination called `ONPREM_BACKEND` that we haven't created yet) to call the OData service running in our local Tomcat server.
-    
+
     The `@Query` annotation implements the query operation for the `BackEndProductData` entity set and the `@Read` annotation for reading a single `BackEndProductData` entity.
 
 1. In the same folder create another Java class and name it as `WishlistHandler`. Replace the contents of file with the code shown below:
@@ -421,7 +426,7 @@ Using Web IDE, we can now enhance the service module of our existing wishlist ap
 
     ```java
     package com.company.furnitureshop;
-    
+
     import org.slf4j.Logger;
     import org.slf4j.LoggerFactory;
     import com.sap.cloud.sdk.service.prov.api.operations.Update;
@@ -435,7 +440,7 @@ Using Web IDE, we can now enhance the service module of our existing wishlist ap
     import java.util.List;
     import java.util.ArrayList;
     import com.sap.cloud.sdk.service.prov.api.response.ErrorResponse;
-    
+
     public class WishlistHandler {
       private static final Logger logger = LoggerFactory.getLogger(WishlistHandler.class.getName());
       @Update(entity = "Wishlist", serviceName = "CatalogService")
@@ -471,10 +476,10 @@ Using Web IDE, we can now enhance the service module of our existing wishlist ap
 
         return UpdateResponse.setSuccess().response();
       }
-      
+
       public static List<String> getWishlistPropertyNames() {
         List<String> propertyNames = new ArrayList<String>();
-        
+
         propertyNames.add("ProductID");
         propertyNames.add("categoryName");
         propertyNames.add("productName");
@@ -492,7 +497,7 @@ Using Web IDE, we can now enhance the service module of our existing wishlist ap
         propertyNames.add("supplierLocation");
         propertyNames.add("pictureURL");
         propertyNames.add("productRating");
-        
+
         return propertyNames;
       }
     }
@@ -508,7 +513,7 @@ Using Web IDE, we can now enhance the service module of our existing wishlist ap
 
 We will next extend the user interface both to display the on-premise product data and show the wishlist product ratings. The ratings will be captured in the next exercise.
 
-There are 2 things we need to change in the UI:  
+There are 2 things we need to change in the UI:
 
 * Add a new Tab to show Backend Product Data that we fetch from on-Premise system.
 * Update the code to Display Product Ratings.
@@ -537,24 +542,25 @@ There are 2 things we need to change in the UI:
 
 We are now ready to build the `furnitureshop` project and deploy it to Cloud Foundry.
 
-1. Now that we have changed both the data model and the service definition, we must rerun the CDS compiler.  
+1. Now that we have changed both the data model and the service definition, we must rerun the CDS compiler.
 Right-click on the `furnitureshop` project name and select _Build -> Build CDS_.
+
+    ![Build Project](images/Exercise2_build_cds.JPG)
+
 
 1. In the console, confirm that the CDS compiler gave a zero return code.
 
-1. Now we can use the CDS tools to build a `.mtar` file for us.  This is the file that contains our entire application and will become the unit of deployment to SAP Cloud Foundry.
-
-    Right-click on the project name and select _Build -> Build_.
+2. Right-click on the project name and select _Build -> Build_.
 
     ![Build Project](images/Exercise2_17_build.JPG)
 
     The build process may take a couple of minutes to complete, but when it does, you will see a new folder in your workspace called `mta_archives` within which your new `furnitureship_0.0.1.mtar` file can be found
 
-1. Right-click the `furnitureshop_0.0.1.mtar` file and select _Deploy -> Deploy to SAP Cloud Platform_.
+3. Right-click the `furnitureshop_0.0.1.mtar` file and select _Deploy -> Deploy to SAP Cloud Platform_.
 
     ![Deploy mtar](images/Exercise2_18_deploy_mtar.JPG)
 
-1. You may get a popup asking you to enter your credentials, please enter your id/password, then in the _Deploy to SAP Cloud Platform_ dialog, enter:
+4. You may get a popup asking you to enter your credentials, please enter your id/password, then in the _Deploy to SAP Cloud Platform_ dialog, enter:
 
     - Cloud Foundry API Endpoint: `https://api.cf.eu10.hana.ondemand.com`
     - Organization: `TechEd2018_OPP363`
@@ -563,29 +569,31 @@ Right-click on the `furnitureshop` project name and select _Build -> Build CDS_.
     ![CF Endpoint](images/Exercise2_19_deploy_mtar_cf_endpoint.JPG)
 
     Wait until the deployment is complete (this will take several minutes) and ensure it was successful, meanwhile you can login to the cockpit to view the applications being deployed.
-    
-    ***IMPORTANT***  
+
+    ***IMPORTANT***
     Please do not attempt to run your `furnitureshop` application until the deployment has completed!
 
-1. Once the deployment has completed successfully, in the Applications section of your SAP Cloud Platform cockpit, you will see that three new applications have been deployed: `db`, `srv` and `ui`.
+5. Once the deployment has completed successfully, in the Applications section of your SAP Cloud Platform cockpit, you will see that three new applications have been deployed: `db`, `srv` and `ui`.
 
     ![Deploy MTAR file](./images/deployed_mtar.png)
-    
-    * `db`  
+
+    * `db`
     This is the implementation of your data model.  It was deployed as part of the MTA deployment and will be stopped by default.  Please do not delete or modify this app.
 
-    * `srv`  
+    * `srv`
     This is the service created to expose your data model.  This module has been implemented in Java and was deployed as part of the MTA deployment
 
-    * `ui`  
+    * `ui`
         This is the HTML5 wishlist application containing the UI logic that was deployed as part of the MTA deployment
 
     You will also see application `webide-builder-sapwebide-di-<some_random_string>`.  This is the CDS builder tool that you installed in Exercise 1. Every time you select "Build CDS" or "Build" from a context menu, you are invoking this tool.  Please ***do not*** delete this application!
-    
-    There will also be the application `<some_random_string>furnitureshop-srv` that was created in an earlier exercise.
-    
 
-1. Select the `srv` service and make a note of the URL under Application Routes.  This is the URL to start your service and will be needed when we create a destination in the next step.
+    There will also be the application `<some_random_string>furnitureshop-srv` that was created in an earlier exercise.
+
+    **Note** - Please note that the development of Franck's app is still incomplete. To test the app we must first create destinations highlighted in Step 6. Once we create the destinations, we can test the application.
+
+
+6. Select the `srv` service and make a note of the URL under Application Routes.  This is the URL to start your service and will be needed when we create a destination in the next step.
 
 [Top](#top)
 
@@ -620,7 +628,7 @@ Next, we need to create an instance of a destination service on the SAP Cloud Pl
     ![destination get wish list](images/dest_getwishlist1.jpeg)
 
 1. Click on Save and add a second destination with the following values:
-      
+
     | Property | Value | Notes |
     |---|---|---|
     | Name | `ONPREM_BACKEND` | This is the destination referenced in your `BackendService.java` class
@@ -636,7 +644,7 @@ Next, we need to create an instance of a destination service on the SAP Cloud Pl
     ![destination](images/Exercise4_Destination.png)
 
     Click on Save.
-    
+
     At this point, pressing the ***Check Connection*** button will incorrectly state that your backend system cannot be reached.  Please ignore this error.
 
 [Top](#top)

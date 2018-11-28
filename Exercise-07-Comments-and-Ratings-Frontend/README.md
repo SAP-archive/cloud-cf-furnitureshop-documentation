@@ -68,7 +68,7 @@ We know that the cloned application consists of 3 modules - `ratings_backend`, `
 
 To start working on *Exercise 7*, the `ratings_frontend` module, we will switch to `exercise-7` branch in git.
 
-1. Select the folder `cloud-cf-furnitureshop-product-ratings` in your Web IDE Files explorer and then using your Git Pane, click on `Discard All` (Discard all unstaged changes in the list) as shown in the picture below.
+1. Select the folder `cloud-cf-furnitureshop-product-ratings` in your Web IDE Files explorer (which is on the left side of your screen) and then using your Git Pane (which is on the right side of your screen), click on `Discard All` (Discard all unstaged changes in the list) as shown in the picture below.
 
     ![Step Image](images/Exercise7_1-1_Git_discard_all.png)
 
@@ -80,7 +80,7 @@ To start working on *Exercise 7*, the `ratings_frontend` module, we will switch 
 
     ![Step Image](images/Exercise7_1-3_Git_pane.png)
 
-1. In the popup that appears, select the source branch as `origin/exercise-7` and enter the branch name as `exercise-7` and click on **OK**.
+1. In the popup that appears, select the source branch as `origin/exercise-7` and enter the branch name as `exercise-7` and click on **Create**.
 
     ![Step Image](images/Exercise7_1-4_create_local_branch.png)
 
@@ -178,7 +178,7 @@ In this section, we will setup the view and controller for product details view 
 
 We will now build and deploy the application that has been built above. Please note that the build and deploy may take few minutes. Please use this deployment time to login to the Cloud cockpit and check the creation of backing service instances, service bindings and applications. The order mentioned in your `mta.yaml` file will be followed during the deployment. You can also keep an eye on the flow of the deployment by watching the console logs from Web IDE or using the CF CLI command - **`cf logs <app_name> --recent`**.
 
-1. To ensure that you do not deploy an incorrect MTAR it is advisable to delete the `product_ratings` folder under *mta_archives* folder as shown in the picture below.
+1. To ensure that you do not deploy an incorrect MTAR it is advisable to **delete the `product_ratings` folder under *mta_archives* folder as shown** in the picture below.
 
     ![Step Image](images/Exercise7_4-1_pr_folder_delete.png)
 
@@ -186,7 +186,7 @@ We will now build and deploy the application that has been built above. Please n
 
     ![Step Image](images/Exercise7_4-2_app_build.png)
 
-   Once the build is completed, you will see a new folder created in Files explorer with the name **`mta_archives`**.
+   Once the build is completed, you will see a new folder (if you have deleted this folder in the earlier step) created in Files explorer with the name **`mta_archives`**.
 
 1. Right click on the generated .mtar file **`product_ratings_1.0.0`**, and go to Deploy &rarr; and click on **Deploy to SAP Cloud Platform** as shown in the picture below.
 
@@ -202,7 +202,7 @@ We will now build and deploy the application that has been built above. Please n
     Space: <select your space from the drop down list>
     ```
 
-1. Once your application is deployed launch the url for `ratings_frontend` app. Your app should look like shown in the [overview section](#overview).
+1. Once your application is deployed launch the url for `ratings_frontend` app. Your app should be as shown in the [overview section](#overview).
 
 1. Select a product and go to the `Rate Item` tab in the Product Details view.
 
@@ -220,7 +220,7 @@ We will now build and deploy the application that has been built above. Please n
 
 <a name="Appendix"></a>
 # Appendix - Understanding the HTML5 application code
-*Please note that this step is intended only to explain the SAPUI5 HTML application code.  You are not required to performed any changes to your code as a part of this step.*
+*Please note that this step is intended only to explain the SAPUI5 HTML application code.  You are **not required to perform** any changes to your code as a part of this step.*
 
 When you create a SAP UI5 application using the SAP Web IDE, a file structure with all the relevant files are created such as *`style.css`*, *`i18n.properties`*, *`model.js`* etc.
 

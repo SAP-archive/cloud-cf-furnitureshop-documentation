@@ -23,7 +23,7 @@
 
 We now switch to the persona of Mary. Mary is a loyal customer of the furniture franchise. She has access to the shop's customer portal, through which she can not only browse the product catalogue, but also see the wishlist items the shop is planning to stock.
 
-Customers like Mary now have the ability to provide their feedback by adding ratings and comments on the products Frank and other furniture shop staff-members have uploaded to the wishlist.
+Customers like Mary now have the ability to provide their feedback by adding ratings and comments on the products Franck and other furniture shop staff-members have uploaded to the wishlist.
 
 
 ## Technology choice
@@ -126,7 +126,7 @@ Sharing of data between micro-services is always a difficult architectural decis
 
    ![Step Image](images/Exercise6_2-2_1_dbOps_js.png)
 
-1. Open `dbOp.js`  
+1. Open `dbOp.js`
     This module is used to perform all the required db operations.
 
    * The `initializeDB` function makes a connection to PostgreSQL with the help of `pg-promise` and creates 2 tables in PostgreSQL.
@@ -147,7 +147,7 @@ Sharing of data between micro-services is always a difficult architectural decis
 
    * `updateWishlistRating` is used to share the average rating of a wishlist product to service 1. It looks for the destination where the OData endpoint is described. Once the OData URL is discovered, a PUT request is made to update average rating into the SAP HANA database.
 
-   Uncomment both functions
+   **Uncomment both functions**
 
 1. The `route.js` module under the `route` folder is used to expose these functions as REST APIs. Have a look at this file to understand how this is achieved.
 
@@ -183,7 +183,7 @@ We will now build and deploy the application that has been built above. Please n
     Space: <select your space from the drop down list>
     ```
 
-1. The `odata.js` file under the `odata` folder in our deployment will expect a destination by name `getWishList`. Note that we have already created this destination in Exercise
+1. The `odata.js` file under the `odata` folder in our deployment will expect a destination by name `getWishList`. Note that we have already created this destination in [Exercise 4](https://github.com/SAP/cloud-cf-furnitureshop-documentation/tree/master/Exercise-04-Order-New-Items#6-create-destination-configuration-on-sap-cloud-platform).
 
    ![Step Image](images/Exercise6_3-4_odata_destination.png)
 

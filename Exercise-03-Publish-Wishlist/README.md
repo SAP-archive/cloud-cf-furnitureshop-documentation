@@ -61,18 +61,17 @@ We will create a new business application using Web IDE. We will define a CDS da
 
     ![Project Name](images/Exercise1_2_project_name.jpg)
 
-1.	Click _Next_.
+1. Click _Next_.
 
 1. Enter Application ID: furnitureshop
 
-**Do not select the option Use HTML5 Application Repository**
+    **Do not select the option Use HTML5 Application Repository**
 
-![AppId](images/appid.jpeg)
+    ![AppId](images/appid.jpeg)
 
-Click _Next_
+1. Click _Next_
 
-1.	Choose
-    Make sure you change the default package name as below
+1.	Make sure you change the default package name as below
     ```
     Service (srv): Java
     Java Package: com.company.furnitureshop
@@ -85,16 +84,10 @@ Click _Next_
     ![Project Temp1](images/cap_template_new.png)
 
 1. Click _Next_.
-2. In the next view, Click _Next_.
-3. Choose
+2. In the next view, Click _Finish_.
 
 
-1.	Note the value for Service, Java Package and Database.
-1.	Click _Finish_.
-
-    ![Project Structure](images/Exercise1_4_project_structure.jpg)
-
-    Notice that by default, the project has been created with two modules: a database module (`db`) and a service module (`srv`).  Each of these modules contains its own CDS file:
+3. Notice that by default, the project has been created with two modules: a database module (`db`) and a service module (`srv`).  Each of these modules contains its own CDS file:
 
     * `db/data-model.cds` and
     * `srv/my-service.cds`
@@ -104,6 +97,9 @@ Click _Next_
     The top level `package.json` file is used to configure CDS (for example adding reuse models).
 
     The file `mta.yaml` is used to configure your overall application
+
+    ![Project Structure](images/Exercise1_4_project_structure.jpg)
+
 
 1.	Open the `data-model.cds` under the `db` module and replace the entire file with the following:
 
@@ -256,10 +252,9 @@ Click _Next_
 
 1.	Now select the Development icon ![dev_icon](images/Exercise1_Dev_icon.jpg) from the vertical toolbar on the left to go back to the development view.
 
-    * Right click on the `furnitreshop` folder and select *Refresh Workspace*.
-    * Right click on the `srv` module and select _Run -> Java Application_
+    * Select the `furnitreshop` folder and click on the run button as shown in the image.
 
-    ![run as](images/Exercise1_17_run_as1.jpg)
+    ![run as](images/Exercise1_17_run_as1.png)
 
 1. This will deploy the Java application to Cloud Foundry. The Run Console will appear at the bottom of the screen and to start with, you will the message "Application is starting"
 

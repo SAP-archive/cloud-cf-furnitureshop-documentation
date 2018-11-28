@@ -23,7 +23,7 @@
 <a name="Intro"></a>
 ## Overview
 
-Till now we have seen that Furniture Shop/Franck have published a 'Wishlist' of products that it/he wishes to carry. We also saw that loyal customers like Mary have access to the customer portal to provide ratings and comments on the wishlist to influence the shop's decision. If we now provide a mechanism to spread the word about these wishlist reviews to a broader audience, more customers would be able to provide their inputs via the portal. And based on this feedback, Franck can order for the highly rated items into his furniture store inventory.
+Till now we have seen that Furniture Shop/Franck has published a 'Wishlist' of products that it/he wishes to carry. We also saw that loyal customers like Mary have access to the customer portal to provide ratings and comments on the wishlist to influence the shop's decision. If we now provide a mechanism to spread the word about these wishlist reviews to a broader audience, more customers would be able to provide their inputs via the portal. And based on this feedback, Franck can order for the highly rated items into his furniture store inventory.
 
 To achieve this reach, we can send out a **tweet** on the Furniture Store's twitter account whenever a customer posts a review of any particular product. We will build `tweet_comments`- a _headless_ micro-service, i.e. a micro-service without any UI & directly consumable in other micro-services, to realise this functionality.
 
@@ -62,7 +62,7 @@ To start working on *Exercise 8*, the `tweet_comments` module, we will switch to
 
     ![Step Image](images/Exercise8_1-3_Git_pane.png)
 
-4. In the popup that appears, select the source branch as `origin/exercise-8` and enter the branch name as `exercise-8` and click on **OK**.
+4. In the popup that appears, select the source branch as `origin/exercise-8` and enter the branch name as `exercise-8` and click on **Create**.
 
     ![Step Image](images/Exercise8_1-4_create_local_branch.png)
 

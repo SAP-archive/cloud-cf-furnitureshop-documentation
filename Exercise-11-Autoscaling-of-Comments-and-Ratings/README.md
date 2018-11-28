@@ -39,7 +39,7 @@ Key benefits:
 
 You have completed till [Exercise 06 -  Comments and Ratings](../Exercise-06-Comments-and-Ratings-Backend) and you should have the applications up and running on your SAP Cloud Platform.
 
-In this exercise, we will be performing manual and auto scaling on the comments and ratings backend logic. Consider a scenario where the review application is used by a large number of employees just like Mary, and the memory consumption, CPU usage is increased for this application. To cater to the increasing demand for this application we need to scale up the application so that request can be fulfilled. 
+In this exercise, we will be performing manual and auto scaling on the comments and ratings backend logic. Consider a scenario where the review application is used by a large number of employees just like Mary, and the memory consumption, CPU usage is increased for this application. To cater to the increasing demand for this application we need to scale up the application so that request can be fulfilled.
 
 Below we will be using SAP Cloud Platform cockpit and auto scaling policies to perform these operations.
 
@@ -72,9 +72,11 @@ We will configure the scaling manually in the SAP Cloud Platform Cockpit. Please
 
     ![screenshot alt text](images/Exercise6_3_increase_quota_512.jpg).
 
-1. Let’s get back the application to original state, click on change quota to reduce the quota back to `256 MB`.
+1. Let’s get back the application to original state, click on change quota to **reduce the quota back to `256 MB`**.
 
-1. Click _Save_.
+    Not doing say may cause issues in the upcoming steps.
+
+2. Click _Save_.
 
 [Top](#Top)
 
@@ -111,7 +113,7 @@ We will configure the scaling manually in the SAP Cloud Platform Cockpit. Please
 
 1. In the _Application_ dropdown select the ratings_backend app.
 
-1. Now copy the contents of `policy.json` from below, edit in Notepad++ editor and then paste it into the `Enter Parameters` text box shown on SAP Cloud Platform cockpit. Scroll down and edit `start_time` to your current time + 4 minutes. and `end_time` to your start time + 4 minutes. 
+1. Now copy the contents of `policy.json` from below, edit in Notepad++ editor and then paste it into the `Enter Parameters` text box shown on SAP Cloud Platform cockpit. Scroll down and edit `start_time` to your current time + 4 minutes. and `end_time` to your start time + 4 minutes.
 
     ```json
     {
@@ -144,37 +146,37 @@ We will configure the scaling manually in the SAP Cloud Platform Cockpit. Please
 
     For example if your current time is 15:13 then you should put 15:17 under start time and 15:23 as end time. We are adding this time so that once we upload this policy the application will scale up and down under this time frame.
 
-    ![screenshot alt text](images/Exercise6_7_bindinstance1.jpg). 
+    ![screenshot alt text](images/Exercise6_7_bindinstance1.jpg).
 
 1. Click _Save_.
 
 1. Explanation of the above parameters used: Here we are increasing the number of instances from 1 to 3, and then bringing it down. Other parameters are mentioned below:
 
-    ***schedules***  
+    ***schedules***
     A schedule enables you to configure scaling rules for specific days or on a recurring basis. Schedule guards against expected high surges or low activity period.
 
-    ***recurring_schedule***  
+    ***recurring_schedule***
     Triggers the scaling rule recursively during the specified intervals.
 
-    ***start_time***  
+    ***start_time***
     Start time of a recurring schedule in 24-hr format (HH:MM).
 
-    ***end_time***  
+    ***end_time***
     End time of a recurring schedule in 24-hr format (HH:MM).
 
-    ***days_of_week***  
+    ***days_of_week***
     Trigger scaling on weekdays ranging from 1 (Monday) to 7 (Sunday). The rule will execute during the weekdays specified within the array.
 
-    ***instance_min_count***  
+    ***instance_min_count***
     Minimum number of instances during the recurrence period.
 
-    ***instance_max_count***  
+    ***instance_max_count***
     Maximum number of instances during the recurrence period.
 
-    ***initial_min_instance_count***  
+    ***initial_min_instance_count***
      Minimum number of instances to scale up during the start of recurrence period.
 
-    For more information on parameters refer our [help guide](https://help.sap.com/viewer/7472b7d13d5d4862b2b06a730a2df086/Cloud/en-US/c8023eb0995e42a68697f4262218a032.html). 
+    For more information on parameters refer our [help guide](https://help.sap.com/viewer/7472b7d13d5d4862b2b06a730a2df086/Cloud/en-US/c8023eb0995e42a68697f4262218a032.html).
 
 1. You can now see your application under _Referencing Apps_.
 
