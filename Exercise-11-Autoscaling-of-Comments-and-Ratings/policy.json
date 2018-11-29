@@ -2,35 +2,25 @@
 	"instance_min_count": 1,
 	"instance_max_count": 2,
 	"schedules": {
-		"timezone": "America/Los_Angeles",
-		"scaling_rules": [
-			{
-				"metric_type": "memoryused",
-				"stat_window_secs": 60,
-				"breach_duration_secs": 60,
-				"threshold": 70,
-				"operator": ">",
-				"cool_down_secs": 60,
-				"adjustment": "-1"
-			}
-		],
-		"recurring_schedule": [
-			{
-			"start_time": "<Edit this:enter a suitable time in 24 hr format, your current time + 4 minutes. for ex:> 15:10",
-			"end_time": "<Edit this:enter a suitable time in 24 hr format, your start time + 4 minutes. for ex:> 15:14",
-				"days_of_week": [
-					1,
-					2,
-					3,
-					4,
-					5,
-					6,
-					7
-				],
-				"instance_min_count": 1,
-				"instance_max_count": 3,
-				"initial_min_instance_count": 3
-			}
-		]
+	  "timezone": "Asia/Kolkata",
+	  "scaling_rules": [
+	  {
+		"metric_type": "memoryused",
+		"stat_window_secs": 60,
+		"breach_duration_secs": 60,
+		"threshold": 70,
+		"operator": ">",
+		"cool_down_secs": 60,
+		"adjustment": "-1"
+	  }],
+	  "recurring_schedule": [
+	  {
+		"start_time": "<Edit this:enter a suitable time in 24 hr format, your current time + 4 minutes. for ex:> 15:10",
+		"end_time": "<Edit this:enter a suitable time in 24 hr format, your start time + 4 minutes. for ex:> 15:14",
+		"days_of_week": [1, 2, 3, 4, 5, 6, 7],
+		"instance_min_count": 1,
+		"instance_max_count": 3,
+		"initial_min_instance_count": 3
+	  }]
 	}
-}
+  }
