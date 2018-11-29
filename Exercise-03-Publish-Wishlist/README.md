@@ -252,7 +252,7 @@ We will create a new business application using Web IDE. We will define a CDS da
 
 1.	Now select the Development icon ![dev_icon](images/Exercise1_Dev_icon.jpg) from the vertical toolbar on the left to go back to the development view.
 
-    * Select the `furnitreshop` folder and click on the run button as shown in the image.
+    * Select the `srv` folder and click on the run button as shown in the image.
 
     ![run as](images/Exercise1_17_run_as1.png)
 
