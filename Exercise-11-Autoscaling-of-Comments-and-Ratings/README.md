@@ -58,11 +58,11 @@ We will configure the scaling manually in the SAP Cloud Platform Cockpit. Please
 1. Scroll down to see the number of instances already running for the application. It should be 1 and will show _Memory usage_ and _Disk usage_. Check the quota assigned to the application which is `256 MB`.
 1. Scroll up and increase the instance of the application by clicking the _+ Instance_ button. This will do the horizontal scaling i.e scaling out.
 
-    ![screenshot alt text](images/Exercise6_1_increase_instances.JPG).
+    ![screenshot alt text](images/Exercise6_1_increase_instances.JPG)
 
 1. When you scroll down you will see the instances count increased to two.
 
-    ![screenshot alt text](images/Exercise6_2_increase_instances.JPG).
+    ![screenshot alt text](images/Exercise6_2_increase_instances.JPG)
 
 1. Now reduce the instance count back to 1 to ensure that we do not exceed the quota limits for the next set of exercises.
 
@@ -70,7 +70,7 @@ We will configure the scaling manually in the SAP Cloud Platform Cockpit. Please
 
 1. Click _Save_ and you will see the quota increased.
 
-    ![screenshot alt text](images/Exercise6_3_increase_quota_512.jpg).
+    ![screenshot alt text](images/Exercise6_3_increase_quota_512.jpg)
 
 1. Let’s get back the application to original state, click on change quota to **reduce the quota back to `256 MB`**.
 
@@ -88,28 +88,28 @@ We will configure the scaling manually in the SAP Cloud Platform Cockpit. Please
 1. Go to your SAP Cloud Platform cockpit under _Org - Space_.
 1. Expand the _Services_ tab on left.
 
-    ![screenshot alt text](images/Exercise6_4_servicemarketplace.JPG).
+    ![screenshot alt text](images/Exercise6_4_servicemarketplace.JPG)
 
 1. Click _Service Marketplace_.
 1. Click _Application Autoscaler_, we are performing this step to create an instance of application autoscaler.
 
-    ![screenshot alt text](images/Exercise6_5_autoscaling.JPG).
+    ![screenshot alt text](images/Exercise6_5_autoscaling.JPG)
 
 1. Click _Instances_ on the left side.
 1. Click _New Instance_.
 
-    ![screenshot alt text](images/Exercise6_5_createinstanceJPG.jpg).
+    ![screenshot alt text](images/Exercise6_5_createinstanceJPG.jpg)
 
 1. Finish configuration by accepting default values and clicking _Next_ on the subsequent screens
 1. Enter the _instance name_ as `myautoscaling`.
 
-    ![screenshot alt text](images/Exercise6_6_myautoscaling.jpg).
+    ![screenshot alt text](images/Exercise6_6_myautoscaling.jpg)
 
 1. Click _Finish_, this will create a autoscaling instance for your applications to use.
 1. Click on the newly created `myautoscaling` instance.
 1. Click _Bind Instance_, we are performing this step to bind our application to this autoscaler instance.
 
-    ![screenshot alt text](images/Exercise6_7_bindinstance.jpg).
+    ![screenshot alt text](images/Exercise6_7_bindinstance.jpg)
 
 1. In the _Application_ dropdown select the ratings_backend app.
 
@@ -144,9 +144,13 @@ We will configure the scaling manually in the SAP Cloud Platform Cockpit. Please
     }
     ```
 
-    For example if your current time is 15:13 then you should put 15:17 under start time and 15:23 as end time. We are adding this time so that once we upload this policy the application will scale up and down under this time frame.
+    For example if your current time is 16:00 then
+    * your `"start_time` should be **16:04**, and
+    * your `"end_time"` should be **16:08**.
 
-    ![screenshot alt text](images/Exercise6_7_bindinstance1.jpg).
+    We are adding this time so that once we upload this policy the application will scale up and down per this time frame.
+
+    ![screenshot alt text](images/Exercise6_7_bindinstance1.jpg)
 
 1. Click _Save_.
 
@@ -180,14 +184,14 @@ We will configure the scaling manually in the SAP Cloud Platform Cockpit. Please
 
 1. You can now see your application under _Referencing Apps_.
 
-    ![screenshot alt text](images/Exercise6_9_refapp.JPG).
+    ![screenshot alt text](images/Exercise6_9_refapp.JPG)
 
 1. Click on your `ratings_backend` application, to go back to your _Application Service Bindings_ page. Here you can see the auto scaler instance being created.
 
 1. Click _Overview_, on the left side.
 1. Scroll down you can see the instances of your application increased to 3 as per the defined policy and the start time mentioned.
 
-    ![screenshot alt text](images/Exercise6_10_ininstances.jpg).
+    ![screenshot alt text](images/Exercise6_10_ininstances.jpg)
 
 1. As per the current policy based on memory threshold, the number of application instances will come down to 2.
 

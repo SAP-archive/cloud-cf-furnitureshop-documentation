@@ -5,7 +5,7 @@
 
 | Previous | | Next
 |---|---|---|
-| [Exercise 11 - Autoscaling of Comments and Ratings](../Exercise-11-Autoscaling-of-Comments-and-Ratings) | [Overview](../README.md) | 
+| [Exercise 11 - Autoscaling of Comments and Ratings](../Exercise-11-Autoscaling-of-Comments-and-Ratings) | [Overview](../README.md) |
 
 
 
@@ -42,7 +42,7 @@ At the end of Exercise 7 we  built an application which allows Mary to submit he
 
 At the end of Exercise 8, we built a twitter module `tweet_comments` which posts Mary's comments on to twitter.
 
-However, Mary does not know that her ratings and reviews are being posted on twitter. Thus we have decided to update our UI to notify Mary that her reviews are being tweeted. Now, since Mary is already using the `Comments and Ratings` application we need to ensure that the newer version doesn't hinder her from using the application.
+Mary does not know that her ratings and reviews are being posted on twitter. Thus, we have decided to update our UI to notify Mary that her reviews are being tweeted. Now, since Mary is already using the `Comments and Ratings` application we need to ensure that the newer version doesn't hinder her from using the application.
 
 This is where Blue-Green deployment comes in. Mary is using the application deployed at the end of Exercise-8 (Blue version). We will make our changes in the code and use the SAP Cloud Platform capability to deploy an updated version of the application (Green version) through Blue-Green deployment. This will create a new application with a unique URL for you to test your changes. While you test the Green version, Mary can continue using the Blue version. Once you are satisfied with your changes, you will finish the Blue-Green deployment process at the end of which you will only have the updated version running with Mary accessing the updated version through the URL that she used to access the Blue version.
 
@@ -57,7 +57,7 @@ We will make small changes to the user interface so that Mary knows that her rev
 
     ![Step Image](images/ex-11-1-1-product_ratings-Blue-i18n.png)
 
-1. Find keyword `submitButton`, as shown in the image,  and update the value from `Submit` to `Submit & Tweet`
+2. **Find** keyword `submitButton`, as shown in the image,  and **replace** the value from `Submit` to `Submit & Tweet`
 
     ![Step Image](images/ex-11-1-2-i18n_submit_n_tweet.png)
 
@@ -65,7 +65,7 @@ We will make small changes to the user interface so that Mary knows that her rev
     submitButton=Submit & Tweet
     ```
 
-1. Add a new keyword `feedInfoToolbar` with value `Your comments are being tweeted` as shown in the image.
+3. **Add** a **new** keyword `feedInfoToolbar` with value `Your comments are being tweeted` as shown in the image.
 
     ![Step Image](images/ex-11-1-3-i18n_feedInfo_toolbar.png)
 
@@ -73,11 +73,11 @@ We will make small changes to the user interface so that Mary knows that her rev
     feedInfoToolBar=Your comments are being tweeted
     ```
 
-1. Open `product_details.view.xml` in WebIDE
+4. Open `product_details.view.xml` in WebIDE
 
-    ![Step Image](images/ex-11-1-4-product_ratings-Blue.mtar-view.jpg)
+    ![Step Image](images/ex-11-1-4-product_ratings-Blue-mtar-view.jpg)
 
-    Replace the code starting at `<List id=idReviewsList>` and ending at `</List>` tag with the following code.
+    **Replace** the code starting at `<List id=idReviewsList>` and ending at `</List>` tag with the following code.
 
     ```xml
     <List id="idReviewsList" items="{reviewsModel>/reviews}" noDataText="{i18n>noCommentsTitle}" growing="true" growingThreshold="10" growingScrollToLoad="true">
@@ -101,7 +101,7 @@ We will make small changes to the user interface so that Mary knows that her rev
     </List>
     ```
 
-1. Open the `mta.yaml` file and change the `version`, as shown in the image, to `1.0.2`.
+5. Open the `mta.yaml` file and change the `version`, as shown in the image, to `1.0.2`.
 
     ![Step Image](images/ex-11-1-5-mta_version.png)
 
@@ -145,13 +145,22 @@ We will make small changes to the user interface so that Mary knows that her rev
 1. Deploy the archive using Blue Green deployment with the command:
 
     ```
-    cf bg-deploy <Path to Mtar>/product_ratings_1.0.2.mtar
+    cf bg-deploy <Path to Mtar>\product_ratings_1.0.2.mtar
     ```
+
+    Your final command should look something like this
+
+    ```shellscript
+    cf bg-deploy "C:\Users\student\Downloads\product_ratings_1.0.2.mtar"
+    ```
+
     This deployment may take several minutes. At the end of the deployment you should see the following:
 
     ![Step Image](images/ex-11-2-5-bg-deploy-success.png)
 
     Make a note of these commands as you will be using them in the upcoming steps. Please note that your process ID will be different than the ones shown in the image and redo the step.
+
+    **Ensure that you have made a note of the Process ID**
 
     Note: If your deployment fails due to insufficient memory, then please stop your Web IDE builder on the SAP Cloud Platform Cockpit as shown in the images.
 
@@ -176,7 +185,7 @@ We will make small changes to the user interface so that Mary knows that her rev
 
     ![Step Image](images/ex-11-2-7-bg-rfe-app.png)
 
-    You will see that the app URL for this application has the keyword 'idle' in it. This is an indication that the currently active version, the one being used by Mary, is the `ratings_frontend` app and not `ratings_frontend_green`.
+    You will see that the app URL for this application has the keyword 'idle' in it. This is an indication that the currently active version, the one being used by Mary, is `ratings_frontend` app and not `ratings_frontend_green` app.
 
 1. Now, let's see how the two URLs point to two different applications.
 
@@ -198,6 +207,8 @@ We will make small changes to the user interface so that Mary knows that her rev
 
     This is the app that Mary is currently using. You can see that the changes we deployed are not available on the currently active version (Blue version).
 
+    To check if your comments are still being tweeted, please head over to the [Twitter handle](https://twitter.com/sapfurnishop)
+
 1.  Now that we have verified that our Green version is working fine, we will make it the active version. In your CLI tool enter the command, that you noted in Step 6, to resume Blue Green deployment.
 
     ```
@@ -210,7 +221,7 @@ We will make small changes to the user interface so that Mary knows that her rev
 
     ![Step Image](images/ex-11-2-10-active-apps.png)
 
-    The `bg-deploy resume` command has deleted the older version of
+    The `bg-deploy resume` command has deleted the older version of applications.
 
 1. Click on `ratings_frontend_green`.
 
@@ -230,7 +241,7 @@ We will make small changes to the user interface so that Mary knows that her rev
 # Appendix
 
 * [Further reading on Blue-Green deployment on SAP Cloud Platform](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/764308c52e68488dac848bae93e9137b.html)
-* [Blue-Green deployment on Cloud Foundry]((https://docs.cloudfoundry.org/devguide/deploy-apps/blue-green.html))
+* [Blue-Green deployment on Cloud Foundry](https://docs.cloudfoundry.org/devguide/deploy-apps/blue-green.html))
 
 
 <hr>
@@ -241,4 +252,4 @@ We will make small changes to the user interface so that Mary knows that her rev
 
 | Previous | | Next
 |---|---|---|
-| [Exercise 11 - Autoscaling of Comments and Ratings](../Exercise-11-Autoscaling-of-Comments-and-Ratings) | [Overview](../README.md) | 
+| [Exercise 11 - Autoscaling of Comments and Ratings](../Exercise-11-Autoscaling-of-Comments-and-Ratings) | [Overview](../README.md) |
